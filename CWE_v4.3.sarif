@@ -8,7 +8,7 @@
       "taxonomies": [
         {
           "name": "CWE",
-		  "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5",
+          "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5",
           "organization": "MITRE",
           "shortDescription": {
             "text": "The MITRE Common Weakness Enumeration"
