@@ -1,0 +1,485 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "NIST SP800-63B v1"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "CC3BE6A5-E774-41CF-B74C-C928269B6778",
+          "name": "NIST SP800-63B",
+          "organization": "National Institute of Standards and Technology",
+          "shortDescription": {
+            "text": "Digital Identity Guidelines"
+          },
+          "version": "1",
+          "releaseDateUtc": "2020-03-02",
+          "downloadUri": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf",
+          "informationUri": "https://pages.nist.gov/800-63-3/sp800-63b.html",
+          "taxa": [
+            {
+              "id": "1",
+              "name": "Purpose"
+            },
+            {
+              "id": "2",
+              "name": "Introduction"
+            },
+            {
+              "id": "3",
+              "name": "Definitions and Abbreviations"
+            },
+            {
+              "id": "4",
+              "name": "Authenticator Assurance Levels"
+            },
+            {
+              "id": "4.1",
+              "name": "Authenticator Assurance Level 1"
+            },
+            {
+              "id": "4.1.1",
+              "name": "Permitted Authenticator Types"
+            },
+            {
+              "id": "4.1.2",
+              "name": "Authenticator and Verifier Requirements"
+            },
+            {
+              "id": "4.1.3",
+              "name": "Reauthentication"
+            },
+            {
+              "id": "4.1.4",
+              "name": "Security Controls"
+            },
+            {
+              "id": "4.1.5",
+              "name": "Records Retention Policy"
+            },
+            {
+              "id": "4.2",
+              "name": "Authenticator Assurance Level 2"
+            },
+            {
+              "id": "4.2.1",
+              "name": "Permitted Authenticator Types"
+            },
+            {
+              "id": "4.2.2",
+              "name": "Authenticator and Verifier Requirements"
+            },
+            {
+              "id": "4.2.3",
+              "name": "Reauthentication"
+            },
+            {
+              "id": "4.2.4",
+              "name": "Security Controls"
+            },
+            {
+              "id": "4.2.5",
+              "name": "Records Retention Policy"
+            },
+            {
+              "id": "4.3",
+              "name": "Authenticator Assurance Level 3"
+            },
+            {
+              "id": "4.3.1",
+              "name": "Permitted Authenticator Types"
+            },
+            {
+              "id": "4.3.2",
+              "name": "Authenticator and Verifier Requirements"
+            },
+            {
+              "id": "4.3.3",
+              "name": "Reauthentication"
+            },
+            {
+              "id": "4.3.4",
+              "name": "Security Controls"
+            },
+            {
+              "id": "4.3.5",
+              "name": "Records Retention Policy"
+            },
+            {
+              "id": "4.4",
+              "name": "Privacy Requirements"
+            },
+            {
+              "id": "4.5",
+              "name": "Summary of Requirements"
+            },
+            {
+              "id": "5",
+              "name": "Authenticator and Verifier Requirements"
+            },
+            {
+              "id": "5.1",
+              "name": "Requirements by Authenticator Type"
+            },
+            {
+              "id": "5.1.1",
+              "name": "Memorized Secrets"
+            },
+            {
+              "id": "5.1.1.1",
+              "name": "Memorized Secret Authenticators"
+            },
+            {
+              "id": "5.1.1.2",
+              "name": "Memorized Secret Verifiers"
+            },
+            {
+              "id": "5.1.2",
+              "name": "Look-Up Secrets"
+            },
+            {
+              "id": "5.1.2.1",
+              "name": "Look-Up Secret Authenticators"
+            },
+            {
+              "id": "5.1.2.2",
+              "name": "Look-Up Secret Verifiers"
+            },
+            {
+              "id": "5.1.3",
+              "name": "Out-of-Band Devices"
+            },
+            {
+              "id": "5.1.3.1",
+              "name": "Out-of-Band Authenticators"
+            },
+            {
+              "id": "5.1.3.2",
+              "name": "Out-of-Band Verifiers"
+            },
+            {
+              "id": "5.1.3.3",
+              "name": "Authentication using the Public Switched Telephone Network"
+            },
+            {
+              "id": "5.1.4",
+              "name": "Single-Factor OTP Device"
+            },
+            {
+              "id": "5.1.4.1",
+              "name": "Single-Factor OTP Authenticators"
+            },
+            {
+              "id": "5.1.4.2",
+              "name": "Single-Factor OTP Verifiers"
+            },
+            {
+              "id": "5.1.5",
+              "name": "Multi-Factor OTP Devices"
+            },
+            {
+              "id": "5.1.5.1",
+              "name": "Multi-Factor OTP Authenticators"
+            },
+            {
+              "id": "5.1.5.2",
+              "name": "Multi-Factor OTP Verifiers"
+            },
+            {
+              "id": "5.1.6",
+              "name": "Single-Factor Cryptographic Software"
+            },
+            {
+              "id": "5.1.6.1",
+              "name": "Single-Factor Cryptographic Software Authenticators"
+            },
+            {
+              "id": "5.1.6.2",
+              "name": "Single-Factor Cryptographic Software Verifiers"
+            },
+            {
+              "id": "5.1.7",
+              "name": "Single-Factor Cryptographic Devices"
+            },
+            {
+              "id": "5.1.7.1",
+              "name": "Single-Factor Cryptographic Device Authenticators"
+            },
+            {
+              "id": "5.1.7.2",
+              "name": "Single-Factor Cryptographic Device Verifiers"
+            },
+            {
+              "id": "5.1.8",
+              "name": "Multi-Factor Cryptographic Software"
+            },
+            {
+              "id": "5.1.8.1",
+              "name": "Multi-Factor Cryptographic Software Authenticators"
+            },
+            {
+              "id": "5.1.8.2",
+              "name": "Multi-Factor Cryptographic Software Verifiers"
+            },
+            {
+              "id": "5.1.9",
+              "name": "Multi-Factor Cryptographic Devices"
+            },
+            {
+              "id": "5.1.9.1",
+              "name": "Multi-Factor Cryptographic Device Authenticators"
+            },
+            {
+              "id": "5.1.9.2",
+              "name": "Multi-Factor Cryptographic Device Verifiers"
+            },
+            {
+              "id": "5.2",
+              "name": "General Authenticator Requirements"
+            },
+            {
+              "id": "5.2.1",
+              "name": "Physical Authenticators"
+            },
+            {
+              "id": "5.2.2",
+              "name": "Rate Limiting (Throttling)"
+            },
+            {
+              "id": "5.2.3",
+              "name": "Use of Biometrics"
+            },
+            {
+              "id": "5.2.4",
+              "name": "Attestation"
+            },
+            {
+              "id": "5.2.5",
+              "name": "Verifier Impersonation Resistance"
+            },
+            {
+              "id": "5.2.6",
+              "name": "Verifier-CSP Communications"
+            },
+            {
+              "id": "5.2.7",
+              "name": "Verifier-Compromise Resistance"
+            },
+            {
+              "id": "5.2.8",
+              "name": "Replay Resistance"
+            },
+            {
+              "id": "5.2.9",
+              "name": "Authentication Intent"
+            },
+            {
+              "id": "5.2.10",
+              "name": "Restricted Authenticators"
+            },
+            {
+              "id": "6",
+              "name": "Authenticator Lifecycle Management"
+            },
+            {
+              "id": "6.1",
+              "name": "Authenticator Binding"
+            },
+            {
+              "id": "6.1.1",
+              "name": "Binding at Enrollment"
+            },
+            {
+              "id": "6.1.2",
+              "name": "Post-Enrollment Binding"
+            },
+            {
+              "id": "6.1.2.1",
+              "name": "Binding of an Additional Authenticator at Existing AAL"
+            },
+            {
+              "id": "6.1.2.2",
+              "name": "Adding an Additional Factor to a Single-Factor Account"
+            },
+            {
+              "id": "6.1.2.3",
+              "name": "Replacement of a Lost Authentication Factor"
+            },
+            {
+              "id": "6.1.3",
+              "name": "Binding to a Subscriber-provided Authenticator"
+            },
+            {
+              "id": "6.1.4",
+              "name": "Renewal"
+            },
+            {
+              "id": "6.2",
+              "name": "Loss, Theft, Damage, and Unauthorized Duplication"
+            },
+            {
+              "id": "6.3",
+              "name": "Expiration"
+            },
+            {
+              "id": "6.4",
+              "name": "Revocation and Termination"
+            },
+            {
+              "id": "7",
+              "name": "Session Management"
+            },
+            {
+              "id": "7.1",
+              "name": "Session Bindings"
+            },
+            {
+              "id": "7.1.1",
+              "name": "Browser Cookies"
+            },
+            {
+              "id": "7.1.2",
+              "name": "Access Tokens"
+            },
+            {
+              "id": "7.1.3",
+              "name": "Device Identification"
+            },
+            {
+              "id": "7.2",
+              "name": "Reauthentication"
+            },
+            {
+              "id": "7.2.1",
+              "name": "Reauthentication from a Federation or Assertion"
+            },
+            {
+              "id": "8",
+              "name": "Threats and Security Considerations"
+            },
+            {
+              "id": "8.1",
+              "name": "Authenticator Threats"
+            },
+            {
+              "id": "8.2",
+              "name": "Threat Mitigation Strategies"
+            },
+            {
+              "id": "8.3",
+              "name": "Authenticator Recovery"
+            },
+            {
+              "id": "8.4",
+              "name": "Session Attacks"
+            },
+            {
+              "id": "9",
+              "name": "Privacy Considerations"
+            },
+            {
+              "id": "9.1",
+              "name": "Privacy Risk Assessment"
+            },
+            {
+              "id": "9.2",
+              "name": "Privacy Controls"
+            },
+            {
+              "id": "9.3",
+              "name": "Use Limitation"
+            },
+            {
+              "id": "9.4",
+              "name": "Agency-Specific Privacy Compliance"
+            },
+            {
+              "id": "10",
+              "name": "Usability Considerations"
+            },
+            {
+              "id": "10.1",
+              "name": "Usability Considerations Common to Authenticators"
+            },
+            {
+              "id": "10.2",
+              "name": "Usability Considerations by Authenticator Type"
+            },
+            {
+              "id": "10.2.1",
+              "name": "Memorized Secrets"
+            },
+            {
+              "id": "10.2.2",
+              "name": "Look-Up Secrets"
+            },
+            {
+              "id": "10.2.3",
+              "name": "Out-of-Band"
+            },
+            {
+              "id": "10.2.4",
+              "name": "Single-Factor OTP Device"
+            },
+            {
+              "id": "10.2.5",
+              "name": "Multi-Factor OTP Device"
+            },
+            {
+              "id": "10.2.6",
+              "name": "Single-Factor Cryptographic Software"
+            },
+            {
+              "id": "10.2.7",
+              "name": "Single-Factor Cryptographic Device"
+            },
+            {
+              "id": "10.2.8",
+              "name": "Multi-Factor Cryptographic Software"
+            },
+            {
+              "id": "10.2.9",
+              "name": "Multi-Factor Cryptographic Device"
+            },
+            {
+              "id": "10.3",
+              "name": "Summary of Usability Considerations"
+            },
+            {
+              "id": "10.4",
+              "name": "Biometrics Usability Considerations"
+            },
+            {
+              "id": "A.1",
+              "name": "Introduction"
+            },
+            {
+              "id": "A.2",
+              "name": "Length"
+            },
+            {
+              "id": "A.3",
+              "name": "Complexity"
+            },
+            {
+              "id": "A.4",
+              "name": "Randomly-Chosen Secrets"
+            },
+            {
+              "id": "A.5",
+              "name": "Summary"
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}
