@@ -1,28 +1,32 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Markdig.Syntax;
-using Microsoft.CodeAnalysis.Sarif;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+
+using Markdig.Syntax;
+
+using Microsoft.CodeAnalysis.Sarif;
+
+using Newtonsoft.Json;
+
 using Taxonomy.Common;
 
 namespace Taxonomy
 {
     public class NistSP80063BTaxonomyGenerator : TaxonomyGenerator
     {
-        public List<NistSP80063BRecord> ReadFromMd(string folderPath)
+        private List<NistSP80063BRecord> ReadFromMd(string folderPath)
         {
             DirectoryInfo d = new DirectoryInfo(folderPath);
             FileInfo[] files = d.GetFiles("sec*.md");
-            files = files.OrderBy(f => Int32.Parse(Regex.Match(f.Name, @"\d+").Value)).ToArray();
+            files = files.OrderBy(f => int.Parse(Regex.Match(f.Name, @"\d+").Value)).ToArray();
             List<string> allHeaders = new List<string>();
 
-            foreach (var file in files)
+            foreach (FileInfo file in files)
             {
                 string text = File.ReadAllText(file.FullName);
                 MarkdownDocument doc = Markdig.Markdown.Parse(text);
@@ -35,7 +39,7 @@ namespace Taxonomy
             }
 
             files = d.GetFiles("app*.md");
-            foreach (var file in files)
+            foreach (FileInfo file in files)
             {
                 string text = File.ReadAllText(file.FullName);
                 MarkdownDocument doc = Markdig.Markdown.Parse(text);
@@ -46,38 +50,48 @@ namespace Taxonomy
             }
 
             List<NistSP80063BRecord> records = new List<NistSP80063BRecord>();
-            foreach (var header in allHeaders)
+            foreach (string header in allHeaders)
             {
-                var splitted = header.Split(new[] { ' ' }, 2);
+                string[] splitted = header.Split(new[] { ' ' }, 2);
                 records.Add(new NistSP80063BRecord() { Id = splitted[0], Name = splitted[1] });
             }
 
             return records;
         }
 
-        public void SaveToSarif(string sourceFolderPath, string targetFilePath)
+        public bool SaveToSarif(string sourceFolderPath, string targetFilePath, string version, string releaseDateUtc)
         {
-            var results = this.ReadFromMd(sourceFolderPath);
-
-            var run = this.ConvertToSarif(results);
-
-            SarifLog log = new SarifLog
+            try
             {
-                Runs = new Run[] { run }
-            };
+                List<NistSP80063BRecord> results = this.ReadFromMd(sourceFolderPath);
 
-            File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
         }
 
-        public Run ConvertToSarif(List<NistSP80063BRecord> records)
+        private Run ConvertToSarif(List<NistSP80063BRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
                 Name = "NIST SP800-63B",
                 Guid = Constants.Guid.NistSP80063B,
-                Version = "1",
-                ReleaseDateUtc = "2020-03-02",
+                Version = version,
+                ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://pages.nist.gov/800-63-3/sp800-63b.html"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf"),
                 Organization = "National Institute of Standards and Technology",

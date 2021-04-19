@@ -1,21 +1,25 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using CsvHelper;
-using Microsoft.CodeAnalysis.Sarif;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+
+using CsvHelper;
+
+using Microsoft.CodeAnalysis.Sarif;
+
+using Newtonsoft.Json;
+
 using Taxonomy.Common;
 
 namespace Taxonomy
 {
     public class NistSP80053TaxonomyGenerator : TaxonomyGenerator
     {
-        public List<NistSP80053CsvRecord> ReadFromCsv(string csvFilePath)
+        private List<NistSP80053CsvRecord> ReadFromCsv(string csvFilePath)
         {
             using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var textReader = new StreamReader(input);
@@ -24,21 +28,31 @@ namespace Taxonomy
             return csvReader.GetRecords<NistSP80053CsvRecord>().ToList();
         }
 
-        public void SaveToSarif(string sourceFilePath, string targetFilePath)
+        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
-            var results = this.ReadFromCsv(sourceFilePath);
-
-            var run = this.ConvertToSarif(results);
-
-            SarifLog log = new SarifLog
+            try
             {
-                Runs = new Run[] { run }
-            };
+                List<NistSP80053CsvRecord> results = this.ReadFromCsv(sourceFilePath);
 
-            File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
         }
 
-        public Run ConvertToSarif(List<NistSP80053CsvRecord> records)
+        private Run ConvertToSarif(List<NistSP80053CsvRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
@@ -89,7 +103,7 @@ namespace Taxonomy
 
             var idList = relationshipString.Split(',', '.', ';').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
             List<ReportingDescriptorRelationship> relationships = new List<ReportingDescriptorRelationship>();
-            foreach (var id in idList)
+            foreach (string id in idList)
             {
                 relationships.Add(new ReportingDescriptorRelationship
                 {

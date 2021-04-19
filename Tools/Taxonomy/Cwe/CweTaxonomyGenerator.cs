@@ -1,9 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using CsvHelper;
-using Microsoft.CodeAnalysis.Sarif;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,13 +8,20 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Serialization;
+
+using CsvHelper;
+
+using Microsoft.CodeAnalysis.Sarif;
+
+using Newtonsoft.Json;
+
 using Taxonomy.Common;
 
 namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        public List<CweCsvRecord> ReadFromCsv(string filePath)
+        private List<CweCsvRecord> ReadFromCsv(string filePath)
         {
             using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var textReader = new StreamReader(input);
@@ -26,49 +30,69 @@ namespace Taxonomy.Cwe
             return csvReader.GetRecords<CweCsvRecord>().ToList();
         }
 
-        public Weakness_Catalog ReadFromXml(string filePath)
+        private Weakness_Catalog ReadFromXml(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Weakness_Catalog));
             return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
         }
 
-        public void SaveCsvToSarif(string filePath)
+        public bool SaveCsvToSarif(string filePath, string version, string releaseDateUtc)
         {
-            var records = this.ReadFromCsv(filePath);
-
-            var run = this.ConvertToSarif(records);
-
-            SarifLog log = new SarifLog
+            try
             {
-                Runs = new Run[] { run }
-            };
+                List<CweCsvRecord> records = this.ReadFromCsv(filePath);
 
-            File.WriteAllText(filePath + ".sarif", JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
+                Run run = this.ConvertToSarif(records, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(filePath + ".sarif", JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
         }
 
-        public void SaveXmlToSarif(string sourceFilePath, string targetFilePath)
+        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
-            var results = this.ReadFromXml(sourceFilePath);
-
-            var run = this.ConvertToSarif(results);
-
-            SarifLog log = new SarifLog
+            try
             {
-                Runs = new Run[] { run }
-            };
+                Weakness_Catalog results = this.ReadFromXml(sourceFilePath);
 
-            File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
+                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
         }
 
-        public Run ConvertToSarif(List<CweCsvRecord> records)
+        private Run ConvertToSarif(List<CweCsvRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
                 Name = "CWE",
                 Guid = Constants.Guid.Cwe,
-                Version = "4.4",
-                ReleaseDateUtc = "2020-12-10",
+                Version = version,
+                ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
                 DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",
@@ -103,15 +127,15 @@ namespace Taxonomy.Cwe
             return run;
         }
 
-        public Run ConvertToSarif(Weakness_Catalog cweXml)
+        private Run ConvertToSarif(Weakness_Catalog cweXml, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
                 Name = "CWE",
                 Guid = Constants.Guid.Cwe,
-                Version = "4.4",
-                ReleaseDateUtc = "2020-12-10",
+                Version = version,
+                ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
                 DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",
@@ -125,7 +149,7 @@ namespace Taxonomy.Cwe
 
             var taxa = new List<ReportingDescriptor>();
 
-            foreach (var r in cweXml.Weaknesses)
+            foreach (WeaknessType r in cweXml.Weaknesses)
             {
                 taxa.Add(new ReportingDescriptor
                 {
@@ -138,7 +162,7 @@ namespace Taxonomy.Cwe
                 });
             }
 
-            foreach (var r in cweXml.Categories)
+            foreach (CategoryType r in cweXml.Categories)
             {
                 taxa.Add(new ReportingDescriptor
                 {
@@ -151,7 +175,7 @@ namespace Taxonomy.Cwe
                 });
             }
 
-            foreach (var r in cweXml.Views)
+            foreach (ViewType r in cweXml.Views)
             {
                 taxa.Add(new ReportingDescriptor
                 {
@@ -188,9 +212,9 @@ namespace Taxonomy.Cwe
 
             // example relationship
             // ::NATURE:ChildOf:CWE ID:707:VIEW ID:1000:ORDINAL:Primary::NATURE:PeerOf:CWE ID:345:VIEW ID:1000:ORDINAL:Primary::NATURE:CanPrecede:CWE ID:22:VIEW ID:1000::NATURE:CanPrecede:CWE ID:41:VIEW ID:1000::NATURE:CanPrecede:CWE ID:74:VIEW ID:1000::NATURE:CanPrecede:CWE ID:119:VIEW ID:1000::NATURE:CanPrecede:CWE ID:770:VIEW ID:1000::
-            var relationships = relationshipString.Split("::");
+            string[] relationships = relationshipString.Split("::");
             var map = new Dictionary<string, CweRelationship>();
-            foreach (var rel in relationships)
+            foreach (string rel in relationships)
             {
                 if (!string.IsNullOrEmpty(rel))
                 {
@@ -203,7 +227,7 @@ namespace Taxonomy.Cwe
             }
 
             List<ReportingDescriptorRelationship> rels = new List<ReportingDescriptorRelationship>();
-            foreach (var entry in map)
+            foreach (KeyValuePair<string, CweRelationship> entry in map)
             {
                 rels.Add(new ReportingDescriptorRelationship
                 {
@@ -228,7 +252,7 @@ namespace Taxonomy.Cwe
             related = related.OrderBy(o => int.Parse(o.CWE_ID)).ToArray();
 
             List<ReportingDescriptorRelationship> rels = new List<ReportingDescriptorRelationship>();
-            foreach (var entry in related)
+            foreach (RelatedWeaknessesTypeRelated_Weakness entry in related)
             {
                 if (!rels.Any(r => r.Target.Id == $"CWE-{entry.CWE_ID}" && r.Kinds.Contains(entry.Nature.ToSarifRelationship())))
                 {
@@ -257,7 +281,7 @@ namespace Taxonomy.Cwe
             related = related.OrderBy(o => int.Parse(o.CWE_ID)).ToArray();
 
             List<ReportingDescriptorRelationship> relationships = new List<ReportingDescriptorRelationship>();
-            foreach (var entry in related)
+            foreach (MemberType entry in related)
             {
                 if (!relationships.Any(r => r.Target.Id == $"CWE-{entry.CWE_ID}"))
                 {
@@ -288,44 +312,54 @@ namespace Taxonomy.Cwe
             return relationships;
         }
 
-        public void AddOwaspRelationshipToSarif(string cweSarifPath, string owaspSarifPath, string targetFilePath)
+        public bool AddOwaspRelationshipToSarif(string cweSarifPath, string owaspSarifPath, string targetFilePath)
         {
-            var cweSarif = ReadFromSarif(cweSarifPath);
-            var owaspSarif = ReadFromSarif(owaspSarifPath);
-            foreach (var taxon in owaspSarif.Runs[0].Taxonomies[0].Taxa)
+            try
             {
-                if (taxon.Relationships != null)
+                SarifLog cweSarif = ReadFromSarif(cweSarifPath);
+                SarifLog owaspSarif = ReadFromSarif(owaspSarifPath);
+                foreach (ReportingDescriptor taxon in owaspSarif.Runs[0].Taxonomies[0].Taxa)
                 {
-                    foreach (var relationship in taxon.Relationships)
+                    if (taxon.Relationships != null)
                     {
-                        if (relationship.Target.ToolComponent.Name == "CWE")
+                        foreach (ReportingDescriptorRelationship relationship in taxon.Relationships)
                         {
-                            var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
-                            reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
-                            reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" };
-                            reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
-                            var existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
-                            if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
+                            if (relationship.Target.ToolComponent.Name == "CWE")
                             {
-                                existingRelationships.Add(reportingDescriptorRelationship);
+                                var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
+                                reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
+                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" };
+                                reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
+                                IList<ReportingDescriptorRelationship> existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
+                                if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
+                                {
+                                    existingRelationships.Add(reportingDescriptorRelationship);
+                                }
                             }
                         }
                     }
                 }
+
+                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" });
+
+                ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
+                externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
+                externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
+                {
+                    Guid = Constants.Guid.Owasp,
+                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/OWASP_ASVS_v4.0.2.sarif") }
+                });
+                cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(cweSarif, Newtonsoft.Json.Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
             }
 
-            cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" });
-
-            ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
-            externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
-            externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
-            {
-                Guid = Constants.Guid.Owasp,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/OWASP_ASVS_v4.0.2.sarif") }
-            });
-            cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
-
-            File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(cweSarif, Newtonsoft.Json.Formatting.Indented));
+            return true;
         }
     }
 }

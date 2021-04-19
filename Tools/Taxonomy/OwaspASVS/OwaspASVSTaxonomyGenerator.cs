@@ -1,21 +1,25 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using CsvHelper;
-using Microsoft.CodeAnalysis.Sarif;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+
+using CsvHelper;
+
+using Microsoft.CodeAnalysis.Sarif;
+
+using Newtonsoft.Json;
+
 using Taxonomy.Common;
 
 namespace Taxonomy
 {
     public class OwaspASVSTaxonomyGenerator : TaxonomyGenerator
     {
-        public List<OwaspASVSCsvRecord> ReadFromCsv(string csvFilePath)
+        private List<OwaspASVSCsvRecord> ReadFromCsv(string csvFilePath)
         {
             using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var textReader = new StreamReader(input);
@@ -24,21 +28,31 @@ namespace Taxonomy
             return csvReader.GetRecords<OwaspASVSCsvRecord>().ToList();
         }
 
-        public void SaveToSarif(string sourceFilePath, string targetFilePath)
+        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
-            var results = this.ReadFromCsv(sourceFilePath);
-
-            var run = this.ConvertToSarif(results);
-
-            SarifLog log = new SarifLog
+            try
             {
-                Runs = new Run[] { run }
-            };
+                List<OwaspASVSCsvRecord> results = this.ReadFromCsv(sourceFilePath);
 
-            File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
         }
 
-        public Run ConvertToSarif(List<OwaspASVSCsvRecord> records)
+        private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version, string releaseDateUtc)
         {
             var supportedTaxonomies = new List<ToolComponentReference>();
             supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Cwe, Name = "CWE" });
@@ -49,8 +63,8 @@ namespace Taxonomy
             {
                 Name = "OWASP",
                 Guid = Constants.Guid.Owasp,
-                Version = "4.0.2",
-                ReleaseDateUtc = "2020-10-01",
+                Version = version,
+                ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
                 DownloadUri = new Uri("https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.pdf"),
                 Organization = "OWASP Foundation",
@@ -66,7 +80,7 @@ namespace Taxonomy
                 Id = r.Id.Replace("V", ""),
                 FullDescription = string.IsNullOrEmpty(r.FullDescription) ? null : new MultiformatMessageString { Text = r.FullDescription },
                 DefaultConfiguration = new ReportingConfiguration { Level = FailureLevel.Warning },
-                Relationships = this.GetRelationships(r.RelatedCwe, r.RelatedNistSP80063B, toolComponent.Name),
+                Relationships = this.GetRelationships(r.RelatedCwe, r.RelatedNistSP80063B),
             }));
 
             taxonomies.Add(toolComponent);
@@ -97,7 +111,7 @@ namespace Taxonomy
             return run;
         }
 
-        private List<ReportingDescriptorRelationship> GetRelationships(string relationshipString, string relationshipStringNistSP80063B, string name)
+        private List<ReportingDescriptorRelationship> GetRelationships(string relationshipString, string relationshipStringNistSP80063B)
         {
             List<ReportingDescriptorRelationship> relationships = new List<ReportingDescriptorRelationship>();
 
@@ -105,7 +119,7 @@ namespace Taxonomy
             {
                 var idList = relationshipString.Split(',', '.', ';').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => "CWE-" + p).ToList();
 
-                foreach (var id in idList)
+                foreach (string id in idList)
                 {
                     relationships.Add(new ReportingDescriptorRelationship
                     {
@@ -123,7 +137,7 @@ namespace Taxonomy
             {
                 var idList = relationshipStringNistSP80063B.Split('/').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => p).ToList();
 
-                foreach (var id in idList)
+                foreach (string id in idList)
                 {
                     relationships.Add(new ReportingDescriptorRelationship
                     {

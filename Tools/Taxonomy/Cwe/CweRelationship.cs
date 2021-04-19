@@ -37,7 +37,7 @@ namespace Taxonomy
 
         public CweRelationship(string relString)
         {
-            var terms = relString.Split(":");
+            string[] terms = relString.Split(":");
             if (terms[2] != "CWE ID")
             {
                 throw new ArgumentException();
