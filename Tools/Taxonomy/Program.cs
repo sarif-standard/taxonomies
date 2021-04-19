@@ -14,13 +14,13 @@ namespace Taxonomy
         private static void Main(string[] args)
         {
             // example:
-            // generate-cwe "..\..\..\..\Source\cwec_v4.4.xml" "..\..\..\..\..\CWE_v4.4.sarif" "4.4" "2020-12-10"
-            // generate-owasp "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" "4.0.2" "2020-10-01"
-            // generate-nistsp80053 "..\..\..\..\Source\sp800-53r5-control-catalog.csv" "..\..\..\..\..\NIST_SP800-53_v5.sarif" "5" "2020-12-10"
-            // generate-nistsp80063b "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" "..\..\..\..\..\NIST_SP800-63B_v1.sarif" "1" "2020-03-02"
-            // add-owasprelationship-to-cwe "..\..\..\..\..\CWE_v4.4.sarif" "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" "..\..\..\..\..\CWE_v4.4.sarif"
+            // generate-cwe --source-file-path "..\..\..\..\Source\cwec_v4.4.xml" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif" --version "4.4" --release-date "2020-12-10"
+            // generate-owasp --source-file-path "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --version "4.0.2" --release-date "2020-10-01"
+            // generate-nistsp80053 --source-file-path "..\..\..\..\Source\sp800-53r5-control-catalog.csv" --target-file-path "..\..\..\..\..\NIST_SP800-53_v5.sarif" --version "5" --release-date "2020-12-10"
+            // generate-nistsp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" --target-file-path "..\..\..\..\..\NIST_SP800-63B_v1.sarif" --version "1" --release-date "2020-03-02"
+            // add-owasprelationship-to-cwe --source-cwe-file-path "..\..\..\..\..\CWE_v4.4.sarif" --source-owasp-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif"
 
-            bool result = Parser.Default.ParseArguments<CweOptions, OwaspOptions, NistSP80053Options, GenerateNistSP80063BOptions, AddOwaspRelationshipToCweOptions>(args)
+            bool result = Parser.Default.ParseArguments<CweOptions, OwaspOptions, NistSP80053Options, NistSP80063BOptions, AddOwaspRelationshipToCweOptions>(args)
             .MapResult(
                 (CweOptions o) =>
                 {
@@ -34,7 +34,7 @@ namespace Taxonomy
                 {
                     return GenerateNistSP80053(o);
                 },
-                (GenerateNistSP80063BOptions o) =>
+                (NistSP80063BOptions o) =>
                 {
                     return GenerateNistSP80063B(o);
                 },
@@ -66,7 +66,7 @@ namespace Taxonomy
             return generator.SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc);
         }
 
-        private static bool GenerateNistSP80063B(GenerateNistSP80063BOptions o)
+        private static bool GenerateNistSP80063B(NistSP80063BOptions o)
         {
             var generator = new NistSP80063BTaxonomyGenerator();
             return generator.SaveToSarif(o.SourceFolderPath, o.TargetFilePath, o.Version, o.ReleaseDateUtc);

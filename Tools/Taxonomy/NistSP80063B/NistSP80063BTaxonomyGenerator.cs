@@ -19,6 +19,30 @@ namespace Taxonomy
 {
     public class NistSP80063BTaxonomyGenerator : TaxonomyGenerator
     {
+        public bool SaveToSarif(string sourceFolderPath, string targetFilePath, string version, string releaseDateUtc)
+        {
+            try
+            {
+                List<NistSP80063BRecord> results = this.ReadFromMd(sourceFolderPath);
+
+                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+
+                SarifLog log = new SarifLog
+                {
+                    Runs = new Run[] { run }
+                };
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
+        }
+
         private List<NistSP80063BRecord> ReadFromMd(string folderPath)
         {
             DirectoryInfo d = new DirectoryInfo(folderPath);
@@ -59,30 +83,6 @@ namespace Taxonomy
             return records;
         }
 
-        public bool SaveToSarif(string sourceFolderPath, string targetFilePath, string version, string releaseDateUtc)
-        {
-            try
-            {
-                List<NistSP80063BRecord> results = this.ReadFromMd(sourceFolderPath);
-
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
-
-                SarifLog log = new SarifLog
-                {
-                    Runs = new Run[] { run }
-                };
-
-                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Formatting.Indented));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-
-            return true;
-        }
-
         private Run ConvertToSarif(List<NistSP80063BRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
@@ -111,7 +111,7 @@ namespace Taxonomy
 
             taxonomies.Add(toolComponent);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = "NIST SP800-63B v1" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = $"NIST SP800-63B v{version}" } };
 
             Run run = new Run
             {

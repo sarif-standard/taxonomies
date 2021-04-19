@@ -36,7 +36,7 @@ namespace Taxonomy.Cwe
             if (node == null || node.Any == null || node.Any.Length == 0)
                 return null;
 
-            return String.Join("", node.Any.Select(n => n.ToDescription()).ToList());
+            return string.Join("", node.Any.Select(n => n.ToDescription()).ToList());
         }
 
         public static string ToDescription(this XmlNode node)
@@ -55,7 +55,7 @@ namespace Taxonomy.Cwe
                 }
             }
 
-            return String.Join("", list);
+            return string.Join("", list);
         }
     }
 }

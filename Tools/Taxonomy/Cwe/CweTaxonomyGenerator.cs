@@ -21,21 +21,6 @@ namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        private List<CweCsvRecord> ReadFromCsv(string filePath)
-        {
-            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return csvReader.GetRecords<CweCsvRecord>().ToList();
-        }
-
-        private Weakness_Catalog ReadFromXml(string filePath)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(Weakness_Catalog));
-            return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
-        }
-
         public bool SaveCsvToSarif(string filePath, string version, string releaseDateUtc)
         {
             try
@@ -84,6 +69,71 @@ namespace Taxonomy.Cwe
             return true;
         }
 
+        public bool AddOwaspRelationshipToSarif(string cweSarifPath, string owaspSarifPath, string targetFilePath)
+        {
+            try
+            {
+                SarifLog cweSarif = ReadFromSarif(cweSarifPath);
+                SarifLog owaspSarif = ReadFromSarif(owaspSarifPath);
+                foreach (ReportingDescriptor taxon in owaspSarif.Runs[0].Taxonomies[0].Taxa)
+                {
+                    if (taxon.Relationships != null)
+                    {
+                        foreach (ReportingDescriptorRelationship relationship in taxon.Relationships)
+                        {
+                            if (relationship.Target.ToolComponent.Name == "CWE")
+                            {
+                                var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
+                                reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
+                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" };
+                                reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
+                                IList<ReportingDescriptorRelationship> existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
+                                if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
+                                {
+                                    existingRelationships.Add(reportingDescriptorRelationship);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" });
+
+                ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
+                externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
+                externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
+                {
+                    Guid = Constants.Guid.Owasp,
+                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/OWASP_ASVS_v4.0.2.sarif") }
+                });
+                cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
+
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(cweSarif, Newtonsoft.Json.Formatting.Indented));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
+        }
+
+        private List<CweCsvRecord> ReadFromCsv(string filePath)
+        {
+            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var textReader = new StreamReader(input);
+            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
+
+            return csvReader.GetRecords<CweCsvRecord>().ToList();
+        }
+
+        private Weakness_Catalog ReadFromXml(string filePath)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Weakness_Catalog));
+            return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
+        }
+
         private Run ConvertToSarif(List<CweCsvRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
@@ -99,7 +149,7 @@ namespace Taxonomy.Cwe
                 ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                 IsComprehensive = true,
-                MinimumRequiredLocalizedDataSemanticVersion = "4.4",
+                MinimumRequiredLocalizedDataSemanticVersion = version,
                 Taxa = new List<ReportingDescriptor>(),
                 SupportedTaxonomies = new List<ToolComponentReference>(),
             };
@@ -116,7 +166,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = "CWE v4.4" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
 
             Run run = new Run
             {
@@ -142,7 +192,7 @@ namespace Taxonomy.Cwe
                 ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                 IsComprehensive = true,
-                MinimumRequiredLocalizedDataSemanticVersion = "4.4",
+                MinimumRequiredLocalizedDataSemanticVersion = version,
                 Taxa = new List<ReportingDescriptor>(),
                 SupportedTaxonomies = new List<ToolComponentReference>(),
             };
@@ -192,7 +242,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = "CWE v4.4" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
 
             Run run = new Run
             {
@@ -212,7 +262,7 @@ namespace Taxonomy.Cwe
 
             // example relationship
             // ::NATURE:ChildOf:CWE ID:707:VIEW ID:1000:ORDINAL:Primary::NATURE:PeerOf:CWE ID:345:VIEW ID:1000:ORDINAL:Primary::NATURE:CanPrecede:CWE ID:22:VIEW ID:1000::NATURE:CanPrecede:CWE ID:41:VIEW ID:1000::NATURE:CanPrecede:CWE ID:74:VIEW ID:1000::NATURE:CanPrecede:CWE ID:119:VIEW ID:1000::NATURE:CanPrecede:CWE ID:770:VIEW ID:1000::
-            string[] relationships = relationshipString.Split("::");
+            string[] relationships = relationshipString.Split("::", StringSplitOptions.TrimEntries);
             var map = new Dictionary<string, CweRelationship>();
             foreach (string rel in relationships)
             {
@@ -310,56 +360,6 @@ namespace Taxonomy.Cwe
             relationships = relationships.OrderByDescending(o => o.Kinds[0]).ThenBy(o => int.Parse(o.Target.Id.Replace("CWE-", ""))).ToList();
 
             return relationships;
-        }
-
-        public bool AddOwaspRelationshipToSarif(string cweSarifPath, string owaspSarifPath, string targetFilePath)
-        {
-            try
-            {
-                SarifLog cweSarif = ReadFromSarif(cweSarifPath);
-                SarifLog owaspSarif = ReadFromSarif(owaspSarifPath);
-                foreach (ReportingDescriptor taxon in owaspSarif.Runs[0].Taxonomies[0].Taxa)
-                {
-                    if (taxon.Relationships != null)
-                    {
-                        foreach (ReportingDescriptorRelationship relationship in taxon.Relationships)
-                        {
-                            if (relationship.Target.ToolComponent.Name == "CWE")
-                            {
-                                var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
-                                reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
-                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" };
-                                reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
-                                IList<ReportingDescriptorRelationship> existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
-                                if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
-                                {
-                                    existingRelationships.Add(reportingDescriptorRelationship);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" });
-
-                ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
-                externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
-                externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
-                {
-                    Guid = Constants.Guid.Owasp,
-                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/OWASP_ASVS_v4.0.2.sarif") }
-                });
-                cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
-
-                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(cweSarif, Newtonsoft.Json.Formatting.Indented));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-
-            return true;
         }
     }
 }

@@ -19,15 +19,6 @@ namespace Taxonomy
 {
     public class OwaspASVSTaxonomyGenerator : TaxonomyGenerator
     {
-        private List<OwaspASVSCsvRecord> ReadFromCsv(string csvFilePath)
-        {
-            using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return csvReader.GetRecords<OwaspASVSCsvRecord>().ToList();
-        }
-
         public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
             try
@@ -50,6 +41,15 @@ namespace Taxonomy
             }
 
             return true;
+        }
+
+        private List<OwaspASVSCsvRecord> ReadFromCsv(string csvFilePath)
+        {
+            using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var textReader = new StreamReader(input);
+            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
+
+            return csvReader.GetRecords<OwaspASVSCsvRecord>().ToList();
         }
 
         private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version, string releaseDateUtc)
@@ -85,7 +85,7 @@ namespace Taxonomy
 
             taxonomies.Add(toolComponent);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = "OWASP ASVS v4.0.2" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = $"OWASP ASVS v{version}" } };
 
             ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
             externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
@@ -117,7 +117,7 @@ namespace Taxonomy
 
             if (!string.IsNullOrWhiteSpace(relationshipString))
             {
-                var idList = relationshipString.Split(',', '.', ';').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => "CWE-" + p).ToList();
+                var idList = relationshipString.Split(new char[] { ',', '.', ';' }, StringSplitOptions.TrimEntries).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => "CWE-" + p).ToList();
 
                 foreach (string id in idList)
                 {
@@ -135,7 +135,7 @@ namespace Taxonomy
 
             if (!string.IsNullOrWhiteSpace(relationshipStringNistSP80063B))
             {
-                var idList = relationshipStringNistSP80063B.Split('/').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => p).ToList();
+                var idList = relationshipStringNistSP80063B.Split('/', StringSplitOptions.TrimEntries).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
 
                 foreach (string id in idList)
                 {

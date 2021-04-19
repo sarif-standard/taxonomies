@@ -19,15 +19,6 @@ namespace Taxonomy
 {
     public class NistSP80053TaxonomyGenerator : TaxonomyGenerator
     {
-        private List<NistSP80053CsvRecord> ReadFromCsv(string csvFilePath)
-        {
-            using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return csvReader.GetRecords<NistSP80053CsvRecord>().ToList();
-        }
-
         public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
             try
@@ -52,6 +43,15 @@ namespace Taxonomy
             return true;
         }
 
+        private List<NistSP80053CsvRecord> ReadFromCsv(string csvFilePath)
+        {
+            using FileStream input = File.Open(csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var textReader = new StreamReader(input);
+            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
+
+            return csvReader.GetRecords<NistSP80053CsvRecord>().ToList();
+        }
+
         private Run ConvertToSarif(List<NistSP80053CsvRecord> records, string version, string releaseDateUtc)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
@@ -59,8 +59,8 @@ namespace Taxonomy
             {
                 Name = "NIST",
                 Guid = Constants.Guid.NistSP80053,
-                Version = "5",
-                ReleaseDateUtc = "2020-12-10",
+                Version = version,
+                ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf"),
                 Organization = "National Institute of Standards and Technology",
@@ -83,7 +83,7 @@ namespace Taxonomy
 
             taxonomies.Add(toolComponent);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = "NIST SP800-53 v5" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = $"NIST SP800-53 v{version}" } };
 
             Run run = new Run
             {
@@ -101,7 +101,7 @@ namespace Taxonomy
                 return null;
             }
 
-            var idList = relationshipString.Split(',', '.', ';').Select(p => p.Trim()).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
+            var idList = relationshipString.Split(new char[] { ',', '.', ';' }, StringSplitOptions.TrimEntries).Where(p => p.ToLower() != "none").Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
             List<ReportingDescriptorRelationship> relationships = new List<ReportingDescriptorRelationship>();
             foreach (string id in idList)
             {
