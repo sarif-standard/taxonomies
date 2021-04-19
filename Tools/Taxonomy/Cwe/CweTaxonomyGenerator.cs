@@ -21,11 +21,11 @@ namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveCsvToSarif(string filePath, string version, string releaseDateUtc)
+        public bool SaveCsvToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
             try
             {
-                List<CweCsvRecord> records = this.ReadFromCsv(filePath);
+                List<CweCsvRecord> records = this.ReadFromCsv(sourceFilePath);
 
                 Run run = this.ConvertToSarif(records, version, releaseDateUtc);
 
@@ -34,7 +34,7 @@ namespace Taxonomy.Cwe
                     Runs = new Run[] { run }
                 };
 
-                File.WriteAllText(filePath + ".sarif", JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
+                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
             }
             catch (Exception ex)
             {
