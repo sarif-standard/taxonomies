@@ -92,13 +92,13 @@ namespace Taxonomy
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
                 Guid = Constants.Guid.Cwe,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/CWE_v4.4.sarif") }
+                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif") }
             });
 
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
                 Guid = Constants.Guid.NistSP80063B,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/NIST_SP800-63B_v1.sarif") }
+                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/NIST_SP800-63B_v1.sarif") }
             });
 
             Run run = new Run

@@ -13,13 +13,13 @@
         "taxonomies": [
           {
             "location": {
-              "uri": "https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/CWE_v4.4.sarif"
+              "uri": "https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif"
             },
             "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
           },
           {
             "location": {
-              "uri": "https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/NIST_SP800-63B_v1.sarif"
+              "uri": "https://raw.githubusercontent.com/sarif-standard/taxonomies/main/NIST_SP800-63B_v1.sarif"
             },
             "guid": "CC3BE6A5-E774-41CF-B74C-C928269B6778"
           }
