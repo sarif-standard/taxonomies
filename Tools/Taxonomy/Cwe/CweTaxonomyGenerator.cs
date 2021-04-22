@@ -104,7 +104,7 @@ namespace Taxonomy.Cwe
                 externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
                 {
                     Guid = Constants.Guid.Owasp,
-                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/5a8490df0cee6a0e7a8d4a210f8cfffbe3a5d319/OWASP_ASVS_v4.0.2.sarif") }
+                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/OWASP_ASVS_v4.0.2.sarif") }
                 });
                 cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
 
