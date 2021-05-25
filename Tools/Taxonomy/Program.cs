@@ -16,11 +16,12 @@ namespace Taxonomy
             // example:
             // generate-cwe --source-file-path "..\..\..\..\Source\cwec_v4.4.xml" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif" --version "4.4" --release-date "2020-12-10"
             // generate-owasp --source-file-path "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --version "4.0.2" --release-date "2020-10-01"
-            // generate-nistsp80053 --source-file-path "..\..\..\..\Source\sp800-53r5-control-catalog.csv" --target-file-path "..\..\..\..\..\NIST_SP800-53_v5.sarif" --version "5" --release-date "2020-12-10"
+            // generate-nistsp80053csv --source-file-path "..\..\..\..\Source\sp800-53r5-control-catalog.csv" --target-file-path "..\..\..\..\..\NIST_SP800-53_v5.sarif" --version "5" --release-date "2020-12-10"
+            // generate-nistsp80053json --source-file-path "..\..\..\..\Source\NIST_SP-800-53_rev4_catalog.json" --target-file-path "..\..\..\..\..\NIST_SP800-53_v4.sarif" --version "4" --release-date "2015-01-22"
             // generate-nistsp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" --target-file-path "..\..\..\..\..\NIST_SP800-63B_v1.sarif" --version "1" --release-date "2020-03-02"
             // add-owasprelationship-to-cwe --source-cwe-file-path "..\..\..\..\..\CWE_v4.4.sarif" --source-owasp-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif"
 
-            bool result = Parser.Default.ParseArguments<CweOptions, OwaspOptions, NistSP80053Options, NistSP80063BOptions, AddOwaspRelationshipToCweOptions>(args)
+            bool result = Parser.Default.ParseArguments<CweOptions, OwaspOptions, NistSP80053CsvOptions, NistSP80053JsonOptions, NistSP80063BOptions, AddOwaspRelationshipToCweOptions>(args)
             .MapResult(
                 (CweOptions o) =>
                 {
@@ -30,9 +31,13 @@ namespace Taxonomy
                 {
                     return GenerateOwasp(o);
                 },
-                (NistSP80053Options o) =>
+                (NistSP80053CsvOptions o) =>
                 {
-                    return GenerateNistSP80053(o);
+                    return GenerateNistSP80053Csv(o);
+                },
+                (NistSP80053JsonOptions o) =>
+                {
+                    return GenerateNistSP80053Json(o);
                 },
                 (NistSP80063BOptions o) =>
                 {
@@ -60,9 +65,15 @@ namespace Taxonomy
             return generator.AddOwaspRelationshipToSarif(o.CweFilePath, o.OwaspFilePath, o.TargetFilePath);
         }
 
-        private static bool GenerateNistSP80053(NistSP80053Options o)
+        private static bool GenerateNistSP80053Csv(NistSP80053CsvOptions o)
         {
-            var generator = new NistSP80053TaxonomyGenerator();
+            var generator = new NistSP80053CsvTaxonomyGenerator();
+            return generator.SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc);
+        }
+
+        private static bool GenerateNistSP80053Json(NistSP80053JsonOptions o)
+        {
+            var generator = new NistSP80053JsonTaxonomyGenerator();
             return generator.SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc);
         }
 

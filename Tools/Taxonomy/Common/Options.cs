@@ -38,8 +38,17 @@ namespace Taxonomy
         public string ReleaseDateUtc { get; set; }
     }
 
-    [Verb("generate-nistsp80053", false, HelpText = "Generate NIST SP800-63B Sarif file")]
-    internal class NistSP80053Options : IOptions
+    [Verb("generate-nistsp80053csv", false, HelpText = "Generate NIST SP800-63B Sarif file from Csv")]
+    internal class NistSP80053CsvOptions : IOptions
+    {
+        public string SourceFilePath { get; set; }
+        public string TargetFilePath { get; set; }
+        public string Version { get; set; }
+        public string ReleaseDateUtc { get; set; }
+    }
+
+    [Verb("generate-nistsp80053json", false, HelpText = "Generate NIST SP800-63B Sarif file from Json")]
+    internal class NistSP80053JsonOptions : IOptions
     {
         public string SourceFilePath { get; set; }
         public string TargetFilePath { get; set; }
