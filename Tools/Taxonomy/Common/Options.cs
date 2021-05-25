@@ -7,6 +7,9 @@ namespace Taxonomy
 {
     internal interface IOptions
     {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        string Type { get; set; }
+
         [Option("source-file-path", HelpText = "Source file path to process.", Required = true)]
         string SourceFilePath { get; set; }
 
@@ -23,6 +26,7 @@ namespace Taxonomy
     [Verb("generate-cwe", false, HelpText = "Generate CWE Sarif file")]
     internal class CweOptions : IOptions
     {
+        public string Type { get; set; }
         public string SourceFilePath { get; set; }
         public string TargetFilePath { get; set; }
         public string Version { get; set; }
@@ -32,34 +36,20 @@ namespace Taxonomy
     [Verb("generate-owasp", false, HelpText = "Generate OWASP Sarif file")]
     internal class OwaspOptions : IOptions
     {
+        public string Type { get; set; }
         public string SourceFilePath { get; set; }
         public string TargetFilePath { get; set; }
         public string Version { get; set; }
         public string ReleaseDateUtc { get; set; }
     }
 
-    [Verb("generate-nistsp80053", false, HelpText = "Generate NIST SP800-63B Sarif file")]
-    internal class NistSP80053Options : IOptions
+    [Verb("generate-nist", false, HelpText = "Generate NIST Sarif file")]
+    internal class NistOptions : IOptions
     {
+        public string Type { get; set; }
         public string SourceFilePath { get; set; }
         public string TargetFilePath { get; set; }
         public string Version { get; set; }
-        public string ReleaseDateUtc { get; set; }
-    }
-
-    [Verb("generate-nistsp80063b", false, HelpText = "Generate NIST SP800-63B Sarif file")]
-    internal class NistSP80063BOptions
-    {
-        [Option("Source-folder-path", HelpText = "Source NIST SP800-63B folder path with md files in it to process.", Required = true)]
-        public string SourceFolderPath { get; set; }
-
-        [Option("target-file-path", HelpText = "Target file path to save.", Required = true)]
-        public string TargetFilePath { get; set; }
-
-        [Option("version", HelpText = "Version string in target file.", Required = true)]
-        public string Version { get; set; }
-
-        [Option("release-date", HelpText = "ReleaseDateUtc string in target file. Format: YYYY-MM-DD", Required = true)]
         public string ReleaseDateUtc { get; set; }
     }
 
