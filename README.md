@@ -9,7 +9,7 @@ This repo stores SARIF Taxonomies
 CWE | [link](https://cwe.mitre.org/data/xml/cwec\_latest.xml.zip)| [CWE_v4.4.sarif](CWE_v4.4.sarif)
 Nist | [link](https://csrc.nist.gov/CSRC/media/Publications/sp/800-53/rev-5/final/documents/sp800-53r5-control-catalog.xlsx) | [NIST_SP800-53_v5.sarif](NIST_SP800-53_v5.sarif)
 OWASP | [link](https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/docs/_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.csv) | [OWASP_ASVS_v4.0.2.sarif](OWASP_ASVS_v4.0.2.sarif)
-WAC | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) | [WASC_2.00.sarif](WASC\_2.00.sarif)
+WAC | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) | [WASC_2.00.sarif](WASC_2.00.sarif)
 
 ## Tool Usage
 
