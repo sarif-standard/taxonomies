@@ -17,7 +17,7 @@ using Taxonomy.Common;
 
 namespace Taxonomy
 {
-    public class NistSP80053TaxonomyGenerator : TaxonomyGenerator
+    public class NistSP80053CsvTaxonomyGenerator : TaxonomyGenerator
     {
         public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
@@ -58,7 +58,7 @@ namespace Taxonomy
             ToolComponent toolComponent = new ToolComponent
             {
                 Name = "NIST",
-                Guid = Constants.Guid.NistSP80053,
+                Guid = Constants.Guid.NistSP80053V5,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"),
