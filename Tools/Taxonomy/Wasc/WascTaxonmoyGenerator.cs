@@ -18,7 +18,6 @@ namespace Tools.Wasc
 {
     public class WascTaxonmoyGenerator : TaxonomyGenerator
     {
-        private static readonly HttpClient httpClient = new HttpClient();
         public async Task<bool> SaveToSarifAsync(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
         {
             if (!Uri.TryCreate(sourceFilePath, UriKind.Absolute, out Uri sourceUri)
@@ -35,7 +34,7 @@ namespace Tools.Wasc
 
                 Run run = this.ConvertToSarif(items.ToList(), version, releaseDateUtc);
 
-                SarifLog log = new SarifLog
+                var log = new SarifLog
                 {
                     Runs = new Run[] { run }
                 };
@@ -86,15 +85,20 @@ namespace Tools.Wasc
 
             var tool = new Tool { Driver = new ToolComponent { Name = $"WASC {version}" } };
 
-            ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
-            externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
-            externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
+            // need to add other relationship once the referenced taxonomies are created.
+            var externalPropertyFileReferences = new ExternalPropertyFileReferences
             {
-                Guid = Constants.Guid.Cwe,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif") }
-            });
+                Taxonomies = new List<ExternalPropertyFileReference>
+                {
+                    new ExternalPropertyFileReference
+                    {
+                        Guid = Constants.Guid.Cwe,
+                        Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif") }
+                    },
+                }
+            };
 
-            Run run = new Run
+            var run = new Run
             {
                 Tool = tool,
                 Taxonomies = taxonomies,
@@ -106,7 +110,7 @@ namespace Tools.Wasc
 
         private List<ReportingDescriptorRelationship> GetRelationships(IEnumerable<string> cweRelationships)
         {
-            List<ReportingDescriptorRelationship> relationships = new List<ReportingDescriptorRelationship>();
+            var relationships = new List<ReportingDescriptorRelationship>();
 
             foreach (string id in cweRelationships)
             {

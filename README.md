@@ -19,6 +19,9 @@ generate-nistsp80053 --source-file-path "..\..\..\..\Source\sp800-53r5-control-c
 Generate NIST SP800-63B Sarif file
 generate-nistsp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" --target-file-path "..\..\..\..\..\NIST_SP800-63B_v1.sarif" --version "1" --release-date "2020-03-02"
 
+Generate WASC 2.00 Sarif file
+generate-wasc --source-file-path "http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View" --target-file-path "..\..\..\..\..\WASC_2.00.sarif" --version "2.00" --release-date "2010-01-01"
+
 ## Data Source
 
  |**Source Url**|**Target File Name**
@@ -26,6 +29,7 @@ generate-nistsp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pag
 CWE|https://cwe.mitre.org/data/xml/cwec\_latest.xml.zip|CWE\_v4.4.sarif
 Nist|https://csrc.nist.gov/CSRC/media/Publications/sp/800-53/rev-5/final/documents/sp800-53r5-control-catalog.xlsx|NIST\_SP800-53\_v5.sarif
 Owasp|https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/docs\_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.csv|OWASP\_ASVS\_v4.0.2.sarif
+WASC|http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View|WASC\_2.00.sarif
 
 ## License
 

@@ -13,7 +13,7 @@ namespace Tools.Wasc
 {
     public class WascDataCralwer
     {
-        private static readonly HttpClient httpClient = new HttpClient();
+        private static readonly HttpClient httpClient = new();
 
         public async Task<IList<WascViewItem>> CrawlWascItemsAsync(Uri sourceUri)
         {
@@ -106,6 +106,8 @@ namespace Tools.Wasc
             doc.OptionWriteEmptyNodes = true;
             doc.LoadHtml(htmlCode);
             HtmlNode divNode = doc.GetElementbyId("wikipage-inner"); // <div id="wikipage-inner">
+
+            // get 5th not empty paragragh, which is description of the threat
             int index = 0;
             foreach (HtmlNode child in divNode.Descendants(0).Where(n => n.Name == "p" || n.Name == "h2"))
             {
