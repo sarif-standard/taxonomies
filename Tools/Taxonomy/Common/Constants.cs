@@ -12,6 +12,7 @@ namespace Taxonomy.Common
             public static string NistSP80053V4 = "EE4E6942-6346-45EE-BBA2-9998A214D80E";
             public static string NistSP80063B = "CC3BE6A5-E774-41CF-B74C-C928269B6778";
             public static string Owasp = "BBEA1F18-F56A-4202-B9A9-3FC348B81E5A";
+            public static string WASC = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
         }
     }
 }

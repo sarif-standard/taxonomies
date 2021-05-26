@@ -65,4 +65,13 @@ namespace Taxonomy
         [Option("target-cwe-file-path", HelpText = "Target CWE file path to save.", Required = true)]
         public string TargetFilePath { get; set; }
     }
+
+    [Verb("generate-wasc", false, HelpText = "Generate WASC Taxonomies Sarif file")]
+    internal class WascOptions : IOptions
+    {
+        public string SourceFilePath { get; set; }
+        public string TargetFilePath { get; set; }
+        public string Version { get; set; }
+        public string ReleaseDateUtc { get; set; }
+    }
 }

@@ -7,6 +7,8 @@ using CommandLine;
 
 using Taxonomy.Cwe;
 
+using Tools.Wasc;
+
 namespace Taxonomy
 {
     internal class Program
@@ -14,14 +16,15 @@ namespace Taxonomy
         private static void Main(string[] args)
         {
             // example:
+            // add-owasprelationship-to-cwe --source-cwe-file-path "..\..\..\..\..\CWE_v4.4.sarif" --source-owasp-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif"
             // generate-cwe --type comprehensive --source-file-path "..\..\..\..\Source\cwec_v4.4.xml" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif" --version "4.4" --release-date "2020-12-10"
-            // generate-owasp --type asvs --source-file-path "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --version "4.0.2" --release-date "2020-10-01"
             // generate-nist --type sp80053 --source-file-path "..\..\..\..\Source\sp800-53r5-control-catalog.csv" --target-file-path "..\..\..\..\..\NIST_SP800-53_v5.sarif" --version "5" --release-date "2020-12-10"
             // generate-nist --type sp80053 --source-file-path "..\..\..\..\Source\NIST_SP-800-53_rev4_catalog.json" --target-file-path "..\..\..\..\..\NIST_SP800-53_v4.sarif" --version "4" --release-date "2015-01-22"
             // generate-nist --type sp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" --target-file-path "..\..\..\..\..\NIST_SP800-63B_v1.sarif" --version "1" --release-date "2020-03-02"
-            // add-owasprelationship-to-cwe --source-cwe-file-path "..\..\..\..\..\CWE_v4.4.sarif" --source-owasp-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif"
+            // generate-owasp --type asvs --source-file-path "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --version "4.0.2" --release-date "2020-10-01"
+            // generate-wasc --source-file-path "http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View" --target-file-path "..\..\..\..\..\WASC_2.00.sarif" --version "2.00" --release-date "2010-01-01"
 
-            bool result = Parser.Default.ParseArguments<CweOptions, OwaspOptions, NistOptions, AddOwaspRelationshipToCweOptions>(args)
+            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, NistOptions, OwaspOptions, WascOptions>(args)
             .MapResult(
                 (CweOptions o) =>
                 {
@@ -38,6 +41,10 @@ namespace Taxonomy
                 (AddOwaspRelationshipToCweOptions o) =>
                 {
                     return AddOwaspRelationshipToCwe(o);
+                },
+                (WascOptions o) =>
+                {
+                    return GenerateWasc(o);
                 },
                 e => false);
 
@@ -87,6 +94,12 @@ namespace Taxonomy
         {
             var generator = new CweTaxonomyGenerator();
             return generator.SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc);
+        }
+
+        private static bool GenerateWasc(WascOptions o)
+        {
+            var generator = new WascTaxonmoyGenerator();
+            return generator.SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc).Result;
         }
     }
 }
