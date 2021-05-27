@@ -4,7 +4,7 @@ This repo stores SARIF Taxonomies
 
 ## Data Source
 
-| **Source Url** | **Target File Name** | **Version** | **SARIF File** |
+| **Taxonomy** | **Target File Name** | **Version** | **SARIF File** |
 -----|-----|-----|-----
 CWE | [link](https://cwe.mitre.org/data/xml/cwec/_latest.xml.zip) | v4.3 | [CWE_v4.3.sarif](CWE_v4.3.sarif)
 CWE | - | v4.4 | [CWE_v4.4.sarif](CWE_v4.4.sarif)
