@@ -7,10 +7,10 @@ This repo stores SARIF Taxonomies
 | **Taxonomy** | **Version** | **Target File Name** | **SARIF File** |
 -----|-----|-----|-----
 CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec/_latest.xml.zip) | [CWE_v4.3.sarif](CWE_v4.3.sarif)
-CWE| v4.4 | - | [CWE_v4.4.sarif](CWE_v4.4.sarif)
-Nist | SP800-53 v4 | - | [NIST_SP800-53_v4.sarif](NIST_SP800-53_v4.sarif)
+CWE| v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
+Nist | SP800-53 v4 | [link](https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_catalog.json) | [NIST_SP800-53_v4.sarif](NIST_SP800-53_v4.sarif)
 Nist | SP800-53 v5 | [link](https://csrc.nist.gov/CSRC/media/Publications/sp/800-53/rev-5/final/documents/sp800-53r5-control-catalog.xlsx) | [NIST_SP800-53_v5.sarif](NIST_SP800-53_v5.sarif)
-Nist | SP800-63B v1 | - | [NIST_SP800-63B_v1.sarif](NIST_SP800-63B_v1.sarif)
+Nist | SP800-63B v1 | [link](https://pages.nist.gov/800-63-3/sp800-63b.html) | [NIST_SP800-63B_v1.sarif](NIST_SP800-63B_v1.sarif)
 OWASP | v4.0.2 | [link](https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/docs/_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.csv) | [OWASP_ASVS_v4.0.2.sarif](OWASP_ASVS_v4.0.2.sarif)
 WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) |[WASC_2.00.sarif](WASC_2.00.sarif)
 
