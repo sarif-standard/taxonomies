@@ -1,0 +1,429 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "GDPR"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "C2BC6A45-3FD3-4B12-A735-041C72A4E286",
+          "name": "GDPR",
+          "organization": "European Parliament",
+          "shortDescription": {
+            "text": "REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL"
+          },
+          "version": "1",
+          "releaseDateUtc": "2016-04-27",
+          "downloadUri": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02016R0679-20160504&from=EN",
+          "informationUri": "https://gdpr-info.eu/",
+          "taxa": [
+            {
+              "id": "GDPR-1",
+              "name": "Subject-matter and objectives"
+            },
+            {
+              "id": "GDPR-2",
+              "name": "Material scope"
+            },
+            {
+              "id": "GDPR-3",
+              "name": "Territorial scope"
+            },
+            {
+              "id": "GDPR-4",
+              "name": "Definitions"
+            },
+            {
+              "id": "GDPR-5",
+              "name": "Principles relating to processing of personal data"
+            },
+            {
+              "id": "GDPR-6",
+              "name": "Lawfulness of processing"
+            },
+            {
+              "id": "GDPR-7",
+              "name": "Conditions for consent"
+            },
+            {
+              "id": "GDPR-8",
+              "name": "Conditions applicable to child's consent in relation to information society services"
+            },
+            {
+              "id": "GDPR-9",
+              "name": "Processing of special categories of personal data"
+            },
+            {
+              "id": "GDPR-10",
+              "name": "Processing of personal data relating to criminal convictions and offences"
+            },
+            {
+              "id": "GDPR-11",
+              "name": "Processing which does not require identification"
+            },
+            {
+              "id": "GDPR-12",
+              "name": "Transparent information, communication and modalities for the exercise of the rights of the data subject"
+            },
+            {
+              "id": "GDPR-13",
+              "name": "Information to be provided where personal data are collected from the data subject"
+            },
+            {
+              "id": "GDPR-14",
+              "name": "Information to be provided where personal data have not been obtained from the data subject"
+            },
+            {
+              "id": "GDPR-15",
+              "name": "Right of access by the data subject"
+            },
+            {
+              "id": "GDPR-16",
+              "name": "Right to rectification"
+            },
+            {
+              "id": "GDPR-17",
+              "name": "Right to erasure (‘right to be forgotten’)"
+            },
+            {
+              "id": "GDPR-18",
+              "name": "Right to restriction of processing"
+            },
+            {
+              "id": "GDPR-19",
+              "name": "Notification obligation regarding rectification or erasure of personal data or restriction of processing"
+            },
+            {
+              "id": "GDPR-20",
+              "name": "Right to data portability"
+            },
+            {
+              "id": "GDPR-21",
+              "name": "Right to object"
+            },
+            {
+              "id": "GDPR-22",
+              "name": "Automated individual decision-making, including profiling"
+            },
+            {
+              "id": "GDPR-23",
+              "name": "Restrictions"
+            },
+            {
+              "id": "GDPR-24",
+              "name": "Responsibility of the controller"
+            },
+            {
+              "id": "GDPR-25",
+              "name": "Data protection by design and by default"
+            },
+            {
+              "id": "GDPR-26",
+              "name": "Joint controllers"
+            },
+            {
+              "id": "GDPR-27",
+              "name": "Representatives of controllers or processors not established in the Union"
+            },
+            {
+              "id": "GDPR-28",
+              "name": "Processor"
+            },
+            {
+              "id": "GDPR-29",
+              "name": "Processing under the authority of the controller or processor"
+            },
+            {
+              "id": "GDPR-30",
+              "name": "Records of processing activities"
+            },
+            {
+              "id": "GDPR-31",
+              "name": "Cooperation with the supervisory authority"
+            },
+            {
+              "id": "GDPR-32",
+              "name": "Security of processing"
+            },
+            {
+              "id": "GDPR-33",
+              "name": "Notification of a personal data breach to the supervisory authority"
+            },
+            {
+              "id": "GDPR-34",
+              "name": "Communication of a personal data breach to the data subject"
+            },
+            {
+              "id": "GDPR-35",
+              "name": "Data protection impact assessment"
+            },
+            {
+              "id": "GDPR-36",
+              "name": "Prior consultation"
+            },
+            {
+              "id": "GDPR-37",
+              "name": "Designation of the data protection officer"
+            },
+            {
+              "id": "GDPR-38",
+              "name": "Position of the data protection officer"
+            },
+            {
+              "id": "GDPR-39",
+              "name": "Tasks of the data protection officer"
+            },
+            {
+              "id": "GDPR-40",
+              "name": "Codes of conduct"
+            },
+            {
+              "id": "GDPR-41",
+              "name": "Monitoring of approved codes of conduct"
+            },
+            {
+              "id": "GDPR-42",
+              "name": "Certification"
+            },
+            {
+              "id": "GDPR-43",
+              "name": "Certification bodies"
+            },
+            {
+              "id": "GDPR-44",
+              "name": "General principle for transfers"
+            },
+            {
+              "id": "GDPR-45",
+              "name": "Transfers on the basis of an adequacy decision"
+            },
+            {
+              "id": "GDPR-46",
+              "name": "Transfers subject to appropriate safeguards"
+            },
+            {
+              "id": "GDPR-47",
+              "name": "Binding corporate rules"
+            },
+            {
+              "id": "GDPR-48",
+              "name": "Transfers or disclosures not authorised by Union law"
+            },
+            {
+              "id": "GDPR-49",
+              "name": "Derogations for specific situations"
+            },
+            {
+              "id": "GDPR-50",
+              "name": "International cooperation for the protection of personal data"
+            },
+            {
+              "id": "GDPR-51",
+              "name": "Supervisory authority"
+            },
+            {
+              "id": "GDPR-52",
+              "name": "Independence"
+            },
+            {
+              "id": "GDPR-53",
+              "name": "General conditions for the members of the supervisory authority"
+            },
+            {
+              "id": "GDPR-54",
+              "name": "Rules on the establishment of the supervisory authority"
+            },
+            {
+              "id": "GDPR-55",
+              "name": "Competence"
+            },
+            {
+              "id": "GDPR-56",
+              "name": "Competence of the lead supervisory authority"
+            },
+            {
+              "id": "GDPR-57",
+              "name": "Tasks"
+            },
+            {
+              "id": "GDPR-58",
+              "name": "Powers"
+            },
+            {
+              "id": "GDPR-59",
+              "name": "Activity reports"
+            },
+            {
+              "id": "GDPR-60",
+              "name": "Cooperation between the lead supervisory authority and the other supervisory authorities concerned"
+            },
+            {
+              "id": "GDPR-61",
+              "name": "Mutual assistance"
+            },
+            {
+              "id": "GDPR-62",
+              "name": "Joint operations of supervisory authorities"
+            },
+            {
+              "id": "GDPR-63",
+              "name": "Consistency mechanism"
+            },
+            {
+              "id": "GDPR-64",
+              "name": "Opinion of the Board"
+            },
+            {
+              "id": "GDPR-65",
+              "name": "Dispute resolution by the Board"
+            },
+            {
+              "id": "GDPR-66",
+              "name": "Urgency procedure"
+            },
+            {
+              "id": "GDPR-67",
+              "name": "Exchange of information"
+            },
+            {
+              "id": "GDPR-68",
+              "name": "European Data Protection Board"
+            },
+            {
+              "id": "GDPR-69",
+              "name": "Independence"
+            },
+            {
+              "id": "GDPR-70",
+              "name": "Tasks of the Board"
+            },
+            {
+              "id": "GDPR-71",
+              "name": "Reports"
+            },
+            {
+              "id": "GDPR-72",
+              "name": "Procedure"
+            },
+            {
+              "id": "GDPR-73",
+              "name": "Chair"
+            },
+            {
+              "id": "GDPR-74",
+              "name": "Tasks of the Chair"
+            },
+            {
+              "id": "GDPR-75",
+              "name": "Secretariat"
+            },
+            {
+              "id": "GDPR-76",
+              "name": "Confidentiality"
+            },
+            {
+              "id": "GDPR-77",
+              "name": "Right to lodge a complaint with a supervisory authority"
+            },
+            {
+              "id": "GDPR-78",
+              "name": "Right to an effective judicial remedy against a supervisory authority"
+            },
+            {
+              "id": "GDPR-79",
+              "name": "Right to an effective judicial remedy against a controller or processor"
+            },
+            {
+              "id": "GDPR-80",
+              "name": "Representation of data subjects"
+            },
+            {
+              "id": "GDPR-81",
+              "name": "Suspension of proceedings"
+            },
+            {
+              "id": "GDPR-82",
+              "name": "Right to compensation and liability"
+            },
+            {
+              "id": "GDPR-83",
+              "name": "General conditions for imposing administrative fines"
+            },
+            {
+              "id": "GDPR-84",
+              "name": "Penalties"
+            },
+            {
+              "id": "GDPR-85",
+              "name": "Processing and freedom of expression and information"
+            },
+            {
+              "id": "GDPR-86",
+              "name": "Processing and public access to official documents"
+            },
+            {
+              "id": "GDPR-87",
+              "name": "Processing of the national identification number"
+            },
+            {
+              "id": "GDPR-88",
+              "name": "Processing in the context of employment"
+            },
+            {
+              "id": "GDPR-89",
+              "name": "Safeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes"
+            },
+            {
+              "id": "GDPR-90",
+              "name": "Obligations of secrecy"
+            },
+            {
+              "id": "GDPR-91",
+              "name": "Existing data protection rules of churches and religious associations"
+            },
+            {
+              "id": "GDPR-92",
+              "name": "Exercise of the delegation"
+            },
+            {
+              "id": "GDPR-93",
+              "name": "Committee procedure"
+            },
+            {
+              "id": "GDPR-94",
+              "name": "Repeal of Directive 95/46/EC"
+            },
+            {
+              "id": "GDPR-95",
+              "name": "Relationship with Directive 2002/58/EC"
+            },
+            {
+              "id": "GDPR-96",
+              "name": "Relationship with previously concluded Agreements"
+            },
+            {
+              "id": "GDPR-97",
+              "name": "Commission reports"
+            },
+            {
+              "id": "GDPR-98",
+              "name": "Review of other Union legal acts on data protection"
+            },
+            {
+              "id": "GDPR-99",
+              "name": "Entry into force and application"
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}

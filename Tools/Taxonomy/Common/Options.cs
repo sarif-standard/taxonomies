@@ -7,7 +7,7 @@ namespace Taxonomy
 {
     internal interface IOptions
     {
-        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        [Option("type", HelpText = "type of the standard to process.", Required = false)]
         string Type { get; set; }
 
         [Option("source-file-path", HelpText = "Source file path to process.", Required = true)]
@@ -69,6 +69,17 @@ namespace Taxonomy
     [Verb("generate-wasc", false, HelpText = "Generate WASC Taxonomies Sarif file")]
     internal class WascOptions : IOptions
     {
+        public string Type { get; set; }
+        public string SourceFilePath { get; set; }
+        public string TargetFilePath { get; set; }
+        public string Version { get; set; }
+        public string ReleaseDateUtc { get; set; }
+    }
+
+    [Verb("generate-gdpr", false, HelpText = "Generate GDPR Taxonomies Sarif file")]
+    internal class GdprOptions : IOptions
+    {
+        public string Type { get; set; }
         public string SourceFilePath { get; set; }
         public string TargetFilePath { get; set; }
         public string Version { get; set; }
