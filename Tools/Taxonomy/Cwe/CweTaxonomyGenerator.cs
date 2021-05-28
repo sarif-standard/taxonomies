@@ -85,7 +85,7 @@ namespace Taxonomy.Cwe
                             {
                                 var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
                                 reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
-                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" };
+                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Owasp.Guid, Name = Constants.Owasp.Name };
                                 reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
                                 IList<ReportingDescriptorRelationship> existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
                                 if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
@@ -97,14 +97,14 @@ namespace Taxonomy.Cwe
                     }
                 }
 
-                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Owasp, Name = "OWASP" });
+                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Owasp.Guid, Name = Constants.Owasp.Name });
 
                 ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
                 externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
                 externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
                 {
-                    Guid = Constants.Guid.Owasp,
-                    Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/OWASP_ASVS_v4.0.2.sarif") }
+                    Guid = Constants.Owasp.Guid,
+                    Location = new ArtifactLocation() { Uri = new Uri(Constants.Owasp.Location) }
                 });
                 cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
 
@@ -139,8 +139,8 @@ namespace Taxonomy.Cwe
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Name = "CWE",
-                Guid = Constants.Guid.Cwe,
+                Name = Constants.CWE.Name,
+                Guid = Constants.CWE.Guid,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
@@ -182,8 +182,8 @@ namespace Taxonomy.Cwe
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Name = "CWE",
-                Guid = Constants.Guid.Cwe,
+                Name = Constants.CWE.Name,
+                Guid = Constants.CWE.Guid,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),

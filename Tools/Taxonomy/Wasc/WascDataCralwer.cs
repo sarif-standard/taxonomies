@@ -15,7 +15,7 @@ namespace Tools.Wasc
     {
         private static readonly HttpClient httpClient = new();
 
-        public async Task<IList<WascViewItem>> CrawlWascItemsAsync(Uri sourceUri)
+        public async Task<IList<WascV2Item>> CrawlWascItemsAsync(Uri sourceUri)
         {
             string htmlCode = await this.ReadWebpageContentAsync(sourceUri);
 
@@ -30,13 +30,13 @@ namespace Tools.Wasc
                 .Skip(1)  // skip header
                 .Select(tr => tr.Elements("td"));
 
-            List<WascViewItem> viewItems = this.ParseHtmlNodeData(rows, sourceUri).ToList();
+            List<WascV2Item> viewItems = this.ParseHtmlNodeData(rows, sourceUri).ToList();
             viewItems.ForEach(async item => item.Description = await this.CrawlWascThreatAsync(item));
 
             return viewItems;
         }
 
-        private IEnumerable<WascViewItem> ParseHtmlNodeData(IEnumerable<IEnumerable<HtmlNode>> rows, Uri sourceUri)
+        private IEnumerable<WascV2Item> ParseHtmlNodeData(IEnumerable<IEnumerable<HtmlNode>> rows, Uri sourceUri)
         {
             // table format:
             // WASC ID | Name ^ | CWE ID ^ | CAPEC ID ^ | SANS/CWE Top 25 2009 ^ | OWASP Top Ten 2010 * | OWASP Top Ten 2007 * | OWASP Top Ten 2004 * |
@@ -46,7 +46,7 @@ namespace Tools.Wasc
             foreach (IEnumerable<HtmlNode> row in rows)
             {
                 int index = 0;
-                var wascViewItem = new WascViewItem();
+                var wascViewItem = new WascV2Item();
                 foreach (HtmlNode col in row)
                 {
                     switch (index)
@@ -89,7 +89,7 @@ namespace Tools.Wasc
             return input.Replace("&nbsp;", " ", StringComparison.OrdinalIgnoreCase);
         }
 
-        private async Task<string> CrawlWascThreatAsync(WascViewItem item)
+        private async Task<string> CrawlWascThreatAsync(WascV2Item item)
         {
             if (!Uri.TryCreate(item.WascLink, UriKind.Absolute, out Uri sourceUri)
                 || (!sourceUri.Scheme.Equals(Uri.UriSchemeHttp, StringComparison.OrdinalIgnoreCase)

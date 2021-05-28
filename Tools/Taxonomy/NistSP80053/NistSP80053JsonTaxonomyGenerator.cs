@@ -55,8 +55,8 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = "NIST",
-                Guid = Constants.Guid.NistSP80053V4,
+                Name = Constants.NistSP80053V4.Name,
+                Guid = Constants.NistSP80053V4.Guid,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final"),

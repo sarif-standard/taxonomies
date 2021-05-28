@@ -88,8 +88,8 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = "NIST SP800-63B",
-                Guid = Constants.Guid.NistSP80063B,
+                Name = Constants.NistSP80063B.Name,
+                Guid = Constants.NistSP80063B.Guid,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://pages.nist.gov/800-63-3/sp800-63b.html"),
