@@ -1,0 +1,213 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "WASC 1.00"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "E30814F7-D50D-4936-9B0C-B80ACD412434",
+          "name": "WASC 1.00",
+          "organization": "Web Application Security Consortium",
+          "shortDescription": {
+            "text": "The WASC Threat Classification"
+          },
+          "version": "1.00",
+          "releaseDateUtc": "2004-01-01",
+          "informationUri": "http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions",
+          "taxa": [
+            {
+              "id": "1",
+              "name": "Brute Force",
+              "fullDescription": {
+                "text": "A Brute Force attack is an automated process of trial and error used to guess a person’s username, password, credit-card number or cryptographic key."
+              }
+            },
+            {
+              "id": "2",
+              "name": "Insufficient Authentication",
+              "fullDescription": {
+                "text": "Insufficient Authentication occurs when a web site permits an attacker to access sensitive content or functionality without having to properly authenticate."
+              }
+            },
+            {
+              "id": "3",
+              "name": "Weak Password Recovery Validation",
+              "fullDescription": {
+                "text": "Weak Password Recovery Validation is when a web site permits an attacker to illegally obtain, change or recover another user’s password."
+              }
+            },
+            {
+              "id": "4",
+              "name": "Credential/Session Prediction",
+              "fullDescription": {
+                "text": "Credential/Session Prediction is a method of hijacking or impersonating a web site user."
+              }
+            },
+            {
+              "id": "5",
+              "name": "Insufficient Authorization",
+              "fullDescription": {
+                "text": "Insufficient Authorization is when a web site permits access to sensitive content or functionality that should require increased access control restrictions."
+              }
+            },
+            {
+              "id": "6",
+              "name": "Insufficient Session Expiration",
+              "fullDescription": {
+                "text": "Insufficient Session Expiration is when a web site permits an attacker to reuse old session credentials or session IDs for authorization."
+              }
+            },
+            {
+              "id": "7",
+              "name": "Session Fixation",
+              "fullDescription": {
+                "text": "Session Fixation is an attack technique that forces a user's session ID to an explicit value."
+              }
+            },
+            {
+              "id": "8",
+              "name": "Content Spoofing",
+              "fullDescription": {
+                "text": "Content Spoofing is an attack technique used to trick a user into believing that certain content appearing on a web site is legitimate and not from an external source."
+              }
+            },
+            {
+              "id": "9",
+              "name": "Cross-site Scripting",
+              "fullDescription": {
+                "text": "Cross-site Scripting (XSS) is an attack technique that forces a web site to echo attacker-supplied executable code, which loads in a user’s browser."
+              }
+            },
+            {
+              "id": "10",
+              "name": "Buffer Overflow",
+              "fullDescription": {
+                "text": "Buffer Overflow exploits are attacks that alter the flow of an application by overwriting parts of memory."
+              }
+            },
+            {
+              "id": "11",
+              "name": "Format String Attack",
+              "fullDescription": {
+                "text": "Format String Attacks alter the flow of an application by using string formatting library features to access other memory space."
+              }
+            },
+            {
+              "id": "12",
+              "name": "LDAP Injection",
+              "fullDescription": {
+                "text": "LDAP Injection is an attack technique used to exploit web sites that construct LDAP statements from user-supplied input."
+              }
+            },
+            {
+              "id": "13",
+              "name": "OS Commanding",
+              "fullDescription": {
+                "text": "OS Commanding is an attack technique used to exploit web sites by executing Operating System commands through manipulation of application input."
+              }
+            },
+            {
+              "id": "14",
+              "name": "SQL Injection",
+              "fullDescription": {
+                "text": "SQL Injection is an attack technique used to exploit web sites that construct SQL statements from user-supplied input."
+              }
+            },
+            {
+              "id": "15",
+              "name": "SSI Injection",
+              "fullDescription": {
+                "text": "SSI Injection (Server-side Include) is a server-side exploit technique that allows an attacker to send code into a web application, which will later be executed locally by the web server."
+              }
+            },
+            {
+              "id": "16",
+              "name": "XPath Injection",
+              "fullDescription": {
+                "text": "XPath Injection is an attack technique used to exploit web sites that construct XPath queries from user-supplied input."
+              }
+            },
+            {
+              "id": "17",
+              "name": "Directory Indexing",
+              "fullDescription": {
+                "text": "Automatic directory listing/indexing is a web server function that lists all of the files within a requested directory if the normal base file is not present."
+              }
+            },
+            {
+              "id": "18",
+              "name": "Information Leakage",
+              "fullDescription": {
+                "text": "Information Leakage is when a web site reveals sensitive data, such as developer comments or error messages, which may aid an attacker in exploiting the system."
+              }
+            },
+            {
+              "id": "19",
+              "name": "Path Traversal",
+              "fullDescription": {
+                "text": "The Path Traversal attack technique forces access to files, directories, and commands that potentially reside outside the web document root directory."
+              }
+            },
+            {
+              "id": "20",
+              "name": "Predictable Resource Location",
+              "fullDescription": {
+                "text": "Predictable Resource Location is an attack technique used to uncover hidden web site content and functionality."
+              }
+            },
+            {
+              "id": "21",
+              "name": "Abuse of Functionality",
+              "fullDescription": {
+                "text": "Abuse of Functionality is an attack technique that uses a web site's own features and functionality to consume, defraud, or circumvents access controls mechanisms."
+              }
+            },
+            {
+              "id": "22",
+              "name": "Denial of Service",
+              "fullDescription": {
+                "text": "Denial of Service (DoS) is an attack technique with the intent of preventing a web site from serving normal user activity."
+              }
+            },
+            {
+              "id": "23",
+              "name": "Insufficient Anti-automation",
+              "fullDescription": {
+                "text": "Insufficient Anti-automation is when a web site permits an attacker to automate a process that should only be performed manually."
+              }
+            },
+            {
+              "id": "24",
+              "name": "Insufficient Process Validation",
+              "fullDescription": {
+                "text": "Insufficient Process Validation is when a web site permits an attacker to bypass or circumvent the intended flow control of an application."
+              }
+            },
+            {
+              "id": "25",
+              "name": "HTTP Response Splitting",
+              "fullDescription": {
+                "text": "In the HTTP Response Splitting attack, there are always 3 parties (at least) involved: \nWeb server, which has a security hole enabling HTTP Response Splitting. \nTarget - an entity that interacts with the web server perhaps on behalf of the attacker. Typically this is a cache server (forward/reverse proxy), or a browser (possibly with a browser cache).\nAttacker – initiates the attack.\nThe essence of HTTP Response Splitting is the attacker’s ability to send a single HTTP request that forces the web server to form an output stream, which is then interpreted by the target as two HTTP responses instead of one response, in the normal case. The first response may be partially controlled by the attacker, but this is less important. What is material is that the attacker completely controls the form of the second response from the HTTP status line to the last byte of the HTTP response body. Once this is possible, the attacker realizes the attack by sending two requests through the target. The first one invokes two responses from the web server, and the second request would typically be to some “innocent” resource on the web server. However, the second request would be matched, by the target, to the second HTTP response, which is fully controlled by the attacker. The attacker, therefore, tricks the target into believing that a particular resource on the web server (designated by the second request) is the server’s HTTP response (server content), while it is in fact some data, which is forged by the attacker through the web server – this is the second response."
+              }
+            },
+            {
+              "id": "26",
+              "name": "Web Server/Application Fingerprinting",
+              "fullDescription": {
+                "text": "Web server/application fingerprinting is similar to its predecessor, TCP/IP Fingerprinting (with today’s favorite scanner - Nmap) except that it is focused on the Application Layer of the OSI model instead of the Transport Layer. The theory behind web server/application fingerprinting is to create an accurate profile of the target’s software, configurations and possibly even their network architecture/topology by analyzing the following: Implementation differences of the HTTP Protocol:\nHTTP Response Headers\nFile Extensions (.asp vs. jsp)\nCookies (ASPSESSION)\nError Pages (Default?)\nDirectory Structures and Naming Conventions (Windows/Unix)\nWeb Developer Interfaces (Frontpage/WebPublisher)\nWeb Administrator Interfaces (iPlanet/Comanche)\nOS Fingerprinting Mismatches (IIS on Linux?)"
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true
+        }
+      ]
+    }
+  ]
+}

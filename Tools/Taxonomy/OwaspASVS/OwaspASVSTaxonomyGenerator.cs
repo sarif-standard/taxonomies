@@ -55,14 +55,14 @@ namespace Taxonomy
         private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version, string releaseDateUtc)
         {
             var supportedTaxonomies = new List<ToolComponentReference>();
-            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.Cwe, Name = "CWE" });
-            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Guid.NistSP80063B, Name = "Nist SP800-63B" });
+            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.CWE.Guid, Name = Constants.CWE.Name });
+            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.NistSP80063B.Guid, Name = Constants.NistSP80063B.Name });
 
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = "OWASP",
-                Guid = Constants.Guid.Owasp,
+                Name = Constants.Owasp.Name,
+                Guid = Constants.Owasp.Guid,
                 Version = version,
                 ReleaseDateUtc = releaseDateUtc,
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
@@ -91,14 +91,14 @@ namespace Taxonomy
             externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
-                Guid = Constants.Guid.Cwe,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif") }
+                Guid = Constants.CWE.Guid,
+                Location = new ArtifactLocation() { Uri = new Uri(Constants.CWE.Location) }
             });
 
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
-                Guid = Constants.Guid.NistSP80063B,
-                Location = new ArtifactLocation() { Uri = new Uri("https://raw.githubusercontent.com/sarif-standard/taxonomies/main/NIST_SP800-63B_v1.sarif") }
+                Guid = Constants.NistSP80063B.Guid,
+                Location = new ArtifactLocation() { Uri = new Uri(Constants.NistSP80063B.Location) }
             });
 
             Run run = new Run
@@ -126,7 +126,7 @@ namespace Taxonomy
                         Target = new ReportingDescriptorReference
                         {
                             Id = id,
-                            ToolComponent = new ToolComponentReference { Name = "CWE", Guid = Constants.Guid.Cwe },
+                            ToolComponent = new ToolComponentReference { Name = Constants.CWE.Name, Guid = Constants.CWE.Guid },
                         },
                         Kinds = new string[] { "relevant" },
                     });
@@ -144,7 +144,7 @@ namespace Taxonomy
                         Target = new ReportingDescriptorReference
                         {
                             Id = id,
-                            ToolComponent = new ToolComponentReference { Name = "Nist SP800-63B", Guid = Constants.Guid.NistSP80063B },
+                            ToolComponent = new ToolComponentReference { Name = Constants.NistSP80063B.Name, Guid = Constants.NistSP80063B.Guid },
                         },
                         Kinds = new string[] { "relevant" },
                     });

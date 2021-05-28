@@ -5,52 +5,36 @@ using CommandLine;
 
 namespace Taxonomy
 {
-    internal interface IOptions
+    internal class BaseOptions
     {
-        [Option("type", HelpText = "type of the standard to process.", Required = true)]
-        string Type { get; set; }
-
         [Option("source-file-path", HelpText = "Source file path to process.", Required = true)]
-        string SourceFilePath { get; set; }
+        public string SourceFilePath { get; set; }
 
         [Option("target-file-path", HelpText = "Target file path to save.", Required = true)]
-        string TargetFilePath { get; set; }
+        public string TargetFilePath { get; set; }
 
         [Option("version", HelpText = "Version string in target file.", Required = true)]
-        string Version { get; set; }
+        public string Version { get; set; }
 
         [Option("release-date", HelpText = "ReleaseDateUtc string in target file. Format: YYYY-MM-DD", Required = true)]
-        string ReleaseDateUtc { get; set; }
+        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("generate-cwe", false, HelpText = "Generate CWE Sarif file")]
-    internal class CweOptions : IOptions
+    internal class CweOptions : BaseOptions
     {
-        public string Type { get; set; }
-        public string SourceFilePath { get; set; }
-        public string TargetFilePath { get; set; }
-        public string Version { get; set; }
-        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("generate-owasp", false, HelpText = "Generate OWASP Sarif file")]
-    internal class OwaspOptions : IOptions
+    internal class OwaspOptions : BaseOptions
     {
-        public string Type { get; set; }
-        public string SourceFilePath { get; set; }
-        public string TargetFilePath { get; set; }
-        public string Version { get; set; }
-        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("generate-nist", false, HelpText = "Generate NIST Sarif file")]
-    internal class NistOptions : IOptions
+    internal class NistOptions : BaseOptions
     {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
         public string Type { get; set; }
-        public string SourceFilePath { get; set; }
-        public string TargetFilePath { get; set; }
-        public string Version { get; set; }
-        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("add-owasprelationship-to-cwe", false, HelpText = "Add OWASP relationship To CWE Sarif file")]
@@ -67,11 +51,7 @@ namespace Taxonomy
     }
 
     [Verb("generate-wasc", false, HelpText = "Generate WASC Taxonomies Sarif file")]
-    internal class WascOptions : IOptions
+    internal class WascOptions : BaseOptions
     {
-        public string SourceFilePath { get; set; }
-        public string TargetFilePath { get; set; }
-        public string Version { get; set; }
-        public string ReleaseDateUtc { get; set; }
     }
 }
