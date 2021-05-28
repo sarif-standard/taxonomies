@@ -99,15 +99,12 @@ namespace Taxonomy
 
         private static bool GenerateWasc(WascOptions o)
         {
-            switch(o.Version)
+            return o.Version switch
             {
-                case "1.00":
-                    return new WascV1Generator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc).Result;
-                case "2.00":
-                    return new WascV2Generator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc).Result;
-                default:
-                    return false;
-            }
+                "1.00" => new WascV1Generator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc).Result,
+                "2.00" => new WascV2Generator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version, o.ReleaseDateUtc).Result,
+                _ => false,
+            };
         }
     }
 }

@@ -20,8 +20,8 @@ namespace Taxonomy.Common
 
         public static TaxonomyData CWE = new TaxonomyData
         {
-            Guid = Guid.Cwe, 
-            Name = "CWE", 
+            Guid = Guid.Cwe,
+            Name = "CWE",
             Location = "https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif"
         };
 
