@@ -64,7 +64,7 @@ namespace Taxonomy
                 Name = Constants.OwaspASVSV402.Name,
                 Guid = Constants.OwaspASVSV402.Guid,
                 Version = version,
-                ReleaseDateUtc = "2020-10-01",
+                ReleaseDateUtc = Constants.Owasp.ReleaseDate,
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
                 DownloadUri = new Uri("https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.pdf"),
                 Organization = "OWASP Foundation",

@@ -19,13 +19,13 @@ namespace Taxonomy
 {
     public class NistSP80053CsvTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version)
         {
             try
             {
                 List<NistSP80053CsvRecord> results = this.ReadFromCsv(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(results, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -52,7 +52,7 @@ namespace Taxonomy
             return csvReader.GetRecords<NistSP80053CsvRecord>().ToList();
         }
 
-        private Run ConvertToSarif(List<NistSP80053CsvRecord> records, string version, string releaseDateUtc)
+        private Run ConvertToSarif(List<NistSP80053CsvRecord> records, string version)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
@@ -60,7 +60,7 @@ namespace Taxonomy
                 Name = Constants.NistSP80053V5.Name,
                 Guid = Constants.NistSP80053V5.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = Constants.NistSP80053V5.ReleaseDate,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf"),
                 Organization = "National Institute of Standards and Technology",

@@ -19,13 +19,13 @@ namespace Taxonomy
 {
     public class NistSP80053JsonTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version)
         {
             try
             {
                 NistSP80053JsonRecord results = this.ReadFromJson(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(results, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -50,7 +50,7 @@ namespace Taxonomy
             return json;
         }
 
-        private Run ConvertToSarif(NistSP80053JsonRecord records, string version, string releaseDateUtc)
+        private Run ConvertToSarif(NistSP80053JsonRecord records, string version)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
@@ -58,7 +58,7 @@ namespace Taxonomy
                 Name = Constants.NistSP80053V4.Name,
                 Guid = Constants.NistSP80053V4.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = Constants.NistSP80053V4.ReleaseDate,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf"),
                 Organization = "National Institute of Standards and Technology",

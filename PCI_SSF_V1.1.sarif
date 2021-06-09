@@ -1,0 +1,2097 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "PCI SSF V1.1"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "8DD3BF80-F4D3-46F2-8E9E-6BB801E973F6",
+          "name": "PCI SSF V1.1",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Software Security Framework"
+          },
+          "version": "1.1",
+          "releaseDateUtc": "2021-02-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf",
+          "taxa": [
+            {
+              "id": "Control Objectives 1",
+              "name": "Critical Asset Identification",
+              "fullDescription": {
+                "text": "All software critical assets are identified and classified."
+              }
+            },
+            {
+              "id": "Control Objectives 1.1",
+              "name": "Control Objectives 1.1",
+              "fullDescription": {
+                "text": "All sensitive data stored, processed, or transmitted by the software is identified."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.a",
+              "name": "Test Requirements 1.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that it details all sensitive data that is stored, processed, and/or transmitted by the software. At a minimum, this shall include all payment data; authentication credentials; cryptographic keys and related data (such as IVs and seed data for random number generators); and system configuration data (such as registry entries, platform environment variables, prompts for plaintext data in software allowing for the entry of PIN data, or configuration scripts)."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.b",
+              "name": "Test Requirements 1.1.b",
+              "fullDescription": {
+                "text": "For each item of sensitive data, the assessor shall examine vendor evidence to confirm that evidence describes where this data is stored, and the applicable security controls implemented to protect the data. This includes in temporary storage (such as volatile memory), semi-permanent storage (such as RAM disks), and non-volatile storage (such as magnetic and flash storage media)."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.c",
+              "name": "Test Requirements 1.1.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify where the implementation enforces storage within a specific location or form factor (such as with an embedded system that is only capable of local storage). The assessor shall confirm that the data for all of these is supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.d",
+              "name": "Test Requirements 1.1.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to validate the information provided by the vendor in Test Requirement 1.1.a."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.e",
+              "name": "Test Requirements 1.1.e",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify the transaction types and/or card data elements that are supported by the software. The assessor shall confirm that the data for all of these is supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.f",
+              "name": "Test Requirements 1.1.f",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify the cryptographic implementations that are supported by the software, including (but not limited to) cryptography used for storage, transport, and authentication. The assessor shall confirm that the cryptographic data for all of these implementations is supported by the vendor evidence, and that the evidence describes whether these are implemented by the software itself, through third-party software, or as functions of the execution environment."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.g",
+              "name": "Test Requirements 1.1.g",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify any accounts or authentication credentials supported by the software, including both default and user created accounts. The assessor shall confirm that these accounts and credentials are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.h",
+              "name": "Test Requirements 1.1.h",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify any configuration options provided by the software that can impact sensitive data, including through separate files or scripts, or internal functions, menus and options provided by the software. The assessor shall confirm that these are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 1.1.i",
+              "name": "Test Requirements 1.1.i",
+              "fullDescription": {
+                "text": "When cryptography is used to protect any sensitive data, the assessor shall examine vendor evidence to confirm that these cryptographic methods and materials are identified."
+              }
+            },
+            {
+              "id": "Control Objectives 1.2",
+              "name": "Control Objectives 1.2",
+              "fullDescription": {
+                "text": "All sensitive functions and sensitive resources provided or used by the software are identified."
+              }
+            },
+            {
+              "id": "Test Requirements 1.2.a",
+              "name": "Test Requirements 1.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that it details all sensitive functions and sensitive resources provided or used by the software. At a minimum, this shall include all functions that are designed to store, process, or transmit sensitive data, and those services, configuration files, or other information necessary for the normal and secure operation of those functions."
+              }
+            },
+            {
+              "id": "Test Requirements 1.2.b",
+              "name": "Test Requirements 1.2.b",
+              "fullDescription": {
+                "text": "For each of the sensitive functions and sensitive resources listed, the assessor shall examine vendor evidence to confirm that vendor evidence clearly describes how and where the sensitive data associated with these functions and resources is stored. This includes in temporary storage (such as volatile memory), semi-permanent storage (such as RAM disks), and non-volatile storage (such as magnetic and flash storage media). The assessor shall confirm that this information is supported by the information provided in Test Requirement 1.1.a."
+              }
+            },
+            {
+              "id": "Test Requirements 1.2.c",
+              "name": "Test Requirements 1.2.c",
+              "fullDescription": {
+                "text": "Where the sensitive functions or sensitive resources are provided by third-party software or systems, the assessor shall examine third-party software or system evidence and test the software to confirm that the vendor software is correctly following the guidance for this third-party software."
+              }
+            },
+            {
+              "id": "Test Requirements 1.2.d",
+              "name": "Test Requirements 1.2.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the sensitive functions and sensitive resources provided or used by the software are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Control Objectives 1.3",
+              "name": "Control Objectives 1.3",
+              "fullDescription": {
+                "text": "Critical assets are classified"
+              }
+            },
+            {
+              "id": "Test Requirements 1.3",
+              "name": "Test Requirements 1.3",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that:\n• The vendor defines classification criteria for identifying critical assets.\n• Vendor classification criteria identifies the confidentiality, integrity, and resiliency requirements for each critical asset.\n• An inventory of all critical assets with appropriate classifications is defined."
+              }
+            },
+            {
+              "id": "Control Objectives 2",
+              "name": "Secure Defaults",
+              "fullDescription": {
+                "text": "Default privileges, features, and functionality are restricted to only those necessary to provide a secure default configuration."
+              }
+            },
+            {
+              "id": "Control Objectives 2.1",
+              "name": "Control Objectives 2.1",
+              "fullDescription": {
+                "text": "All functions exposed by the software are enabled by default only when and where it is a documented and justified part of the software architecture."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.a",
+              "name": "Test Requirements 2.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify any software APIs or other interfaces that are provided or exposed by default upon installation, initialization, or first use. For each of these functions, the assessor shall confirm that the vendor has documented and justified its use as part of the software architecture. Testing shall include methods to reveal any exposed functionality of the software (such as scanning for listening services where applicable). "
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.b",
+              "name": "Test Requirements 2.1.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to determine whether any of the functions identified in Test Requirement 2.1.a rely on external resources for authentication. If such resources are relied upon, the assessor shall examine vendor evidence to identify what methods are required to ensure proper authentication remains in place and shall confirm that these methods are included in the assessment of all other requirements of this standard."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.c",
+              "name": "Test Requirements 2.1.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to determine whether any of the functions identified in Test Requirement 2.1.a rely on external resources for the protection of sensitive data during transmission. If such resources are relied upon, the assessor shall examine vendor evidence to identify what methods are required to ensure proper protection remains in place and shall confirm that these methods are included in the assessment of all other requirements of this standard."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.d",
+              "name": "Test Requirements 2.1.d",
+              "fullDescription": {
+                "text": "The assessor shall test the software to identify whether any of the functions identified in Test Requirement 2.1.a expose methods or services which have publicly disclosed vulnerabilities by conducting a search on the exposed protocols, methods, or services in public vulnerability repositories such as that maintained within the National Vulnerability Database."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.e",
+              "name": "Test Requirements 2.1.e",
+              "fullDescription": {
+                "text": "Where vulnerabilities in exposed functions exist, the assessor shall examine vendor evidence and test the software to confirm the following:\n• The mitigations implemented by the software vendor to minimize exploit of these weaknesses have been identified.\n• The risks posed by the use of known vulnerable protocols,functions, or ports is documented.\n• Clear and sufficient guidance on how to correctly implement sufficient security to meet the security and control objectives of this standard is made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.f",
+              "name": "Test Requirements 2.1.f",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm available functionality matches what is described in vendor documentation. Testing shall include methods to reveal any exposed functionality of the software(such as scanning for listening services where applicable)."
+              }
+            },
+            {
+              "id": "Test Requirements 2.1.g",
+              "name": "Test Requirements 2.1.g",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence for any third-party modules used by the software and ensure that any functionality exposed by each module is disabled, unable to be accessed through mitigation methods implemented by the software, or formally documented and justified by the vendor."
+              }
+            },
+            {
+              "id": "Control Objectives 2.2",
+              "name": "Control Objectives 2.2",
+              "fullDescription": {
+                "text": "All software security controls, features, and functions are enabled upon software installation, initialization, or first use."
+              }
+            },
+            {
+              "id": "Test Requirements 2.2.a",
+              "name": "Test Requirements 2.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify all software security controls, features and functions, and to confirm that any such controls, features and functions relied upon by the software for the protection of critical assets are enabled upon installation, initialization, or first use of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 2.2.b",
+              "name": "Test Requirements 2.2.b",
+              "fullDescription": {
+                "text": "Where any software security controls, features and functions are enabled only upon initialization or first use, the assessor shall test the software to confirm that no sensitive data can be processed until this initialization process has been completed."
+              }
+            },
+            {
+              "id": "Test Requirements 2.2.c",
+              "name": "Test Requirements 2.2.c",
+              "fullDescription": {
+                "text": "Where user input or interaction is required to enable any software security controls, features, or functions (such as the installation of certificates) the assessor shall examine vendor evidence to confirm that there is clear and sufficient guidance on the process provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": " 2.2.d",
+              "name": " 2.2.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that following the software vendor’s security guidance required in Control Objective 12.1 results in all security-relevant software security controls, features, and functions being enabled prior to the software enabling processing of sensitive data."
+              }
+            },
+            {
+              "id": "Control Objectives 2.3",
+              "name": "Control Objectives 2.3",
+              "fullDescription": {
+                "text": "Default authentication credentials or keys for built-in accounts are not used after installation, initialization, or first use."
+              }
+            },
+            {
+              "id": "Test Requirements 2.3.a",
+              "name": "Test Requirements 2.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify all default credentials, keys, certificates, and other critical assets used for authentication by the software."
+              }
+            },
+            {
+              "id": "Test Requirements 2.3.b",
+              "name": "Test Requirements 2.3.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that all default credentials, keys, certificates, and other critical assets used for authentication by the software are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 2.3.c",
+              "name": "Test Requirements 2.3.c",
+              "fullDescription": {
+                "text": "Where user input or interaction is required to disable or change any authentication credentials or keys for built-in accounts, the assessor shall examine vendor evidence to confirm that there is clear and sufficient guidance on this process provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 2.3.d",
+              "name": "Test Requirements 2.3.d",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that default authentication credentials or keys for built-in accounts are not used by the authentication and access control mechanisms implemented by the software after software installation, initialization, or first use."
+              }
+            },
+            {
+              "id": "Test Requirements 2.3.e",
+              "name": "Test Requirements 2.3.e",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that default authentication credentials or keys for built-in accounts are not used to protect the storage and transmission of sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements 2.4",
+              "name": "Test Requirements 2.4",
+              "fullDescription": {
+                "text": "The privileges and resources requested by the software from its execution environment are limited to those necessary for the operation of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 2.4.a",
+              "name": "Test Requirements 2.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify all privileges and resources required by the software and to confirm the evidence describes and reasonably justifies all privileges and resources required, including explicit permissions for access to resources, such as cameras, contacts, etc."
+              }
+            },
+            {
+              "id": "Test Requirements 2.4.b",
+              "name": "Test Requirements 2.4.b",
+              "fullDescription": {
+                "text": "Where limiting access is not possible - e.g., due to the architecture of the solution or the execution environment in which the software is executed - the assessor shall examine vendor evidence to identify all mechanisms implemented by the software to prevent unauthorized access, exposure, or modification of critical assets, and to confirm there is clear and sufficient guidance on properly implementing the mechanisms provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 2.4.c",
+              "name": "Test Requirements 2.4.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that access permissions and privileges are assigned according to the vendor evidence. The assessor shall, where possible, use suitable tools for the platform on which the software is installed to review the permissions and privileges of the software itself, as well as the permissions and privileges of any resources, files, or additional elements generated or loaded by the software during use."
+              }
+            },
+            {
+              "id": "Test Requirements 2.4.d",
+              "name": "Test Requirements 2.4.d",
+              "fullDescription": {
+                "text": "Where the software execution environment provides legacy features for use by older versions of the software, the assessor shall examine vendor evidence and test the software to confirm that these are not utilized, and only recent and secured functionality is implemented. For example, software should “target” the latest versions of APIs provided by the environment they run on, where available."
+              }
+            },
+            {
+              "id": "Control Objectives 2.5",
+              "name": "Control Objectives 2.5",
+              "fullDescription": {
+                "text": "Default privileges for built-in accounts are limited to those necessary for their intended purpose and function."
+              }
+            },
+            {
+              "id": "Test Requirements 2.5.a",
+              "name": "Test Requirements 2.5.a",
+              "fullDescription": {
+                "text": "The assessor shall examine the vendor evidence to identify all default accounts provided by the software and to confirm vendor evidence includes reasonable justification for the privileges assigned to these accounts."
+              }
+            },
+            {
+              "id": "Test Requirements 2.5.b",
+              "name": "Test Requirements 2.5.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that all default accounts provided or used by the software are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 2.5.c",
+              "name": "Test Requirements 2.5.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that exposed functionalities (i.e., APIs) are protected from use by unauthorized users to modify account privileges and elevate user access rights."
+              }
+            },
+            {
+              "id": "Control Objectives 3",
+              "name": "Sensitive Data Retention",
+              "fullDescription": {
+                "text": "Retention of sensitive data is minimized."
+              }
+            },
+            {
+              "id": "Control Objectives 3.1",
+              "name": "Control Objectives 3.1",
+              "fullDescription": {
+                "text": "The software only retains the sensitive data absolutely necessary for the software to provide its intended functionality."
+              }
+            },
+            {
+              "id": "Test Requirements 3.1.a",
+              "name": "Test Requirements 3.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify what sensitive data is collected by the software for use beyond any one transaction, the default time period for which it is retained, and whether the retention period is user-configurable, and to confirm vendor evidence includes reasonable justification for retaining the sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements 3.1.b",
+              "name": "Test Requirements 3.1.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that all available functions or services designed for the retention of sensitive data are supported by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 3.1.c",
+              "name": "Test Requirements 3.1.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that sensitive data stored solely for the purposes of debugging, error finding, or testing of systems is protected during storage in accordance with Control Objective 6. Any such functionality that allows for storage of sensitive data must be explicitly enabled through an interface that requires interaction and authorization by the user and retained only for the duration necessary in accordance with reasonable vendor criteria. Closure of the software must result in termination of this debugging state, such that it requires explicit re-enablement when the software is next executed; and any sensitive data is securely deleted per Control Objective 3.4."
+              }
+            },
+            {
+              "id": "Test Requirements 3.1.d",
+              "name": "Test Requirements 3.1.d",
+              "fullDescription": {
+                "text": "Where user input or interaction is required to configure the retention period of sensitive data, the assessor shall examine vendor evidence to confirm that there is clear and sufficient guidance on this process provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Control Objectives 3.2",
+              "name": "Control Objectives 3.2",
+              "fullDescription": {
+                "text": "Transient sensitive data is retained only for the duration necessary to fulfill a legitimate business purpose."
+              }
+            },
+            {
+              "id": "Test Requirements 3.2.a",
+              "name": "Test Requirements 3.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify all sensitive data that is retained by the software for transient use, what triggers the secure deletion of this data, and confirm reasonable justification exists for retaining the data. This includes data that is stored only in memory during the operation of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 3.2.b",
+              "name": "Test Requirements 3.2.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that all available functions or services that retain transient sensitive data are supported by vendor evidence and do not use immutable objects."
+              }
+            },
+            {
+              "id": "Test Requirements 3.2.c",
+              "name": "Test Requirements 3.2.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that transient sensitive data stored solely for the purposes of debugging, error finding, or testing of systems is protected in accordance with Control Objective 6. Any such functionality that allows for the storage of transient sensitive data must be explicitly enabled through an interface that requires interaction and authorization by the user. Closure of the software must result in termination of this debugging state, such that it requires explicit re-enablement when the software is next executed; and any transient sensitive data is securely deleted in accordance with Control Objective 3.4."
+              }
+            },
+            {
+              "id": "Test Requirements 3.2.d",
+              "name": "Test Requirements 3.2.d",
+              "fullDescription": {
+                "text": "Where users can configure retention of transient sensitive data, the assessor shall examine vendor evidence to confirm that clear and sufficient guidance on this process is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Control Objectives 3.3",
+              "name": "Control Objectives 3.3",
+              "fullDescription": {
+                "text": "The software protects the confidentiality and integrity of sensitive data (both transient and persistent) during retention."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.a",
+              "name": "Test Requirements 3.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine the vendor evidence to identify the protection methods implemented for all sensitive data during storage and transmission."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.b",
+              "name": "Test Requirements 3.3.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that no additional storage of sensitive data is included."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.c",
+              "name": "Test Requirements 3.3.c",
+              "fullDescription": {
+                "text": "Where sensitive data is stored outside of temporary variables within the code itself, the assessor shall test the software to confirm that sensitive data is protected using either strong cryptography or other methods that provide an equivalent level of security."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.d",
+              "name": "Test Requirements 3.3.d",
+              "fullDescription": {
+                "text": "Where protection methods use cryptography, the assessor shall examine vendor evidence and test the software to confirm that the cryptographic implementation complies with Control Objective 7 of this standard."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.e",
+              "name": "Test Requirements 3.3.e",
+              "fullDescription": {
+                "text": "Where sensitive data is protected using methods other than strong cryptography, the assessor shall examine vendor evidence and test the software to confirm that the protections are present in all environments where the software is designed to be executed, are correctly implemented, and are covered by the vendor evidence."
+              }
+            },
+            {
+              "id": "Test Requirements 3.3.f",
+              "name": "Test Requirements 3.3.f",
+              "fullDescription": {
+                "text": "Where users are required to configure protection methods, the assessor shall examine vendor evidence to confirm that there is clear and sufficient guidance on this process provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Control Objectives 3.4",
+              "name": "Control Objectives 3.4",
+              "fullDescription": {
+                "text": "The software securely deletes sensitive data when it is no longer required."
+              }
+            },
+            {
+              "id": "Test Requirements 3.4.a",
+              "name": "Test Requirements 3.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify all secure deletion methods implemented by the software for all non-transient sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements 3.4.b",
+              "name": "Test Requirements 3.4.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify any platform or implementation level issues that complicate the secure deletion of non-transient sensitive data and to confirm that any non-transient sensitive data is securely deleted using a method that ensures that the data is unrecoverable after deletion. Methods may include (but are not necessarily limited to) overwriting the data, deletion of cryptographic keys (of sufficient strength) which have been used to encrypt the data, or platform specific functions which provide for secure deletion. Methods must accommodate for platform specific issues, such as flash wear-leveling algorithms or SSD over-provisioning, which may complicate simple over-writing methods."
+              }
+            },
+            {
+              "id": "Test Requirements 3.4.c",
+              "name": "Test Requirements 3.4.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software using forensic tools to identify any non-transient sensitive data residue in the execution environment, and to confirm that the methods attested by the software vendor are correctly implemented and applied to all sensitive data. This analysis should accommodate for the data structures and methods used to store the sensitive data (e.g., by examining file systems at the allocation level, and translating data formats to identify sensitive data elements), as well as covering all non-transient sensitive data types."
+              }
+            },
+            {
+              "id": "Control Objectives 3.5",
+              "name": "Control Objectives 3.5",
+              "fullDescription": {
+                "text": "Transient sensitive data is securely deleted from temporary storage facilities automatically by the software once the purpose for which it is retained is satisfied."
+              }
+            },
+            {
+              "id": "Test Requirements 3.5.a",
+              "name": "Test Requirements 3.5.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to identify all secure deletion methods for all transient sensitive data and to confirm that these methods ensure that the data is unrecoverable after deletion."
+              }
+            },
+            {
+              "id": "Test Requirements 3.5.b",
+              "name": "Test Requirements 3.5.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify any platform or implementation level issues that complicate the erasure of such transient sensitive data - such as abstraction layers between the code and the hardware execution environment - and to confirm what methods have been implemented to minimize the risk posed by these complications."
+              }
+            },
+            {
+              "id": "Test Requirements 3.5.c",
+              "name": "Test Requirements 3.5.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software, including usage of forensic tools, to identify any sensitive data residue in the execution environment to confirm that the methods attested by the software vendor are correctly implemented and applied to all transient sensitive data. This analysis should accommodate for the data structures and methods used to store the sensitive data - e.g., by examining file systems at the allocation level, and translating data formats to identify sensitive data elements - as well as cover all non-transient sensitive data types."
+              }
+            },
+            {
+              "id": "Control Objectives 3.6",
+              "name": "Control Objectives 3.6",
+              "fullDescription": {
+                "text": "The software does not disclose sensitive data through unintended channels."
+              }
+            },
+            {
+              "id": "Test Requirements 3.6.a",
+              "name": "Test Requirements 3.6.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm the software vendor has performed a thorough analysis to account for all sensitive data disclosure attack vectors including, but not limited to:\n• Error messages, error logs, or memory dumps.\n• Execution environments that may be vulnerable to remote side-channel attacks to expose sensitive data⎯such as attacks that exploit cache timing or branch prediction within the platform processor.\n• Automatic storage or exposure of sensitive data by the underlying execution environment, such as through swapfiles, system error logging, keyboard spelling, and autocorrect features, etc.\n• Sensors or services provided by the execution environment that may be used to extract or leak sensitive data such as through use of an accelerometer to capture input of a passphrase to be used as a seed for a cryptographic key, or through capture of sensitive data through use of cameras, near-field communication (NFC) interfaces, etc."
+              }
+            },
+            {
+              "id": "Test Requirements 3.6.b",
+              "name": "Test Requirements 3.6.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including the results of the analysis described in Test Requirement 3.6.a, and test the software to confirm the software vendor implements mitigations to protect against unintended disclosure of sensitive data. Mitigations may include usage of cryptography to protect the data, or the use of blinding or masking of cryptographic operations (where supported by the execution environment)."
+              }
+            },
+            {
+              "id": "Test Requirements 3.6.c",
+              "name": "Test Requirements 3.6.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that clear and sufficient guidance on the proper configuration and use of such mitigations is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 3.6.d",
+              "name": "Test Requirements 3.6.d",
+              "fullDescription": {
+                "text": "The assessor shall test the software using forensic tools to identify any sensitive data residue in the execution environment, and to confirm that all mitigation controls are correctly implemented and the software does not expose or otherwise reveal sensitive data."
+              }
+            },
+            {
+              "id": "Control Objectives 4",
+              "name": "Critical Asset Protection",
+              "fullDescription": {
+                "text": "Critical assets are protected from attack scenarios."
+              }
+            },
+            {
+              "id": "Control Objectives 4.1",
+              "name": "Control Objectives 4.1",
+              "fullDescription": {
+                "text": "Attack scenarios applicable to the software are identified."
+              }
+            },
+            {
+              "id": "Test Requirements 4.1.a",
+              "name": "Test Requirements 4.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the software vendor has identified, documented, and prepared mitigations for relevant attack scenarios for the software."
+              }
+            },
+            {
+              "id": "Test Requirements 4.1.b",
+              "name": "Test Requirements 4.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to determine whether any specific industry-standard methods or guidelines were used to identify relevant attack scenarios, such as the threat model guidelines. Where such industry standards are not used, the assessor shall confirm that the methodology used provides an equivalent coverage of the attack scenarios and methods for the software."
+              }
+            },
+            {
+              "id": "Test Requirements 4.1.c",
+              "name": "Test Requirements 4.1.c",
+              "fullDescription": {
+                "text": "The assessor shall examine the vendor evidence to confirm the following:\n• A formal owner of the software is assigned. This may be a role for a specific individual or a specific name, but evidence must clearly show an individual who is accountable for the security of the software.\n• A methodology is defined for measuring the likelihood and impact for any exploit of the system.\n• Generic threat methods and types that may be applicable to the software are documented.\n• All critical assets managed by and all sensitive resources used by the system are documented.\n• All entry and egress methods for sensitive data by the software, as well as the authentication and trust model applied to each of these entry/egress points, are defined.\n• All data flows, network segments, and authentication/privilege boundaries are defined.\n• All static IPs, domains, URLs, or ports required by the software for operation are documented.\n• Considerations for cryptography elements like cipher modes, protecting against timing attacks, padded oracles, brute force, “rainbow table” attacks, dictionary attacks against the input domain, etc. are documented.\n• Execution environment implementation specifics or assumptions such as network configurations, operating system security configurations, etc. are documented.\n• Consideration for the installed environment of the software, including any considerations for the size of the install base are documented. All attack surfaces that must be mitigated - such as implementing insecure user prompts or separating open protocol stacks; storage of sensitive data post authorization or storage of sensitive data using insecure methods, etc. - are documented."
+              }
+            },
+            {
+              "id": "Test Requirements 4.1.d",
+              "name": "Test Requirements 4.1.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the threat model created is reasonable to address the potential risks posed by the install and use of the software in a production environment - i.e., not in a test environment - given the assessor’s understanding through evaluation of the payment software to this standard."
+              }
+            },
+            {
+              "id": "Control Objectives 4.2",
+              "name": "Control Objectives 4.2",
+              "fullDescription": {
+                "text": "Software security controls are implemented to mitigate software attacks."
+              }
+            },
+            {
+              "id": "Test Requirements 4.2.a",
+              "name": "Test Requirements 4.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that for each of the threats identified in Control Objective 4.1, one or more mitigation methods are clearly defined, or reasonable justification for the lack of mitigations is provided."
+              }
+            },
+            {
+              "id": "Test Requirements 4.2.b",
+              "name": "Test Requirements 4.2.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the implemented mitigation methods are reasonable for the threat they address."
+              }
+            },
+            {
+              "id": "Test Requirements 4.2.c",
+              "name": "Test Requirements 4.2.c",
+              "fullDescription": {
+                "text": "Where any mitigations rely on settings within the software, the assessor shall test the software to confirm that such settings are applied by default, before first processing any sensitive data, upon installation, initialization, or first use of the software.\nWhere user input or interaction can disable, remove, or bypass any such mitigations, the assessor shall test the software to confirm that such action requires authorization and strong authentication, and examine vendor evidence to confirm that clear and sufficient guidance on the risk of this action and that installation in this manner will invalidate any security validation that has been performed is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 4.2.d",
+              "name": "Test Requirements 4.2.d",
+              "fullDescription": {
+                "text": "When any mitigations rely on features of the execution environment, the assessor shall examine vendor evidence to confirm that guidance is provided to the software users to enable such settings as part of the install process.\nWhere the execution environment provides APIs to query the status of mitigation controls, the assessor shall test the software to confirm that software checks for these mitigations are in place and active prior to being launched, and periodically throughout execution."
+              }
+            },
+            {
+              "id": "Control Objectives 5",
+              "name": "Authentication and Access Control",
+              "fullDescription": {
+                "text": "The software implements strong authentication and access control to help protect the confidentiality and integrity of critical assets."
+              }
+            },
+            {
+              "id": "Control Objectives 5.1",
+              "name": "Control Objectives 5.1",
+              "fullDescription": {
+                "text": "Access to critical assets is authenticated."
+              }
+            },
+            {
+              "id": "Test Requirements 5.1.a",
+              "name": "Test Requirements 5.1.a",
+              "fullDescription": {
+                "text": " The assessor shall examine vendor evidence to confirm that the vendor has identified authentication requirements (i.e., type and number of factors) for all roles based on critical asset classification, the type of access (e.g., local, non-console, remote) and level of privilege."
+              }
+            },
+            {
+              "id": "Test Requirements 5.1.b",
+              "name": "Test Requirements 5.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that all access to critical assets is authenticated and authentication mechanisms are implemented correctly."
+              }
+            },
+            {
+              "id": "Test Requirements 5.1.c",
+              "name": "Test Requirements 5.1.c",
+              "fullDescription": {
+                "text": "Where the software recommends, suggests, relies on, or otherwise facilitates the use of additional mechanisms (such as third-party VPNs, remote desktop features, etc.) to facilitate secure non-console access to the system on which the software is executed or directly to the software itself, the assessor shall examine vendor evidence to confirm that clear and sufficient guidance on how to configure authentication mechanisms correctly is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 5.1.d",
+              "name": "Test Requirements 5.1.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that any sensitive data associated with credentials, including public keys, is identified as a critical asset."
+              }
+            },
+            {
+              "id": "Control Objectives 5.2",
+              "name": "Control Objectives 5.2",
+              "fullDescription": {
+                "text": "Access to critical assets requires unique identification."
+              }
+            },
+            {
+              "id": "Test Requirements 5.2.a",
+              "name": "Test Requirements 5.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that all implemented authentication methods require unique identification."
+              }
+            },
+            {
+              "id": "Test Requirements 5.2.b",
+              "name": "Test Requirements 5.2.b",
+              "fullDescription": {
+                "text": "Where interfaces, such as APIs, allow for automated access to critical assets, the assessor shall examine vendor evidence and test the software to confirm that unique identification of different programs or systems accessing the critical assets is required (for example, through use of multiple public keys) and that guidance on configuring a unique credential for each program or system is included in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 5.2.c",
+              "name": "Test Requirements 5.2.c",
+              "fullDescription": {
+                "text": "Where identification is supplied across a non-console interface, the assessor shall test the software to confirm that authentication mechanisms are protected."
+              }
+            },
+            {
+              "id": "Test Requirements 5.2.d",
+              "name": "Test Requirements 5.2.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the software vendor’s implementation guidance provided to stakeholders per Control Objective 12.1 specifically notes that identification and authentication parameters must not be shared between individuals, programs, or in any way that prevents the unique identification of each access to a critical asset."
+              }
+            },
+            {
+              "id": "Test Requirements 5.2.e",
+              "name": "Test Requirements 5.2.e",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including source code of the software, to confirm that there are no additional methods for accessing critical assets."
+              }
+            },
+            {
+              "id": "Control Objectives 5.3",
+              "name": "Control Objectives 5.3",
+              "fullDescription": {
+                "text": "Authentication methods (including session credentials) are sufficiently strong and robust to protect authentication credentials from being forged, spoofed, leaked, guessed, or circumvented."
+              }
+            },
+            {
+              "id": "Test Requirements 5.3.a",
+              "name": "Test Requirements 5.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that all implemented authentication methods were evaluated to identify the details of known vulnerabilities or attack methods on the authentication method, and how the implementation mitigates against such attacks. The evidence must also illustrate that the implementation used in the software was considered. For example, a fingerprint may be uniquely identifiable to an individual, but the ability to spoof or otherwise bypass such technology can be highly dependent on the way the solution is implemented."
+              }
+            },
+            {
+              "id": "Test Requirements 5.3.b",
+              "name": "Test Requirements 5.3.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that implemented authentication methods are robust and that robustness of the authentication methods was evaluated using industry-accepted methods."
+              }
+            },
+            {
+              "id": "Test Requirements 5.3.c",
+              "name": "Test Requirements 5.3.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm the authentication methods are implemented correctly and do not expose vulnerabilities."
+              }
+            },
+            {
+              "id": "Control Objectives 5.4",
+              "name": "Control Objectives 5.4",
+              "fullDescription": {
+                "text": "By default, all access to critical assets is restricted to only those accounts and services that require such access."
+              }
+            },
+            {
+              "id": "Test Requirements 5.4.a",
+              "name": "Test Requirements 5.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the vendor has clearly identified and reasonably justified the required access for all critical assets."
+              }
+            },
+            {
+              "id": "Test Requirements 5.4.b",
+              "name": "Test Requirements 5.4.b",
+              "fullDescription": {
+                "text": " The assessor shall examine vendor evidence and test the software to identify what access is provided to critical assets and confirm that such access correlates with the vendor evidence. The test to confirm access is restricted should include attempts to access critical assets through user accounts, roles, or services which should not have the required privileges."
+              }
+            },
+            {
+              "id": "Control Objectives 6",
+              "name": "Sensitive Data Protection",
+              "fullDescription": {
+                "text": "Sensitive data is protected at rest and in transit."
+              }
+            },
+            {
+              "id": "Control Objectives 6.1",
+              "name": "Control Objectives 6.1",
+              "fullDescription": {
+                "text": "Sensitive data is secured anywhere it is stored."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.a",
+              "name": "Test Requirements 6.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify all locations where sensitive data is stored to confirm protection requirements for all sensitive data are defined, including requirements for rendering sensitive data with confidentiality considerations unreadable anywhere it is stored persistently."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.b",
+              "name": "Test Requirements 6.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that security methods implemented to protect all sensitive data during storage appropriately address all defined protection requirements and identified attack scenarios."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.c",
+              "name": "Test Requirements 6.1.c",
+              "fullDescription": {
+                "text": "Where cryptography is used for securing sensitive data, the assessor shall examine vendor evidence and test the software to confirm that any method implementing cryptography for securing sensitive data complies with Control Objective 7."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.d",
+              "name": "Test Requirements 6.1.d",
+              "fullDescription": {
+                "text": "Where index tokens are used for securing sensitive data, the assessor shall examine vendor evidence and test the software to confirm that these are generated in a way that ensures there is no correlation between the value and the sensitive data that is being referenced (without access to the vendor software to perform the correlation as part of a formally defined and assessed feature of that software - such as “detokenization”)."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.e",
+              "name": "Test Requirements 6.1.e",
+              "fullDescription": {
+                "text": "Where protection methods rely on security properties of the execution environment, the assessor shall examine vendor evidence and test the software to confirm that these security properties are valid for all platforms which the software targets, and that they provide sufficient protection to the sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements 6.1.f",
+              "name": "Test Requirements 6.1.f",
+              "fullDescription": {
+                "text": " Where protection methods rely on security properties of third-party software, the assessor shall examine vendor evidence and test the software to confirm that this software provides security that is sufficient to meet the requirements of this standard. The assessor shall perform a review of current publicly available literature and vulnerability disclosures to confirm that there are no unmitigated vulnerabilities or issues with the security properties relied upon with that software."
+              }
+            },
+            {
+              "id": "Control Objectives 6.2",
+              "name": "Control Objectives 6.2",
+              "fullDescription": {
+                "text": "Sensitive data is secured during transmission."
+              }
+            },
+            {
+              "id": "Test Requirements 6.2.a",
+              "name": "Test Requirements 6.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to identify all locations within the software where sensitive data is transmitted and confirm protection requirements for the transmission of all sensitive data are defined."
+              }
+            },
+            {
+              "id": "Test Requirements 6.2.b",
+              "name": "Test Requirements 6.2.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that for each of the ingress and egress methods that allow for transmission of sensitive data with confidentiality considerations outside of the physical execution environment, sensitive data is always encrypted with strong cryptography prior to transmission or is transmitted over an encrypted channel using strong cryptography."
+              }
+            },
+            {
+              "id": "Test Requirements 6.2.c",
+              "name": "Test Requirements 6.2.c",
+              "fullDescription": {
+                "text": "Where third-party or execution-environment features are relied upon for the security of the transmitted data, the assessor shall examine vendor evidence to confirm that clear and sufficient guidance on how to configure such features are included in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 6.2.d",
+              "name": "Test Requirements 6.2.d",
+              "fullDescription": {
+                "text": "Where transport layer encryption is used to secure the transmission of sensitive data, the assessor shall test the software to confirm that all ingress and egress methods enforce a secure version of the protocol with end-point authentication prior to the transmission of that sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements 6.2.e",
+              "name": "Test Requirements 6.2.e",
+              "fullDescription": {
+                "text": "Where the methods implemented for encrypting sensitive data allow for the use of different types of cryptography or different levels of security, the assessor shall test the software, including capturing software transmissions, to confirm the software enforces the use of strong cryptography at all times during transmission."
+              }
+            },
+            {
+              "id": "Control Objectives 6.3",
+              "name": "Control Objectives 6.3",
+              "fullDescription": {
+                "text": "Use of cryptography meets all applicable cryptography requirements within this standard."
+              }
+            },
+            {
+              "id": "Test Requirements 6.3.a",
+              "name": "Test Requirements 6.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that each use of cryptography - where cryptography is relied upon (in whole or in part) for the security of critical assets - is compliant to Control Objective 7."
+              }
+            },
+            {
+              "id": "Test Requirements 6.3.b",
+              "name": "Test Requirements 6.3.b",
+              "fullDescription": {
+                "text": "Where cryptographic methods provided by third-party software or aspects of the execution environment or platform on which the application is run are relied upon for the protection of sensitive data, the assessor shall examine vendor evidence and test the software to confirm that the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1 provides clear and sufficient detail for correctly configuring these methods during the installation, initialization, or first use of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 6.3.c",
+              "name": "Test Requirements 6.3.c",
+              "fullDescription": {
+                "text": "Where asymmetric cryptography such as RSA or ECC is used for protecting the confidentiality of sensitive data, the assessor shall examine vendor evidence and test the software to confirm that private keys are not used for providing confidentiality protection to the data."
+              }
+            },
+            {
+              "id": "Control Objectives 7",
+              "name": "Use of Cryptography",
+              "fullDescription": {
+                "text": "Cryptography is used appropriately and correctly."
+              }
+            },
+            {
+              "id": "Control Objectives 7.1",
+              "name": "Control Objectives 7.1",
+              "fullDescription": {
+                "text": "Approved cryptographic algorithms and methods are used for securing critical assets. Approved cryptographic algorithms and methods are those recognized by industry-accepted standards bodies—for example: NIST, ANSI, ISO, and EMVCo. Cryptographic algorithms and parameters that are known to be vulnerable are not used."
+              }
+            },
+            {
+              "id": "Test Requirements 7.1.a",
+              "name": "Test Requirements 7.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine the vendor evidence to confirm that, where cryptography is relied upon (in whole or in part) for the security of the critical assets:\n• Industry-accepted cryptographic algorithms and modes of operation are used in the software as the primary means for protecting critical assets; and\n• Use of any unapproved algorithms must be in conjunction with approved algorithms and implemented in a manner that does not reduce the equivalent cryptographic key strength provided by the approved algorithms."
+              }
+            },
+            {
+              "id": "Test Requirements 7.1.b",
+              "name": "Test Requirements 7.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including the vendor threat information, and test the software to confirm that:\n• Only documented cryptographic algorithms and modes are used in the software and are implemented correctly, and\n• Protections are incorporated to prevent common cryptographic attacks such as the use of the software as a decryption oracle, brute-force or dictionary attacks against the input domain of the sensitive data, the re-use of security parameters such as IVs, or the re-encryption of multiple datasets using linearly applied key values (such as XOR’d key values in stream ciphers or one-time pads)."
+              }
+            },
+            {
+              "id": "Test Requirements 7.1.c",
+              "name": "Test Requirements 7.1.c",
+              "fullDescription": {
+                "text": "Where any algorithm or mode of operation requires a unique value per encryption operation or session, the assessor shall examine current publicly available literature or industry standards to identify security vulnerabilities in their implementation and test the software to confirm correct implementation. For example, this may include the use of a unique IV for a stream cipher mode of operation, a unique (and random) “k” value for a digital signature."
+              }
+            },
+            {
+              "id": "Test Requirements 7.1.d",
+              "name": "Test Requirements 7.1.d",
+              "fullDescription": {
+                "text": "Where padding is used prior to/during encryption, the assessor shall examine vendor evidence and test the software to confirm that the encryption operation always incorporates an industry-accepted standard padding method."
+              }
+            },
+            {
+              "id": "Test Requirements 7.1.e",
+              "name": "Test Requirements 7.1.e",
+              "fullDescription": {
+                "text": "Where hash functions are used within the software, the assessor shall:\n• Examine publicly available literature and research to identify vulnerable algorithms that can be exploited, and\n• Test the software to confirm that only approved, collisionresistant hash algorithms and methods are used with a salt value of appropriate strength, generated using a secure random number generator."
+              }
+            },
+            {
+              "id": "Control Objectives 7.2",
+              "name": "Control Objectives 7.2",
+              "fullDescription": {
+                "text": "The software supports approved key-management processes and procedures. Approved keymanagement processes and procedures are those recognized by industry-standards bodies—for example: NIST, ANSI, and ISO."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.a",
+              "name": "Test Requirements 7.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that:\n• All cryptographic keys that are used for providing security to critical assets - including both confidentiality and authenticity - as well as for providing other security services to the software (such as authentication of endpoint or software updates) have a unique purpose. For example, no key may be used for both encryption and authentication operations.\n• All keys have defined generation methods, and no secret or private cryptographic keys relied upon for security of critical assets are shared between software instances, except when a common secret or private key is used for securing the storage of other cryptographic keys that are generated during the installation, initialization, or first use of the software (e.g., white-box cryptography).\n• All cryptographic keys have an equivalent bit strength of at least 128 bits in accordance with industry standards.\n• All keys have a defined crypto-period aligned with industry standards, and methods are implemented to retire and/or update each key at the end of the defined crypto-period.\n• The integrity and confidentiality of all secret and private cryptographic keys managed by the software are protected when stored (e.g., encrypted with a key-encrypting key that is at least as strong as the data-encrypting key and is stored separately from the data-encrypting key, or as at least two full-length key components or key shares, in accordance with an industry-accepted method).\n• All keys have a defined generation or injection process, and this process ensures sufficient entropy for the key.\n• All key-generation functions must implement one-way functions or other irreversible key-generation processes, and no reversible key calculation modes (such as key variants) are used to directly create new keys from an existing key."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.b",
+              "name": "Test Requirements 7.2.b",
+              "fullDescription": {
+                "text": "Where cryptography is used to protect a key, the assessor shall examine vendor evidence and test the software to confirm that security is not provided to any key by a key of lesser strength (e.g., by encrypting a 256-bit AES key with a 128-bit AES key)."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.c",
+              "name": "Test Requirements 7.2.c",
+              "fullDescription": {
+                "text": "Where any public keys are used by the system, the assessor shall examine vendor evidence and test the software to confirm that the vendor maintains an inventory of all cryptographic keys used by the software and that the authenticity of all public keys is maintained. Vendor evidence must identify:\n• Key label or name\n• Key location\n• Effective and expiration date\n• Key purpose/type\n• Key length"
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.d",
+              "name": "Test Requirements 7.2.d",
+              "fullDescription": {
+                "text": "Where public or white-box keys are not unique per software instantiation the assessor shall examine vendor evidence and test the software to confirm that methods and procedures to revoke and/or replace such keys (or key pairs) exist."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.e",
+              "name": "Test Requirements 7.2.e",
+              "fullDescription": {
+                "text": "Where the software relies upon external files or other data elements for key material (such as for public TLS certificates), the assessor shall examine vendor evidence to confirm that clear and sufficient guidance on how to install such key material in accordance with this standard - including details noting any security requirements for such key material - is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.f",
+              "name": "Test Requirements 7.2.f",
+              "fullDescription": {
+                "text": "Where public keys are used, the assessor shall examine vendor evidence and test the software to confirm that public keys manually loaded or used as root keys are installed and stored in a way that provides dual control (to a level that is feasible on the execution environment), preventing a single user from replacing a key to facilitate a man-in-the-middle attack, easy decryption of stored data, etc. Where complete dual control is not feasible (e.g., due to a limitation of the execution environment), the assessor shall confirm that the methods implemented are appropriate to protect the public keys."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.g",
+              "name": "Test Requirements 7.2.g",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that any secret and/or private keys are managed in a way that ensures split knowledge over the key, to a level that is feasible given the platform on which the software is executed. Where absolute split knowledge is not feasible, the assessor shall confirm that methods implemented are reasonable to protect secrets and/or private keys."
+              }
+            },
+            {
+              "id": "Test Requirements 7.2.h",
+              "name": "Test Requirements 7.2.h",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that methods are implemented to “roll” any keys at the end of their defined crypto-period that ensure the security of the sensitive data (both cryptographic keys and data secured through use of these keys) is in line with the requirements of this standard."
+              }
+            },
+            {
+              "id": "Control Objectives 7.3",
+              "name": "Control Objectives 7.3",
+              "fullDescription": {
+                "text": "All random numbers used by the software are generated using only approved random number generation (RNG) algorithms or libraries. Approved RNG algorithms or libraries are those that meet industry standards for sufficient unpredictability (e.g., NIST Special Publication 800-22)."
+              }
+            },
+            {
+              "id": "Test Requirements 7.3.a",
+              "name": "Test Requirements 7.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that all random number generation methods implemented in the software:\n• Use at least 128 bits of entropy prior to the output of any random numbers from the random number generator.\n• Ensure it is not possible for the system to provide or produce reduced entropy upon start-up or entry of other predictable states of the system."
+              }
+            },
+            {
+              "id": "Test Requirements 7.3.b",
+              "name": "Test Requirements 7.3.b",
+              "fullDescription": {
+                "text": "Where the vendor is relying upon previous assessment of the random number generator, or source of initial entropy, the assessor shall examine the approval records of the previous assessment and test the software to confirm that this scheme and specific approval include the correct areas of the software in the scope of its assessment, and that the vendor claims do not exceed the scope of the evaluation or approval of that software. For example, some cryptographic implementations approved under FIPS 140-2 or 140-3 require seeding from an external entropy source to correctly output random data."
+              }
+            },
+            {
+              "id": "Test Requirements 7.3.c",
+              "name": "Test Requirements 7.3.c",
+              "fullDescription": {
+                "text": "Where third-party software, platforms, or libraries are used for all or part of the random number generation process, the assessor shall examine current publicly available literature to confirm that there are no publicly known vulnerabilities or concerns with the software that may compromise its use for generating random values in the software under test.\nWhere problems are known, but have been mitigated by the software vendor, the assessor shall examine vendor evidence and test the software to confirm that the vulnerabilities have been sufficiently mitigated.\nThe assessor shall test the software to confirm that third-party software, platforms, or libraries are correctly integrated, implemented, and configured."
+              }
+            },
+            {
+              "id": "Test Requirements 7.3.d",
+              "name": "Test Requirements 7.3.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that methods have been implemented to prevent or detect (and respond) the interception, or “hooking,” of random number calls that are serviced from third-party software, or the platform on which the software is executed."
+              }
+            },
+            {
+              "id": "Test Requirements 7.3.e",
+              "name": "Test Requirements 7.3.e",
+              "fullDescription": {
+                "text": "The assessor shall test the software to obtain 128MB of data output from each random number generator implemented in the system to confirm the lack of statistical correlation in the output. This data may be generated by the assessor directly, or supplied by the vendor, but the assessor must confirm that the generation method implemented ensures that the data is produced as it would be produced by the software during normal operation."
+              }
+            },
+            {
+              "id": "Control Objectives 7.4",
+              "name": "Control Objectives 7.4",
+              "fullDescription": {
+                "text": "Random values have entropy that meets the minimum effective strength requirements of the cryptographic primitives and keys that rely on them."
+              }
+            },
+            {
+              "id": "Test Requirements 7.4.a",
+              "name": "Test Requirements 7.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the methods used for the generation of all cryptographic keys and other material (such as IVs, “k” values for digital signatures, etc.) have entropy that meets the minimum effective strength requirements of the cryptographic primitives and keys."
+              }
+            },
+            {
+              "id": "Test Requirements 7.4.b",
+              "name": "Test Requirements 7.4.b",
+              "fullDescription": {
+                "text": "Where cryptographic keys are generated through processes which require direct user interaction, such as through the entry of a passphrase or the use of “random” user interaction with the software, the assessor shall examine vendor evidence and test the software to confirm that these processes are implemented in such a way that they provide sufficient entropy. Specifically, the assessor shall confirm that:\n• Any methods used for generating keys directly from a password/passphrase enforces an input domain that is able to provide sufficient entropy, such that the total possible inputs are at least equal to that of the equivalent bit strength of the key being generated (e.g., a 32-hex-digit input field for an AES128 key).\n• The passphrase is passed through an industry-standard key-derivation function, such as PBKDF2 or bcrypt, which extends the work factor for any attempt to brute-force the passphrase value. The assessor shall confirm that a work factor of at least 10,000 is applied to any such implementation.\n• Clear and sufficient guidance is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1 that any passphrase used must be:\n– Randomly generated itself, using a valid and secure random process: an online random number generator must not be used for this purpose.\n– Never implemented by a single person, such that one person has an advantage in recovering the clear key value; violating the requirements for split knowledge."
+              }
+            },
+            {
+              "id": "Test Requirements 7.4.c",
+              "name": "Test Requirements 7.4.c",
+              "fullDescription": {
+                "text": "Where any third-party software or platforms are relied upon by the software and do not meet the entropy requirements, the assessor shall examine vendor evidence and test the software to confirm that sufficient mitigations are implemented, and that clear and sufficient guidance on the secure configuration and usage of these software components is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Control Objectives 8",
+              "name": "Activity Tracking",
+              "fullDescription": {
+                "text": "All software activity involving critical assets is tracked."
+              }
+            },
+            {
+              "id": "Control Objectives 8.1",
+              "name": "Control Objectives 8.1",
+              "fullDescription": {
+                "text": "All access attempts and usage of critical assets is tracked and traceable to a unique individual."
+              }
+            },
+            {
+              "id": "Test Requirements 8.1",
+              "name": "Test Requirements 8.1",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that all access attempts and usage of critical assets are tracked and traceable to a unique identification for the person, system, or entity performing the access."
+              }
+            },
+            {
+              "id": "Control Objectives 8.2",
+              "name": "Control Objectives 8.2",
+              "fullDescription": {
+                "text": "All activity is captured in sufficient and necessary detail to accurately describe what specific activities were performed, who performed them, the time they were performed, and which critical assets were impacted."
+              }
+            },
+            {
+              "id": "Test Requirements 8.2.a",
+              "name": "Test Requirements 8.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the tracking method(s) implemented capture specific activity performed, including:\n• Enablement of any privileged modes of operation\n• Disabling of encryption of sensitive data\n• Decryption of sensitive data\n• Exporting of sensitive data to other systems or processes\n• Failed authentication attempts\n• Disabling or deleting a security control or altering security functionality"
+              }
+            },
+            {
+              "id": "Test Requirements 8.2.b",
+              "name": "Test Requirements 8.2.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the tracking method(s) implemented provide:\n• A unique identification for the person, system, or entity performing the access\n• A timestamp for each tracked event\n• Details on what critical asset has been accessed"
+              }
+            },
+            {
+              "id": "Test Requirements 8.2.c",
+              "name": "Test Requirements 8.2.c",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that sensitive data is not directly recorded in the tracking data."
+              }
+            },
+            {
+              "id": "Control Objectives 8.3",
+              "name": "Control Objectives 8.3",
+              "fullDescription": {
+                "text": "The software supports secure retention of detailed activity records."
+              }
+            },
+            {
+              "id": "Test Requirements 8.3.a",
+              "name": "Test Requirements 8.3.a",
+              "fullDescription": {
+                "text": "Where the activity records are managed by the software, including only temporarily before being passed to other systems, the assessor shall examine vendor evidence and test the software to confirm that the protection methods are implemented to protect completeness, accuracy, and integrity of the activity records."
+              }
+            },
+            {
+              "id": "Test Requirements 8.3.b",
+              "name": "Test Requirements 8.3.b",
+              "fullDescription": {
+                "text": "Where the software utilizes other systems for maintenance of tracking data, such as a log server, the assessor shall examine vendor evidence to confirm that clear and sufficient guidance on the correct and complete setup and/or integration of the software with the log storage system is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1. The assessor shall test the software to confirm methods are implemented to secure the authenticity of the tracking data during transmission to the log storage system, and to confirm that this protection meets the requirements of this standard⎯for example, authenticity parameters must be applied using strong cryptography - and any account or authentication parameters used for access to an external logging system are protected."
+              }
+            },
+            {
+              "id": "Control Objectives 8.4",
+              "name": "Control Objectives 8.4",
+              "fullDescription": {
+                "text": "The software handles failures in activity-tracking mechanisms such that the integrity of existing activity records is preserved."
+              }
+            },
+            {
+              "id": "Test Requirements 8.4.a",
+              "name": "Test Requirements 8.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that failure of the activity tracking system does not violate the integrity of existing records. The assessor shall explicitly confirm that:\n• The software does not overwrite existing tracking data upon a restart of the software. Each new start shall only append to existing datasets or shall create a new tracking dataset.\n• Where unique dataset names are relied upon for maintaining integrity between execution instances, the implementation ensures that other software (including another instance of the same software) cannot overwrite or render invalid existing datasets.\n• Where possible the software applies suitable file privileges to assist with maintaining the integrity of the tracking dataset (such as applying an append only access control to a dataset once created). Where the software does not apply such controls, the assessor shall confirm reasonable justification exists describing why this is the case, why the behavior is sufficient, and what additional mitigations are applied to maintain the integrity of the tracking data."
+              }
+            },
+            {
+              "id": "Test Requirements 8.4.b",
+              "name": "Test Requirements 8.4.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including source code, and shall test the software, including (wherever possible):\n• Performing actions that should be tracked, force-closing and then restarting the software, and performing other tracked actions.\n• Performing actions that should be tracked, power-cycling the platform on which the software is executing, and then restarting the software and performing other tracked actions.\n• Locking access to the tracking dataset and confirming that the software handles the inability to access this dataset in a secure way, such as by creating a new dataset or preventing further use of the software.\n• Preventing the creation of new dataset entries by preventing further writing to the media on which the dataset is located (e.g., by using media that has insufficient available space).\nWhere any of the tests above are not possible, the assessor shall interview personnel to confirm reasonable justification exists to describe why this is the case and shall confirm protections are put in place to prevent such scenarios from affecting the integrity of the tracking records."
+              }
+            },
+            {
+              "id": "Control Objectives 9",
+              "name": "Attack Detection",
+              "fullDescription": {
+                "text": "Attacks are detected, and the impacts/effects of attacks are minimized."
+              }
+            },
+            {
+              "id": "Control Objectives 9.1",
+              "name": "Control Objectives 9.1",
+              "fullDescription": {
+                "text": "The software detects and alerts upon detection of anomalous behavior, such as changes in postdeployment configurations or obvious attack behavior."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.a",
+              "name": "Test Requirements 9.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that, where possible, the software implements a method to validate the integrity of its own executable and any configuration options, files, and datasets that it relies upon for operation (such that unauthorized, postdeployment changes can be detected).\nWhere the execution environment prevents this, the assessor shall examine vendor evidence and current publicly available literature on the platform and associated technologies to confirm that there are indeed no methods for validating authenticity. The assessor shall then test the software to confirm controls are implemented to minimize the associated risk."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.b",
+              "name": "Test Requirements 9.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that integrity values used by the software and dataset(s) upon which it relies for secure operation are checked upon software execution, and at least every 36 hours thereafter (if the software continues execution during that time period). The assessor shall confirm what action the software takes upon failure of these checks and confirm that the processing of sensitive data is halted until this problem is remediated."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.c",
+              "name": "Test Requirements 9.1.c",
+              "fullDescription": {
+                "text": "Where cryptographic primitives are used by any anomalydetection methods, the assessor shall examine vendor evidence and test the software to confirm that cryptographic primitives are protected."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.d",
+              "name": "Test Requirements 9.1.d",
+              "fullDescription": {
+                "text": "Where stored values are used by any anomaly-detection methods, the assessor shall examine vendor evidence and test the software to confirm that these values are considered sensitive data and protected accordingly."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.e",
+              "name": "Test Requirements 9.1.e",
+              "fullDescription": {
+                "text": "Where configuration or other dataset values can be modified by the software during execution, the assessor shall examine vendor evidence and test the software to confirm that integrity protections are implemented to allow for this update while still ensuring dataset integrity can be validated after the update."
+              }
+            },
+            {
+              "id": "Test Requirements 9.1.f",
+              "name": "Test Requirements 9.1.f",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that the software implements controls to prevent brute-force attacks on account, password, or cryptographic-key input fields (e.g., input rate limiting)."
+              }
+            },
+            {
+              "id": "Control Objectives 10",
+              "name": "Threat and Vulnerability Management",
+              "fullDescription": {
+                "text": "The software vendor identifies, assesses, and manages threats and vulnerabilities to its payment software."
+              }
+            },
+            {
+              "id": "Control Objectives 10.1",
+              "name": "Control Objectives 10.1",
+              "fullDescription": {
+                "text": "Software threats and vulnerabilities are identified, assessed, and addressed."
+              }
+            },
+            {
+              "id": "Test Requirements 10.1.a",
+              "name": "Test Requirements 10.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the vendor identifies common methods for attack against the software product. This may include platform-level, protocollevel, and/or language-level attacks."
+              }
+            },
+            {
+              "id": "Test Requirements 10.1.b",
+              "name": "Test Requirements 10.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the list of common attacks is valid for the software the vendor has produced and shall note where this does not include common attack methods detailed in industry-standard references such as OWASP and CWE lists."
+              }
+            },
+            {
+              "id": "Test Requirements 10.1.c",
+              "name": "Test Requirements 10.1.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that mitigations against each identified attack vector exists, and that the vendor’s software release process includes validation of the existence of these mitigations."
+              }
+            },
+            {
+              "id": "Control Objectives 10.2",
+              "name": "Control Objectives 10.2",
+              "fullDescription": {
+                "text": "Vulnerabilities in the software and third-party components are tested for and fixed prior to release."
+              }
+            },
+            {
+              "id": "Test Requirements 10.2.a",
+              "name": "Test Requirements 10.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the software vendor has implemented robust testing processes throughout the software lifecycle to validate the mitigations used to secure the software against attacks outlined in the vendor threat model and vulnerability assessment."
+              }
+            },
+            {
+              "id": "Test Requirements 10.2.b",
+              "name": "Test Requirements 10.2.b",
+              "fullDescription": {
+                "text": "The assessor shall examine evidence, including documented testing processes and output of several instances of the testing, as performed on the software under evaluation to confirm that the testing process:\n• Includes, at a minimum, the use of automated tools capable of detecting vulnerabilities both in software code and during software execution.\n• Includes the use of tools for security testing that are appropriate for detecting applicable vulnerabilities and are suitable for the software architecture, development languages, and frameworks used in the development of the software.\n• Accounts for the entire code base, including detecting vulnerabilities in third-party, open-source, or shared components and libraries.\n• Accounts for common vulnerabilities and attack methods.\n• Demonstrates a history of finding software vulnerabilities and remediating them prior to retesting of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 10.2.c",
+              "name": "Test Requirements 10.2.c",
+              "fullDescription": {
+                "text": "Where vendor evidence shows the release of software with known vulnerabilities, the assessor shall examine vendor evidence to confirm that:\n• The vendor implements an industry-standard vulnerabilityranking system (such as CVSS) that allows for the categorization of vulnerabilities.\n• For all vulnerabilities, the vendor provides a remediation plan - it is unacceptable for a known vulnerability to remain unmitigated for an indefinite period."
+              }
+            },
+            {
+              "id": "Control Objectives 11",
+              "name": "Secure Software Updates",
+              "fullDescription": {
+                "text": "The software vendor facilitates secure software releases and updates."
+              }
+            },
+            {
+              "id": "Control Objectives 11.1",
+              "name": "Control Objectives 11.1",
+              "fullDescription": {
+                "text": "Software updates to fix known vulnerabilities are made available to stakeholders in a timely manner."
+              }
+            },
+            {
+              "id": "Test Requirements 11.1.a",
+              "name": "Test Requirements 11.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that:\n• Reasonable criteria exist for releasing software updates to fix security vulnerabilities.\n• Security updates are made available to stakeholders in accordance with defined criteria."
+              }
+            },
+            {
+              "id": "Test Requirements 11.1.b",
+              "name": "Test Requirements 11.1.b",
+              "fullDescription": {
+                "text": "For a sample of vendor software updates, the assessor shall examine vendor evidence, including update-specific security-testing results and details, to confirm security fixes have been made available to stakeholders in accordance with defined criteria. Where updates were not provided in accordance with defined criteria, such instances are be reasonably justified by the vendor."
+              }
+            },
+            {
+              "id": "Control Objectives 11.2",
+              "name": "Control Objectives 11.2",
+              "fullDescription": {
+                "text": "Software releases and updates are delivered in a secure manner that ensures the integrity of the software and its code."
+              }
+            },
+            {
+              "id": "Test Requirements 11.2.a",
+              "name": "Test Requirements 11.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the method by which the vendor releases software updates ensures the integrity of the software and its code during transmission and install. Where user instructions are required to validate the integrity of the code, the assessor shall confirm that clear and sufficient guidance to enable the process to be correctly performed is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 11.2.b",
+              "name": "Test Requirements 11.2.b",
+              "fullDescription": {
+                "text": "Where the integrity method implemented is not cryptographically secure (such as through the use of digital signatures), the assessor shall examine vendor evidence to confirm that the software distribution method provides a chain of trust (such as through use of a TLS connection that provides compliant cipher-suite implementations)."
+              }
+            },
+            {
+              "id": "Test Requirements 11.2.c",
+              "name": "Test Requirements 11.2.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the software vendor informs users of the software updates, and that clear and sufficient guidance on how they may be obtained and installed is provided in the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1."
+              }
+            },
+            {
+              "id": "Test Requirements 11.2.d",
+              "name": "Test Requirements 11.2.d",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm the vendor has a process for informing users of the software of known vulnerabilities that have not yet been patched by a new version of the software. This includes vulnerabilities that may exist in third-party software and libraries used by the vendor’s software product. The assessor shall confirm that this process includes providing the users with suggested mitigations for any such vulnerabilities."
+              }
+            },
+            {
+              "id": "Test Requirements 11.2.e",
+              "name": "Test Requirements 11.2.e",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm the update mechanisms cover all software, configuration files, and other metadata that may be used by the software for security purposes, or which may in some way affect security."
+              }
+            },
+            {
+              "id": "Control Objectives 12",
+              "name": "Software Vendor Implementation Guidance",
+              "fullDescription": {
+                "text": "The software vendor provides stakeholders with clear and thorough guidance on the secure implementation, configuration, and operation of the software"
+              }
+            },
+            {
+              "id": "Control Objectives 12.1",
+              "name": "Control Objectives 12.1",
+              "fullDescription": {
+                "text": "The software vendor provides stakeholders with clear and thorough guidance on the secure implementation, configuration, and operation of its payment software."
+              }
+            },
+            {
+              "id": "Test Requirements 12.1.a",
+              "name": "Test Requirements 12.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the vendor creates and provides, to all stakeholders, clear and sufficient guidance to allow for the secure installation and use of the software."
+              }
+            },
+            {
+              "id": "Test Requirements 12.1.b",
+              "name": "Test Requirements 12.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence to confirm that the guidance:\n• Includes details on how to securely and correctly install any third-party software that is required for the operation of the vendor software.\n• Provides instructions on the correct configuration of the platform(s) on which the software is to be executed, including setting security parameters and installation of any data elements (such as certificates).\n• Includes instructions for key management (e.g., use of keys, how keys are distributed, loaded, removed, changed, destroyed, etc.)\n• Does not instruct the user to disable security settings or parameters within the installed environment, such as antimalware software or firewall or other network-level protection systems.\n• Does not instruct the user to execute the software in a privileged mode higher than what is required by the software.\n• Provides details on how to validate the version of the software and clearly indicates for which version(s) of the software the guidance is written.\n• Provides justification for any requirements in this standard that are to be assessed as not applicable. For each of these, the assessor shall confirm reasonable justification exists for why this is the case and confirm that it agrees with their understanding and the results of their testing of the software."
+              }
+            },
+            {
+              "id": "Control Objectives A.1",
+              "name": " Sensitive Authentication Data",
+              "fullDescription": {
+                "text": "Sensitive authentication data is not retained after authorization"
+              }
+            },
+            {
+              "id": "Control Objectives A.1.1",
+              "name": "Control Objectives A.1.1",
+              "fullDescription": {
+                "text": "The software does not store sensitive authentication data after authorization - even if encrypted⎯unless the software is intended only for use by issuers or organizations that support issuing services."
+              }
+            },
+            {
+              "id": "Test Requirements A.1.1.a",
+              "name": "Test Requirements A.1.1.a",
+              "fullDescription": {
+                "text": "For each instance of sensitive authentication data identified in Control Objective 1.1,the assessor shall test the software, including generation of error conditions and log entries, and usage of forensic tools and/or methods, to identify all potential storage locations and to confirm that the software does not store sensitive authentication data after authorization. This includes temporary storage (such as volatile memory), semi-permanent storage (such as RAM disks), and non-volatile storage (such as magnetic and flash storage media)."
+              }
+            },
+            {
+              "id": "Test Requirements A.1.1.b",
+              "name": "Test Requirements A.1.1.b",
+              "fullDescription": {
+                "text": "Where sensitive authentication data is stored after authorization, the assessor shall examine vendor evidence to confirm the software is intended only for use by issuers or organizations that support issuing services."
+              }
+            },
+            {
+              "id": "Control Objectives A.2",
+              "name": "Control Objectives A.2",
+              "fullDescription": {
+                "text": " Cardholder Data Protection"
+              }
+            },
+            {
+              "id": "Control Objectives A.2.1",
+              "name": "Control Objectives A.2.1",
+              "fullDescription": {
+                "text": "The software vendor provides guidance to customers regarding secure deletion of cardholder data after expiration of the customer-defined retention period."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.1",
+              "name": "Test Requirements A.2.1",
+              "fullDescription": {
+                "text": "The assessor shall examine the instructions prepared by the software vendor and confirm the documentation includes the following guidance for customers, integrators, and resellers:\n• A list of all locations where the software stores cardholder data.\n• Instructions on how to securely delete cardholder data stored by the payment software, including data stored on underlying software or systems (such as OS, databases, etc.).\n• Instructions for configuring the underlying software or systems (such as OS, databases, etc.) to prevent inadvertent capture or retention of cardholder data—for example, system backup or restore points."
+              }
+            },
+            {
+              "id": "Control Objectives A.2.2",
+              "name": "Control Objectives A.2.2",
+              "fullDescription": {
+                "text": "The software masks the PAN such that only a maximum of the first six and last four digits are displayed by default."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.2.a",
+              "name": "Test Requirements A.2.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1, to confirm the guidance includes the following instructions for customers and integrators/resellers:\n• Details of all instances where PAN is displayed.\n• Confirmation that the payment software masks PAN to display a maximum of the first six and last four digits by default on all displays.\n• Instructions for how to configure the software to display more than the first six/last four digits of the PAN (includes displays of the full PAN)."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.2.b",
+              "name": "Test Requirements A.2.2.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that all displays of PAN are masked by default."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.2.c",
+              "name": "Test Requirements A.2.2.c",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence and test the software to confirm that for each instance where the PAN is displayed, the instructions for displaying more than the first six/last four digits are accurate."
+              }
+            },
+            {
+              "id": "Control Objectives A.2.3",
+              "name": "Control Objectives A.2.3",
+              "fullDescription": {
+                "text": "Render the PAN unreadable anywhere it is stored (including data on portable digital media, backup media, and in logs) by using any of the following approaches:\n• Truncation (hashing cannot be used to replace the truncated segment of PAN).\n• Index tokens and pads (pads must be securely stored).\n• Strong cryptography with associated key-management processes and procedures."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.3.a",
+              "name": "Test Requirements A.2.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine vendor evidence, including the software vendor’s implementation guidance made available to stakeholders per Control Objective 12.1 to verify the guidance includes the following:\n• Details of any configurable options for each method used by the software to render cardholder data unreadable, and instructions on how to configure each method for all locations where cardholder data is stored by the payment software.\n• A list of all instances where cardholder data may be output for the customer to store outside of the payment application, and instructions that the customer is responsible for rendering the PAN unreadable in all such instances.\n• Instruction that if debugging logs are ever enabled (for example, for troubleshooting purposes) and they include the PAN, they must be protected, disabled as soon as troubleshooting is complete, and securely deleted when no longer needed."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.3.b",
+              "name": "Test Requirements A.2.3.b",
+              "fullDescription": {
+                "text": "The assessor shall test the software to confirm that the method used to protect the PAN, including the encryption algorithms (if applicable), and verify that the PAN is rendered unreadable using any of the following methods:\n• Truncation\n• Index tokens and pads, with the pads being securely stored\n• Strong cryptography, with associated key-management processes and procedures."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.3.c",
+              "name": "Test Requirements A.2.3.c",
+              "fullDescription": {
+                "text": "Where software creates both tokenized and truncated versions of the same PAN, the assessor shall test the software to confirm that the tokenized and truncated versions cannot be correlated to reconstruct the original PAN."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.3.d",
+              "name": "Test Requirements A.2.3.d",
+              "fullDescription": {
+                "text": "Where software creates or generates files for use outside the software - for example, files generated for export or backup - including for storage on removable media, the assessor shall test the software, including examining a sample of generated files, such as those generated on removable media (for example, back-up tapes), to confirm that the PAN is rendered unreadable."
+              }
+            },
+            {
+              "id": "Test Requirements A.2.3.e",
+              "name": "Test Requirements A.2.3.e",
+              "fullDescription": {
+                "text": "If the software vendor stores the PAN for any reason (for example, because log files, debugging files, and other data sources are received from customers for debugging or troubleshooting purposes), the assessor shall examine vendor evidence and test the software to confirm that the PAN is rendered unreadable in accordance with this requirement."
+              }
+            },
+            {
+              "id": "Control Objectives B.1",
+              "name": "Terminal Software Documentation",
+              "fullDescription": {
+                "text": "The software architecture is documented and includes diagrams that describe all software components and services in use and how they interact."
+              }
+            },
+            {
+              "id": "Control Objectives B.1.1",
+              "name": "Control Objectives B.1.1",
+              "fullDescription": {
+                "text": "The software vendor maintains documentation that describes all software components, interfaces, and services provided or used by the software."
+              }
+            },
+            {
+              "id": "Test Requirements B.1.1",
+              "name": "Test Requirements B.1.1",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant documentation and evidence necessary to confirm that the software vendor maintains documentation describing the software’s overall design and function including, but not limited to, the following:\n• All third-party and open-source components, external services, and Application Programming Interfaces (APIs) used by the software.\n• All User Interfaces (UI) and APIs provided or made accessible by the software."
+              }
+            },
+            {
+              "id": "Control Objectives B.1.2",
+              "name": "Control Objectives B.1.2",
+              "fullDescription": {
+                "text": "The software vendor maintains documentation that describes all data flows and functions that involve sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements B.1.2.a",
+              "name": "Test Requirements B.1.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant documentation and evidence necessary to confirm that the software vendor maintains documentation describing all sensitive data flows including, but not limited to, the following:\n• All sensitive data stored, processed, or transmitted by the software.\n• All locations where sensitive data is stored, including both temporary and persistent storage locations.\n• How sensitive data is securely deleted from storage (both temporary and persistent) when no longer needed."
+              }
+            },
+            {
+              "id": "Test Requirements B.1.2.b",
+              "name": "Test Requirements B.1.2.b",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant documentation and evidence necessary to confirm that the software vendor maintains documentation describing all functions that handle sensitive data including, but not limited to, the following:\n• All inputs, outputs, and possible error conditions for each function that handles sensitive data.\n• All cryptographic algorithms, modes of operation, and associated key management practices for all functions that employ cryptography for the protection of sensitive data."
+              }
+            },
+            {
+              "id": "Control Objectives B.1.3",
+              "name": "Control Objectives B.1.3",
+              "fullDescription": {
+                "text": "The software vendor maintains documentation that describes all configurable options that can affect the security of sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements B.1.3",
+              "name": "Test Requirements B.1.3",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant documentation and evidence necessary to confirm that the software vendor maintains documentation describing all configurable options provided or made available by the software that can impact the security of sensitive data including, but not limited to, the following:\n• All configurable options that could allow access to sensitive data.\n• All configurable options that could enable modification of any mechanisms used to protect sensitive data.\n• All remote access features, functions, and parameters provided or made available by the software.\n• All remote update features, functions, and parameters provided or made available by the software.\n• The default settings for each configurable option."
+              }
+            },
+            {
+              "id": "Control Objectives B.2",
+              "name": "Terminal Software Design",
+              "fullDescription": {
+                "text": "The software does not implement any feature that enables the security features, functions, and characteristics of the payment terminal to be circumvented or rendered ineffective."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.1",
+              "name": "Control Objectives B.2.1",
+              "fullDescription": {
+                "text": "The software is intended for deployment and operation on payment terminals (i.e., PCIapproved POI devices)."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.1",
+              "name": "Test Requirements B.2.1",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and evidence necessary to determine the payment terminals upon which the software is to be deployed. For each of the payment terminals identified in the software documentation and included in the software assessment, the assessor shall examine the payment terminal’s device characteristics and compare them with the following characteristics specified in the PCI SSC’s List of Approved PTS Devices to confirm they match:\n• Model name/number\n• PTS approval number\n• Hardware version number\n• Firmware version number(s)"
+              }
+            },
+            {
+              "id": "Control Objectives B.2.2",
+              "name": "Control Objectives B.2.2",
+              "fullDescription": {
+                "text": "The software uses only the external communication methods included in the payment terminal’s PTS device evaluation."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.2.a",
+              "name": "Test Requirements B.2.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether the software supports external communications."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.2.b",
+              "name": "Test Requirements B.2.2.b",
+              "fullDescription": {
+                "text": "Where the software supports external communications, the assessor shall examine all relevant payment terminal documentation—including the payment terminal vendor’s security guidance/policy—to determine which external communication methods were included in the payment terminal’s PTS device evaluation."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.2.c",
+              "name": "Test Requirements B.2.2.c",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to confirm that the software uses only the external communication methods included in the payment terminal’s PTS device evaluation and does not implement its own external communication methods (i.e., its own IP stack)."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.2.1",
+              "name": "Control Objectives B.2.2.1",
+              "fullDescription": {
+                "text": "Where the software relies on the Open Protocols feature of the payment terminal, the software is developed in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.2.1",
+              "name": "Test Requirements B.2.2.1",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant payment terminal documentation—including the payment terminal vendor’s security guidance/policy—and all relevant software vendor process documentation and software design documentation to confirm that the software is developed in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.2.2",
+              "name": "Control Objectives B.2.2.2",
+              "fullDescription": {
+                "text": "The software does not circumvent, bypass, or add additional services or protocols to the Open Protocols of the payment terminal as approved and documented in the payment terminal vendor’s security guidance/policy. This includes the use of:\n• Link Layer protocols\n• IP protocols\n• Security protocols\n• IP Services"
+              }
+            },
+            {
+              "id": "Test Requirements B.2.2.2",
+              "name": "Test Requirements B.2.2.2",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code to confirm that the software does not circumvent, bypass, or add additional services or protocols to the Open Protocols of the payment terminal as approved and documented in the payment terminal vendor’s security guidance/policy. This includes the use of:\n• Link Layer protocols\n• IP protocols\n• Security protocols\n• IP Services"
+              }
+            },
+            {
+              "id": "Control Objectives B.2.3",
+              "name": "Control Objectives B.2.3",
+              "fullDescription": {
+                "text": "The software does not bypass or render ineffective any encryption methods or account data security methods implemented by the payment terminal in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.3.a",
+              "name": "Test Requirements B.2.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether the software facilitates encryption of sensitive data. Where the software does provide such a function, the assessor shall confirm the software does not bypass or render ineffective any encryption methods or account data security methods implemented by the payment terminal as follows:"
+              }
+            },
+            {
+              "id": "Test Requirements B.2.3.b",
+              "name": "Test Requirements B.2.3.b",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant payment terminal documentation—including payment terminal vendor security guidance/policy—necessary to determine which encryption methods are provided by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.3.c",
+              "name": "Test Requirements B.2.3.c",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to confirm that the software does not bypass or render ineffective any encryption methods provided by the payment terminal in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.3.d",
+              "name": "Test Requirements B.2.3.d",
+              "fullDescription": {
+                "text": "Where the software facilitates encryption of sensitive data, but the payment terminal is not required to provide approved encryption methods (per the PCI PTS POI Standard), the assessor shall examine all relevant software documentation and source code necessary to confirm that the encryption methods used or implemented by the software for encrypting sensitive data provide “strong cryptography” and are implemented in accordance with Control Objectives 7.1 and 7.2."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.4",
+              "name": "Control Objectives B.2.4",
+              "fullDescription": {
+                "text": "The software uses only the random number generation function(s) included in the payment terminal’s PTS device evaluation for all cryptographic operations involving sensitive data or sensitive functions where random values are required and does not implement its own random number generation function(s)."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.4.a",
+              "name": "Test Requirements B.2.4.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether the software requires random values to be generated for any cryptographic operations involving sensitive data or sensitive functions."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.4.b",
+              "name": "Test Requirements B.2.4.b",
+              "fullDescription": {
+                "text": "Where the software requires random values for cryptographic operations involving sensitive data or sensitive functions, the assessor shall examine all relevant payment terminal documentation—including payment terminal vendor security guidance/policy—necessary to determine all of the random number generation functions included in the payment terminal’s PTS device evaluation."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.4.c",
+              "name": "Test Requirements B.2.4.c",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to confirm that the software uses only the random number generation function(s) included in the payment terminal’s PTS device evaluation for all cryptographic functions involving sensitive data or sensitive functions where random values are required and does not implement its own random number generation function(s)."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.5",
+              "name": "Control Objectives B.2.5",
+              "fullDescription": {
+                "text": "The software does not facilitate, through its own logical interface(s), the sharing of clear-text account data directly with other software."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.5.a",
+              "name": "Test Requirements B.2.5.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine all logical interfaces of the software, including:\n• All logical interfaces and the purpose and function of each.\n• The logical interfaces intended for sharing clear-text account data, such as those used to pass clear-text account data back to the approved firmware of the payment terminal.\n• The logical interfaces not intended for sharing of clear-text account data, such as those for communication with other software."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.5.b",
+              "name": "Test Requirements B.2.5.b",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to confirm that the software does not facilitate sharing of clear-text account data directly with other software through its own logical interfaces."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.5.c",
+              "name": "Test Requirements B.2.5.c",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall test the software using all software functions that handle account data to confirm that the software does not facilitate the sharing of clear-text account data directly with other software through its own logical interfaces."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.6",
+              "name": "Control Objectives B.2.6",
+              "fullDescription": {
+                "text": "The software uses and/or integrates all shared resources securely and in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.6.a",
+              "name": "Test Requirements B.2.6.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether and how the software connects to and/or uses any shared resources provided by the payment terminal, and to confirm that:\n• The software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1 includes detailed instructions for how to configure the software to ensure secure integration with shared resources.\n• The software vendor’s implementation guidance for secure integration with such shared resources is in accordance with the payment terminal vendor’s security guidance/policy."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.6.b",
+              "name": "Test Requirements B.2.6.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall test the software using all software functions that use or integrate shared resources to confirm that any connections to or use of shared resources are handled securely."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.7",
+              "name": "Control Objectives B.2.7",
+              "fullDescription": {
+                "text": "The software does not bypass or render ineffective any application segregation enforced by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.7.a",
+              "name": "Test Requirements B.2.7.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant payment terminal documentation—including the payment terminal vendor’s security guidance/policy—necessary to determine whether and how application segregation is enforced by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.7.b",
+              "name": "Test Requirements B.2.7.b",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to confirm that the software does not introduce any function(s) that would allow it to bypass or defeat any device-level application segregation controls."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.8",
+              "name": "Control Objectives B.2.8",
+              "fullDescription": {
+                "text": "All software files are cryptographically signed to facilitate cryptographic authentication of the software files by the payment terminal firmware."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.8.a",
+              "name": "Test Requirements B.2.8.a",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1 to confirm it includes detailed instructions for how to cryptographically sign the software files in a manner that facilitates the cryptographic authentication of all such files by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.8.b",
+              "name": "Test Requirements B.2.8.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall confirm that all software files are cryptographically signed in a manner that facilitates the cryptographic authentication of all software files."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.8.c",
+              "name": "Test Requirements B.2.8.c",
+              "fullDescription": {
+                "text": "Where the software supports the loading of files outside of the base software package(s), the assessor shall determine whether each of those files is cryptographically signed in a manner that facilitates the cryptographic authentication of those files by the payment terminal. For any files that cannot be cryptographically signed, the assessor shall justify why the inability to cryptographically sign each such files does not adversely affect the security of the software or the underlying payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.8.d",
+              "name": "Test Requirements B.2.8.d",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether and how the software supports EMV® payment transactions. Where EMV payment transactions are supported by the software, the assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall confirm that all EMV Certification Authority Public Keys are cryptographically signed in a manner that facilitates the cryptographic authentication of those files by the payment terminal."
+              }
+            },
+            {
+              "id": "Control Objectives B.2.9",
+              "name": "Control Objectives B.2.9",
+              "fullDescription": {
+                "text": "The integrity of software prompt files is protected in accordance with Control Objective B.2.8."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.9.a",
+              "name": "Test Requirements B.2.9.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to determine whether the software supports the use of data entry prompts and/or prompt files. Where the software supports such features, the assessor shall confirm the software protects the integrity of those prompts as defined in Test Requirements B.2.9.b through B.2.9.c."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.9.b",
+              "name": "Test Requirements B.2.9.b",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1 to confirm it includes detailed instructions for directing software stakeholders to cryptographically sign all prompt files in a manner that facilitates the cryptographic authentication of all such files in accordance with B.2.8."
+              }
+            },
+            {
+              "id": "Test Requirements B.2.9.c",
+              "name": "Test Requirements B.2.9.c",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall confirm that all prompt files are cryptographically signed in a manner that facilitates the cryptographic authentication of those files by the payment terminal in accordance with B.2.8."
+              }
+            },
+            {
+              "id": "Control Objectives B.3",
+              "name": "Terminal Software Attack Mitigation",
+              "fullDescription": {
+                "text": "Software security controls are implemented to mitigate software attacks."
+              }
+            },
+            {
+              "id": "Control Objectives B.3.1",
+              "name": "Control Objectives B.3.1",
+              "fullDescription": {
+                "text": "The software validates all user and other external inputs."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.a",
+              "name": "Test Requirements B.3.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to identify all external inputs to the software. For each user or other external input, the assessor shall examine all relevant software documentation and source code to confirm that inputs conform to a list of expected characteristics and that all input that does not conform to expected characteristics is rejected by the software or otherwise handled securely."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.b",
+              "name": "Test Requirements B.3.1.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall test the software by attempting to supply each user or other external input with invalid or unexpected characteristics to confirm that the software validates all inputs and either rejects or securely handles all unexpected characteristics."
+              }
+            },
+            {
+              "id": "Control Objectives B.3.1.1",
+              "name": "Control Objectives B.3.1.1",
+              "fullDescription": {
+                "text": "All string values are validated by the software."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.1.a",
+              "name": "Test Requirements B.3.1.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to identify all terminal software functions where string values are passed as inputs to confirm that all strings are checked for text or data that can be erroneously or maliciously interpreted as a command."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.1.b",
+              "name": "Test Requirements B.3.1.1.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.), the assessor shall test the software by attempting to supply each of the identified functions with data that includes commands to confirm that the software either rejects such inputs or otherwise handles such inputs securely."
+              }
+            },
+            {
+              "id": "Control Objectives B.3.1.2",
+              "name": "Control Objectives B.3.1.2",
+              "fullDescription": {
+                "text": "The software checks inputs and rejects or otherwise securely handles any inputs that violate buffer size or other memory allocation thresholds."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.2.a",
+              "name": "Test Requirements B.3.1.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to identify all software functions that handle buffers and process data supplied by external inputs. For each of the noted functions, the assessor shall confirm that each of the identified functions:\n• Uses only unsigned variables to define buffer sizes.\n• Conducts checks that confirm that buffers are sized appropriately for the data they are intended to handle, including consideration for underflows and overflows.\n• Rejects or otherwise securely handles any inputs that violate buffer size or other memory allocation thresholds."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.1.2.b",
+              "name": "Test Requirements B.3.1.2.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.) the assessor shall test the software by attempting to supply each noted function with inputs that violate buffer size thresholds to confirm that the software either rejects or securely handles all such attempts."
+              }
+            },
+            {
+              "id": "Control Objectives B.3.2",
+              "name": "Control Objectives B.3.2",
+              "fullDescription": {
+                "text": "Return values are checked, and error conditions are handled securely."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.2.a",
+              "name": "Test Requirements B.3.2.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to identify all software functions that handle the sensitive data predefined in Control Objective 1.2. For each of the noted software functions, the assessor shall confirm that each function:\n• Checks return values for the presence of sensitive data\n• Processes the return values in a way that does not inadvertently “leak” sensitive data."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.2.b",
+              "name": "Test Requirements B.3.2.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.), the assessor shall test each software function that handles sensitive data by attempting to manipulate the software in a manner that generates an unhandled exception to confirm that error conditions do not expose sensitive data."
+              }
+            },
+            {
+              "id": "Control Objectives B.3.3",
+              "name": "Control Objectives B.3.3",
+              "fullDescription": {
+                "text": "Race conditions are avoided."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.3.a",
+              "name": "Test Requirements B.3.3.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and source code necessary to identify all software functions that rely on synchronous processing. For each of the noted functions, the assessor shall confirm that protection mechanisms have been implemented in the software to mitigate race conditions."
+              }
+            },
+            {
+              "id": "Test Requirements B.3.3.b",
+              "name": "Test Requirements B.3.3.b",
+              "fullDescription": {
+                "text": "The assessor shall install and configure the software in accordance with the software vendor’s implementation guidance required in Control Objectives 12.1 and B.5.1. Using an appropriate “test platform” and suitable forensic tools and/or methods (commercial tools, scripts, etc.), the assessor shall test each software function that relies on synchronous processing by attempting to generate a race condition (such as through specially-crafted attacks intended to exploit the timing of synchronous events) to confirm that the software is resistant to such attacks."
+              }
+            },
+            {
+              "id": "Control Objectives B.4",
+              "name": "Terminal Software Security Testing",
+              "fullDescription": {
+                "text": "The software is tested rigorously for vulnerabilities prior to each release."
+              }
+            },
+            {
+              "id": "Control Objectives B.4.1",
+              "name": "Control Objectives B.4.1",
+              "fullDescription": {
+                "text": "A documented process is maintained and followed for testing software for vulnerabilities prior to each update or release."
+              }
+            },
+            {
+              "id": "Test Requirements B.4.1.a",
+              "name": "Test Requirements B.4.1.a",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and evidence necessary to confirm that the software vendor maintains a documented process in accordance with Control Objective 10.2 for testing the software for vulnerabilities prior to each update or release, and that the documented process includes detailed descriptions of how the vendor tests for the following:\n• The presence or use of any unnecessary ports and protocols.\n• The unintended storage, transmission, or output of any clear-text account data.\n• The presence of any default user accounts with default or static access credentials.\n• The presence of any hard-coded authentication credentials in code or in configuration files.\n• The presence of any test data or test accounts.\n• The presence of any faulty or ineffective software security controls."
+              }
+            },
+            {
+              "id": "Test Requirements B.4.1.b",
+              "name": "Test Requirements B.4.1.b",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant documentation and evidence necessary (such as software testing artifacts, etc.) to confirm that the software is tested for vulnerabilities prior to each release and that the testing covers the following:\n• The presence or use of any unnecessary ports and protocols.\n• The unintended storage, transmission, or output of any clear-text account data.\n• The unintended storage, transmission, or output of any clear-text account data.\n• The presence of any default user accounts with static access credentials.\n• The presence of any hard-coded authentication credentials in code or in configuration files.\n• The presence of any test data or test accounts.\n• The presence of any faulty or ineffective software security controls."
+              }
+            },
+            {
+              "id": "Control Objectives B.5",
+              "name": "Terminal Software Implementation Guidance",
+              "fullDescription": {
+                "text": "The software vendor provides stakeholders with clear and thorough guidance on the secure implementation, configuration, and operation of the software on applicable payment terminals."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1",
+              "name": "Control Objectives B.5.1",
+              "fullDescription": {
+                "text": "The software vendor provides implementation guidance on how to implement and operate the software securely for the payment terminals on which it is to be deployed."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1",
+              "name": "Test Requirements B.5.1",
+              "fullDescription": {
+                "text": "The assessor shall examine all relevant software documentation and evidence necessary to confirm that the software vendor provides detailed implementation guidance to stakeholders in accordance with Control Objective 12.1 on how to securely implement and operate the software for all applicable payment terminals."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1.1",
+              "name": "Control Objectives B.5.1.1",
+              "fullDescription": {
+                "text": "Implementation guidance includes detailed instructions for how to configure all available security options and parameters of the software."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1.1",
+              "name": "Test Requirements B.5.1.1",
+              "fullDescription": {
+                "text": "The assessor shall examine software vendor implementation guidance to confirm it includes detailed instructions on how to configure all available security options and parameters of the software in accordance with Control Objective B.1.3."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1.2",
+              "name": "Control Objectives B.5.1.2",
+              "fullDescription": {
+                "text": "Implementation guidance includes detailed instructions for how to securely configure the software to use the security features and functions of the payment terminal where applicable."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1.2",
+              "name": "Test Requirements B.5.1.2",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor implementation guidance to confirm it includes detailed instructions on how to securely configure the software to use the security features and functions of the payment terminal where applicable."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1.3",
+              "name": "Control Objectives B.5.1.3",
+              "fullDescription": {
+                "text": "Implementation guidance includes detailed instructions for how to configure the software to securely integrate or use any shared resources provided by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1.3",
+              "name": "Test Requirements B.5.1.3",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor implementation guidance to confirm it includes detailed instructions on how to configure the software to securely integrate or use any shared resources provided by the payment terminal in accordance with Control Objective B.2.6."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1.4",
+              "name": "Control Objectives B.5.1.4",
+              "fullDescription": {
+                "text": "Implementation guidance includes detailed instructions on how to cryptographically sign the software files in a manner that facilitates the cryptographic authentication of all such files by the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1.4",
+              "name": "Test Requirements B.5.1.4",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor implementation guidance to confirm it includes detailed instructions on how to cryptographically sign the software files in a manner that facilitates the cryptographic authentication of all such files by the payment terminal in accordance with Control Objective B.2.8."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.1.5",
+              "name": "Control Objectives B.5.1.5",
+              "fullDescription": {
+                "text": "Implementation guidance includes instructions for stakeholders to cryptographically sign all prompt files."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.1.5",
+              "name": "Test Requirements B.5.1.5",
+              "fullDescription": {
+                "text": "The assessor shall examine the software vendor implementation guidance to confirm it includes detailed instructions for stakeholders to cryptographically sign all prompt files in accordance with Control Objective B.2.9."
+              }
+            },
+            {
+              "id": "Control Objectives B.5.2",
+              "name": "Control Objectives B.5.2",
+              "fullDescription": {
+                "text": "Implementation guidance adheres to payment terminal vendor guidance on the secure configuration of the payment terminal."
+              }
+            },
+            {
+              "id": "Test Requirements B.5.2",
+              "name": "Test Requirements B.5.2",
+              "fullDescription": {
+                "text": "The assessor shall examine the payment terminal vendor’s security guidance/policy and the software implementation guidance required in Control Objective B.5.1 to confirm that the software implementation guidance aligns with the payment terminal vendor’s security guidance/policy."
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true
+        }
+      ]
+    }
+  ]
+}

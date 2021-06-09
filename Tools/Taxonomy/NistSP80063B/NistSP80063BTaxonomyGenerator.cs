@@ -19,13 +19,13 @@ namespace Taxonomy
 {
     public class NistSP80063BTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveToSarif(string sourceFolderPath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveToSarif(string sourceFolderPath, string targetFilePath, string version)
         {
             try
             {
                 List<NistSP80063BRecord> results = this.ReadFromMd(sourceFolderPath);
 
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(results, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -83,7 +83,7 @@ namespace Taxonomy
             return records;
         }
 
-        private Run ConvertToSarif(List<NistSP80063BRecord> records, string version, string releaseDateUtc)
+        private Run ConvertToSarif(List<NistSP80063BRecord> records, string version)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
@@ -91,7 +91,7 @@ namespace Taxonomy
                 Name = Constants.NistSP80063B.Name,
                 Guid = Constants.NistSP80063B.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = Constants.NistSP80063B.ReleaseDate,
                 InformationUri = new Uri("https://pages.nist.gov/800-63-3/sp800-63b.html"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf"),
                 Organization = "National Institute of Standards and Technology",
