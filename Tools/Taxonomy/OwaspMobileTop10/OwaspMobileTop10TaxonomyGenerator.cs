@@ -89,18 +89,7 @@ namespace Taxonomy
                     "2016" => Constants.OwaspMobileTop102016.Guid,
                     _ => throw new NotImplementedException()
                 },
-                InformationUri = new Uri(version switch
-                {
-                    "2014" => Constants.OwaspMobileTop102014.Location,
-                    "2016" => Constants.OwaspMobileTop102016.Location,
-                    _ => throw new NotImplementedException()
-                }),
-                DownloadUri = new Uri(version switch
-                {
-                    "2014" => Constants.OwaspMobileTop102014.Location,
-                    "2016" => Constants.OwaspMobileTop102016.Location,
-                    _ => throw new NotImplementedException()
-                }),
+                InformationUri = new Uri("https://owasp.org/www-project-mobile-top-10/"),
                 Organization = "OWASP Foundation",
                 ShortDescription = new MultiformatMessageString { Text = $"OWASP Mobile Top 10 {version}" },
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,

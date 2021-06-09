@@ -18,7 +18,6 @@
             "text": "OWASP Mobile Top 10 2014"
           },
           "version": "2014",
-          "downloadUri": "https://owasp.org/www-project-mobile-top-10/",
           "informationUri": "https://owasp.org/www-project-mobile-top-10/",
           "taxa": [
             {

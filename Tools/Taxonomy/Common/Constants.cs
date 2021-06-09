@@ -73,14 +73,14 @@ namespace Taxonomy.Common
         {
             Guid = Guid.OwaspMobileTop102014,
             Name = "OWASP Mobile Top 10 2014",
-            Location = "https://owasp.org/www-project-mobile-top-10/"
+            Location = REPO_PATH + "OWASP_MobileTop10_v2014.sarif"
         };
 
         public static TaxonomyData OwaspMobileTop102016 = new TaxonomyData
         {
             Guid = Guid.OwaspMobileTop102016,
             Name = "OWASP Mobile Top 10 2016",
-            Location = "https://owasp.org/www-project-mobile-top-10/"
+            Location = REPO_PATH + "OWASP_MobileTop10_v2016.sarif"
         };
 
         public static TaxonomyData WASCV1 = new TaxonomyData
