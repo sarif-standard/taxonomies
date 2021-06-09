@@ -15,9 +15,6 @@ namespace Taxonomy
 
         [Option("version", HelpText = "Version string in target file.", Required = true)]
         public string Version { get; set; }
-
-        [Option("release-date", HelpText = "ReleaseDateUtc string in target file. Format: YYYY-MM-DD", Required = true)]
-        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("generate-cwe", false, HelpText = "Generate CWE Sarif file")]
@@ -48,6 +45,13 @@ namespace Taxonomy
 
         [Option("target-cwe-file-path", HelpText = "Target CWE file path to save.", Required = true)]
         public string TargetFilePath { get; set; }
+    }
+
+    [Verb("generate-pci", false, HelpText = "Generate PCI Taxonomies Sarif file")]
+    internal class PciOptions : BaseOptions
+    {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        public string Type { get; set; }
     }
 
     [Verb("generate-wasc", false, HelpText = "Generate WASC Taxonomies Sarif file")]

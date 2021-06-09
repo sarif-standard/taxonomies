@@ -10,15 +10,35 @@ using Microsoft.CodeAnalysis.Sarif;
 
 using Taxonomy.Common;
 
+using Tools.Common;
+
 namespace Tools.Wasc
 {
-    public class WascV2Generator : WascGenerator<WascV2Item>
+    public class WascV2Generator : GeneratorBase<WascV2Item>
     {
-        protected override string TaxonomyGuid => Constants.WASCV2.Guid;
+        private ToolComponent tool;
 
-        protected override string TaxonomyName => Constants.WASCV2.Name;
-
-        protected override Uri InformationUri => new Uri("http://projects.webappsec.org/Threat%20Classification");
+        protected override ToolComponent ToolComponent
+        {
+            get
+            {
+                if (this.tool == null)
+                {
+                    this.tool = new ToolComponent
+                    {
+                        Name = Constants.WASCV2.Name,
+                        Guid = Constants.WASCV2.Guid,
+                        ReleaseDateUtc = Constants.WASCV2.ReleaseDate,
+                        InformationUri = new Uri("http://projects.webappsec.org/Threat%20Classification"),
+                        Organization = "Web Application Security Consortium",
+                        ShortDescription = new MultiformatMessageString { Text = "The WASC Threat Classification" },
+                        Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
+                        IsComprehensive = true,
+                    };
+                }
+                return this.tool;
+            }
+        }
 
         protected override bool VerifySource(string sourceFilePath, out Uri sourceUri)
         {
@@ -27,12 +47,12 @@ namespace Tools.Wasc
                    || sourceUri.Scheme.Equals(Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase));
         }
 
-        protected override Task<IList<WascV2Item>> GetWascItemsAsync(Uri sourceUri)
+        protected override Task<IList<WascV2Item>> GetSourceItemsAsync(Uri sourceUri)
         {
             return new WascDataCralwer().CrawlWascItemsAsync(sourceUri);
         }
 
-        protected override IList<ReportingDescriptor> GetTaxa(List<WascV2Item> items)
+        protected override IList<ReportingDescriptor> ConvertSourceItemToTaxa(List<WascV2Item> items)
         {
             return items.Select(r => new ReportingDescriptor
             {
