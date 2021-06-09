@@ -19,13 +19,13 @@ namespace Taxonomy
 {
     public class OwaspASVSTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveToSarif(string sourceFilePath, string targetFilePath, string version)
         {
             try
             {
                 List<OwaspASVSCsvRecord> results = this.ReadFromCsv(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(results, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -52,7 +52,7 @@ namespace Taxonomy
             return csvReader.GetRecords<OwaspASVSCsvRecord>().ToList();
         }
 
-        private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version, string releaseDateUtc)
+        private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version)
         {
             var supportedTaxonomies = new List<ToolComponentReference>();
             supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.CWE.Guid, Name = Constants.CWE.Name });
@@ -61,10 +61,10 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = Constants.Owasp.Name,
-                Guid = Constants.Owasp.Guid,
+                Name = Constants.OwaspASVSV402.Name,
+                Guid = Constants.OwaspASVSV402.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = "2020-10-01",
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
                 DownloadUri = new Uri("https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.pdf"),
                 Organization = "OWASP Foundation",

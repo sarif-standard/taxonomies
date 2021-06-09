@@ -1,0 +1,102 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "OWASP Mobile Top 10 2014"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "F539BA7E-3C82-4C60-B8C9-EC151E27E140",
+          "name": "OWASP Mobile Top 10 2014",
+          "organization": "OWASP Foundation",
+          "shortDescription": {
+            "text": "OWASP Mobile Top 10 2014"
+          },
+          "version": "2014",
+          "downloadUri": "https://owasp.org/www-project-mobile-top-10/",
+          "informationUri": "https://owasp.org/www-project-mobile-top-10/",
+          "taxa": [
+            {
+              "id": "M1",
+              "name": "Weak Server Side Controls",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Weak Server Side Controls'?\r\nHow Do I Prevent 'Weak Server Side Controls'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M2",
+              "name": "Insecure Data Storage",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insecure Data Storage'?\r\nHow Do I Prevent 'Insecure Data Storage'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M3",
+              "name": "Insufficient Transport Layer Protection",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insufficient Transport Layer Protection'?\r\nHow Do I Prevent 'Insufficient Transport Layer Protection'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M4",
+              "name": "Unintended Data Leakage",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Unintended Data Leakage'?\r\nHow Do I Prevent 'Unintended Data Leakage'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M5",
+              "name": "Poor Authorization and Authentication",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Poor Authorization and Authentication'?\r\nHow Do I Prevent 'Poor Authorization and Authentication'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M6",
+              "name": "Broken Cryptography",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Broken Cryptography'?\r\nHow Do I Prevent 'Broken Cryptography'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M7",
+              "name": "Client Side Injection",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Client Side Injection'?\r\nHow Do I Prevent 'Client Side Injection'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M8",
+              "name": "Security Decisions Via Untrusted Inputs",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Security Decisions Via Untrusted Inputs'?\r\nHow Do I Prevent 'Security Decisions Via Untrusted Inputs'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M9",
+              "name": "Improper Session Handling",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Improper Session Handling'?\r\nHow Do I Prevent 'Improper Session Handling'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M10",
+              "name": "Lack of Binary Protections",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Lack of Binary Protections'?\r\nHow Do I Prevent 'Lack of Binary Protections'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}

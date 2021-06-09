@@ -32,6 +32,12 @@ Generate OWASP ASVS Sarif file
 generate-owasp --source-file-path "OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "OWASP_ASVS_v4.0.2.sarif" --version "4.0.2" --release-date "2020-10-01"
 ```
 
+Generate OWASP Mobile Top 10 Sarif file
+
+```bash
+generate-owasp --source-file-path "\www-project-mobile-top-10-master\2014-risks" --target-file-path "OWASP_MobileTop10_v2014.sarif" --version "2014" --release-date "2014-10-01"
+```
+
 Generate NIST SP800-53 Sarif file
 
 ```bash
