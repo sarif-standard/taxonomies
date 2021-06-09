@@ -16,9 +16,9 @@ using Taxonomy.Common;
 
 using Tools.Common;
 
-namespace Tools.Pic
+namespace Tools.Pci
 {
-    public class PicSsfGenerator : GeneratorBase<PicSsfItem>
+    public class PciSsfGenerator : GeneratorBase<PciSsfItem>
     {
         #region overrides
 
@@ -53,12 +53,12 @@ namespace Tools.Pic
                    && File.Exists(sourceFilePath);
         }
 
-        protected override Task<IList<PicSsfItem>> GetSourceItemsAsync(Uri sourceUri)
+        protected override Task<IList<PciSsfItem>> GetSourceItemsAsync(Uri sourceUri)
         {
             return this.ReadFromCsvAsync(sourceUri.OriginalString);
         }
 
-        protected override IList<ReportingDescriptor> ConvertSourceItemToTaxa(List<PicSsfItem> items)
+        protected override IList<ReportingDescriptor> ConvertSourceItemToTaxa(List<PciSsfItem> items)
         {
             return items.Select(r => new ReportingDescriptor
             {
@@ -77,13 +77,13 @@ namespace Tools.Pic
         }
         #endregion
 
-        private async Task<IList<PicSsfItem>> ReadFromCsvAsync(string filePath)
+        private async Task<IList<PciSsfItem>> ReadFromCsvAsync(string filePath)
         {
             using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var textReader = new StreamReader(input);
             using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
 
-            return await csvReader.GetRecordsAsync<PicSsfItem>().ToListAsync();
+            return await csvReader.GetRecordsAsync<PciSsfItem>().ToListAsync();
         }
     }
 }

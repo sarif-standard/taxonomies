@@ -7,7 +7,7 @@ using CommandLine;
 
 using Taxonomy.Cwe;
 
-using Tools.Pic;
+using Tools.Pci;
 using Tools.Wasc;
 
 namespace Taxonomy
@@ -16,18 +16,8 @@ namespace Taxonomy
     {
         private static void Main(string[] args)
         {
-            // example:
-            // add-owasprelationship-to-cwe --source-cwe-file-path "..\..\..\..\..\CWE_v4.4.sarif" --source-owasp-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif"
-            // generate-cwe --source-file-path "..\..\..\..\Source\cwec_v4.4.xml" --target-file-path "..\..\..\..\..\CWE_v4.4.sarif" --version "4.4"
-            // generate-nist --type sp80053 --source-file-path "..\..\..\..\Source\sp800-53r5-control-catalog.csv" --target-file-path "..\..\..\..\..\NIST_SP800-53_v5.sarif" --version "5"
-            // generate-nist --type sp80053 --source-file-path "..\..\..\..\Source\NIST_SP-800-53_rev4_catalog.json" --target-file-path "..\..\..\..\..\NIST_SP800-53_v4.sarif" --version "4"
-            // generate-nist --type sp80063b --Source-folder-path "..\..\..\..\Source\800-63-3-nist-pages\sp800-63b" --target-file-path "..\..\..\..\..\NIST_SP800-63B_v1.sarif" --version "1"
-            // generate-owasp --source-file-path "..\..\..\..\Source\OWASP Application Security Verification Standard 4.0.2-en.csv" --target-file-path "..\..\..\..\..\OWASP_ASVS_v4.0.2.sarif" --version "4.0.2"
-            // generate-pci --type ssf --source-file-path "..\..\..\..\Source\pci_ssf_v1.1.csv" --target-file-path "..\..\..\..\..\PCI_SSF_V1.1.sarif" --version "1.1"
-            // generate-wasc --source-file-path "..\..\..\..\Source\wasc_1.00.csv" --target-file-path "..\..\..\..\..\WASC_1.00.sarif" --version "1.00"
-            // generate-wasc --source-file-path "http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View" --target-file-path "..\..\..\..\..\WASC_2.00.sarif" --version "2.00"
-
-            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, NistOptions, OwaspOptions, PicOptions, WascOptions>(args)
+            // see README.MD for usages
+            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, NistOptions, OwaspOptions, PciOptions, WascOptions>(args)
             .MapResult(
                 (AddOwaspRelationshipToCweOptions o) =>
                 {
@@ -45,9 +35,9 @@ namespace Taxonomy
                 {
                     return GenerateOwasp(o);
                 },
-                (PicOptions o) =>
+                (PciOptions o) =>
                 {
-                    return GeneratePic(o);
+                    return GeneratePci(o);
                 },
                 (WascOptions o) =>
                 {
@@ -97,12 +87,12 @@ namespace Taxonomy
             return generator.SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
         }
 
-        private static bool GeneratePic(PicOptions o)
+        private static bool GeneratePci(PciOptions o)
         {
             return o.Type switch
             {
-                "ssf" => new PicSsfGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
-                // "dss" => new PicDssGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
+                "ssf" => new PciSsfGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
+                // "dss" => new PciDssGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
                 _ => false,
             };
         }

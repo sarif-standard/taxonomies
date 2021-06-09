@@ -15,9 +15,6 @@ namespace Taxonomy
 
         [Option("version", HelpText = "Version string in target file.", Required = true)]
         public string Version { get; set; }
-
-        [Option("release-date", HelpText = "ReleaseDateUtc string in target file. Format: YYYY-MM-DD", Required = false)]
-        public string ReleaseDateUtc { get; set; }
     }
 
     [Verb("generate-cwe", false, HelpText = "Generate CWE Sarif file")]
@@ -51,7 +48,7 @@ namespace Taxonomy
     }
 
     [Verb("generate-pci", false, HelpText = "Generate PCI Taxonomies Sarif file")]
-    internal class PicOptions : BaseOptions
+    internal class PciOptions : BaseOptions
     {
         [Option("type", HelpText = "type of the standard to process.", Required = true)]
         public string Type { get; set; }

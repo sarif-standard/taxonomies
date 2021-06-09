@@ -5,9 +5,9 @@ using CsvHelper.Configuration.Attributes;
 
 using Tools.Common;
 
-namespace Tools.Pic
+namespace Tools.Pci
 {
-    public class PicSsfItem : TaxaItemBase
+    public class PciSsfItem : TaxaItemBase
     {
         [Name("Category")]
         public string Category { get; set; }
