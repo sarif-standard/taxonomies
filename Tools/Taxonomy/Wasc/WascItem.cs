@@ -5,9 +5,11 @@ using System.Collections.Generic;
 
 using CsvHelper.Configuration.Attributes;
 
+using Tools.Common;
+
 namespace Tools.Wasc
 {
-    public class WascBaseItem
+    public class WascBaseItem : TaxaItemBase
     {
         [Name("Id")]
         public string WascId { get; set; }

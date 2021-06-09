@@ -21,13 +21,13 @@ namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveCsvToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveCsvToSarif(string sourceFilePath, string targetFilePath, string version)
         {
             try
             {
                 List<CweCsvRecord> records = this.ReadFromCsv(sourceFilePath);
 
-                Run run = this.ConvertToSarif(records, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(records, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -45,13 +45,13 @@ namespace Taxonomy.Cwe
             return true;
         }
 
-        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version, string releaseDateUtc)
+        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version)
         {
             try
             {
                 Weakness_Catalog results = this.ReadFromXml(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version, releaseDateUtc);
+                Run run = this.ConvertToSarif(results, version);
 
                 SarifLog log = new SarifLog
                 {
@@ -134,7 +134,7 @@ namespace Taxonomy.Cwe
             return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
         }
 
-        private Run ConvertToSarif(List<CweCsvRecord> records, string version, string releaseDateUtc)
+        private Run ConvertToSarif(List<CweCsvRecord> records, string version)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
@@ -142,7 +142,7 @@ namespace Taxonomy.Cwe
                 Name = Constants.CWE.Name,
                 Guid = Constants.CWE.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = Constants.CWE.ReleaseDate,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
                 DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",
@@ -177,7 +177,7 @@ namespace Taxonomy.Cwe
             return run;
         }
 
-        private Run ConvertToSarif(Weakness_Catalog cweXml, string version, string releaseDateUtc)
+        private Run ConvertToSarif(Weakness_Catalog cweXml, string version)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
@@ -185,7 +185,7 @@ namespace Taxonomy.Cwe
                 Name = Constants.CWE.Name,
                 Guid = Constants.CWE.Guid,
                 Version = version,
-                ReleaseDateUtc = releaseDateUtc,
+                ReleaseDateUtc = Constants.CWE.ReleaseDate,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
                 DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",

@@ -16,10 +16,12 @@ using Taxonomy.Common;
 
 using Tools.Common;
 
-namespace Tools.Wasc
+namespace Tools.Pic
 {
-    public class WascV1Generator : GeneratorBase<WascV1Item>
+    public class PicSsfGenerator : GeneratorBase<PicSsfItem>
     {
+        #region overrides
+
         private ToolComponent tool;
 
         protected override ToolComponent ToolComponent
@@ -30,12 +32,13 @@ namespace Tools.Wasc
                 {
                     this.tool = new ToolComponent
                     {
-                        Name = Constants.WASCV1.Name,
-                        Guid = Constants.WASCV1.Guid,
-                        ReleaseDateUtc = Constants.WASCV1.ReleaseDate,
-                        InformationUri = new Uri("http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions"),
-                        Organization = "Web Application Security Consortium",
-                        ShortDescription = new MultiformatMessageString { Text = "The WASC Threat Classification" },
+                        Name = Constants.PCI_SSF_V1.Name,
+                        Guid = Constants.PCI_SSF_V1.Guid,
+                        ReleaseDateUtc = Constants.PCI_SSF_V1.ReleaseDate,
+                        InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf"),
+                        DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf"),
+                        Organization = "PCI Security Standards Council",
+                        ShortDescription = new MultiformatMessageString { Text = "Payment Card Industry (PCI) Software Security Framework" },
                         Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                         IsComprehensive = true,
                     };
@@ -50,26 +53,17 @@ namespace Tools.Wasc
                    && File.Exists(sourceFilePath);
         }
 
-        protected override Task<IList<WascV1Item>> GetSourceItemsAsync(Uri sourceUri)
+        protected override Task<IList<PicSsfItem>> GetSourceItemsAsync(Uri sourceUri)
         {
             return this.ReadFromCsvAsync(sourceUri.OriginalString);
         }
 
-        private async Task<IList<WascV1Item>> ReadFromCsvAsync(string filePath)
-        {
-            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return await csvReader.GetRecordsAsync<WascV1Item>().ToListAsync();
-        }
-
-        protected override IList<ReportingDescriptor> ConvertSourceItemToTaxa(List<WascV1Item> items)
+        protected override IList<ReportingDescriptor> ConvertSourceItemToTaxa(List<PicSsfItem> items)
         {
             return items.Select(r => new ReportingDescriptor
             {
-                Id = r.WascId,
-                Name = r.WascName,
+                Id = $"{r.Category} {r.Id}",
+                Name = string.IsNullOrEmpty(r.Name) ? $"{r.Category} {r.Id}" : r.Name,
                 FullDescription = string.IsNullOrEmpty(r.Description) ? null : new MultiformatMessageString { Text = r.Description },
                 DefaultConfiguration = new ReportingConfiguration { Level = FailureLevel.Warning }, // default
                 // no relationship defined
@@ -80,6 +74,16 @@ namespace Tools.Wasc
         {
             // no reference taxonomy defined
             return null;
+        }
+        #endregion
+
+        private async Task<IList<PicSsfItem>> ReadFromCsvAsync(string filePath)
+        {
+            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var textReader = new StreamReader(input);
+            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
+
+            return await csvReader.GetRecordsAsync<PicSsfItem>().ToListAsync();
         }
     }
 }
