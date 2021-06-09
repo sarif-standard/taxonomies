@@ -25,6 +25,8 @@ namespace Taxonomy
     [Verb("generate-owasp", false, HelpText = "Generate OWASP Sarif file")]
     internal class OwaspOptions : BaseOptions
     {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        public string Type { get; set; }
     }
 
     [Verb("generate-nist", false, HelpText = "Generate NIST Sarif file")]

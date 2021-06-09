@@ -61,10 +61,10 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = Constants.Owasp.Name,
-                Guid = Constants.Owasp.Guid,
+                Name = Constants.OwaspASVSV402.Name,
+                Guid = Constants.OwaspASVSV402.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.Owasp.ReleaseDate,
+                ReleaseDateUtc = Constants.OwaspASVSV402.ReleaseDate,
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
                 DownloadUri = new Uri("https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.pdf"),
                 Organization = "OWASP Foundation",

@@ -1,8 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.Collections.Generic;
-
 namespace Taxonomy.Common
 {
     public static class Constants
@@ -15,7 +13,9 @@ namespace Taxonomy.Common
             public static string NistSP80053V5 = "AAFBAB93-5201-419E-8443-D4925C542398";
             public static string NistSP80053V4 = "EE4E6942-6346-45EE-BBA2-9998A214D80E";
             public static string NistSP80063B = "CC3BE6A5-E774-41CF-B74C-C928269B6778";
-            public static string Owasp = "BBEA1F18-F56A-4202-B9A9-3FC348B81E5A";
+            public static string OwaspASVSV402 = "BBEA1F18-F56A-4202-B9A9-3FC348B81E5A";
+            public static string OwaspMobileTop102014 = "F539BA7E-3C82-4C60-B8C9-EC151E27E140";
+            public static string OwaspMobileTop102016 = "62118DBB-B3B1-4489-BE8E-938A6C071CED";
             public static string PCI_SSF_V1 = "8DD3BF80-F4D3-46F2-8E9E-6BB801E973F6";
             public static string WASCV1 = "E30814F7-D50D-4936-9B0C-B80ACD412434";
             public static string WASCV2 = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
@@ -53,9 +53,9 @@ namespace Taxonomy.Common
             ReleaseDate = "2020-03-02",
         };
 
-        public static TaxonomyData Owasp = new TaxonomyData
+        public static TaxonomyData OwaspASVSV402 = new TaxonomyData
         {
-            Guid = Guid.Owasp,
+            Guid = Guid.OwaspASVSV402,
             Name = "OWASP",
             Location = REPO_PATH + "OWASP_ASVS_v4.0.2.sarif",
             ReleaseDate = "2020-10-01",
@@ -67,6 +67,20 @@ namespace Taxonomy.Common
             Name = "PCI SSF V1.1",
             Location = REPO_PATH + "PCI_SSF_v1.1.sarif",
             ReleaseDate = "2021-02-01",
+        };
+
+        public static TaxonomyData OwaspMobileTop102014 = new TaxonomyData
+        {
+            Guid = Guid.OwaspMobileTop102014,
+            Name = "OWASP Mobile Top 10 2014",
+            Location = REPO_PATH + "OWASP_MobileTop10_v2014.sarif"
+        };
+
+        public static TaxonomyData OwaspMobileTop102016 = new TaxonomyData
+        {
+            Guid = Guid.OwaspMobileTop102016,
+            Name = "OWASP Mobile Top 10 2016",
+            Location = REPO_PATH + "OWASP_MobileTop10_v2016.sarif"
         };
 
         public static TaxonomyData WASCV1 = new TaxonomyData

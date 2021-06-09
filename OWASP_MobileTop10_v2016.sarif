@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "OWASP Mobile Top 10 2016"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "62118DBB-B3B1-4489-BE8E-938A6C071CED",
+          "name": "OWASP Mobile Top 10 2016",
+          "organization": "OWASP Foundation",
+          "shortDescription": {
+            "text": "OWASP Mobile Top 10 2016"
+          },
+          "version": "2016",
+          "informationUri": "https://owasp.org/www-project-mobile-top-10/",
+          "taxa": [
+            {
+              "id": "M1",
+              "name": "Improper Platform Usage",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Improper Platform Usage'?\r\nHow Do I Prevent 'Improper Platform Usage'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M2",
+              "name": "Insecure Data Storage",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insecure Data Storage'?\r\nHow Do I Prevent 'Insecure Data Storage'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M3",
+              "name": "Insecure Communication",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insecure Communication'?\r\nHow Do I Prevent 'Insecure Communication'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M4",
+              "name": "Insecure Authentication",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insecure Authentication'?\r\nHow Do I Prevent 'Insecure Authentication'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M5",
+              "name": "Insufficient Cryptography",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insufficient Cryptography'?\r\nReliance Upon Built-In Code Encryption Processes\r\nHow Do I Prevent 'Insufficient Cryptography'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M6",
+              "name": "Insecure Authorization",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Insecure Authorization'?\r\nHow Do I Prevent 'Insecure Authorization'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M7",
+              "name": "Poor Code Quality",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Poor Code Quality'?\r\nHow Do I Prevent 'Poor Code Quality'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M8",
+              "name": "Code Tampering",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Code Tampering'?\r\nHow Do I Prevent 'Code Tampering'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M9",
+              "name": "Reverse Engineering",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Reverse Engineering'?\r\nHow Do I Prevent 'Reverse Engineering'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            },
+            {
+              "id": "M10",
+              "name": "Extraneous Functionality",
+              "shortDescription": {
+                "text": "Threat Agents\r\nAttack Vectors\r\nSecurity Weakness\r\nTechnical Impacts\r\nBusiness Impacts\r\nAm I Vulnerable To 'Extraneous Functionality'?\r\nHow Do I Prevent 'Extraneous Functionality'?\r\nExample Attack Scenarios\r\nReferences"
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}

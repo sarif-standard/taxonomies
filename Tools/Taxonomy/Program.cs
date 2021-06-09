@@ -83,8 +83,12 @@ namespace Taxonomy
 
         private static bool GenerateOwasp(OwaspOptions o)
         {
-            var generator = new OwaspASVSTaxonomyGenerator();
-            return generator.SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
+            return o.Type switch
+            {
+                "asvs" => new OwaspASVSTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version),
+                "mobiletop10" => new OwaspMobileTop10TaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version),
+                _ => false,
+            };
         }
 
         private static bool GeneratePci(PciOptions o)
