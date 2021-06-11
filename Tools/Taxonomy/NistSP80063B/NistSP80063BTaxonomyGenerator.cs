@@ -88,10 +88,10 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = Constants.NistSP80063B.Name,
-                Guid = Constants.NistSP80063B.Guid,
+                Name = Constants.Nist_SP80063B.Name,
+                Guid = Constants.Nist_SP80063B.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.NistSP80063B.ReleaseDate,
+                ReleaseDateUtc = Constants.Nist_SP80063B.ReleaseDate,
                 InformationUri = new Uri("https://pages.nist.gov/800-63-3/sp800-63b.html"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf"),
                 Organization = "National Institute of Standards and Technology",

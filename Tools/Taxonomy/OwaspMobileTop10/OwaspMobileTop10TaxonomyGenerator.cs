@@ -79,14 +79,14 @@ namespace Taxonomy
                 Version = version,
                 Name = version switch
                 {
-                    "2014" => Constants.OwaspMobileTop102014.Name,
-                    "2016" => Constants.OwaspMobileTop102016.Name,
+                    "2014" => Constants.Owasp_Mobile_Top_10_2014.Name,
+                    "2016" => Constants.Owasp_Mobile_Top_10_2016.Name,
                     _ => throw new NotImplementedException()
                 },
                 Guid = version switch
                 {
-                    "2014" => Constants.OwaspMobileTop102014.Guid,
-                    "2016" => Constants.OwaspMobileTop102016.Guid,
+                    "2014" => Constants.Owasp_Mobile_Top_10_2014.Guid,
+                    "2016" => Constants.Owasp_Mobile_Top_10_2016.Guid,
                     _ => throw new NotImplementedException()
                 },
                 InformationUri = new Uri("https://owasp.org/www-project-mobile-top-10/"),
