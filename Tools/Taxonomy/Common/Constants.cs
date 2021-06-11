@@ -17,6 +17,7 @@ namespace Taxonomy.Common
             public static string OwaspMobileTop102014 = "F539BA7E-3C82-4C60-B8C9-EC151E27E140";
             public static string OwaspMobileTop102016 = "62118DBB-B3B1-4489-BE8E-938A6C071CED";
             public static string PCI_SSF_V1 = "8DD3BF80-F4D3-46F2-8E9E-6BB801E973F6";
+            public static string PCI_DSS_V3_2_1 = "73D7AC88-CADA-444E-A606-B657D4E17250";
             public static string WASCV1 = "E30814F7-D50D-4936-9B0C-B80ACD412434";
             public static string WASCV2 = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
         }
@@ -61,14 +62,6 @@ namespace Taxonomy.Common
             ReleaseDate = "2020-10-01",
         };
 
-        public static TaxonomyData PCI_SSF_V1 = new TaxonomyData
-        {
-            Guid = Guid.PCI_SSF_V1,
-            Name = "PCI SSF V1.1",
-            Location = REPO_PATH + "PCI_SSF_v1.1.sarif",
-            ReleaseDate = "2021-02-01",
-        };
-
         public static TaxonomyData OwaspMobileTop102014 = new TaxonomyData
         {
             Guid = Guid.OwaspMobileTop102014,
@@ -81,6 +74,22 @@ namespace Taxonomy.Common
             Guid = Guid.OwaspMobileTop102016,
             Name = "OWASP Mobile Top 10 2016",
             Location = REPO_PATH + "OWASP_MobileTop10_v2016.sarif"
+        };
+
+        public static TaxonomyData PCI_SSF_V1 = new TaxonomyData
+        {
+            Guid = Guid.PCI_SSF_V1,
+            Name = "PCI SSF V1.1",
+            Location = REPO_PATH + "PCI_SSF_v1.1.sarif",
+            ReleaseDate = "2021-02-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V321 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V3_2_1,
+            Name = "PCI DSS V3.2.1",
+            Location = REPO_PATH + "PCI_DSS_v3.2.1.sarif",
+            ReleaseDate = "2018-05-01",
         };
 
         public static TaxonomyData WASCV1 = new TaxonomyData

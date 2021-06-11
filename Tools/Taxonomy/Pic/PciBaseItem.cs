@@ -21,4 +21,8 @@ namespace Tools.Pci
         [Name("Description")]
         public string Description { get; set; }
     }
+
+    public class PciDssItem : PciSsfItem
+    {
+    }
 }

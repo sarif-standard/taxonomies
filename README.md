@@ -15,6 +15,7 @@ OWASP | ASVS v4.0.2 | [link](https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/docs/_
 OWASP | Mobile Top 10 v2014 | [link](https://github.com/OWASP/www-project-mobile-top-10/tree/master/2014-risks) | [OWASP_MobileTop10_v2014.sarif](OWASP_MobileTop10_v2014.sarif)
 OWASP | Mobile Top 10 v2016 | [link](https://github.com/OWASP/www-project-mobile-top-10/tree/master/2016-risks) | [OWASP_MobileTop10_v2016.sarif](OWASP_MobileTop10_v2016.sarif)
 PCI | SSF V1.1 | [link](https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf) | [PCI_SSF_V1.1.sarif](PCI_SSF_V1.1.sarif)
+PCI | DSS V3.2.1 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf) | [PCI_DSS_V3.2.1.sarif](PCI_DSS_V3.2.1.sarif)
 WASC | v1.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions) |[WASC_1.00.sarif](WASC_1.00.sarif)
 WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) |[WASC_2.00.sarif](WASC_2.00.sarif)
 
@@ -57,6 +58,12 @@ Generate PCI SSF 1.1 Sarif file
 
 ```bash
 generate-pci --type ssf --source-file-path "pci_ssf_v1.1.csv" --target-file-path "..\..\..\..\..\PCI_SSF_V1.1.sarif" --version "1.1"
+```
+
+Generate PCI DSS 3.2.1 Sarif file
+
+```bash
+generate-pci --type ssf --source-file-path "pci_dss_v3.2.1.csv" --target-file-path "..\..\..\..\..\PCI_DSS_V3.2.1.sarif" --version "3.2.1"
 ```
 
 Generate WASC 1.00 (WASC 24 + 2) Sarif file

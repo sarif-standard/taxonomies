@@ -96,7 +96,7 @@ namespace Taxonomy
             return o.Type switch
             {
                 "ssf" => new PciSsfGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
-                // "dss" => new PciDssGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
+                "dss" => new PciDssGenerator().SaveToSarifAsync(o.SourceFilePath, o.TargetFilePath, o.Version).Result,
                 _ => false,
             };
         }
