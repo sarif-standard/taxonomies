@@ -30,9 +30,9 @@ namespace Tools.Wasc
                 {
                     this.tool = new ToolComponent
                     {
-                        Name = Constants.WASCV1.Name,
-                        Guid = Constants.WASCV1.Guid,
-                        ReleaseDateUtc = Constants.WASCV1.ReleaseDate,
+                        Name = Constants.WASC_V1.Name,
+                        Guid = Constants.WASC_V1.Guid,
+                        ReleaseDateUtc = Constants.WASC_V1.ReleaseDate,
                         InformationUri = new Uri("http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions"),
                         Organization = "Web Application Security Consortium",
                         ShortDescription = new MultiformatMessageString { Text = "The WASC Threat Classification" },

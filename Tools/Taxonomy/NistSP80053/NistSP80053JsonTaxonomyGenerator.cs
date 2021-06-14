@@ -55,10 +55,10 @@ namespace Taxonomy
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = Constants.NistSP80053V4.Name,
-                Guid = Constants.NistSP80053V4.Guid,
+                Name = Constants.Nist_SP80053_V4.Name,
+                Guid = Constants.Nist_SP80053_V4.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.NistSP80053V4.ReleaseDate,
+                ReleaseDateUtc = Constants.Nist_SP80053_V4.ReleaseDate,
                 InformationUri = new Uri("https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/final"),
                 DownloadUri = new Uri("https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf"),
                 Organization = "National Institute of Standards and Technology",

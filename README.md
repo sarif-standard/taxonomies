@@ -14,6 +14,11 @@ Nist | SP800-63B v1 | [link](https://pages.nist.gov/800-63-3/sp800-63b.html) | [
 OWASP | ASVS v4.0.2 | [link](https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/docs/_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.csv) | [OWASP_ASVS_v4.0.2.sarif](OWASP_ASVS_v4.0.2.sarif)
 OWASP | Mobile Top 10 v2014 | [link](https://github.com/OWASP/www-project-mobile-top-10/tree/master/2014-risks) | [OWASP_MobileTop10_v2014.sarif](OWASP_MobileTop10_v2014.sarif)
 OWASP | Mobile Top 10 v2016 | [link](https://github.com/OWASP/www-project-mobile-top-10/tree/master/2016-risks) | [OWASP_MobileTop10_v2016.sarif](OWASP_MobileTop10_v2016.sarif)
+OWASP | Top 10 v2004 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2004/master/README.md) | [OWASP_Top10_v2004.sarif](OWASP_Top10_v2004.sarif)
+OWASP | Top 10 v2007 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2007/master/README.md) | [OWASP_Top10_v2007.sarif](OWASP_Top10_v2007.sarif)
+OWASP | Top 10 v2010 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2010/master/README.md) | [OWASP_Top10_v2010.sarif](OWASP_Top10_v2010.sarif)
+OWASP | Top 10 v2013 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2013/master/README.md) | [OWASP_Top10_v2013.sarif](OWASP_Top10_v2013.sarif)
+OWASP | Top 10 v2017 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2017/master/README.md) | [OWASP_Top10_v2017.sarif](OWASP_Top10_v2017.sarif)
 PCI | SSF V1.1 | [link](https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf) | [PCI_SSF_V1.1.sarif](PCI_SSF_V1.1.sarif)
 WASC | v1.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions) |[WASC_1.00.sarif](WASC_1.00.sarif)
 WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) |[WASC_2.00.sarif](WASC_2.00.sarif)
@@ -39,6 +44,12 @@ Generate OWASP Mobile Top 10 Sarif file
 
 ```bash
 generate-owasp --type mobiletop10 --source-file-path "\www-project-mobile-top-10-master\2014-risks" --target-file-path "OWASP_MobileTop10_v2014.sarif" --version "2014"
+```
+
+Generate OWASP Top 10 Sarif file
+
+```bash
+generate-owasp --type top10 --source-file-path "https://raw.githubusercontent.com/owasp-top/owasp-top-2004/master/README.md" --target-file-path "OWASP_Top10_v2004.sarif" --version "2004"
 ```
 
 Generate NIST SP800-53 Sarif file

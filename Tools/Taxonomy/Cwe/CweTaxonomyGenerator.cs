@@ -85,7 +85,7 @@ namespace Taxonomy.Cwe
                             {
                                 var reportingDescriptorRelationship = new ReportingDescriptorRelationship();
                                 reportingDescriptorRelationship.Target = new ReportingDescriptorReference() { Id = taxon.Id };
-                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.OwaspASVSV402.Guid, Name = Constants.OwaspASVSV402.Name };
+                                reportingDescriptorRelationship.Target.ToolComponent = new ToolComponentReference() { Guid = Constants.Owasp_ASVS_V402.Guid, Name = Constants.Owasp_ASVS_V402.Name };
                                 reportingDescriptorRelationship.Kinds = new List<string>() { "relevant" };
                                 IList<ReportingDescriptorRelationship> existingRelationships = cweSarif.Runs[0].Taxonomies[0].Taxa.First(t => t.Id == relationship.Target.Id).Relationships;
                                 if (existingRelationships != null && !existingRelationships.Any(r => r.Target.Id == reportingDescriptorRelationship.Target.Id))
@@ -97,14 +97,14 @@ namespace Taxonomy.Cwe
                     }
                 }
 
-                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.OwaspASVSV402.Guid, Name = Constants.OwaspASVSV402.Name });
+                cweSarif.Runs[0].Taxonomies[0].SupportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Owasp_ASVS_V402.Guid, Name = Constants.Owasp_ASVS_V402.Name });
 
                 ExternalPropertyFileReferences externalPropertyFileReferences = new ExternalPropertyFileReferences();
                 externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
                 externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
                 {
-                    Guid = Constants.OwaspASVSV402.Guid,
-                    Location = new ArtifactLocation() { Uri = new Uri(Constants.OwaspASVSV402.Location) }
+                    Guid = Constants.Owasp_ASVS_V402.Guid,
+                    Location = new ArtifactLocation() { Uri = new Uri(Constants.Owasp_ASVS_V402.Location) }
                 });
                 cweSarif.Runs[0].ExternalPropertyFileReferences = externalPropertyFileReferences;
 
