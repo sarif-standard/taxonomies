@@ -15,7 +15,7 @@
             "location": {
               "uri": "https://raw.githubusercontent.com/sarif-standard/taxonomies/main/CWE_v4.4.sarif"
             },
-            "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+            "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
           }
         ]
       },
@@ -43,7 +43,7 @@
                     "id": "CWE-287",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -64,7 +64,7 @@
                     "id": "CWE-284",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -85,7 +85,7 @@
                     "id": "CWE-190",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -106,7 +106,7 @@
                     "id": "CWE-311",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -118,7 +118,7 @@
                     "id": "CWE-523",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -139,7 +139,7 @@
                     "id": "CWE-98",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -160,7 +160,7 @@
                     "id": "CWE-134",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -181,7 +181,7 @@
                     "id": "CWE-119",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -193,7 +193,7 @@
                     "id": "CWE-120",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -214,7 +214,7 @@
                     "id": "CWE-79",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -235,7 +235,7 @@
                     "id": "CWE-352",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -256,7 +256,7 @@
                     "id": "CWE-400",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -277,7 +277,7 @@
                     "id": "CWE-330",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -289,7 +289,7 @@
                     "id": "CWE-331",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -301,7 +301,7 @@
                     "id": "CWE-340",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -322,7 +322,7 @@
                     "id": "CWE-345",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -343,7 +343,7 @@
                     "id": "CWE-200",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -364,7 +364,7 @@
                     "id": "CWE-16",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -385,7 +385,7 @@
                     "id": "CWE-16",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -406,7 +406,7 @@
                     "id": "CWE-548",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -427,7 +427,7 @@
                     "id": "CWE-280",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -448,7 +448,7 @@
                     "id": "CWE-330",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -469,7 +469,7 @@
                     "id": "CWE-89",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -490,7 +490,7 @@
                     "id": "CWE-20",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -511,7 +511,7 @@
                     "id": "CWE-799",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -523,7 +523,7 @@
                     "id": "CWE-804",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -544,7 +544,7 @@
                     "id": "CWE-116",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -565,7 +565,7 @@
                     "id": "CWE-91",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -586,7 +586,7 @@
                     "id": "CWE-93",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -607,7 +607,7 @@
                     "id": "CWE-113",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -628,7 +628,7 @@
                     "id": "CWE-444",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -649,7 +649,7 @@
                     "id": "CWE-436",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -670,7 +670,7 @@
                     "id": "CWE-158",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -691,7 +691,7 @@
                     "id": "CWE-90",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -712,7 +712,7 @@
                     "id": "CWE-88",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -733,7 +733,7 @@
                     "id": "CWE-78",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -754,7 +754,7 @@
                     "id": "CWE-300",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -766,7 +766,7 @@
                     "id": "CWE-441",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -787,7 +787,7 @@
                     "id": "CWE-22",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -808,7 +808,7 @@
                     "id": "CWE-425",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -829,7 +829,7 @@
                     "id": "CWE-789",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -850,7 +850,7 @@
                     "id": "CWE-97",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -871,7 +871,7 @@
                     "id": "CWE-384",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -892,7 +892,7 @@
                     "id": "CWE-601",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -913,7 +913,7 @@
                     "id": "CWE-643",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -934,7 +934,7 @@
                     "id": "CWE-691",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -955,7 +955,7 @@
                     "id": "CWE-400",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -967,7 +967,7 @@
                     "id": "CWE-405",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -988,7 +988,7 @@
                     "id": "CWE-227",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1009,7 +1009,7 @@
                     "id": "CWE-611",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1030,7 +1030,7 @@
                     "id": "CWE-776",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1051,7 +1051,7 @@
                     "id": "CWE-205",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1072,7 +1072,7 @@
                     "id": "CWE-652",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1093,7 +1093,7 @@
                     "id": "CWE-613",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1114,7 +1114,7 @@
                     "id": "CWE-612",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1135,7 +1135,7 @@
                     "id": "CWE-640",
                     "toolComponent": {
                       "name": "CWE",
-                      "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+                      "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
                     }
                   },
                   "kinds": [
@@ -1150,7 +1150,7 @@
           "supportedTaxonomies": [
             {
               "name": "CWE",
-              "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5"
+              "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B"
             }
           ]
         }
