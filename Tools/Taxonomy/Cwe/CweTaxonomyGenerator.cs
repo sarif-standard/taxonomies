@@ -182,7 +182,7 @@ namespace Taxonomy.Cwe
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Version = version,                
+                Version = version,
                 Organization = "MITRE",
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                 IsComprehensive = true,
@@ -288,7 +288,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name } };
 
             Run run = new Run
             {

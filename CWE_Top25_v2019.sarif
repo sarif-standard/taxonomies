@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "CWE v2019"
+          "name": "CWE Top 25 2019"
         }
       },
       "columnKind": "utf16CodeUnits",
