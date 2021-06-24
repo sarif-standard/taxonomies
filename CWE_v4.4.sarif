@@ -11,14 +11,14 @@
       "columnKind": "utf16CodeUnits",
       "taxonomies": [
         {
-          "guid": "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5",
+          "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B",
           "name": "CWE",
           "organization": "MITRE",
           "shortDescription": {
             "text": "The MITRE Common Weakness Enumeration"
           },
           "version": "4.4",
-          "releaseDateUtc": "2020-12-10",
+          "releaseDateUtc": "2021-03-15",
           "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip",
           "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.4.pdf",
           "taxa": [

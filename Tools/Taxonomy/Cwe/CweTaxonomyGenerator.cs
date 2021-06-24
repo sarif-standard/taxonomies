@@ -45,13 +45,13 @@ namespace Taxonomy.Cwe
             return true;
         }
 
-        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version)
+        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version, string type)
         {
             try
             {
                 Weakness_Catalog results = this.ReadFromXml(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version);
+                Run run = this.ConvertToSarif(results, version, type);
 
                 SarifLog log = new SarifLog
                 {
@@ -139,10 +139,10 @@ namespace Taxonomy.Cwe
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Name = Constants.CWE.Name,
-                Guid = Constants.CWE.Guid,
+                Name = Constants.CWE_Comprehensive_V43.Name,
+                Guid = Constants.CWE_Comprehensive_V43.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.CWE.ReleaseDate,
+                ReleaseDateUtc = Constants.CWE_Comprehensive_V43.ReleaseDate,
                 InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
                 DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",
@@ -177,25 +177,71 @@ namespace Taxonomy.Cwe
             return run;
         }
 
-        private Run ConvertToSarif(Weakness_Catalog cweXml, string version)
+        private Run ConvertToSarif(Weakness_Catalog cweXml, string version, string type)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Name = Constants.CWE.Name,
-                Guid = Constants.CWE.Guid,
-                Version = version,
-                ReleaseDateUtc = Constants.CWE.ReleaseDate,
-                InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
-                DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
+                Version = version,                
                 Organization = "MITRE",
-                ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                 IsComprehensive = true,
                 MinimumRequiredLocalizedDataSemanticVersion = version,
                 Taxa = new List<ReportingDescriptor>(),
                 SupportedTaxonomies = new List<ToolComponentReference>(),
             };
+
+            switch (type.ToLower())
+            {
+                case "comprehensive":
+                    switch (version.ToLower())
+                    {
+                        case "4.3":
+                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V43.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V43.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V43.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.3.pdf");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
+                            break;
+                        case "4.4":
+                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V44.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V44.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V44.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "top25":
+                    switch (version.ToLower())
+                    {
+                        case "2019":
+                            cweTaxonomy.Name = Constants.CWE_Top_25_2019.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Top_25_2019.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Top_25_2019.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/slices/1200.html");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/views/1200.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration Top 25" };
+                            break;
+                        case "2020":
+                            cweTaxonomy.Name = Constants.CWE_Top_25_2020.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Top_25_2020.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Top_25_2020.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/slices/1350.html");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/views/1350.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration Top 25" };
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
             var taxa = new List<ReportingDescriptor>();
 

@@ -75,7 +75,7 @@ namespace Tools.Wasc
                     Target = new ReportingDescriptorReference
                     {
                         Id = $"CWE-{id}",
-                        ToolComponent = new ToolComponentReference { Name = Constants.CWE.Name, Guid = Constants.CWE.Guid },
+                        ToolComponent = new ToolComponentReference { Name = Constants.CWE_Comprehensive_V44.Name, Guid = Constants.CWE_Comprehensive_V44.Guid },
                     },
                     Kinds = new string[] { "relevant" },
                 });
@@ -90,7 +90,7 @@ namespace Tools.Wasc
 
             tool.SupportedTaxonomies = new List<ToolComponentReference>
             {
-                new ToolComponentReference() { Guid = Constants.CWE.Guid, Name = Constants.CWE.Name }
+                new ToolComponentReference() { Guid = Constants.CWE_Comprehensive_V44.Guid, Name = Constants.CWE_Comprehensive_V44.Name }
             };
 
             return new ExternalPropertyFileReferences
@@ -99,8 +99,8 @@ namespace Tools.Wasc
                 {
                     new ExternalPropertyFileReference
                     {
-                        Guid = Constants.CWE.Guid,
-                        Location = new ArtifactLocation() { Uri = new Uri(Constants.CWE.Location) }
+                        Guid = Constants.CWE_Comprehensive_V44.Guid,
+                        Location = new ArtifactLocation() { Uri = new Uri(Constants.CWE_Comprehensive_V44.Location) }
                     },
                 }
             };
