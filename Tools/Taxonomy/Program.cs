@@ -87,6 +87,7 @@ namespace Taxonomy
             {
                 "asvs" => new OwaspASVSTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version),
                 "mobiletop10" => new OwaspMobileTop10TaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version),
+                "top10" => new OwaspTop10TaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version),
                 _ => false,
             };
         }

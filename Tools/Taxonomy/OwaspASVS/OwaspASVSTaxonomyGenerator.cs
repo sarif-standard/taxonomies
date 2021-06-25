@@ -56,15 +56,15 @@ namespace Taxonomy
         {
             var supportedTaxonomies = new List<ToolComponentReference>();
             supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.CWE.Guid, Name = Constants.CWE.Name });
-            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.NistSP80063B.Guid, Name = Constants.NistSP80063B.Name });
+            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Nist_SP80063B.Guid, Name = Constants.Nist_SP80063B.Name });
 
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent toolComponent = new ToolComponent
             {
-                Name = Constants.OwaspASVSV402.Name,
-                Guid = Constants.OwaspASVSV402.Guid,
+                Name = Constants.Owasp_ASVS_V402.Name,
+                Guid = Constants.Owasp_ASVS_V402.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.OwaspASVSV402.ReleaseDate,
+                ReleaseDateUtc = Constants.Owasp_ASVS_V402.ReleaseDate,
                 InformationUri = new Uri("https://owasp.org/www-project-application-security-verification-standard/"),
                 DownloadUri = new Uri("https://github.com/OWASP/ASVS/raw/v4.0.2/4.0/OWASP%20Application%20Security%20Verification%20Standard%204.0.2-en.pdf"),
                 Organization = "OWASP Foundation",
@@ -97,8 +97,8 @@ namespace Taxonomy
 
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
-                Guid = Constants.NistSP80063B.Guid,
-                Location = new ArtifactLocation() { Uri = new Uri(Constants.NistSP80063B.Location) }
+                Guid = Constants.Nist_SP80063B.Guid,
+                Location = new ArtifactLocation() { Uri = new Uri(Constants.Nist_SP80063B.Location) }
             });
 
             Run run = new Run
@@ -144,7 +144,7 @@ namespace Taxonomy
                         Target = new ReportingDescriptorReference
                         {
                             Id = id,
-                            ToolComponent = new ToolComponentReference { Name = Constants.NistSP80063B.Name, Guid = Constants.NistSP80063B.Guid },
+                            ToolComponent = new ToolComponentReference { Name = Constants.Nist_SP80063B.Name, Guid = Constants.Nist_SP80063B.Guid },
                         },
                         Kinds = new string[] { "relevant" },
                     });

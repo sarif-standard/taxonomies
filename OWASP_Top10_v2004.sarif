@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "OWASP Top 10 2004"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "35A384BD-CA28-449B-8ACC-60873A53E5CB",
+          "name": "OWASP Top 10 2004",
+          "organization": "OWASP Foundation",
+          "shortDescription": {
+            "text": "OWASP Top 10 2004"
+          },
+          "version": "2004",
+          "informationUri": "https://owasp.org/www-project-top-ten/",
+          "taxa": [
+            {
+              "id": "A1",
+              "name": "Unvalidated Input",
+              "shortDescription": {
+                "text": "Information from web requests is not validated before being used by a web application. Attackers can use these flaws to attack backend components through a web application."
+              }
+            },
+            {
+              "id": "A2",
+              "name": "Broken Access Control",
+              "shortDescription": {
+                "text": "Restrictions on what authenticated users are allowed to do are not properly enforced. Attackers can exploit these flaws to access other users' accounts, view sensitive files, or use unauthorized functions."
+              }
+            },
+            {
+              "id": "A3",
+              "name": "Broken Authentication and Session Management",
+              "shortDescription": {
+                "text": "Account credentials and session tokens are not properly protected. Attackers that can compromise passwords, keys, session cookies, or other tokens can defeat authentication restrictions and assume other users' identities."
+              }
+            },
+            {
+              "id": "A4",
+              "name": "Cross Site Scripting",
+              "shortDescription": {
+                "text": "The web application can be used as a mechanism to transport an attack to an end user's browser. A successful attack can disclose the end user?s session token, attack the local machine, or spoof content to fool the user."
+              }
+            },
+            {
+              "id": "A5",
+              "name": "Buffer Overflow",
+              "shortDescription": {
+                "text": "Web application components in some languages that do not properly validate input can be crashed and, in some cases, used to take control of a process. These components can include CGI, libraries, drivers, and web application server components."
+              }
+            },
+            {
+              "id": "A6",
+              "name": "Injection Flaws",
+              "shortDescription": {
+                "text": "Web applications pass parameters when they access external systems or the local operating system. If an attacker can embed malicious commands in these parameters, the external system may execute those commands on behalf of the web application."
+              }
+            },
+            {
+              "id": "A7",
+              "name": "Improper Error Handling",
+              "shortDescription": {
+                "text": "Error conditions that occur during normal operation are not handled properly. If an attacker can cause errors to occur that the web application does not handle, they can gain detailed system information, deny service, cause security mechanisms to fail, or crash the server."
+              }
+            },
+            {
+              "id": "A8",
+              "name": "Insecure Storage",
+              "shortDescription": {
+                "text": "Web applications frequently use cryptographic functions to protect information and credentials. These functions and the code to integrate them have proven difficult to code properly, frequently resulting in weak protection."
+              }
+            },
+            {
+              "id": "A9",
+              "name": "Application Denial of Service",
+              "shortDescription": {
+                "text": "Attackers can consume web application resources to a point where other legitimate users can no longer access or use the application. Attackers can also lock users out of their accounts or even cause the entire application to fail."
+              }
+            },
+            {
+              "id": "A10",
+              "name": "Insecure Configuration Management",
+              "shortDescription": {
+                "text": "Having a strong server configuration standard is critical to a secure web application. These servers have many configuration options that affect security and are not secure out of the box."
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}

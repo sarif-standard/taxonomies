@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "OWASP Top 10 2010"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "FA6B4314-F96C-4F59-B270-BF36180CFC05",
+          "name": "OWASP Top 10 2010",
+          "organization": "OWASP Foundation",
+          "shortDescription": {
+            "text": "OWASP Top 10 2010"
+          },
+          "version": "2010",
+          "informationUri": "https://owasp.org/www-project-top-ten/",
+          "taxa": [
+            {
+              "id": "A1",
+              "name": "Injection",
+              "shortDescription": {
+                "text": "Injection flaws, such as SQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing unauthorized data."
+              }
+            },
+            {
+              "id": "A2",
+              "name": "Cross Site Scripting (XSS)",
+              "shortDescription": {
+                "text": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation and escaping. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+              }
+            },
+            {
+              "id": "A3",
+              "name": "Broken Authentication and Session Management",
+              "shortDescription": {
+                "text": "Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, session tokens, or exploit other implementation flaws to assume other users’ identities."
+              }
+            },
+            {
+              "id": "A4",
+              "name": "Insecure Direct Object References",
+              "shortDescription": {
+                "text": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
+              }
+            },
+            {
+              "id": "A5",
+              "name": "Cross Site Request Forgery (CSRF)",
+              "shortDescription": {
+                "text": "A CSRF attack forces a logged-on victim’s browser to send a forged HTTP request, including the victim’s session cookie and any other automatically included authentication information, to a vulnerable web application. This allows the attacker to force the victim’s browser to generate requests the vulnerable application thinks are legitimate requests from the victim."
+              }
+            },
+            {
+              "id": "A6",
+              "name": "Security Misconfiguration",
+              "shortDescription": {
+                "text": "Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. All these settings should be defined, implemented, and maintained as many are not shipped with secure defaults. This includes keeping all software up to date, including all code libraries used by the application."
+              }
+            },
+            {
+              "id": "A7",
+              "name": "Insecure Cryptographic Storage",
+              "shortDescription": {
+                "text": "Many web applications do not properly protect sensitive data, such as credit cards, SSNs, and authentication credentials, with appropriate encryption or hashing. Attackers may steal or modify such weakly protected data to conduct identity theft, credit card fraud, or other crimes."
+              }
+            },
+            {
+              "id": "A8",
+              "name": "Failure to Restrict URL Access",
+              "shortDescription": {
+                "text": "Many web applications check URL access rights before rendering protected links and buttons. However, applications need to perform similar access control checks each time these pages are accessed, or attackers will be able to forge URLs to access these hidden pages anyway."
+              }
+            },
+            {
+              "id": "A9",
+              "name": "Insufficient Transport Layer Protection",
+              "shortDescription": {
+                "text": "Applications frequently fail to authenticate, encrypt, and protect the confidentiality and integrity of sensitive network traffic. When they do, they sometimes support weak algorithms, use expired or invalid certificates, or do not use them correctly."
+              }
+            },
+            {
+              "id": "A10",
+              "name": "Unvalidated Redirects and Forwards",
+              "shortDescription": {
+                "text": "Web applications frequently redirect and forward users to other pages and websites, and use untrusted data to determine the destination pages. Without proper validation, attackers can redirect victims to phishing or malware sites, or use forwards to access unauthorized pages."
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}
