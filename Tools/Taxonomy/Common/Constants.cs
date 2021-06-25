@@ -25,6 +25,9 @@ namespace Taxonomy.Common
             public static string Owasp_Top_10_2013 = "89C67EDA-0925-48FF-893D-8089C98ED416";
             public static string Owasp_Top_10_2017 = "C783E54B-A1A8-4C3A-B7C5-CEFF77D3A8C3";
             public static string PCI_SSF_V1 = "8DD3BF80-F4D3-46F2-8E9E-6BB801E973F6";
+            public static string PCI_DSS_V3_2_1 = "73D7AC88-CADA-444E-A606-B657D4E17250";
+            public static string PCI_DSS_V3_2 = "D3B5FFEE-B158-4E46-9370-73E3952F76CD";
+            public static string PCI_DSS_V3_1 = "0C5B56E9-1223-490F-B594-1E7E8D415A72";
             public static string WASC_V1 = "E30814F7-D50D-4936-9B0C-B80ACD412434";
             public static string WASC_V2 = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
         }
@@ -93,14 +96,6 @@ namespace Taxonomy.Common
             ReleaseDate = "2020-10-01",
         };
 
-        public static TaxonomyData PCI_SSF_V1 = new TaxonomyData
-        {
-            Guid = Guid.PCI_SSF_V1,
-            Name = "PCI SSF V1.1",
-            Location = REPO_PATH + "PCI_SSF_v1.1.sarif",
-            ReleaseDate = "2021-02-01",
-        };
-
         public static TaxonomyData Owasp_Mobile_Top_10_2014 = new TaxonomyData
         {
             Guid = Guid.Owasp_Mobile_Top_10_2014,
@@ -148,6 +143,38 @@ namespace Taxonomy.Common
             Guid = Guid.Owasp_Top_10_2017,
             Name = "OWASP Top 10 2017",
             Location = REPO_PATH + "OWASP_Top10_v2017.sarif"
+        };
+
+        public static TaxonomyData PCI_SSF_V1 = new TaxonomyData
+        {
+            Guid = Guid.PCI_SSF_V1,
+            Name = "PCI SSF V1.1",
+            Location = REPO_PATH + "PCI_SSF_v1.1.sarif",
+            ReleaseDate = "2021-02-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V3_2_1 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V3_2_1,
+            Name = "PCI DSS V3.2.1",
+            Location = REPO_PATH + "PCI_DSS_v3.2.1.sarif",
+            ReleaseDate = "2018-05-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V3_2 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V3_2,
+            Name = "PCI DSS V3.2",
+            Location = REPO_PATH + "PCI_DSS_v3.2.sarif",
+            ReleaseDate = "2016-04-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V3_1 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V3_1,
+            Name = "PCI DSS V3.1",
+            Location = REPO_PATH + "PCI_DSS_v3.1.sarif",
+            ReleaseDate = "2015-04-01",
         };
 
         public static TaxonomyData WASC_V1 = new TaxonomyData
