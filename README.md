@@ -21,6 +21,8 @@ OWASP | Top 10 v2013 | [link](https://raw.githubusercontent.com/owasp-top/owasp-
 OWASP | Top 10 v2017 | [link](https://raw.githubusercontent.com/owasp-top/owasp-top-2017/master/README.md) | [OWASP_Top10_v2017.sarif](OWASP_Top10_v2017.sarif)
 PCI | SSF V1.1 | [link](https://www.pcisecuritystandards.org/documents/PCI-Secure-Software-Standard-v1_1.pdf) | [PCI_SSF_V1.1.sarif](PCI_SSF_V1.1.sarif)
 PCI | DSS V3.2.1 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf) | [PCI_DSS_V3.2.1.sarif](PCI_DSS_V3.2.1.sarif)
+PCI | DSS V3.2 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2.pdf) | [PCI_DSS_V3.2.sarif](PCI_DSS_V3.2.sarif)
+PCI | DSS V3.1 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf) | [PCI_DSS_V3.1.sarif](PCI_DSS_V3.1.sarif)
 WASC | v1.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions) |[WASC_1.00.sarif](WASC_1.00.sarif)
 WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) |[WASC_2.00.sarif](WASC_2.00.sarif)
 
