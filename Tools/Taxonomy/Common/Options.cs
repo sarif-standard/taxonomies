@@ -20,6 +20,8 @@ namespace Taxonomy
     [Verb("generate-cwe", false, HelpText = "Generate CWE Sarif file")]
     internal class CweOptions : BaseOptions
     {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        public string Type { get; set; }
     }
 
     [Verb("generate-owasp", false, HelpText = "Generate OWASP Sarif file")]
