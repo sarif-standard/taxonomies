@@ -1,0 +1,1238 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "CWE Top 25 2019"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "B37033B9-1D33-482B-AD09-C6E788340839",
+          "name": "CWE Top 25 2019",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration Top 25"
+          },
+          "version": "2019",
+          "releaseDateUtc": "2019-09-18",
+          "downloadUri": "https://cwe.mitre.org/data/xml/views/1200.xml.zip",
+          "informationUri": "https://cwe.mitre.org/data/slices/1200.html",
+          "taxa": [
+            {
+              "id": "CWE-20",
+              "name": "Improper Input Validation",
+              "shortDescription": {
+                "text": "The product receives input or data, but it does\n        not validate or incorrectly validates that the input has the\n        properties that are required to process the data safely and\n        correctly."
+              },
+              "fullDescription": {
+                "text": "Input validation is a frequently-used technique\n\t   for checking potentially dangerous inputs in order to\n\t   ensure that the inputs are safe for processing within the\n\t   code, or when communicating with other components.  When\n\t   software does not validate input properly, an attacker is\n\t   able to craft the input in a form that is not expected by\n\t   the rest of the application. This will lead to parts of the\n\t   system receiving unintended input, which may result in\n\t   altered control flow, arbitrary control of a resource, or\n\t   arbitrary code execution.Input validation is not the only technique for\n\t   processing input, however.  Other techniques attempt to\n\t   transform potentially-dangerous input into something safe, such\n\t   as filtering (CWE-790) - which attempts to remove dangerous\n\t   inputs - or encoding/escaping (CWE-116), which attempts to\n\t   ensure that the input is not misinterpreted when it is included\n\t   in output to another component. Other techniques exist as well\n\t   (see CWE-138 for more examples.)Input validation can be applied to:raw data - strings, numbers, parameters, file contents, etc.metadata - information about the raw data, such as headers or sizeData can be simple or structured.  Structured data\n\t   can be composed of many nested layers, composed of\n\t   combinations of metadata and raw data, with other simple or\n\t   structured data.Many properties of raw data or metadata may need\n\t   to be validated upon entry into the code, such\n\t   as:specified quantities such as size, length, frequency, price, rate, number of operations, time, etc.implied or derived quantities, such as the actual size of a file instead of a specified sizeindexes, offsets, or positions into more complex data structuressymbolic keys or other elements into hash tables, associative arrays, etc.well-formedness, i.e. syntactic correctness - compliance with expected syntax lexical token correctness - compliance with rules for what is treated as a tokenspecified or derived type - the actual type of the input (or what the input appears to be)consistency - between individual data elements, between raw data and metadata, between references, etc.conformance to domain-specific rules, e.g. business logic equivalence - ensuring that equivalent inputs are treated the sameauthenticity, ownership, or other attestations about the input, e.g. a cryptographic signature to prove the source of the dataImplied or derived properties of data must often\n\t   be calculated or inferred by the code itself.  Errors in\n\t   deriving properties may be considered a contributing factor\n\t   to improper input validation.\n\t   Note that \"input validation\" has very different\n\t   meanings to different people, or within different\n\t   classification schemes.  Caution must be used when\n\t   referencing this CWE entry or mapping to it.  For example,\n\t   some weaknesses might involve inadvertently giving control\n\t   to an attacker over an input when they should not be able\n\t   to provide an input at all, but sometimes this is referred\n\t   to as input validation.Finally, it is important to emphasize that the\n\t   distinctions between input validation and output escaping\n\t   are often blurred, and developers must be careful to\n\t   understand the difference, including how input validation\n\t   is not always sufficient to prevent vulnerabilities,\n\t   especially when less stringent data types must be\n\t   supported, such as free-form text. Consider a SQL injection\n\t   scenario in which a person's last name is inserted into a\n\t   query. The name \"O'Reilly\" would likely pass the validation\n\t   step since it is a common last name in the English\n\t   language. However, this valid name cannot be directly\n\t   inserted into the database because it contains the \"'\"\n\t   apostrophe character, which would need to be escaped or\n\t   otherwise transformed. In this case, removing the\n\t   apostrophe might reduce the risk of SQL injection, but it\n\t   would produce incorrect behavior because the wrong name\n\t   would be recorded."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-22",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-41",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-74",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-119",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-345",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-707",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-770",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-22",
+              "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+              "shortDescription": {
+                "text": "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+              },
+              "fullDescription": {
+                "text": "Many file operations are intended to take place within a restricted directory. By using special elements such as \"..\" and \"/\" separators, attackers can escape outside of the restricted location to access files or directories that are elsewhere on the system. One of the most common special elements is the \"../\" sequence, which in most modern operating systems is interpreted as the parent directory of the current location. This is referred to as relative path traversal. Path traversal also covers the use of absolute pathnames such as \"/usr/local/bin\", which may also be useful in accessing unexpected files. This is referred to as absolute path traversal.In many programming languages, the injection of a null byte (the 0 or NUL) may allow an attacker to truncate a generated filename to widen the scope of attack. For example, the software may add \".txt\" to any pathname, thus limiting the attacker to text files, but a null injection may effectively remove this restriction."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-668",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-706",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-78",
+              "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+              "shortDescription": {
+                "text": "The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component."
+              },
+              "fullDescription": {
+                "text": "This could allow attackers to execute unexpected, dangerous commands directly on the operating system. This weakness can lead to a vulnerability in environments in which the attacker does not have direct access to the operating system, such as in web applications. Alternately, if the weakness occurs in a privileged program, it could allow the attacker to specify commands that normally would not be accessible, or to call alternate commands with privileges that the attacker does not have. The problem is exacerbated if the compromised process does not follow the principle of least privilege, because the attacker-controlled commands may run with special system privileges that increases the amount of damage.There are at least two subtypes of OS command injection:The application intends to execute a single, fixed program that is under its own control. It intends to use externally-supplied inputs as arguments to that program. For example, the program might use system(\"nslookup [HOSTNAME]\") to run nslookup and allow the user to supply a HOSTNAME, which is used as an argument. Attackers cannot prevent nslookup from executing. However, if the program does not remove command separators from the HOSTNAME argument, attackers could place the separators into the arguments, which allows them to execute their own program after nslookup has finished executing.The application accepts an input that it uses to fully select which program to run, as well as which commands to use. The application simply redirects this entire command to the operating system. For example, the program might use \"exec([COMMAND])\" to execute the [COMMAND] that was supplied by the user. If the COMMAND is under attacker control, then the attacker can execute arbitrary commands or programs. If the command is being executed using functions like exec() and CreateProcess(), the attacker might not be able to combine multiple commands together in the same line.From a weakness standpoint, these variants represent distinct programmer errors. In the first variant, the programmer clearly intends that input from untrusted parties will be part of the arguments in the command to be executed. In the second variant, the programmer does not intend for the command to be accessible to any untrusted party, but the programmer probably has not accounted for alternate ways in which malicious attackers can provide input."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-74",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-77",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-88",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "equal"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-79",
+              "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+              "shortDescription": {
+                "text": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+              },
+              "fullDescription": {
+                "text": "Cross-site scripting (XSS) vulnerabilities occur when:Untrusted data enters a web application, typically from a web request.The web application dynamically generates a web page that contains this untrusted data.During page generation, the application does not prevent the data from containing content that is executable by a web browser, such as JavaScript, HTML tags, HTML attributes, mouse events, Flash, ActiveX, etc.A victim visits the generated web page through a web browser, which contains malicious script that was injected using the untrusted data.Since the script comes from a web page that was sent by the web server, the victim's web browser executes the malicious script in the context of the web server's domain.This effectively violates the intention of the web browser's same-origin policy, which states that scripts in one domain should not be able to access resources or run code in a different domain.There are three main kinds of XSS:Type 1: Reflected XSS (or Non-Persistent) - \n         \t\t\tThe server reads data directly from the HTTP request and reflects it back in the HTTP response. Reflected XSS exploits occur when an attacker causes a victim to supply dangerous content to a vulnerable web application, which is then reflected back to the victim and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or e-mailed directly to the victim. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces a victim to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the victim, the content is executed by the victim's browser.Type 2: Stored XSS (or Persistent) - \n               The application stores dangerous data in a database, message forum, visitor log, or other trusted data store. At a later time, the dangerous data is subsequently read back into the application and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user. For example, the attacker might inject XSS into a log message, which might not be handled properly when an administrator views the logs.\n            Type 0: DOM-Based XSS - \n               In DOM-based XSS, the client performs the injection of XSS into the page; in the other types, the server performs the injection. DOM-based XSS generally involves server-controlled, trusted script that is sent to the client, such as Javascript that performs sanity checks on a form before the user submits it. If the server-supplied script processes user-supplied data and then injects it back into the web page (such as with dynamic HTML), then DOM-based XSS is possible.\n            Once the malicious script is injected, the attacker can perform a variety of malicious activities. The attacker could transfer private information, such as cookies that may include session information, from the victim's machine to the attacker. The attacker could send malicious requests to a web site on behalf of the victim, which could be especially dangerous to the site if the victim has administrator privileges to manage that site. Phishing attacks could be used to emulate trusted web sites and trick the victim into entering a password, allowing the attacker to compromise the victim's account on that web site. Finally, the script could exploit a vulnerability in the web browser itself possibly taking over the victim's machine, sometimes referred to as \"drive-by hacking.\"In many cases, the attack can be launched without the victim even being aware of it. Even with careful users, attackers frequently use a variety of methods to encode the malicious portion of the attack, such as URL encoding or Unicode, so the request looks less suspicious."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-74",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-352",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-494",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-89",
+              "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+              "shortDescription": {
+                "text": "The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
+              },
+              "fullDescription": {
+                "text": "Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data. This can be used to alter query logic to bypass security checks, or to insert additional statements that modify the back-end database, possibly including execution of system commands.SQL injection has become a common issue with database-driven web sites. The flaw is easily detected, and easily exploited, and as such, any site or software package with even a minimal user base is likely to be subject to an attempted attack of this kind. This flaw depends on the fact that SQL makes no real distinction between the control and data planes."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-74",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-943",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-94",
+              "name": "Improper Control of Generation of Code ('Code Injection')",
+              "shortDescription": {
+                "text": "The software constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment."
+              },
+              "fullDescription": {
+                "text": "When software allows a user's input to contain code syntax, it might be possible for an attacker to craft the code in such a way that it will alter the intended control flow of the software. Such an alteration could lead to arbitrary code execution.Injection problems encompass a wide variety of issues -- all mitigated in very different ways. For this reason, the most effective way to discuss these weaknesses is to note the distinct features which classify them as injection weaknesses. The most important issue to note is that all injection problems share one thing in common -- i.e., they allow for the injection of control plane data into the user-controlled data plane. This means that the execution of the process may be altered by sending code in through legitimate data channels, using no other mechanism. While buffer overflows, and many other flaws, involve the use of some further issue to gain execution, injection problems need only for the data to be parsed. The most classic instantiations of this category of weakness are SQL injection and format string vulnerabilities."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-74",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-691",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-913",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-119",
+              "name": "Improper Restriction of Operations within the Bounds of a Memory Buffer",
+              "shortDescription": {
+                "text": "The software performs operations on a memory buffer, but it can read from or write to a memory location that is outside of the intended boundary of the buffer."
+              },
+              "fullDescription": {
+                "text": "Certain languages allow direct addressing of memory locations and do not automatically ensure that these locations are valid for the memory buffer that is being referenced. This can cause read or write operations to be performed on memory locations that may be associated with other variables, data structures, or internal program data.As a result, an attacker may be able to execute arbitrary code, alter the intended control flow, read sensitive information, or cause the system to crash."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-20",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-118",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-125",
+              "name": "Out-of-bounds Read",
+              "shortDescription": {
+                "text": "The software reads data past the end, or before the beginning, of the intended buffer."
+              },
+              "fullDescription": {
+                "text": "Typically, this can allow attackers to read sensitive information from other memory locations or cause a crash.  A crash can occur when the code reads a variable amount of data and assumes that a sentinel exists to stop the read operation, such as a NUL in a string.  The expected sentinel might not be located in the out-of-bounds memory, causing excessive data to be read, leading to a segmentation fault or a buffer overflow.  The software may modify an index or perform pointer arithmetic that references a memory location that is outside of the boundaries of the buffer.  A subsequent read operation then produces undefined or unexpected results."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-119",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-190",
+              "name": "Integer Overflow or Wraparound",
+              "shortDescription": {
+                "text": "The software performs a calculation that can produce an integer overflow or wraparound, when the logic assumes that the resulting value will always be larger than the original value. This can introduce other weaknesses when the calculation is used for resource management or execution control."
+              },
+              "fullDescription": {
+                "text": "An integer overflow or wraparound occurs when an integer value is incremented to a value that is too large to store in the associated representation. When this occurs, the value may wrap to become a very small or negative number. While this may be intended behavior in circumstances that rely on wrapping, it can have security consequences if the wrap is unexpected. This is especially the case if the integer overflow can be triggered using user-supplied inputs. This becomes security-critical when the result is used to control looping, make a security decision, or determine the offset or size in behaviors such as memory allocation, copying, concatenation, etc."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-20",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-119",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-682",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-200",
+              "name": "Exposure of Sensitive Information to an Unauthorized Actor",
+              "shortDescription": {
+                "text": "The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information."
+              },
+              "fullDescription": {
+                "text": "There are many different kinds of mistakes that introduce information exposures. The severity of the error can range widely, depending on the context in which the product operates, the type of sensitive information that is revealed, and the benefits it may provide to an attacker.  Some kinds of sensitive information include:private, personal information, such as personal messages, financial data, health records, geographic location, or contact detailssystem status and environment, such as the operating system and installed packagesbusiness secrets and intellectual propertynetwork status and configurationthe product's own code or internal statemetadata, e.g. logging of connections or message headersindirect information, such as a discrepancy between two internal operations that can be observed by an outsiderInformation might be sensitive to different parties, each of which may have their own expectations for whether the information should be protected.  These parties include:the product's own userspeople or organizations whose information is created or used by the product, even if they are not direct product usersthe product's administrators, including the admins of the system(s) and/or networks on which the product operatesthe developerInformation exposures can occur in different ways:the code explicitly inserts sensitive information into resources or messages that are intentionally made accessible to unauthorized actors, but should not contain the information - i.e., the information should have been \"scrubbed\" or \"sanitized\"a different weakness or mistake indirectly inserts the sensitive information into resources, such as a web script error revealing the full system path of the program.the code manages resources that intentionally contain sensitive information, but the resources are unintentionally made accessible to unauthorized actors. In this case, the information exposure is resultant - i.e., a different weakness enabled the access to the information in the first place.It is common practice to describe any loss of confidentiality as an \"information exposure,\" but this can lead to overuse of CWE-200 in CWE mapping. From the CWE perspective, loss of confidentiality is a technical impact that can arise from dozens of different weaknesses, such as insecure file permissions or out-of-bounds read.  CWE-200 and its lower-level descendants are intended to cover the mistakes that occur in behaviors that explicitly manage, store,  transfer, or cleanse sensitive information."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-668",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-269",
+              "name": "Improper Privilege Management",
+              "shortDescription": {
+                "text": "The software does not properly assign, modify, track, or check privileges for an actor, creating an unintended sphere of control for that actor."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-284",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-287",
+              "name": "Improper Authentication",
+              "shortDescription": {
+                "text": "When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-284",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-295",
+              "name": "Improper Certificate Validation",
+              "shortDescription": {
+                "text": "The software does not validate, or incorrectly validates, a certificate."
+              },
+              "fullDescription": {
+                "text": "When a certificate is invalid or malicious, it might allow an attacker to spoof a trusted entity by interfering in the communication path between the host and client. The software might connect to a malicious host while believing it is a trusted host, or the software might be deceived into accepting spoofed data that appears to originate from a trusted host."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-287",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-322",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-352",
+              "name": "Cross-Site Request Forgery (CSRF)",
+              "shortDescription": {
+                "text": "The web application does not, or can not, sufficiently verify whether a well-formed, valid, consistent request was intentionally provided by the user who submitted the request."
+              },
+              "fullDescription": {
+                "text": "When a web server is designed to receive a request from a client without any mechanism for verifying that it was intentionally sent, then it might be possible for an attacker to trick a client into making an unintentional request to the web server which will be treated as an authentic request. This can be done via a URL, image load, XMLHttpRequest, etc. and can result in exposure of data or unintended code execution."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-345",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-346",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "willPrecede"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-441",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "willPrecede"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-613",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "willPrecede"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-642",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "willPrecede"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-400",
+              "name": "Uncontrolled Resource Consumption",
+              "shortDescription": {
+                "text": "The software does not properly control the allocation and maintenance of a limited resource, thereby enabling an actor to influence the amount of resources consumed, eventually leading to the exhaustion of available resources."
+              },
+              "fullDescription": {
+                "text": "Limited resources include memory, file system storage, database connection pool entries, and CPU. If an attacker can trigger the allocation of these limited resources, but the number or size of the resources is not controlled, then the attacker could cause a denial of service that consumes all available resources. This would prevent valid users from accessing the software, and it could potentially have an impact on the surrounding environment. For example, a memory exhaustion attack against an application could slow down the application as well as its host operating system.There are at least three distinct scenarios which can commonly lead to resource exhaustion:Lack of throttling for the number of allocated resourcesLosing all references to a resource before reaching the shutdown stageNot closing/returning a resource after processingResource exhaustion problems are often result due to an incorrect implementation of the following situations:Error conditions and other exceptional circumstances.Confusion over which part of the program is responsible for releasing the resource."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-664",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-416",
+              "name": "Use After Free",
+              "shortDescription": {
+                "text": "Referencing memory after it has been freed can cause a program to crash, use unexpected values, or execute code."
+              },
+              "fullDescription": {
+                "text": "The use of previously-freed memory can have any number of adverse consequences, ranging from the corruption of valid data to the execution of arbitrary code, depending on the instantiation and timing of the flaw. The simplest way data corruption may occur involves the system's reuse of the freed memory. Use-after-free errors have two common and sometimes overlapping causes:Error conditions and other exceptional circumstances.Confusion over which part of the program is responsible for freeing the memory.In this scenario, the memory in question is allocated to another pointer validly at some point after it has been freed. The original pointer to the freed memory is used again and points to somewhere within the new allocation. As the data is changed, it corrupts the validly used memory; this induces undefined behavior in the process.If the newly allocated data chances to hold a class, in C++ for example, various function pointers may be scattered within the heap data. If one of these function pointers is overwritten with an address to valid shellcode, execution of arbitrary code can be achieved."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-120",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-123",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "canFollow"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-672",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-825",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-426",
+              "name": "Untrusted Search Path",
+              "shortDescription": {
+                "text": "The application searches for critical resources using an externally-supplied search path that can point to resources that are not under the application's direct control."
+              },
+              "fullDescription": {
+                "text": "This might allow attackers to execute their own programs, access unauthorized data files, or modify configuration in unexpected ways. If the application uses a search path to locate critical resources such as programs, then an attacker could modify that search path to point to a malicious program, which the targeted application would then execute. The problem extends to any type of critical resource that the application trusts.Some of the most common variants of untrusted search path are:In various UNIX and Linux-based systems, the PATH environment variable may be consulted to locate executable programs, and LD_PRELOAD may be used to locate a separate library.In various Microsoft-based systems, the PATH environment variable is consulted to locate a DLL, if the DLL is not found in other paths that appear earlier in the search order."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-427",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-428",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-642",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-668",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-673",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-434",
+              "name": "Unrestricted Upload of File with Dangerous Type",
+              "shortDescription": {
+                "text": "The software allows the attacker to upload or transfer files of dangerous types that can be automatically processed within the product's environment."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-351",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-430",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-436",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-669",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-476",
+              "name": "NULL Pointer Dereference",
+              "shortDescription": {
+                "text": "A NULL pointer dereference occurs when the application dereferences a pointer that it expects to be valid, but is NULL, typically causing a crash or exit."
+              },
+              "fullDescription": {
+                "text": "NULL pointer dereference issues can occur through a number of flaws, including race conditions, and simple programming omissions."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-710",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-754",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-502",
+              "name": "Deserialization of Untrusted Data",
+              "shortDescription": {
+                "text": "The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid."
+              },
+              "fullDescription": {
+                "text": "It is often convenient to serialize objects for communication or to save them for later use. However, deserialized data or code can often be modified without using the provided accessor functions if it does not use cryptography to protect itself. Furthermore, any cryptography would still be client-side security -- which is a dangerous security assumption.Data that is untrusted can not be trusted to be well-formed.When developers place no restrictions on \"gadget chains,\" or series of instances and method invocations that can self-execute during the deserialization process (i.e., before the object is returned to the caller), it is sometimes possible for attackers to leverage them to perform unauthorized actions, like generating a shell."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-913",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-915",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-611",
+              "name": "Improper Restriction of XML External Entity Reference",
+              "shortDescription": {
+                "text": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
+              },
+              "fullDescription": {
+                "text": "XML documents optionally contain a Document Type Definition (DTD), which, among other features, enables the definition of XML entities. It is possible to define an entity by providing a substitution string in the form of a URI. The XML parser can access the contents of this URI and embed these contents back into the XML document for further processing.By submitting an XML file that defines an external entity with a file:// URI, an attacker can cause the processing application to read the contents of a local file. For example, a URI such as \"file:///c:/winnt/win.ini\" designates (in Windows) the file C:\\Winnt\\win.ini, or file:///etc/passwd designates the password file in Unix-based systems. Using URIs with other schemes such as http://, the attacker can force the application to make outgoing requests to servers that the attacker cannot reach directly, which can be used to bypass firewall restrictions or hide the source of attacks such as port scanning.Once the content of the URI is read, it is fed back into the application that is processing the XML. This application may echo back the data (e.g. in an error message), thereby exposing the file contents."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-441",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-610",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-732",
+              "name": "Incorrect Permission Assignment for Critical Resource",
+              "shortDescription": {
+                "text": "The product specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors."
+              },
+              "fullDescription": {
+                "text": "When a resource is given a permissions setting that provides access to a wider range of actors than required, it could lead to the exposure of sensitive information, or the modification of that resource by unintended parties. This is especially dangerous when the resource is related to program configuration, execution or sensitive user data."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-285",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-668",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-772",
+              "name": "Missing Release of Resource after Effective Lifetime",
+              "shortDescription": {
+                "text": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
+              },
+              "fullDescription": {
+                "text": "When a resource is not released after use, it can allow attackers to cause a denial of service by causing the allocation of resources without triggering their release. Frequently-affected resources include memory, CPU, disk space, power or battery, etc."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-404",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-787",
+              "name": "Out-of-bounds Write",
+              "shortDescription": {
+                "text": "The software writes data past the end, or before the beginning, of the intended buffer."
+              },
+              "fullDescription": {
+                "text": "Typically, this can result in corruption of data, a crash, or code execution.  The software may modify an index or perform pointer arithmetic that references a memory location that is outside of the boundaries of the buffer.  A subsequent write operation then produces undefined or unexpected results."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-119",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-798",
+              "name": "Use of Hard-coded Credentials",
+              "shortDescription": {
+                "text": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
+              },
+              "fullDescription": {
+                "text": "Hard-coded credentials typically create a significant hole that allows an attacker to bypass the authentication that has been configured by the software administrator. This hole might be difficult for the system administrator to detect. Even if detected, it can be difficult to fix, so the administrator may be forced into disabling the product entirely. There are two main variations:Inbound: the software contains an authentication mechanism that checks the input credentials against a hard-coded set of credentials.Outbound: the software connects to another system or component, and it contains hard-coded credentials for connecting to that component.In the Inbound variant, a default administration account is created, and a simple password is hard-coded into the product and associated with that account. This hard-coded password is the same for each installation of the product, and it usually cannot be changed or disabled by system administrators without manually modifying the program, or otherwise patching the software. If the password is ever discovered or published (a common occurrence on the Internet), then anybody with knowledge of this password can access the product. Finally, since all installations of the software will have the same password, even across different organizations, this enables massive attacks such as worms to take place.The Outbound variant applies to front-end systems that authenticate with a back-end service. The back-end service may require a fixed password which can be easily discovered. The programmer may simply hard-code those back-end credentials into the front-end software. Any user of that program may be able to extract the password. Client-side systems with hard-coded passwords pose even more of a threat, since the extraction of a password from a binary is usually very simple."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-257",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "relevant"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-287",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-344",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-671",
+                    "toolComponent": {
+                      "name": "CWE"
+                    }
+                  },
+                  "kinds": [
+                    "superset"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CWE-1200",
+              "name": "Weaknesses in the 2019 CWE Top 25 Most Dangerous Software Errors",
+              "fullDescription": {
+                "text": "CWE entries in this view are listed in the 2019 CWE Top 25 Most Dangerous Software Errors."
+              },
+              "relationships": [
+                {
+                  "target": {
+                    "id": "CWE-20"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-22"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-78"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-79"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-89"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-94"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-119"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-125"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-190"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-200"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-269"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-287"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-295"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-352"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-400"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-416"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-426"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-434"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-476"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-502"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-611"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-732"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-772"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-787"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                },
+                {
+                  "target": {
+                    "id": "CWE-798"
+                  },
+                  "kinds": [
+                    "subset"
+                  ]
+                }
+              ]
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true,
+          "minimumRequiredLocalizedDataSemanticVersion": "2019",
+          "supportedTaxonomies": []
+        }
+      ]
+    }
+  ]
+}

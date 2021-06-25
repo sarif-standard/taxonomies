@@ -21,37 +21,13 @@ namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveCsvToSarif(string sourceFilePath, string targetFilePath, string version)
-        {
-            try
-            {
-                List<CweCsvRecord> records = this.ReadFromCsv(sourceFilePath);
-
-                Run run = this.ConvertToSarif(records, version);
-
-                SarifLog log = new SarifLog
-                {
-                    Runs = new Run[] { run }
-                };
-
-                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-
-            return true;
-        }
-
-        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version)
+        public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version, string type)
         {
             try
             {
                 Weakness_Catalog results = this.ReadFromXml(sourceFilePath);
 
-                Run run = this.ConvertToSarif(results, version);
+                Run run = this.ConvertToSarif(results, version, type);
 
                 SarifLog log = new SarifLog
                 {
@@ -119,34 +95,19 @@ namespace Taxonomy.Cwe
             return true;
         }
 
-        private List<CweCsvRecord> ReadFromCsv(string filePath)
-        {
-            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return csvReader.GetRecords<CweCsvRecord>().ToList();
-        }
-
         private Weakness_Catalog ReadFromXml(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Weakness_Catalog));
             return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
         }
 
-        private Run ConvertToSarif(List<CweCsvRecord> records, string version)
+        private Run ConvertToSarif(Weakness_Catalog cweXml, string version, string type)
         {
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
             ToolComponent cweTaxonomy = new ToolComponent
             {
-                Name = Constants.CWE.Name,
-                Guid = Constants.CWE.Guid,
                 Version = version,
-                ReleaseDateUtc = Constants.CWE.ReleaseDate,
-                InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
-                DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
                 Organization = "MITRE",
-                ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
                 Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                 IsComprehensive = true,
                 MinimumRequiredLocalizedDataSemanticVersion = version,
@@ -154,48 +115,57 @@ namespace Taxonomy.Cwe
                 SupportedTaxonomies = new List<ToolComponentReference>(),
             };
 
-            records.ForEach(r => cweTaxonomy.Taxa.Add(new ReportingDescriptor
+            switch (type.ToLower())
             {
-                Id = $"CWE-{r.CweId}",
-                Name = r.Name,
-                ShortDescription = new MultiformatMessageString { Text = r.Description },
-                FullDescription = string.IsNullOrEmpty(r.ExtendedDescription) ? null : new MultiformatMessageString { Text = r.ExtendedDescription },
-                DefaultConfiguration = new ReportingConfiguration { Level = FailureLevel.Warning },
-                Relationships = this.GetRelationships(r.RelatedWeaknesses),
-            }));
-
-            taxonomies.Add(cweTaxonomy);
-
-            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
-
-            Run run = new Run
-            {
-                Tool = tool,
-                Taxonomies = taxonomies
-            };
-
-            return run;
-        }
-
-        private Run ConvertToSarif(Weakness_Catalog cweXml, string version)
-        {
-            IList<ToolComponent> taxonomies = new List<ToolComponent>();
-            ToolComponent cweTaxonomy = new ToolComponent
-            {
-                Name = Constants.CWE.Name,
-                Guid = Constants.CWE.Guid,
-                Version = version,
-                ReleaseDateUtc = Constants.CWE.ReleaseDate,
-                InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf"),
-                DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip"),
-                Organization = "MITRE",
-                ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
-                Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
-                IsComprehensive = true,
-                MinimumRequiredLocalizedDataSemanticVersion = version,
-                Taxa = new List<ReportingDescriptor>(),
-                SupportedTaxonomies = new List<ToolComponentReference>(),
-            };
+                case "comprehensive":
+                    switch (version.ToLower())
+                    {
+                        case "4.3":
+                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V43.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V43.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V43.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.3.pdf");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
+                            break;
+                        case "4.4":
+                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V44.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V44.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V44.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "top25":
+                    switch (version.ToLower())
+                    {
+                        case "2019":
+                            cweTaxonomy.Name = Constants.CWE_Top_25_2019.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Top_25_2019.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Top_25_2019.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/slices/1200.html");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/views/1200.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration Top 25" };
+                            break;
+                        case "2020":
+                            cweTaxonomy.Name = Constants.CWE_Top_25_2020.Name;
+                            cweTaxonomy.Guid = Constants.CWE_Top_25_2020.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Top_25_2020.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/slices/1350.html");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/views/1350.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration Top 25" };
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
             var taxa = new List<ReportingDescriptor>();
 
@@ -242,7 +212,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
+            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name } };
 
             Run run = new Run
             {
@@ -251,45 +221,6 @@ namespace Taxonomy.Cwe
             };
 
             return run;
-        }
-
-        private List<ReportingDescriptorRelationship> GetRelationships(string relationshipString)
-        {
-            if (string.IsNullOrEmpty(relationshipString))
-            {
-                return null;
-            }
-
-            // example relationship
-            // ::NATURE:ChildOf:CWE ID:707:VIEW ID:1000:ORDINAL:Primary::NATURE:PeerOf:CWE ID:345:VIEW ID:1000:ORDINAL:Primary::NATURE:CanPrecede:CWE ID:22:VIEW ID:1000::NATURE:CanPrecede:CWE ID:41:VIEW ID:1000::NATURE:CanPrecede:CWE ID:74:VIEW ID:1000::NATURE:CanPrecede:CWE ID:119:VIEW ID:1000::NATURE:CanPrecede:CWE ID:770:VIEW ID:1000::
-            string[] relationships = relationshipString.Split("::", StringSplitOptions.TrimEntries);
-            var map = new Dictionary<string, CweRelationship>();
-            foreach (string rel in relationships)
-            {
-                if (!string.IsNullOrEmpty(rel))
-                {
-                    var cweRel = new CweRelationship(rel);
-                    if (!map.ContainsKey(cweRel.ToString()))
-                    {
-                        map.Add(cweRel.ToString(), cweRel);
-                    }
-                }
-            }
-
-            List<ReportingDescriptorRelationship> rels = new List<ReportingDescriptorRelationship>();
-            foreach (KeyValuePair<string, CweRelationship> entry in map)
-            {
-                rels.Add(new ReportingDescriptorRelationship
-                {
-                    Target = new ReportingDescriptorReference
-                    {
-                        Id = entry.Value.CweId,
-                    },
-                    Kinds = new string[] { entry.Value.Kinds },
-                });
-            }
-
-            return rels;
         }
 
         private List<ReportingDescriptorRelationship> GetRelationships(RelatedWeaknessesTypeRelated_Weakness[] related)

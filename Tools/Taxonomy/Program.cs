@@ -104,8 +104,7 @@ namespace Taxonomy
 
         private static bool GenerateCwe(CweOptions o)
         {
-            var generator = new CweTaxonomyGenerator();
-            return generator.SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
+            return new CweTaxonomyGenerator().SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.Type);
         }
 
         private static bool GenerateWasc(WascOptions o)
