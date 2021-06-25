@@ -33,16 +33,17 @@ namespace Taxonomy.Cwe
 
         public static string ToDescription(this StructuredTextType node)
         {
-            if (node == null || node.Any == null || node.Any.Length == 0)
-                return null;
-
-            return string.Join("", node.Any.Select(n => n.ToDescription()).ToList());
+            return node == null || node.Any == null || node.Any.Length == 0
+                ? null
+                : string.Join("", node.Any.Select(n => n.ToDescription()).ToList());
         }
 
         public static string ToDescription(this XmlNode node)
         {
             if (node.Value != null)
+            {
                 return node.Value;
+            }
 
             XmlNodeList allNodes = node.SelectNodes("descendant::node()");
             var list = new List<string>();
@@ -51,7 +52,9 @@ namespace Taxonomy.Cwe
                 if (allNodes[i].Value != null)
                 {
                     if (!string.IsNullOrWhiteSpace(allNodes[i].Value.Replace(@"\r", "").Replace(@"\n", "").Replace(@"\t", "")))
+                    {
                         list.Add(allNodes[i].Value);
+                    }
                 }
             }
 

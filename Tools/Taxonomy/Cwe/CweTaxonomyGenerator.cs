@@ -21,30 +21,6 @@ namespace Taxonomy.Cwe
 {
     public class CweTaxonomyGenerator : TaxonomyGenerator
     {
-        public bool SaveCsvToSarif(string sourceFilePath, string targetFilePath, string version)
-        {
-            try
-            {
-                List<CweCsvRecord> records = this.ReadFromCsv(sourceFilePath);
-
-                Run run = this.ConvertToSarif(records, version);
-
-                SarifLog log = new SarifLog
-                {
-                    Runs = new Run[] { run }
-                };
-
-                File.WriteAllText(targetFilePath, JsonConvert.SerializeObject(log, Newtonsoft.Json.Formatting.Indented));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-
-            return true;
-        }
-
         public bool SaveXmlToSarif(string sourceFilePath, string targetFilePath, string version, string type)
         {
             try
@@ -119,62 +95,10 @@ namespace Taxonomy.Cwe
             return true;
         }
 
-        private List<CweCsvRecord> ReadFromCsv(string filePath)
-        {
-            using FileStream input = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using var textReader = new StreamReader(input);
-            using var csvReader = new CsvReader(textReader, CultureInfo.InvariantCulture);
-
-            return csvReader.GetRecords<CweCsvRecord>().ToList();
-        }
-
         private Weakness_Catalog ReadFromXml(string filePath)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Weakness_Catalog));
             return (Weakness_Catalog)serializer.Deserialize(new XmlTextReader(filePath));
-        }
-
-        private Run ConvertToSarif(List<CweCsvRecord> records, string version)
-        {
-            IList<ToolComponent> taxonomies = new List<ToolComponent>();
-            ToolComponent cweTaxonomy = new ToolComponent
-            {
-                Name = Constants.CWE_Comprehensive_V43.Name,
-                Guid = Constants.CWE_Comprehensive_V43.Guid,
-                Version = version,
-                ReleaseDateUtc = Constants.CWE_Comprehensive_V43.ReleaseDate,
-                InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.3.pdf"),
-                DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip"),
-                Organization = "MITRE",
-                ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" },
-                Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
-                IsComprehensive = true,
-                MinimumRequiredLocalizedDataSemanticVersion = version,
-                Taxa = new List<ReportingDescriptor>(),
-                SupportedTaxonomies = new List<ToolComponentReference>(),
-            };
-
-            records.ForEach(r => cweTaxonomy.Taxa.Add(new ReportingDescriptor
-            {
-                Id = $"CWE-{r.CweId}",
-                Name = r.Name,
-                ShortDescription = new MultiformatMessageString { Text = r.Description },
-                FullDescription = string.IsNullOrEmpty(r.ExtendedDescription) ? null : new MultiformatMessageString { Text = r.ExtendedDescription },
-                DefaultConfiguration = new ReportingConfiguration { Level = FailureLevel.Warning },
-                Relationships = this.GetRelationships(r.RelatedWeaknesses),
-            }));
-
-            taxonomies.Add(cweTaxonomy);
-
-            var tool = new Tool { Driver = new ToolComponent { Name = $"CWE v{version}" } };
-
-            Run run = new Run
-            {
-                Tool = tool,
-                Taxonomies = taxonomies
-            };
-
-            return run;
         }
 
         private Run ConvertToSarif(Weakness_Catalog cweXml, string version, string type)
@@ -297,45 +221,6 @@ namespace Taxonomy.Cwe
             };
 
             return run;
-        }
-
-        private List<ReportingDescriptorRelationship> GetRelationships(string relationshipString)
-        {
-            if (string.IsNullOrEmpty(relationshipString))
-            {
-                return null;
-            }
-
-            // example relationship
-            // ::NATURE:ChildOf:CWE ID:707:VIEW ID:1000:ORDINAL:Primary::NATURE:PeerOf:CWE ID:345:VIEW ID:1000:ORDINAL:Primary::NATURE:CanPrecede:CWE ID:22:VIEW ID:1000::NATURE:CanPrecede:CWE ID:41:VIEW ID:1000::NATURE:CanPrecede:CWE ID:74:VIEW ID:1000::NATURE:CanPrecede:CWE ID:119:VIEW ID:1000::NATURE:CanPrecede:CWE ID:770:VIEW ID:1000::
-            string[] relationships = relationshipString.Split("::", StringSplitOptions.TrimEntries);
-            var map = new Dictionary<string, CweRelationship>();
-            foreach (string rel in relationships)
-            {
-                if (!string.IsNullOrEmpty(rel))
-                {
-                    var cweRel = new CweRelationship(rel);
-                    if (!map.ContainsKey(cweRel.ToString()))
-                    {
-                        map.Add(cweRel.ToString(), cweRel);
-                    }
-                }
-            }
-
-            List<ReportingDescriptorRelationship> rels = new List<ReportingDescriptorRelationship>();
-            foreach (KeyValuePair<string, CweRelationship> entry in map)
-            {
-                rels.Add(new ReportingDescriptorRelationship
-                {
-                    Target = new ReportingDescriptorReference
-                    {
-                        Id = entry.Value.CweId,
-                    },
-                    Kinds = new string[] { entry.Value.Kinds },
-                });
-            }
-
-            return rels;
         }
 
         private List<ReportingDescriptorRelationship> GetRelationships(RelatedWeaknessesTypeRelated_Weakness[] related)
