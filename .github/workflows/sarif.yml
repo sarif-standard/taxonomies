@@ -1,12 +1,12 @@
-name: dotnet format
+name: sarif validation
 
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
-  check-format:
-    runs-on: windows-latest
+  sarif:
+    runs-on: ubuntu-latest
 
     steps:
     - name: check out code
