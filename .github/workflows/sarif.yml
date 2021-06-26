@@ -1,0 +1,18 @@
+name: sarif validation
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  sarif:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: check out code
+      uses: actions/checkout@v2
+
+    - name: SARIF Multitool
+      uses: microsoft/sarif-actions@v0.1
+      with:
+        command: 'validate *.sarif'
