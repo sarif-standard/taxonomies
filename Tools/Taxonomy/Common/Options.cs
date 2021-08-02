@@ -24,6 +24,13 @@ namespace Taxonomy
         public string Type { get; set; }
     }
 
+    [Verb("generate-disa", false, HelpText = "Generate DISA Sarif file")]
+    internal class DisaOptions : BaseOptions
+    {
+        [Option("type", HelpText = "type of the standard to process.", Required = true)]
+        public string Type { get; set; }
+    }
+
     [Verb("generate-owasp", false, HelpText = "Generate OWASP Sarif file")]
     internal class OwaspOptions : BaseOptions
     {

@@ -13,6 +13,7 @@ namespace Taxonomy.Common
             public static string CWE_Comprehensive_V44 = "7D699257-C37D-4A10-9C98-D7DB481F1A8B";
             public static string CWE_Top_25_2019 = "B37033B9-1D33-482B-AD09-C6E788340839";
             public static string CWE_Top_25_2020 = "4D54E275-787C-493E-9F1A-4149C1A906C0";
+            public static string DISA_CCI_V2 = "A5D61558-0042-4F62-A2E3-59EA163BD5D6";
             public static string Nist_SP80053_V4 = "EE4E6942-6346-45EE-BBA2-9998A214D80E";
             public static string Nist_SP80053_V5 = "AAFBAB93-5201-419E-8443-D4925C542398";
             public static string Nist_SP80063B = "CC3BE6A5-E774-41CF-B74C-C928269B6778";
@@ -62,6 +63,14 @@ namespace Taxonomy.Common
             Name = "CWE Top 25 2020",
             Location = REPO_PATH + "CWE_Top25_v2020.sarif",
             ReleaseDate = "2020-08-20",
+        };
+
+        public static TaxonomyData DISA_CCI_V2 = new TaxonomyData
+        {
+            Guid = Guid.DISA_CCI_V2,
+            Name = "DISA CCI V2",
+            Location = REPO_PATH + "DISA_CCI_v2.sarif",
+            ReleaseDate = "2011-02-28",
         };
 
         public static TaxonomyData Nist_SP80053_V4 = new TaxonomyData

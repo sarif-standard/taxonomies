@@ -10,6 +10,7 @@ CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec/cwec_v4.3.xml.zip) | [CW
 CWE| v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
 CWE | Top 25 2019 | [link](https://cwe.mitre.org/data/xml/views/1200.xml.zip) | [CWE_Top25_v2019.sarif](CWE_Top25_v2019.sarif)
 CWE | Top 25 2020 | [link](https://cwe.mitre.org/data/xml/views/1350.xml.zip) | [CWE_Top25_v2020.sarif](CWE_Top25_v2020.sarif)
+DISA | CCI v2 | [link](https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/u_draft_cci_specification_v2r0.2.zip) | [DISA_CCI_v2.sarif](DISA_CCI_v2.sarif)
 Nist | SP800-53 v4 | [link](https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_catalog.json) | [NIST_SP800-53_v4.sarif](NIST_SP800-53_v4.sarif)
 Nist | SP800-53 v5 | [link](https://csrc.nist.gov/CSRC/media/Publications/sp/800-53/rev-5/final/documents/sp800-53r5-control-catalog.xlsx) | [NIST_SP800-53_v5.sarif](NIST_SP800-53_v5.sarif)
 Nist | SP800-63B v1 | [link](https://pages.nist.gov/800-63-3/sp800-63b.html) | [NIST_SP800-63B_v1.sarif](NIST_SP800-63B_v1.sarif)
@@ -43,6 +44,12 @@ Generate CWE Top 25 Sarif file
 
 ```bash
 generate-cwe --type top25 --source-file-path "1350.xml" --target-file-path "CWE_Top25_v2020.sarif" --version "2020"
+```
+
+Generate DISA CCI Sarif file
+
+```bash
+generate-disa --type cci --source-file-path "U_CCI_List.xml" --target-file-path "DISA_CCI_v2.sarif" --version "2"
 ```
 
 Generate OWASP ASVS Sarif file

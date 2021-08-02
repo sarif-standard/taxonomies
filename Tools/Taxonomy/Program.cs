@@ -6,6 +6,7 @@ using System;
 using CommandLine;
 
 using Taxonomy.Cwe;
+using Taxonomy.Disa;
 
 using Tools.Pci;
 using Tools.Wasc;
@@ -17,32 +18,22 @@ namespace Taxonomy
         private static void Main(string[] args)
         {
             // see README.MD for usages
-            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, NistOptions, OwaspOptions, PciOptions, WascOptions>(args)
+            bool result = Parser.Default.ParseArguments
+                <AddOwaspRelationshipToCweOptions,
+                CweOptions,
+                DisaOptions,
+                NistOptions,
+                OwaspOptions,
+                PciOptions,
+                WascOptions>(args)
             .MapResult(
-                (AddOwaspRelationshipToCweOptions o) =>
-                {
-                    return AddOwaspRelationshipToCwe(o);
-                },
-                (CweOptions o) =>
-                {
-                    return GenerateCwe(o);
-                },
-                (NistOptions o) =>
-                {
-                    return GenerateNist(o);
-                },
-                (OwaspOptions o) =>
-                {
-                    return GenerateOwasp(o);
-                },
-                (PciOptions o) =>
-                {
-                    return GeneratePci(o);
-                },
-                (WascOptions o) =>
-                {
-                    return GenerateWasc(o);
-                },
+                (AddOwaspRelationshipToCweOptions o) => AddOwaspRelationshipToCwe(o),
+                (CweOptions o) => GenerateCwe(o),
+                (DisaOptions o) => GenerateDisa(o),
+                (NistOptions o) => GenerateNist(o),
+                (OwaspOptions o) => GenerateOwasp(o),
+                (PciOptions o) => GeneratePci(o),
+                (WascOptions o) => GenerateWasc(o),
                 e => false);
 
             if (result)
@@ -66,14 +57,9 @@ namespace Taxonomy
             switch (o.Type)
             {
                 case "sp80053":
-                    if (o.SourceFilePath.EndsWith(".json"))
-                    {
-                        return new NistSP80053JsonTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
-                    }
-                    else
-                    {
-                        return new NistSP80053CsvTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
-                    }
+                    return o.SourceFilePath.EndsWith(".json")
+                        ? new NistSP80053JsonTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version)
+                        : new NistSP80053CsvTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
                 case "sp80063b":
                     return new NistSP80063BTaxonomyGenerator().SaveToSarif(o.SourceFilePath, o.TargetFilePath, o.Version);
                 default:
@@ -105,6 +91,11 @@ namespace Taxonomy
         private static bool GenerateCwe(CweOptions o)
         {
             return new CweTaxonomyGenerator().SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.Type);
+        }
+
+        private static bool GenerateDisa(DisaOptions o)
+        {
+            return new DisaTaxonomyGenerator().SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.Type);
         }
 
         private static bool GenerateWasc(WascOptions o)
