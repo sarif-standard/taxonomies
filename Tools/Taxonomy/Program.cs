@@ -6,6 +6,7 @@ using System;
 using CommandLine;
 
 using Taxonomy.Cwe;
+using Taxonomy.Disa;
 
 using Tools.Pci;
 using Tools.Wasc;
@@ -17,7 +18,7 @@ namespace Taxonomy
         private static void Main(string[] args)
         {
             // see README.MD for usages
-            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, NistOptions, OwaspOptions, PciOptions, WascOptions>(args)
+            bool result = Parser.Default.ParseArguments<AddOwaspRelationshipToCweOptions, CweOptions, DisaOptions, NistOptions, OwaspOptions, PciOptions, WascOptions>(args)
             .MapResult(
                 (AddOwaspRelationshipToCweOptions o) =>
                 {
@@ -26,6 +27,10 @@ namespace Taxonomy
                 (CweOptions o) =>
                 {
                     return GenerateCwe(o);
+                },
+                (DisaOptions o) =>
+                {
+                    return GenerateDisa(o);
                 },
                 (NistOptions o) =>
                 {
@@ -105,6 +110,11 @@ namespace Taxonomy
         private static bool GenerateCwe(CweOptions o)
         {
             return new CweTaxonomyGenerator().SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.Type);
+        }
+
+        private static bool GenerateDisa(DisaOptions o)
+        {
+            return new DisaTaxonomyGenerator().SaveXmlToSarif(o.SourceFilePath, o.TargetFilePath, o.Version, o.Type);
         }
 
         private static bool GenerateWasc(WascOptions o)
