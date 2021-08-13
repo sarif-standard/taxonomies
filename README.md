@@ -26,6 +26,9 @@ PCI | SSF V1.1 | [link](https://www.pcisecuritystandards.org/documents/PCI-Secur
 PCI | DSS V3.2.1 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf) | [PCI_DSS_V3.2.1.sarif](PCI_DSS_V3.2.1.sarif)
 PCI | DSS V3.2 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2.pdf) | [PCI_DSS_V3.2.sarif](PCI_DSS_V3.2.sarif)
 PCI | DSS V3.1 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf) | [PCI_DSS_V3.1.sarif](PCI_DSS_V3.1.sarif)
+PCI | DSS V3.0 | [link](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf) | [PCI_DSS_V3.0.sarif](PCI_DSS_V3.0.sarif)
+PCI | DSS V1.2 | [link](https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf) | [PCI_DSS_V1.2.sarif](PCI_DSS_V1.2.sarif)
+PCI | DSS V1.1 | [link](https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf) | [PCI_DSS_V1.1.sarif](PCI_DSS_V1.1.sarif)
 WASC | v1.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Previous%20Versions) |[WASC_1.00.sarif](WASC_1.00.sarif)
 WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View) |[WASC_2.00.sarif](WASC_2.00.sarif)
 
