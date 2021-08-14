@@ -42,6 +42,7 @@ namespace Tools.Pci
                         ShortDescription = new MultiformatMessageString { Text = "Payment Card Industry (PCI) Data Security Standard" },
                         Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                         IsComprehensive = true,
+                        Version = this.version,
                     };
 
                     switch (this.version)
@@ -73,6 +74,13 @@ namespace Tools.Pci
                             this.tool.ReleaseDateUtc = Constants.PCI_DSS_V3_0.ReleaseDate;
                             this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf");
                             this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf");
+                            break;
+                        case "2.0":
+                            this.tool.Name = Constants.PCI_DSS_V2_0.Name;
+                            this.tool.Guid = Constants.PCI_DSS_V2_0.Guid;
+                            this.tool.ReleaseDateUtc = Constants.PCI_DSS_V2_0.ReleaseDate;
+                            this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v2.pdf");
+                            this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v2.pdf");
                             break;
                         case "1.2":
                             this.tool.Name = Constants.PCI_DSS_V1_2.Name;
