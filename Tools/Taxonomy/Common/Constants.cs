@@ -29,6 +29,10 @@ namespace Taxonomy.Common
             public static string PCI_DSS_V3_2_1 = "73D7AC88-CADA-444E-A606-B657D4E17250";
             public static string PCI_DSS_V3_2 = "D3B5FFEE-B158-4E46-9370-73E3952F76CD";
             public static string PCI_DSS_V3_1 = "0C5B56E9-1223-490F-B594-1E7E8D415A72";
+            public static string PCI_DSS_V3_0 = "9F59A23D-741B-465E-B241-114DE24D55D2";
+            public static string PCI_DSS_V2_0 = "81029DE6-747D-4F10-923D-35E693428744";
+            public static string PCI_DSS_V1_2 = "ACA11AA0-2EEA-42F0-B995-193193F56583";
+            public static string PCI_DSS_V1_1 = "355F57AC-0289-430E-B71C-B32C2A5B5C2A";
             public static string WASC_V1 = "E30814F7-D50D-4936-9B0C-B80ACD412434";
             public static string WASC_V2 = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
         }
@@ -184,6 +188,38 @@ namespace Taxonomy.Common
             Name = "PCI DSS V3.1",
             Location = REPO_PATH + "PCI_DSS_v3.1.sarif",
             ReleaseDate = "2015-04-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V3_0 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V3_0,
+            Name = "PCI DSS V3.0",
+            Location = REPO_PATH + "PCI_DSS_v3.0.sarif",
+            ReleaseDate = "2013-11-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V2_0 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V2_0,
+            Name = "PCI DSS V2.0",
+            Location = REPO_PATH + "PCI_DSS_v2.0.sarif",
+            ReleaseDate = "2010-10-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V1_2 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V1_2,
+            Name = "PCI DSS V1.2",
+            Location = REPO_PATH + "PCI_DSS_v1.2.sarif",
+            ReleaseDate = "2008-10-01",
+        };
+
+        public static TaxonomyData PCI_DSS_V1_1 = new TaxonomyData
+        {
+            Guid = Guid.PCI_DSS_V1_1,
+            Name = "PCI DSS V1.1",
+            Location = REPO_PATH + "PCI_DSS_v1.1.sarif",
+            ReleaseDate = "2006-09-01",
         };
 
         public static TaxonomyData WASC_V1 = new TaxonomyData

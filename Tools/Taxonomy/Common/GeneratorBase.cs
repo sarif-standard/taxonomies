@@ -93,7 +93,20 @@ namespace Tools.Common
 
             var run = new Run
             {
-                Tool = new Tool { Driver = new ToolComponent { Name = this.ToolComponent.Name } },
+                Tool = new Tool
+                {
+                    Driver = new ToolComponent
+                    {
+                        Name = this.ToolComponent.Name,
+                        Guid = this.ToolComponent.Guid,
+                        Organization = this.ToolComponent.Organization,
+                        Version = this.ToolComponent.Version,
+                        ReleaseDateUtc = this.ToolComponent.ReleaseDateUtc,
+                        ShortDescription = this.ToolComponent.ShortDescription,
+                        InformationUri = this.ToolComponent.InformationUri,
+                        DownloadUri = this.ToolComponent.DownloadUri,
+                    }
+                },
                 Taxonomies = taxonomies,
                 ExternalPropertyFileReferences = this.GetTaxonomyReference(taxonomies.First()),
             };

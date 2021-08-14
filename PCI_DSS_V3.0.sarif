@@ -5,31 +5,31 @@
     {
       "tool": {
         "driver": {
-          "guid": "0C5B56E9-1223-490F-B594-1E7E8D415A72",
-          "name": "PCI DSS V3.1",
+          "guid": "9F59A23D-741B-465E-B241-114DE24D55D2",
+          "name": "PCI DSS V3.0",
           "organization": "PCI Security Standards Council",
           "shortDescription": {
             "text": "Payment Card Industry (PCI) Data Security Standard"
           },
-          "version": "3.1",
-          "releaseDateUtc": "2015-04-01",
-          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf",
-          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf"
+          "version": "3.0",
+          "releaseDateUtc": "2013-11-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf"
         }
       },
       "columnKind": "utf16CodeUnits",
       "taxonomies": [
         {
-          "guid": "0C5B56E9-1223-490F-B594-1E7E8D415A72",
-          "name": "PCI DSS V3.1",
+          "guid": "9F59A23D-741B-465E-B241-114DE24D55D2",
+          "name": "PCI DSS V3.0",
           "organization": "PCI Security Standards Council",
           "shortDescription": {
             "text": "Payment Card Industry (PCI) Data Security Standard"
           },
-          "version": "3.1",
-          "releaseDateUtc": "2015-04-01",
-          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf",
-          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf",
+          "version": "3.0",
+          "releaseDateUtc": "2013-11-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf",
           "taxa": [
             {
               "id": "Requirements 1",
@@ -623,7 +623,7 @@
               "id": "Requirements 2.2.3",
               "name": "Requirements 2.2.3",
               "fullDescription": {
-                "text": "Implement additional security features for any required services, protocols, or daemons that are considered to be insecure—for example, use secured technologies such as SSH, S-FTP, TLS, or IPSec VPN to protect insecure services such as NetBIOS, file-sharing, Telnet, FTP, etc."
+                "text": "Implement additional security features for any required services, protocols, or daemons that are considered to be insecure—for example, use secured technologies such as SSH, S-FTP, SSL, or IPSec VPN to protect insecure services such as NetBIOS, file-sharing, Telnet, FTP, etc."
               }
             },
             {
@@ -707,7 +707,7 @@
               "id": "Requirements 2.3",
               "name": "Requirements 2.3",
               "fullDescription": {
-                "text": "Encrypt all non-console administrative access using strong cryptography. Use technologies such as SSH, VPN, or TLS for web-based management and other non-console administrative access."
+                "text": "Encrypt all non-console administrative access using strong cryptography. Use technologies such as SSH, VPN, or SSL/TLS for web-based management and other non-console administrative access."
               }
             },
             {
@@ -882,7 +882,7 @@
               "id": "Requirements 3.2.1",
               "name": "Requirements 3.2.1",
               "fullDescription": {
-                "text": "Do not store the full contents of any track (from the magnetic stripe located on the back of a card, equivalent data contained on a chip, or elsewhere) after authorization. This data is alternatively called full track, track, track 1, track 2, and magnetic-stripe data."
+                "text": "Do not store the full contents of any track (from the magnetic stripe located on the back of a card, equivalent data contained on a chip, or elsewhere). This data is alternatively called full track, track, track 1, track 2, and magnetic-stripe data."
               }
             },
             {
@@ -896,7 +896,7 @@
               "id": "Requirements 3.2.2",
               "name": "Requirements 3.2.2",
               "fullDescription": {
-                "text": "Do not store the card verification code or value (three-digit or four-digit number printed on the front or back of a payment card used to verify card-notpresent transactions) after authorization."
+                "text": "Do not store the card verification code or value (three-digit or four-digit number printed on the front or back of a payment card) used to verify cardnot-present transactions."
               }
             },
             {
@@ -910,7 +910,7 @@
               "id": "Requirements 3.2.3",
               "name": "Requirements 3.2.3",
               "fullDescription": {
-                "text": "Do not store the personal identification number (PIN) or the encrypted PIN block after authorization."
+                "text": "Do not store the personal identification number (PIN) or the encrypted PIN block."
               }
             },
             {
@@ -984,13 +984,6 @@
               }
             },
             {
-              "id": "Testing Procedures 3.4.e",
-              "name": "Testing Procedures 3.4.e",
-              "fullDescription": {
-                "text": "If hashed and truncated versions of the same PAN are present in the environment, examine implemented controls to verify that the hashed and truncated versions cannot be correlated to reconstruct the original PAN."
-              }
-            },
-            {
               "id": "Requirements 3.4.1",
               "name": "Requirements 3.4.1",
               "fullDescription": {
@@ -1050,7 +1043,7 @@
               "id": "Requirements 3.5.2",
               "name": "Requirements 3.5.2",
               "fullDescription": {
-                "text": "Store secret and private keys used to encrypt/decrypt cardholder data in one (or more) of the following forms at all times:\n• Encrypted with a key-encrypting key that is at least as strong as the dataencrypting key, and that is stored separately from the data-encrypting key\n• Within a secure cryptographic device (such as a hardware (host) security module (HSM) or PTS-approved point-of-interaction device)\n• As at least two full-length key components or key shares, in accordance with an industryaccepted method "
+                "text": "Store secret and private keys used to encrypt/decrypt cardholder data in one (or more) of the following forms at all times:\n• Encrypted with a key-encrypting key that is at least as strong as the dataencrypting key, and that is stored separately from the data-encrypting key\n• Within a secure cryptographic device (such as a host security module (HSM) or PTS-approved point-of-interaction device)\n• As at least two full-length key components or key shares, in accordance with an industryaccepted method "
               }
             },
             {
@@ -1099,7 +1092,7 @@
               "id": "Testing Procedures 3.6.a",
               "name": "Testing Procedures 3.6.a",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: If the service provider shares keys with their customers for transmission or storage of cardholder data, examine the documentation that the service provider provides to their customers to verify that it includes guidance on how to securely transmit, store, and update customers’ keys, in accordance with Requirements 3.6.1 through 3.6.8 below"
+                "text": "Additional testing procedure for service provider: If the service provider shares keys with their customers for transmission or storage of cardholder data, examine the documentation that the service provider provides to their customers to verify that it includes guidance on how to securely transmit, store, and update customers’ keys, in accordance with Requirements 3.6.1 through 3.6.8 below"
               }
             },
             {
@@ -1302,7 +1295,7 @@
               "id": "Requirements 4.1",
               "name": "Requirements 4.1",
               "fullDescription": {
-                "text": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n• Only trusted keys and certificates are accepted.\n• The protocol in use only supports secure versions or configurations.\n• The encryption strength is appropriate for the encryption methodology in use."
+                "text": "Use strong cryptography and security protocols (for example, SSL/TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n• Only trusted keys and certificates are accepted.\n• The protocol in use only supports secure versions or configurations.\n• The encryption strength is appropriate for the encryption methodology in use."
               }
             },
             {
@@ -1379,14 +1372,14 @@
               "id": "Testing Procedures 4.1.1",
               "name": "Testing Procedures 4.1.1",
               "fullDescription": {
-                "text": "Identify all wireless networks transmitting cardholder data or connected to the cardholder data environment. Examine documented standards and compare to system configuration settings to verify the following for all wireless networks identified: \n• Industry best practices are used to implement strong encryption for authentication and transmission.\n• Weak encryption (for example, WEP, SSL) is not used as a security control for authentication or transmission."
+                "text": "Identify all wireless networks transmitting cardholder data or connected to the cardholder data environment. Examine documented standards and compare to system configuration settings to verify the following for all wireless networks identified: \n• Industry best practices are used to implement strong encryption for authentication and transmission.\n• Weak encryption (for example, WEP, SSL version 2.0 or older) is not used as a security control for authentication or transmission."
               }
             },
             {
               "id": "Requirements 4.2",
               "name": "Requirements 4.2",
               "fullDescription": {
-                "text": "Never send unprotected PANs by enduser messaging technologies (for example, email, instant messaging, SMS, chat, etc.)."
+                "text": "Never send unprotected PANs by enduser messaging technologies (for example, email, instant messaging, chat, etc.)."
               }
             },
             {
@@ -2023,7 +2016,7 @@
               "id": "Testing Procedures 6.6",
               "name": "Testing Procedures 6.6",
               "fullDescription": {
-                "text": "For public-facing web applications, ensure that either one of the following methods is in place as follows:\n• Examine documented processes, interview personnel, and examine records of application security assessments to verify that public-facing web applications are reviewed—using either manual or automated vulnerability security assessment tools or methods—as follows:\n- At least annually\n- After any changes\n- By an organization that specializes in application security\n- That, at a minimum, all vulnerabilities in Requirement 6.5 are included in the assessment\n- That all vulnerabilities are corrected\n- That the application is re-evaluated after the corrections.\n• Examine the system configuration settings and interview responsible personnel to verify that an automated technical solution that detects and prevents web-based attacks (for example, a web-application firewall) is in place as follows:\n- Is situated in front of public-facing web applications to detect and prevent web-based attacks.\n- Is actively running and up to date as applicable.\n- Is generating audit logs.\n- Is configured to either block web-based attacks, or generate an alert that is immediately investigated."
+                "text": "For public-facing web applications, ensure that either one of the following methods is in place as follows:\n• Examine documented processes, interview personnel, and examine records of application security assessments to verify that public-facing web applications are reviewed—using either manual or automated vulnerability security assessment tools or methods—as follows:\n- At least annually\n- After any changes\n- By an organization that specializes in application security\n- That, at a minimum, all vulnerabilities in Requirement 6.5 are included in the assessment\n- That all vulnerabilities are corrected\n- That the application is re-evaluated after the corrections.\n• Examine the system configuration settings and interview responsible personnel to verify that an automated technical solution that detects and prevents web-based attacks (for example, a web-application firewall) is in place as follows:\n- Is situated in front of public-facing web applications to detect and prevent web-based attacks.\n- Is actively running and up to date as applicable.\n- Is generating audit logs.\n- Is configured to either block web-based attacks, or generate an alert."
               }
             },
             {
@@ -2275,7 +2268,7 @@
               "id": "Requirements 8.1.4",
               "name": "Requirements 8.1.4",
               "fullDescription": {
-                "text": "Remove/disable inactive user accounts within 90 days."
+                "text": "Remove/disable inactive user accounts at least every 90 days."
               }
             },
             {
@@ -2324,7 +2317,7 @@
               "id": "Testing Procedures 8.1.6.b",
               "name": "Testing Procedures 8.1.6.b",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Review internal processes and customer/user documentation, and observe implemented processes to verify that non-consumer customer user accounts are temporarily locked-out after not more than six invalid access attempts."
+                "text": "Additional testing procedure for service provider: Review internal processes and customer/user documentation, and observe implemented processes to verify that non-consumer customer user accounts are temporarily locked-out after not more than six invalid access attempts."
               }
             },
             {
@@ -2401,14 +2394,14 @@
               "id": "Testing Procedures 8.2.1.d",
               "name": "Testing Procedures 8.2.1.d",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Observe password files to verify that nonconsumer customer passwords are unreadable during storage."
+                "text": "Additional testing procedure for service provider: Observe password files to verify that nonconsumer customer passwords are unreadable during storage."
               }
             },
             {
               "id": "Testing Procedures 8.2.1.e",
               "name": "Testing Procedures 8.2.1.e",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Observe data transmissions to verify that non-consumer customer passwords are unreadable during transmission."
+                "text": "Additional testing procedure for service provider: Observe data transmissions to verify that non-consumer customer passwords are unreadable during transmission."
               }
             },
             {
@@ -2443,14 +2436,14 @@
               "id": "Testing Procedures 8.2.3.b",
               "name": "Testing Procedures 8.2.3.b",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Review internal processes and customer/user documentation to verify that non-consumer customer passwords are required to meet at least the following strength/complexity:\n• Require a minimum length of at least seven characters.\n• Contain both numeric and alphabetic characters."
+                "text": "Additional testing procedure for service provider: Review internal processes and customer/user documentation to verify that non-consumer customer passwords are required to meet at least the following strength/complexity:\n• Require a minimum length of at least seven characters.\n• Contain both numeric and alphabetic characters."
               }
             },
             {
               "id": "Requirements 8.2.4",
               "name": "Requirements 8.2.4",
               "fullDescription": {
-                "text": "Change user passwords/passphrases at least once every 90 days."
+                "text": "Change user passwords/passphrases at least every 90 days."
               }
             },
             {
@@ -2464,7 +2457,7 @@
               "id": "Testing Procedures 8.2.4.b",
               "name": "Testing Procedures 8.2.4.b",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Review internal processes and customer/user documentation to verify that:\n• Non-consumer customer user passwords/passphrases are required to change periodically; and\n• Non-consumer customer users are given guidance as to when, and under what circumstances, passwords/passphrases must change."
+                "text": "Additional testing procedure for service provider: Review internal processes and customer/user documentation to verify that:\n• Non-consumer customer user passwords/passphrases are required to change periodically; and\n• Non-consumer customer users are given guidance as to when, and under what circumstances, passwords/passphrases must change."
               }
             },
             {
@@ -2485,7 +2478,7 @@
               "id": "Testing Procedures 8.2.5.b",
               "name": "Testing Procedures 8.2.5.b",
               "fullDescription": {
-                "text": "Additional testing procedure for service provider assessments only: Review internal processes and customer/user documentation to verify that new non-consumer customer user passwords/passphrase cannot be the same as the previous four passwords."
+                "text": "Additional testing procedure for service provider: Review internal processes and customer/user documentation to verify that new non-consumer customer user passwords/passphrase cannot be the same as the previous four passwords."
               }
             },
             {
@@ -2583,7 +2576,7 @@
               "id": "Requirements 8.5.1",
               "name": "Requirements 8.5.1",
               "fullDescription": {
-                "text": "Additional requirement for service providers only: Service providers with remote access to customer premises (for example, for support of POS systems or servers) must use a unique authentication credential (such as a password/phrase) for each customer."
+                "text": "Additional requirement for service providers: Service providers with remote access to customer premises (for example, for support of POS systems or servers) must use a unique authentication credential (such as a password/phrase) for each customer."
               }
             },
             {
@@ -2765,7 +2758,7 @@
               "id": "Testing Procedures 9.2.b",
               "name": "Testing Procedures 9.2.b",
               "fullDescription": {
-                "text": "Examine identification methods (such as ID badges) and observe processes for identifying and distinguishing between onsite personnel and visitors to verify that:\n• Visitors are clearly identified, and\n• It is easy to distinguish between onsite personnel and visitors."
+                "text": "Observe processes for identifying and distinguishing between onsite personnel and visitors to verify that:\n• Visitors are clearly identified, and\n• It is easy to distinguish between onsite personnel and visitors."
               }
             },
             {
@@ -2773,6 +2766,13 @@
               "name": "Testing Procedures 9.2.c",
               "fullDescription": {
                 "text": "Verify that access to the identification process (such as a badge system) is limited to authorized personnel."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.2.d",
+              "name": "Testing Procedures 9.2.d",
+              "fullDescription": {
+                "text": "Examine identification methods (such as ID badges) in use to verify that they clearly identify visitors and it is easy to distinguish between onsite personnel and visitors."
               }
             },
             {
@@ -3108,7 +3108,7 @@
               "id": "Testing Procedures 9.9.1.b",
               "name": "Testing Procedures 9.9.1.b",
               "fullDescription": {
-                "text": "Select a sample of devices from the list and observe devices and device locations to verify that the list is accurate and up to date."
+                "text": "Select a sample of devices from the list and observe device locations to verify that the list is accurate and up to date."
               }
             },
             {
@@ -3591,7 +3591,7 @@
               "id": "Requirements 10.6.1",
               "name": "Requirements 10.6.1",
               "fullDescription": {
-                "text": "Review the following at least daily:\n• All security events\n• Logs of all system components that store, process, or transmit CHD and/or SAD\n• Logs of all critical system components\n• Logs of all servers and system components that perform security functions (for example, firewalls, intrusion-detection systems/intrusion-prevention systems (IDS/IPS), authentication servers, e-commerce redirection servers, etc.). "
+                "text": "Review the following at least daily:\n• All security events\n• Logs of all system components that store, process, or transmit CHD and/or SAD, or that could impact the security of CHD and/or SAD\n• Logs of all critical system components\n• Logs of all servers and system components that perform security functions (for example, firewalls, intrusion-detection systems/intrusion-prevention systems (IDS/IPS), authentication servers, e-commerce redirection servers, etc.). "
               }
             },
             {
@@ -3724,7 +3724,7 @@
               "id": "Testing Procedures 11.1.c",
               "name": "Testing Procedures 11.1.c",
               "fullDescription": {
-                "text": "If wireless scanning is utilized, examine output from recent wireless scans to verify that:\n• Authorized and unauthorized wireless access points are identified, and\n• The scan is performed at least quarterly for all system components and facilities."
+                "text": "Examine output from recent wireless scans to verify that:\n• Authorized and unauthorized wireless access points are identified, and\n• The scan is performed at least quarterly for all system components and facilities."
               }
             },
             {
@@ -3913,7 +3913,7 @@
               "id": "Testing Procedures 11.3.2.a",
               "name": "Testing Procedures 11.3.2.a",
               "fullDescription": {
-                "text": "Examine the scope of work and results from the most recent internal penetration test to verify that penetration testing is performed as follows.\n• Per the defined methodology\n• At least annually\n• After any significant changes to the environment."
+                "text": "Examine the scope of work and results from the most recent internal penetration test to verify that penetration testing is performed at least annually and after any significant changes to the environment.\n• Per the defined methodology\n• At least annually\n• After any significant changes to the environment."
               }
             },
             {
@@ -3941,7 +3941,7 @@
               "id": "Requirements 11.3.4",
               "name": "Requirements 11.3.4",
               "fullDescription": {
-                "text": "If segmentation is used to isolate the CDE from other networks, perform penetration tests at least annually and after any changes to segmentation controls/methods to verify that the segmentation methods are operational and effective, and isolate all out-of-scope systems from systems in the CDE."
+                "text": "If segmentation is used to isolate the CDE from other networks, perform penetration tests at least annually and after any changes to segmentation controls/methods to verify that the segmentation methods are operational and effective, and isolate all out-of-scope systems from in-scope systems."
               }
             },
             {
@@ -3990,7 +3990,7 @@
               "id": "Requirements 11.5",
               "name": "Requirements 11.5",
               "fullDescription": {
-                "text": "Deploy a change-detection mechanism (for example, file-integrity monitoring tools) to alert personnel to unauthorized modification (including changes, additions, and deletions) of critical system files, configuration files, or content files; and configure the software to perform critical file comparisons at least weekly."
+                "text": "Deploy a change-detection mechanism (for example, file-integrity monitoring tools) to alert personnel to unauthorized modification of critical system files, configuration files, or content files; and configure the software to perform critical file comparisons at least weekly."
               }
             },
             {
@@ -4074,7 +4074,7 @@
               "id": "Requirements 12.2",
               "name": "Requirements 12.2",
               "fullDescription": {
-                "text": "Implement a risk-assessment process that:\n• Is performed at least annually and upon significant changes to the environment (for example, acquisition, merger, relocation, etc.),\n• Identifies critical assets, threats, and vulnerabilities, and\n• Results in a formal, documented analysis of risk."
+                "text": "Implement a risk-assessment process that:\n• Is performed at least annually and upon significant changes to the environment (for example, acquisition, merger, relocation, etc.),\n• Identifies critical assets, threats, and vulnerabilities, and\n• Results in a formal risk assessment."
               }
             },
             {
@@ -4529,7 +4529,7 @@
               "id": "Requirements 12.9",
               "name": "Requirements 12.9",
               "fullDescription": {
-                "text": "Additional requirement for service providers only: Service providers acknowledge in writing to customers that they are responsible for the security of cardholder data the service provider possesses or otherwise stores, processes, or transmits on behalf of the customer, or to the extent that they could impact the security of the customer’s cardholder data environment."
+                "text": "Additional requirement for service providers: Service providers acknowledge in writing to customers that they are responsible for the security of cardholder data the service provider possesses or otherwise stores, processes, or transmits on behalf of the customer, or to the extent that they could impact the security of the customer’s cardholder data environment."
               }
             },
             {

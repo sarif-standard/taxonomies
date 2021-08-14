@@ -42,6 +42,7 @@ namespace Tools.Pci
                         ShortDescription = new MultiformatMessageString { Text = "Payment Card Industry (PCI) Data Security Standard" },
                         Contents = ToolComponentContents.LocalizedData | ToolComponentContents.NonLocalizedData,
                         IsComprehensive = true,
+                        Version = this.version,
                     };
 
                     switch (this.version)
@@ -66,6 +67,34 @@ namespace Tools.Pci
                             this.tool.ReleaseDateUtc = Constants.PCI_DSS_V3_1.ReleaseDate;
                             this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf");
                             this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf");
+                            break;
+                        case "3.0":
+                            this.tool.Name = Constants.PCI_DSS_V3_0.Name;
+                            this.tool.Guid = Constants.PCI_DSS_V3_0.Guid;
+                            this.tool.ReleaseDateUtc = Constants.PCI_DSS_V3_0.ReleaseDate;
+                            this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf");
+                            this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_DSS_v3.pdf");
+                            break;
+                        case "2.0":
+                            this.tool.Name = Constants.PCI_DSS_V2_0.Name;
+                            this.tool.Guid = Constants.PCI_DSS_V2_0.Guid;
+                            this.tool.ReleaseDateUtc = Constants.PCI_DSS_V2_0.ReleaseDate;
+                            this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v2.pdf");
+                            this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v2.pdf");
+                            break;
+                        case "1.2":
+                            this.tool.Name = Constants.PCI_DSS_V1_2.Name;
+                            this.tool.Guid = Constants.PCI_DSS_V1_2.Guid;
+                            this.tool.ReleaseDateUtc = Constants.PCI_DSS_V1_2.ReleaseDate;
+                            this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf");
+                            this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf");
+                            break;
+                        case "1.1":
+                            this.tool.Name = Constants.PCI_DSS_V1_1.Name;
+                            this.tool.Guid = Constants.PCI_DSS_V1_1.Guid;
+                            this.tool.ReleaseDateUtc = Constants.PCI_DSS_V1_1.ReleaseDate;
+                            this.tool.InformationUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf");
+                            this.tool.DownloadUri = new Uri("https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf");
                             break;
                         default:
                             throw new Exception("Not supported version.");

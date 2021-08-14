@@ -1,0 +1,1616 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "guid": "355F57AC-0289-430E-B71C-B32C2A5B5C2A",
+          "name": "PCI DSS V1.1",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Data Security Standard"
+          },
+          "version": "1.1",
+          "releaseDateUtc": "2006-09-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "355F57AC-0289-430E-B71C-B32C2A5B5C2A",
+          "name": "PCI DSS V1.1",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Data Security Standard"
+          },
+          "version": "1.1",
+          "releaseDateUtc": "2006-09-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/pci_dss_v1-1.pdf",
+          "taxa": [
+            {
+              "id": "Requirements 1",
+              "name": "Install and maintain a firewall configuration to protect cardholder data",
+              "fullDescription": {
+                "text": "Firewalls are computer devices that control computer traffic allowed into and out of a company’s network, as well as traffic into more sensitive areas within a company’s internal network. A firewall examines all network traffic and blocks those transmissions that do not meet the specified security criteria.\nAll systems must be protected from unauthorized access from the Internet, whether entering the system as e-commerce, employees’ Internet-based access through desktop browsers, or employees’ e-mail access. Often, seemingly insignificant paths to and from the Internet can provide unprotected pathways into key systems. Firewalls are a key protection mechanism for any computer network."
+              }
+            },
+            {
+              "id": "Requirements 1.1",
+              "name": "Requirements 1.1",
+              "fullDescription": {
+                "text": "Establish firewall configuration standards that include the following:"
+              }
+            },
+            {
+              "id": "Requirements 1.1.1",
+              "name": "Requirements 1.1.1",
+              "fullDescription": {
+                "text": "A formal process for approving and testing all external network connections and changes to the firewall configuration"
+              }
+            },
+            {
+              "id": "Requirements 1.1.2",
+              "name": "Requirements 1.1.2",
+              "fullDescription": {
+                "text": "A current network diagram with all connections to cardholder data, including any wireless networks"
+              }
+            },
+            {
+              "id": "Requirements 1.1.3",
+              "name": "Requirements 1.1.3",
+              "fullDescription": {
+                "text": "Requirements for a firewall at each Internet connection and between any demilitarized zone (DMZ) and the internal network zone"
+              }
+            },
+            {
+              "id": "Requirements 1.1.4",
+              "name": "Requirements 1.1.4",
+              "fullDescription": {
+                "text": "Description of groups, roles, and responsibilities for logical management of network components"
+              }
+            },
+            {
+              "id": "Requirements 1.1.5",
+              "name": "Requirements 1.1.5",
+              "fullDescription": {
+                "text": "Documented list of services and ports necessary for business"
+              }
+            },
+            {
+              "id": "Requirements 1.1.6",
+              "name": "Requirements 1.1.6",
+              "fullDescription": {
+                "text": "Justification and documentation for any available protocols besides hypertext transfer protocol (HTTP), and secure sockets layer (SSL), secure shell (SSH), and virtual private network (VPN)"
+              }
+            },
+            {
+              "id": "Requirements 1.1.7",
+              "name": "Requirements 1.1.7",
+              "fullDescription": {
+                "text": "Justification and documentation for any risky protocols allowed (for example, file transfer protocol (FTP), which includes reason for use of protocol and security features implemented"
+              }
+            },
+            {
+              "id": "Requirements 1.1.8",
+              "name": "Requirements 1.1.8",
+              "fullDescription": {
+                "text": "Quarterly review of firewall and router rule sets"
+              }
+            },
+            {
+              "id": "Requirements 1.1.9",
+              "name": "Requirements 1.1.9",
+              "fullDescription": {
+                "text": "Configuration standards for routers"
+              }
+            },
+            {
+              "id": "Requirements 1.2",
+              "name": "Requirements 1.2",
+              "fullDescription": {
+                "text": "Build a firewall configuration that denies all traffic from “untrusted” networks and hosts, except for protocols necessary for the cardholder data environment."
+              }
+            },
+            {
+              "id": "Requirements 1.3",
+              "name": "Requirements 1.3",
+              "fullDescription": {
+                "text": "Build a firewall configuration that restricts connections between publicly accessible servers and any system component storing cardholder data, including any connections from wireless networks. This firewall configuration should include the following:"
+              }
+            },
+            {
+              "id": "Requirements 1.3.1",
+              "name": "Requirements 1.3.1",
+              "fullDescription": {
+                "text": "Restricting inbound Internet traffic to Internet protocol (IP) addresses within the DMZ (ingress filters)"
+              }
+            },
+            {
+              "id": "Requirements 1.3.2",
+              "name": "Requirements 1.3.2",
+              "fullDescription": {
+                "text": "Not allowing internal addresses to pass from the Internet into the DMZ"
+              }
+            },
+            {
+              "id": "Requirements 1.3.3",
+              "name": "Requirements 1.3.3",
+              "fullDescription": {
+                "text": "Implementing stateful inspection, also known as dynamic packet filtering (that is, only ”established” connections are allowed into the network)"
+              }
+            },
+            {
+              "id": "Requirements 1.3.4",
+              "name": "Requirements 1.3.4",
+              "fullDescription": {
+                "text": "Placing the database in an internal network zone, segregated from the DMZ"
+              }
+            },
+            {
+              "id": "Requirements 1.3.5",
+              "name": "Requirements 1.3.5",
+              "fullDescription": {
+                "text": "Restricting inbound and outbound traffic to that which is necessary for the cardholder data environment"
+              }
+            },
+            {
+              "id": "Requirements 1.3.6",
+              "name": "Requirements 1.3.6",
+              "fullDescription": {
+                "text": "Securing and synchronizing router configuration files. For example, running configuration files (for normal functioning of the routers), and start-up configuration files (when machines are re-booted) should have the same secure configuration"
+              }
+            },
+            {
+              "id": "Requirements 1.3.7",
+              "name": "Requirements 1.3.7",
+              "fullDescription": {
+                "text": "Denying all other inbound and outbound traffic not specifically allowed"
+              }
+            },
+            {
+              "id": "Requirements 1.3.8",
+              "name": "Requirements 1.3.8",
+              "fullDescription": {
+                "text": "Installing perimeter firewalls between any wireless networks and the cardholder data environment, and configuring these firewalls to deny any traffic from the wireless environment or from controlling any traffic (if such traffic is necessary for business purposes)"
+              }
+            },
+            {
+              "id": "Requirements 1.3.9",
+              "name": "Requirements 1.3.9",
+              "fullDescription": {
+                "text": "Installing personal firewall software on any mobile and employee-owned computers with direct connectivity to the Internet (for example, laptops used by employees), which are used to access the organization’s network."
+              }
+            },
+            {
+              "id": "Requirements 1.4",
+              "name": "Requirements 1.4",
+              "fullDescription": {
+                "text": "Prohibit direct public access between external networks and any system component that stores cardholder data (for example, databases, logs, trace files)."
+              }
+            },
+            {
+              "id": "Requirements 1.4.1",
+              "name": "Requirements 1.4.1",
+              "fullDescription": {
+                "text": "Implement a DMZ to filter and screen all traffic and to prohibit direct routes for inbound and outbound Internet traffic"
+              }
+            },
+            {
+              "id": "Requirements 1.4.2",
+              "name": "Requirements 1.4.2",
+              "fullDescription": {
+                "text": "Restrict outbound traffic from payment card applications to IP addresses within the DMZ"
+              }
+            },
+            {
+              "id": "Requirements 1.5",
+              "name": "Requirements 1.5",
+              "fullDescription": {
+                "text": "Implement IP masquerading to prevent internal addresses from being translated and revealed on the Internet. Use technologies that implement RFC 1918 address space, such as port address translation (PAT) or network address translation (NAT)."
+              }
+            },
+            {
+              "id": "Requirements 2",
+              "name": "Do not use vendor-supplied defaults for system passwords and other security parameters",
+              "fullDescription": {
+                "text": "Hackers (external and internal to a company) often use vendor default passwords and other vendor default settings to compromise systems. These passwords and settings are well known in hacker communities and easily determined via public information."
+              }
+            },
+            {
+              "id": "Requirements 2.1",
+              "name": "Requirements 2.1",
+              "fullDescription": {
+                "text": "Always change vendor-supplied defaults before installing a system on the network (for example, include passwords, simple network management protocol (SNMP) community strings, and elimination of unnecessary accounts)."
+              }
+            },
+            {
+              "id": "Requirements 2.1.1",
+              "name": "Requirements 2.1.1",
+              "fullDescription": {
+                "text": "For wireless environments, change wireless vendor defaults, including but not limited to, wired equivalent privacy (WEP) keys, default service set identifier (SSID), passwords, and SNMP community strings. Disable SSID broadcasts. Enable WiFi protected access (WPA and WPA2) technology for encryption and authentication when WPA-capable"
+              }
+            },
+            {
+              "id": "Requirements 2.2",
+              "name": "Requirements 2.2",
+              "fullDescription": {
+                "text": "Develop configuration standards for all system components. Assure that these standards address all known security vulnerabilities and are consistent with industry-accepted system hardening standards as defined, for example, by SysAdmin Audit Network Security Network (SANS), National Institute of Standards Technology (NIST), and Center for Internet Security (CIS)."
+              }
+            },
+            {
+              "id": "Requirements 2.2.1",
+              "name": "Requirements 2.2.1",
+              "fullDescription": {
+                "text": "Implement only one primary function per server (for example, web servers, database servers, and DNS should be implemented on separate servers)"
+              }
+            },
+            {
+              "id": "Requirements 2.2.2",
+              "name": "Requirements 2.2.2",
+              "fullDescription": {
+                "text": "Disable all unnecessary and insecure services and protocols (services and protocols not directly needed to perform the devices’ specified function)"
+              }
+            },
+            {
+              "id": "Requirements 2.2.3",
+              "name": "Requirements 2.2.3",
+              "fullDescription": {
+                "text": "Configure system security parameters to prevent misuse"
+              }
+            },
+            {
+              "id": "Requirements 2.2.4",
+              "name": "Requirements 2.2.4",
+              "fullDescription": {
+                "text": "Remove all unnecessary functionality, such as scripts, drivers, features, subsystems, file systems, and unnecessary web servers"
+              }
+            },
+            {
+              "id": "Requirements 2.3",
+              "name": "Requirements 2.3",
+              "fullDescription": {
+                "text": "Encrypt all non-console administrative access. Use technologies such as SSH, VPN, or SSL/TLS (transport layer security) for web-based management and other non-console administrative access."
+              }
+            },
+            {
+              "id": "Requirements 2.4",
+              "name": "Requirements 2.4",
+              "fullDescription": {
+                "text": "Hosting providers must protect each entity’s hosted environment and data. These providers must meet specific requirements as detailed in Appendix A: “PCI DSS Applicability for Hosting Providers.”"
+              }
+            },
+            {
+              "id": "Requirements 3",
+              "name": "Protect stored cardholder data",
+              "fullDescription": {
+                "text": "Encryption is a critical component of cardholder data protection. If an intruder circumvents other network security controls and gains access to encrypted data, without the proper cryptographic keys, the data is unreadable and unusable to that person. Other effective methods of protecting stored data should be considered as potential risk mitigation opportunities. For example, methods for minimizing risk include not storing cardholder data unless absolutely necessary, truncating cardholder data if full PAN is not needed, and not sending PAN in unencrypted e-mails."
+              }
+            },
+            {
+              "id": "Requirements 3.1",
+              "name": "Requirements 3.1",
+              "fullDescription": {
+                "text": "Keep cardholder data storage to a minimum. Develop a data retention and disposal policy. Limit storage amount and retention time to that which is required for business, legal, and/or regulatory purposes, as documented in the data retention policy."
+              }
+            },
+            {
+              "id": "Requirements 3.2",
+              "name": "Requirements 3.2",
+              "fullDescription": {
+                "text": "Do not store sensitive authentication data subsequent to authorization (even if encrypted). Sensitive authentication data includes the data as cited in the following Requirements 3.2.1 through 3.2.3:"
+              }
+            },
+            {
+              "id": "Requirements 3.2.1",
+              "name": "Requirements 3.2.1",
+              "fullDescription": {
+                "text": "Do not store the full contents of any track from the magnetic stripe (that is on the back of a card, in a chip or elsewhere). This data is alternatively called full track, track, track 1, track 2, and magnetic stripe data\nIn the normal course of business, the following data elements from the magnetic stripe may need to be retained: the accountholder’s name, primary account number (PAN), expiration date, and service code. To minimize risk, store only those data elements needed for business. NEVER store the card verification code or value or PIN verification value data elements. Note: See “Glossary” for additional information."
+              }
+            },
+            {
+              "id": "Requirements 3.2.2",
+              "name": "Requirements 3.2.2",
+              "fullDescription": {
+                "text": "Do not store the card-validation code or value (three-digit or four-digit number printed on the front or back of a payment card) used to verify card-not-present transactions"
+              }
+            },
+            {
+              "id": "Requirements 3.2.3",
+              "name": "Requirements 3.2.3",
+              "fullDescription": {
+                "text": "Do not store the personal identification number (PIN) or the encrypted PIN block."
+              }
+            },
+            {
+              "id": "Requirements 3.3",
+              "name": "Requirements 3.3",
+              "fullDescription": {
+                "text": "Mask PAN when displayed (the first six and last four digits are the maximum number of digits to be displayed)."
+              }
+            },
+            {
+              "id": "Requirements 3.4",
+              "name": "Requirements 3.4",
+              "fullDescription": {
+                "text": "Render PAN, at minimum, unreadable anywhere it is stored (including data on portable digital media, backup media, in logs, and data received from or stored by wireless networks) by using any of the following approaches:\n• Strong one-way hash functions (hashed indexes)\n• Truncation\n• Index tokens and pads (pads must be securely stored)\n• Strong cryptography with associated key management processes and procedures.\nThe MINIMUM account information that must be rendered unreadable is the PAN.\nIf for some reason, a company is unable to encrypt cardholder data, refer to Appendix B: “Compensating Controls for Encryption of Stored Data.”"
+              }
+            },
+            {
+              "id": "Requirements 3.4.1",
+              "name": "Requirements 3.4.1",
+              "fullDescription": {
+                "text": "If disk encryption is used (rather than file- or column-level database encryption), logical access must be managed independently of native operating system access control Payment Card Industry (PCI) Data Security Standard 6 mechanisms (for example, by not using local system or Active Directory accounts). Decryption keys must not be tied to user accounts."
+              }
+            },
+            {
+              "id": "Requirements 3.5",
+              "name": "Requirements 3.5",
+              "fullDescription": {
+                "text": "Protect encryption keys used for encryption of cardholder data against both disclosure and misuse."
+              }
+            },
+            {
+              "id": "Requirements 3.5.1",
+              "name": "Requirements 3.5.1",
+              "fullDescription": {
+                "text": "Restrict access to keys to the fewest number of custodians necessary"
+              }
+            },
+            {
+              "id": "Requirements 3.5.2",
+              "name": "Requirements 3.5.2",
+              "fullDescription": {
+                "text": "Store keys securely in the fewest possible locations and forms."
+              }
+            },
+            {
+              "id": "Requirements 3.6",
+              "name": "Requirements 3.6",
+              "fullDescription": {
+                "text": "Fully document and implement all key management processes and procedures for keys used for encryption of cardholder data, including the following:"
+              }
+            },
+            {
+              "id": "Requirements 3.6.1",
+              "name": "Requirements 3.6.1",
+              "fullDescription": {
+                "text": "Generation of strong keys"
+              }
+            },
+            {
+              "id": "Requirements 3.6.2",
+              "name": "Requirements 3.6.2",
+              "fullDescription": {
+                "text": "Secure key distribution"
+              }
+            },
+            {
+              "id": "Requirements 3.6.3",
+              "name": "Requirements 3.6.3",
+              "fullDescription": {
+                "text": "Secure key storage"
+              }
+            },
+            {
+              "id": "Requirements 3.6.4",
+              "name": "Requirements 3.6.4",
+              "fullDescription": {
+                "text": "Periodic changing of keys\n• As deemed necessary and recommended by the associated application (for example, re-keying); preferably automatically\n• At least annually."
+              }
+            },
+            {
+              "id": "Requirements 3.6.5",
+              "name": "Requirements 3.6.5",
+              "fullDescription": {
+                "text": "Destruction of old keys"
+              }
+            },
+            {
+              "id": "Requirements 3.6.6",
+              "name": "Requirements 3.6.6",
+              "fullDescription": {
+                "text": "Split knowledge and establishment of dual control of keys (so that it requires two or three people, each knowing only their part of the key, to reconstruct the whole key)"
+              }
+            },
+            {
+              "id": "Requirements 3.6.7",
+              "name": "Requirements 3.6.7",
+              "fullDescription": {
+                "text": "Prevention of unauthorized substitution of keys"
+              }
+            },
+            {
+              "id": "Requirements 3.6.8",
+              "name": "Requirements 3.6.8",
+              "fullDescription": {
+                "text": "Replacement of known or suspected compromised keys"
+              }
+            },
+            {
+              "id": "Requirements 3.6.9",
+              "name": "Requirements 3.6.9",
+              "fullDescription": {
+                "text": "Revocation of old or invalid keys"
+              }
+            },
+            {
+              "id": "Requirements 3.6.10",
+              "name": "Requirements 3.6.10",
+              "fullDescription": {
+                "text": "Requirement for key custodians to sign a form stating that they understand and accept their key-custodian responsibilities."
+              }
+            },
+            {
+              "id": "Requirements 4",
+              "name": "Encrypt transmission of cardholder data across open, public networks",
+              "fullDescription": {
+                "text": "Sensitive information must be encrypted during transmission over networks that are easy and common for a hacker to intercept, modify, and divert data while in transit."
+              }
+            },
+            {
+              "id": "Requirements 4.1",
+              "name": "Requirements 4.1",
+              "fullDescription": {
+                "text": "Use strong cryptography and security protocols such as secure sockets layer (SSL) / transport layer security (TLS) and Internet protocol security (IPSEC) to safeguard sensitive cardholder data during transmission over open, public networks.\nExamples of open, public networks that are in scope of the PCI DSS are the Internet, WiFi (IEEE 802.11x), global system for mobile communications (GSM), and general packet radio service (GPRS)."
+              }
+            },
+            {
+              "id": "Requirements 4.1.1",
+              "name": "Requirements 4.1.1",
+              "fullDescription": {
+                "text": "For wireless networks transmitting cardholder data, encrypt the transmissions by using WiFi protected access (WPA or WPA2) technology, IPSEC VPN, or SSL/TLS. Never rely exclusively on wired equivalent privacy (WEP) to protect confidentiality and access to a wireless LAN. If WEP is used, do the following:\n• Use with a minimum 104-bit encryption key and 24 bit-initialization value\n• Use ONLY in conjunction with WiFi protected access (WPA or WPA2) technology, VPN, or SSL/TLS\n• Rotate shared WEP keys quarterly (or automatically if the technology permits)\n• Rotate shared WEP keys whenever there are changes in personnel with access to keys\n• Restrict access based on media access code (MAC) address."
+              }
+            },
+            {
+              "id": "Requirements 4.2",
+              "name": "Requirements 4.2",
+              "fullDescription": {
+                "text": "Never send unencrypted PANs by e-mail."
+              }
+            },
+            {
+              "id": "Requirements 5",
+              "name": "Use and regularly update anti-virus software or programs",
+              "fullDescription": {
+                "text": "Many vulnerabilities and malicious viruses enter the network via employees’ e-mail activities. Anti-virus software must be used on all systems commonly affected by viruses to protect systems from malicious software."
+              }
+            },
+            {
+              "id": "Requirements 5.1",
+              "name": "Requirements 5.1",
+              "fullDescription": {
+                "text": "Deploy anti-virus software on all systems commonly affected by viruses (particularly personal computers and servers)\nNote: Systems commonly affected by viruses typically do not include UNIX-based operating systems or mainframes"
+              }
+            },
+            {
+              "id": "Requirements 5.1.1",
+              "name": "Requirements 5.1.1",
+              "fullDescription": {
+                "text": "Ensure that anti-virus programs are capable of detecting, removing, and protecting against other forms of malicious software, including spyware and adware."
+              }
+            },
+            {
+              "id": "Requirements 5.2",
+              "name": "Requirements 5.2",
+              "fullDescription": {
+                "text": "Ensure that all anti-virus mechanisms are current, actively running, and capable of generating audit logs."
+              }
+            },
+            {
+              "id": "Requirements 6",
+              "name": "Develop and maintain secure systems and applications",
+              "fullDescription": {
+                "text": "Unscrupulous individuals use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendor-provided security patches. All systems must have the most recently released, appropriate software patches to protect against exploitation by employees, external hackers, and viruses. Note: Appropriate software patches are those patches that have been evaluated and tested sufficiently to determine that the patches do not conflict with existing security configurations. For in-house developed applications, numerous vulnerabilities can be avoided by using standard system development processes and secure coding techniques."
+              }
+            },
+            {
+              "id": "Requirements 6.1",
+              "name": "Requirements 6.1",
+              "fullDescription": {
+                "text": "Ensure that all system components and software have the latest vendor-supplied security patches installed. Install relevant security patches within one month of release."
+              }
+            },
+            {
+              "id": "Requirements 6.2",
+              "name": "Requirements 6.2",
+              "fullDescription": {
+                "text": "Establish a process to identify newly discovered security vulnerabilities (for example, subscribe to alert services freely available on the Internet). Update standards to address new vulnerability issues"
+              }
+            },
+            {
+              "id": "Requirements 6.3",
+              "name": "Requirements 6.3",
+              "fullDescription": {
+                "text": "Develop software applications based on industry best practices and incorporate information security throughout the software development life cycle."
+              }
+            },
+            {
+              "id": "Requirements 6.3.1",
+              "name": "Requirements 6.3.1",
+              "fullDescription": {
+                "text": "Testing of all security patches and system and software configuration changes before deployment"
+              }
+            },
+            {
+              "id": "Requirements 6.3.2",
+              "name": "Requirements 6.3.2",
+              "fullDescription": {
+                "text": "Separate development, test, and production environments"
+              }
+            },
+            {
+              "id": "Requirements 6.3.3",
+              "name": "Requirements 6.3.3",
+              "fullDescription": {
+                "text": "Separation of duties between development, test, and production environments"
+              }
+            },
+            {
+              "id": "Requirements 6.3.4",
+              "name": "Requirements 6.3.4",
+              "fullDescription": {
+                "text": "Production data (live PANs) are not used for testing or development"
+              }
+            },
+            {
+              "id": "Requirements 6.3.5",
+              "name": "Requirements 6.3.5",
+              "fullDescription": {
+                "text": "Removal of test data and accounts before production systems become active"
+              }
+            },
+            {
+              "id": "Requirements 6.3.6",
+              "name": "Requirements 6.3.6",
+              "fullDescription": {
+                "text": "Removal of custom application accounts, usernames, and passwords before applications become active or are released to customers"
+              }
+            },
+            {
+              "id": "Requirements 6.3.7",
+              "name": "Requirements 6.3.7",
+              "fullDescription": {
+                "text": "Review of custom code prior to release to production or customers in order to identify any potential coding vulnerability."
+              }
+            },
+            {
+              "id": "Requirements 6.4",
+              "name": "Requirements 6.4",
+              "fullDescription": {
+                "text": "Follow change control procedures for all system and software configuration changes. The procedures must include the following:"
+              }
+            },
+            {
+              "id": "Requirements 6.4.1",
+              "name": "Requirements 6.4.1",
+              "fullDescription": {
+                "text": "Documentation of impact"
+              }
+            },
+            {
+              "id": "Requirements 6.4.2",
+              "name": "Requirements 6.4.2",
+              "fullDescription": {
+                "text": "Management sign-off by appropriate parties"
+              }
+            },
+            {
+              "id": "Requirements 6.4.3",
+              "name": "Requirements 6.4.3",
+              "fullDescription": {
+                "text": "Testing of operational functionality"
+              }
+            },
+            {
+              "id": "Requirements 6.4.4",
+              "name": "Requirements 6.4.4",
+              "fullDescription": {
+                "text": "Back-out procedures"
+              }
+            },
+            {
+              "id": "Requirements 6.5",
+              "name": "Requirements 6.5",
+              "fullDescription": {
+                "text": "Develop all web applications based on secure coding guidelines such as the Open Web Application Security Project guidelines. Review custom application code to identify coding vulnerabilities. Cover prevention of common coding vulnerabilities in software development processes, to include the following:"
+              }
+            },
+            {
+              "id": "Requirements 6.5.1",
+              "name": "Requirements 6.5.1",
+              "fullDescription": {
+                "text": "Unvalidated input"
+              }
+            },
+            {
+              "id": "Requirements 6.5.2",
+              "name": "Requirements 6.5.2",
+              "fullDescription": {
+                "text": "Broken access control (for example, malicious use of user IDs)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.3",
+              "name": "Requirements 6.5.3",
+              "fullDescription": {
+                "text": "Broken authentication and session management (use of account credentials and session cookies)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.4",
+              "name": "Requirements 6.5.4",
+              "fullDescription": {
+                "text": "Cross-site scripting (XSS) attacks"
+              }
+            },
+            {
+              "id": "Requirements 6.5.5",
+              "name": "Requirements 6.5.5",
+              "fullDescription": {
+                "text": "Buffer overflows"
+              }
+            },
+            {
+              "id": "Requirements 6.5.6",
+              "name": "Requirements 6.5.6",
+              "fullDescription": {
+                "text": "Injection flaws (for example, structured query language (SQL) injection)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.7",
+              "name": "Requirements 6.5.7",
+              "fullDescription": {
+                "text": "Improper error handling"
+              }
+            },
+            {
+              "id": "Requirements 6.5.8",
+              "name": "Requirements 6.5.8",
+              "fullDescription": {
+                "text": "Insecure storage"
+              }
+            },
+            {
+              "id": "Requirements 6.5.9",
+              "name": "Requirements 6.5.9",
+              "fullDescription": {
+                "text": "Denial of service"
+              }
+            },
+            {
+              "id": "Requirements 6.5.10",
+              "name": "Requirements 6.5.10",
+              "fullDescription": {
+                "text": "Insecure configuration management"
+              }
+            },
+            {
+              "id": "Requirements 6.6",
+              "name": "Requirements 6.6",
+              "fullDescription": {
+                "text": "Ensure that all web-facing applications are protected against known attacks by applying either of the following methods:\n• Having all custom application code reviewed for common vulnerabilities by an organization that specializes in application security\n• Installing an application layer firewall in front of web-facing applications.\nNote: This method is considered a best practice until June 30, 2008, after which it becomes a requirement."
+              }
+            },
+            {
+              "id": "Requirements 7",
+              "name": "Restrict access to cardholder data by business need-to-know",
+              "fullDescription": {
+                "text": "This requirement ensures critical data can only be accessed by authorized personnel"
+              }
+            },
+            {
+              "id": "Requirements 7.1",
+              "name": "Requirements 7.1",
+              "fullDescription": {
+                "text": "Limit access to computing resources and cardholder information only to those individuals whose job requires such access."
+              }
+            },
+            {
+              "id": "Requirements 7.2",
+              "name": "Requirements 7.2",
+              "fullDescription": {
+                "text": "Establish a mechanism for systems with multiple users that restricts access based on a user’s need to know and is set to “deny all” unless specifically allowed."
+              }
+            },
+            {
+              "id": "Requirements 8",
+              "name": "Assign a unique ID to each person with computer access",
+              "fullDescription": {
+                "text": "Assigning a unique identification (ID) to each person with access ensures that actions taken on critical data and systems are performed by, and can be traced to, known and authorized users."
+              }
+            },
+            {
+              "id": "Requirements 8.1",
+              "name": "Requirements 8.1",
+              "fullDescription": {
+                "text": "Identify all users with a unique user name before allowing them to access system components or cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 8.2",
+              "name": "Requirements 8.2",
+              "fullDescription": {
+                "text": "In addition to assigning a unique ID, employ at least one of the following methods to authenticate all users:\n• Password\n• Token devices (e.g., SecureID, certificates, or public key)\n• Biometrics. "
+              }
+            },
+            {
+              "id": "Requirements 8.3",
+              "name": "Requirements 8.3",
+              "fullDescription": {
+                "text": "Implement two-factor authentication for remote access to the network by employees, administrators, and third parties. Use technologies such as remote authentication and dial-in service (RADIUS) or terminal access controller access control system (TACACS) with tokens; or VPN (based on SSL/TLS or IPSEC) with individual certificates."
+              }
+            },
+            {
+              "id": "Requirements 8.4",
+              "name": "Requirements 8.4",
+              "fullDescription": {
+                "text": "Encrypt all passwords during transmission and storage on all system components."
+              }
+            },
+            {
+              "id": "Requirements 8.5",
+              "name": "Requirements 8.5",
+              "fullDescription": {
+                "text": "Ensure proper user authentication and password management for non-consumer users and administrators on all system components as follows:"
+              }
+            },
+            {
+              "id": "Requirements 8.5.1",
+              "name": "Requirements 8.5.1",
+              "fullDescription": {
+                "text": "Control addition, deletion, and modification of user IDs, credentials, and other identifier objects"
+              }
+            },
+            {
+              "id": "Requirements 8.5.2",
+              "name": "Requirements 8.5.2",
+              "fullDescription": {
+                "text": "Verify user identity before performing password resets"
+              }
+            },
+            {
+              "id": "Requirements 8.5.3",
+              "name": "Requirements 8.5.3",
+              "fullDescription": {
+                "text": "Set first-time passwords to a unique value for each user and change immediately after the first use"
+              }
+            },
+            {
+              "id": "Requirements 8.5.4",
+              "name": "Requirements 8.5.4",
+              "fullDescription": {
+                "text": "Immediately revoke access for any terminated users"
+              }
+            },
+            {
+              "id": "Requirements 8.5.5",
+              "name": "Requirements 8.5.5",
+              "fullDescription": {
+                "text": "Remove inactive user accounts at least every 90 days"
+              }
+            },
+            {
+              "id": "Requirements 8.5.6",
+              "name": "Requirements 8.5.6",
+              "fullDescription": {
+                "text": "Enable accounts used by vendors for remote maintenance only during the time period needed"
+              }
+            },
+            {
+              "id": "Requirements 8.5.7",
+              "name": "Requirements 8.5.7",
+              "fullDescription": {
+                "text": "Communicate password procedures and policies to all users who have access to cardholder data"
+              }
+            },
+            {
+              "id": "Requirements 8.5.8",
+              "name": "Requirements 8.5.8",
+              "fullDescription": {
+                "text": "Do not use group, shared, or generic accounts and passwords"
+              }
+            },
+            {
+              "id": "Requirements 8.5.9",
+              "name": "Requirements 8.5.9",
+              "fullDescription": {
+                "text": "Change user passwords at least every 90 days"
+              }
+            },
+            {
+              "id": "Requirements 8.5.10",
+              "name": "Requirements 8.5.10",
+              "fullDescription": {
+                "text": "Require a minimum password length of at least seven characters"
+              }
+            },
+            {
+              "id": "Requirements 8.5.11",
+              "name": "Requirements 8.5.11",
+              "fullDescription": {
+                "text": "Use passwords containing both numeric and alphabetic characters"
+              }
+            },
+            {
+              "id": "Requirements 8.5.12",
+              "name": "Requirements 8.5.12",
+              "fullDescription": {
+                "text": "Do not allow an individual to submit a new password that is the same as any of the last four passwords he or she has used"
+              }
+            },
+            {
+              "id": "Requirements 8.5.13",
+              "name": "Requirements 8.5.13",
+              "fullDescription": {
+                "text": "Limit repeated access attempts by locking out the user ID after not more than six attempts"
+              }
+            },
+            {
+              "id": "Requirements 8.5.14",
+              "name": "Requirements 8.5.14",
+              "fullDescription": {
+                "text": "Set the lockout duration to thirty minutes or until administrator enables the user ID"
+              }
+            },
+            {
+              "id": "Requirements 8.5.15",
+              "name": "Requirements 8.5.15",
+              "fullDescription": {
+                "text": "If a session has been idle for more than 15 minutes, require the user to re-enter the password to re-activate the terminal"
+              }
+            },
+            {
+              "id": "Requirements 8.5.16",
+              "name": "Requirements 8.5.16",
+              "fullDescription": {
+                "text": "Authenticate all access to any database containing cardholder data. This includes access by applications, administrators, and all other users"
+              }
+            },
+            {
+              "id": "Requirements 9",
+              "name": "Restrict physical access to cardholder data",
+              "fullDescription": {
+                "text": "Any physical access to data or systems that house cardholder data provides the opportunity for individuals to access devices or data and to remove systems or hardcopies, and should be appropriately restricted."
+              }
+            },
+            {
+              "id": "Requirements 9.1",
+              "name": "Requirements 9.1",
+              "fullDescription": {
+                "text": "Use appropriate facility entry controls to limit and monitor physical access to systems that store, process, or transmit cardholder data"
+              }
+            },
+            {
+              "id": "Requirements 9.1.1",
+              "name": "Requirements 9.1.1",
+              "fullDescription": {
+                "text": "Use cameras to monitor sensitive areas. Audit collected data and correlate with other entries. Store for at least three months, unless otherwise restricted by law"
+              }
+            },
+            {
+              "id": "Requirements 9.1.2",
+              "name": "Requirements 9.1.2",
+              "fullDescription": {
+                "text": "Restrict physical access to publicly accessible network jacks"
+              }
+            },
+            {
+              "id": "Requirements 9.1.3",
+              "name": "Requirements 9.1.3",
+              "fullDescription": {
+                "text": "Restrict physical access to wireless access points, gateways, and handheld devices."
+              }
+            },
+            {
+              "id": "Requirements 9.2",
+              "name": "Requirements 9.2",
+              "fullDescription": {
+                "text": "Develop procedures to help all personnel easily distinguish between employees and visitors, especially in areas where cardholder data is accessible.\n“Employee” refers to full-time and part-time employees, temporary employees and personnel, and consultants who are “resident” on the entity’s site. A “visitor” is defined as a vendor, guest of an employee, service personnel, or anyone who needs to enter the facility for a short duration, usually not more than one day"
+              }
+            },
+            {
+              "id": "Requirements 9.3",
+              "name": "Requirements 9.3",
+              "fullDescription": {
+                "text": "Make sure all visitors are handled as follows:"
+              }
+            },
+            {
+              "id": "Requirements 9.3.1",
+              "name": "Requirements 9.3.1",
+              "fullDescription": {
+                "text": "Authorized before entering areas where cardholder data is processed or maintained"
+              }
+            },
+            {
+              "id": "Requirements 9.3.2",
+              "name": "Requirements 9.3.2",
+              "fullDescription": {
+                "text": "Given a physical token (for example, a badge or access device) that expires and that identifies the visitors as non-employees"
+              }
+            },
+            {
+              "id": "Requirements 9.3.3",
+              "name": "Requirements 9.3.3",
+              "fullDescription": {
+                "text": "Asked to surrender the physical token before leaving the facility or at the date of expiration."
+              }
+            },
+            {
+              "id": "Requirements 9.4",
+              "name": "Requirements 9.4",
+              "fullDescription": {
+                "text": "Use a visitor log to maintain a physical audit trail of visitor activity. Retain this log for a minimum of three months, unless otherwise restricted by law."
+              }
+            },
+            {
+              "id": "Requirements 9.5",
+              "name": "Requirements 9.5",
+              "fullDescription": {
+                "text": "Store media back-ups in a secure location, preferably in an off-site facility, such as an alternate or backup site, or a commercial storage facility."
+              }
+            },
+            {
+              "id": "Requirements 9.6",
+              "name": "Requirements 9.6",
+              "fullDescription": {
+                "text": "Physically secure all paper and electronic media (including computers, electronic media, networking and communications hardware, telecommunication lines, paper receipts, paper reports, and faxes) that contain cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 9.7",
+              "name": "Requirements 9.7",
+              "fullDescription": {
+                "text": "Maintain strict control over the internal or external distribution of any kind of media that contains cardholder data including the following:"
+              }
+            },
+            {
+              "id": "Requirements 9.7.1",
+              "name": "Requirements 9.7.1",
+              "fullDescription": {
+                "text": "Classify the media so it can be identified as confidential"
+              }
+            },
+            {
+              "id": "Requirements 9.7.2",
+              "name": "Requirements 9.7.2",
+              "fullDescription": {
+                "text": "Send the media by secured courier or other delivery method that can be accurately tracked."
+              }
+            },
+            {
+              "id": "Requirements 9.8",
+              "name": "Requirements 9.8",
+              "fullDescription": {
+                "text": "Ensure management approves any and all media that is moved from a secured area (especially when media is distributed to individuals)."
+              }
+            },
+            {
+              "id": "Requirements 9.9",
+              "name": "Requirements 9.9",
+              "fullDescription": {
+                "text": "Maintain strict control over the storage and accessibility of media that contains cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 9.9.1",
+              "name": "Requirements 9.9.1",
+              "fullDescription": {
+                "text": "Properly inventory all media and make sure it is securely stored."
+              }
+            },
+            {
+              "id": "Requirements 9.10",
+              "name": "Requirements 9.10",
+              "fullDescription": {
+                "text": "Destroy media containing cardholder data when it is no longer needed for business or legal reasons as follows:"
+              }
+            },
+            {
+              "id": "Requirements 9.10.1",
+              "name": "Requirements 9.10.1",
+              "fullDescription": {
+                "text": "Cross-cut shred, incinerate, or pulp hardcopy materials"
+              }
+            },
+            {
+              "id": "Requirements 9.10.2",
+              "name": "Requirements 9.10.2",
+              "fullDescription": {
+                "text": "Purge, degauss, shred, or otherwise destroy electronic media so that cardholder data cannot be reconstructed."
+              }
+            },
+            {
+              "id": "Requirements 10",
+              "name": "Track and monitor all access to network resources and cardholder data",
+              "fullDescription": {
+                "text": "Logging mechanisms and the ability to track user activities are critical. The presence of logs in all environments allows thorough tracking and analysis if something does go wrong. Determining the cause of a compromise is very difficult without system activity logs."
+              }
+            },
+            {
+              "id": "Requirements 10.1",
+              "name": "Requirements 10.1",
+              "fullDescription": {
+                "text": "Establish a process for linking all access to system components (especially access done with administrative privileges such as root) to each individual user."
+              }
+            },
+            {
+              "id": "Requirements 10.2",
+              "name": "Requirements 10.2",
+              "fullDescription": {
+                "text": "Implement automated audit trails for all system components to reconstruct the following events:"
+              }
+            },
+            {
+              "id": "Requirements 10.2.1",
+              "name": "Requirements 10.2.1",
+              "fullDescription": {
+                "text": "All individual user accesses to cardholder data"
+              }
+            },
+            {
+              "id": "Requirements 10.2.2",
+              "name": "Requirements 10.2.2",
+              "fullDescription": {
+                "text": "All actions taken by any individual with root or administrative privileges"
+              }
+            },
+            {
+              "id": "Requirements 10.2.3",
+              "name": "Requirements 10.2.3",
+              "fullDescription": {
+                "text": "Access to all audit trails"
+              }
+            },
+            {
+              "id": "Requirements 10.2.4",
+              "name": "Requirements 10.2.4",
+              "fullDescription": {
+                "text": "Invalid logical access attempts"
+              }
+            },
+            {
+              "id": "Requirements 10.2.5",
+              "name": "Requirements 10.2.5",
+              "fullDescription": {
+                "text": "Use of identification and authentication mechanisms"
+              }
+            },
+            {
+              "id": "Requirements 10.2.6",
+              "name": "Requirements 10.2.6",
+              "fullDescription": {
+                "text": "Initialization of the audit logs"
+              }
+            },
+            {
+              "id": "Requirements 10.2.7",
+              "name": "Requirements 10.2.7",
+              "fullDescription": {
+                "text": "Creation and deletion of system-level objects."
+              }
+            },
+            {
+              "id": "Requirements 10.3",
+              "name": "Requirements 10.3",
+              "fullDescription": {
+                "text": "Record at least the following audit trail entries for all system components for each event:"
+              }
+            },
+            {
+              "id": "Requirements 10.3.1",
+              "name": "Requirements 10.3.1",
+              "fullDescription": {
+                "text": "User identification"
+              }
+            },
+            {
+              "id": "Requirements 10.3.2",
+              "name": "Requirements 10.3.2",
+              "fullDescription": {
+                "text": "Type of event"
+              }
+            },
+            {
+              "id": "Requirements 10.3.3",
+              "name": "Requirements 10.3.3",
+              "fullDescription": {
+                "text": "Date and time"
+              }
+            },
+            {
+              "id": "Requirements 10.3.4",
+              "name": "Requirements 10.3.4",
+              "fullDescription": {
+                "text": "Success or failure indication"
+              }
+            },
+            {
+              "id": "Requirements 10.3.5",
+              "name": "Requirements 10.3.5",
+              "fullDescription": {
+                "text": "Origination of event"
+              }
+            },
+            {
+              "id": "Requirements 10.3.6",
+              "name": "Requirements 10.3.6",
+              "fullDescription": {
+                "text": "Identity or name of affected data, system component, or resource."
+              }
+            },
+            {
+              "id": "Requirements 10.4",
+              "name": "Requirements 10.4",
+              "fullDescription": {
+                "text": "Synchronize all critical system clocks and times."
+              }
+            },
+            {
+              "id": "Requirements 10.5",
+              "name": "Requirements 10.5",
+              "fullDescription": {
+                "text": "Secure audit trails so they cannot be altered."
+              }
+            },
+            {
+              "id": "Requirements 10.5.1",
+              "name": "Requirements 10.5.1",
+              "fullDescription": {
+                "text": "Limit viewing of audit trails to those with a job-related need"
+              }
+            },
+            {
+              "id": "Requirements 10.5.2",
+              "name": "Requirements 10.5.2",
+              "fullDescription": {
+                "text": "Protect audit trail files from unauthorized modifications"
+              }
+            },
+            {
+              "id": "Requirements 10.5.3",
+              "name": "Requirements 10.5.3",
+              "fullDescription": {
+                "text": "Promptly back-up audit trail files to a centralized log server or media that is difficult to alter"
+              }
+            },
+            {
+              "id": "Requirements 10.5.4",
+              "name": "Requirements 10.5.4",
+              "fullDescription": {
+                "text": "Copy logs for wireless networks onto a log server on the internal LAN."
+              }
+            },
+            {
+              "id": "Requirements 10.5.5",
+              "name": "Requirements 10.5.5",
+              "fullDescription": {
+                "text": "Use file integrity monitoring and change detection software on logs to ensure that existing log data cannot be changed without generating alerts (although new data being added should not cause an alert)."
+              }
+            },
+            {
+              "id": "Requirements 10.6",
+              "name": "Requirements 10.6",
+              "fullDescription": {
+                "text": "Review logs for all system components at least daily. Log reviews must include those servers that perform security functions like intrusion detection system (IDS) and authentication, authorization, and accounting protocol (AAA) servers (for example, RADIUS).\nNote: Log harvesting, parsing, and alerting tools may be used to achieve compliance with Requirement 10.6."
+              }
+            },
+            {
+              "id": "Requirements 10.7",
+              "name": "Requirements 10.7",
+              "fullDescription": {
+                "text": "Retain audit trail history for at least one year, with a minimum of three months online availability."
+              }
+            },
+            {
+              "id": "Requirements 11",
+              "name": "Regularly test security systems and processes",
+              "fullDescription": {
+                "text": "Vulnerabilities are being discovered continually by hackers and researchers, and being introduced by new software. Systems, processes, and custom software should be tested frequently to ensure security is maintained over time and with any changes in software."
+              }
+            },
+            {
+              "id": "Requirements 11.1",
+              "name": "Requirements 11.1",
+              "fullDescription": {
+                "text": "Test security controls, limitations, network connections, and restrictions annually to assure the ability to adequately identify and to stop any unauthorized access attempts. Use a wireless analyzer at least quarterly to identify all wireless devices in use."
+              }
+            },
+            {
+              "id": "Requirements 11.2",
+              "name": "Requirements 11.2",
+              "fullDescription": {
+                "text": "Run internal and external network vulnerability scans at least quarterly and after any significant change in the network (such as new system component installations, changes in network topology, firewall rule modifications, product upgrades).\nNote: Quarterly external vulnerability scans must be performed by a scan vendor qualified by the payment card industry. Scans conducted after network changes may be performed by the company’s internal staff."
+              }
+            },
+            {
+              "id": "Requirements 11.3",
+              "name": "Requirements 11.3",
+              "fullDescription": {
+                "text": "Perform penetration testing at least once a year and after any significant infrastructure or application upgrade or modification (such as an operating system upgrade, a sub-network added to the environment, or a web server added to the environment). These penetration tests must include the following:"
+              }
+            },
+            {
+              "id": "Requirements 11.3.1",
+              "name": "Requirements 11.3.1",
+              "fullDescription": {
+                "text": "Network-layer penetration tests"
+              }
+            },
+            {
+              "id": "Requirements 11.3.2",
+              "name": "Requirements 11.3.2",
+              "fullDescription": {
+                "text": "Application-layer penetration tests."
+              }
+            },
+            {
+              "id": "Requirements 11.4",
+              "name": "Requirements 11.4",
+              "fullDescription": {
+                "text": "Use network intrusion detection systems, host-based intrusion detection systems, and intrusion prevention systems to monitor all network traffic and alert personnel to suspected compromises. Keep all intrusion detection and prevention engines up-to-date."
+              }
+            },
+            {
+              "id": "Requirements 11.5",
+              "name": "Requirements 11.5",
+              "fullDescription": {
+                "text": "Deploy file integrity monitoring software to alert personnel to unauthorized modification of critical system or content files; and configure the software to perform critical file comparisons at least weekly.\nCritical files are not necessarily only those containing cardholder data. For file integrity monitoring purposes, critical files are usually those that do not regularly change, but the modification of which could indicate a system compromise or risk of compromise. File integrity monitoring products usually come pre-configured with critical files for the related operating system. Other critical files, such as those for custom applications, must be evaluated and defined by the entity (that is the merchant or service provider)."
+              }
+            },
+            {
+              "id": "Requirements 12",
+              "name": "Maintain a policy that addresses information security for employees and contractors",
+              "fullDescription": {
+                "text": "A strong security policy sets the security tone for the whole company and informs employees what is expected of them. All employees should be aware of the sensitivity of data and their responsibilities for protecting it."
+              }
+            },
+            {
+              "id": "Requirements 12.1",
+              "name": "Requirements 12.1",
+              "fullDescription": {
+                "text": "Establish, publish, maintain, and disseminate a security policy that accomplishes the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.1.1",
+              "name": "Requirements 12.1.1",
+              "fullDescription": {
+                "text": "Addresses all requirements in this specification"
+              }
+            },
+            {
+              "id": "Requirements 12.1.2",
+              "name": "Requirements 12.1.2",
+              "fullDescription": {
+                "text": "Includes an annual process that identifies threats and vulnerabilities, and results in a formal risk assessment"
+              }
+            },
+            {
+              "id": "Requirements 12.1.3",
+              "name": "Requirements 12.1.3",
+              "fullDescription": {
+                "text": "Includes a review at least once a year and updates when the environment changes."
+              }
+            },
+            {
+              "id": "Requirements 12.2",
+              "name": "Requirements 12.2",
+              "fullDescription": {
+                "text": "Develop daily operational security procedures that are consistent with requirements in this specification (for example, user account maintenance procedures, and log review procedures)."
+              }
+            },
+            {
+              "id": "Requirements 12.3",
+              "name": "Requirements 12.3",
+              "fullDescription": {
+                "text": "Develop usage policies for critical employee-facing technologies (such as modems and wireless) to define proper use of these technologies for all employees and contractors. Ensure these usage policies require the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.3.1",
+              "name": "Requirements 12.3.1",
+              "fullDescription": {
+                "text": "Explicit management approval"
+              }
+            },
+            {
+              "id": "Requirements 12.3.2",
+              "name": "Requirements 12.3.2",
+              "fullDescription": {
+                "text": "Authentication for use of the technology"
+              }
+            },
+            {
+              "id": "Requirements 12.3.3",
+              "name": "Requirements 12.3.3",
+              "fullDescription": {
+                "text": "List of all such devices and personnel with access"
+              }
+            },
+            {
+              "id": "Requirements 12.3.4",
+              "name": "Requirements 12.3.4",
+              "fullDescription": {
+                "text": "Labeling of devices with owner, contact information, and purpose"
+              }
+            },
+            {
+              "id": "Requirements 12.3.5",
+              "name": "Requirements 12.3.5",
+              "fullDescription": {
+                "text": "Acceptable uses of the technologies"
+              }
+            },
+            {
+              "id": "Requirements 12.3.6",
+              "name": "Requirements 12.3.6",
+              "fullDescription": {
+                "text": "Acceptable network locations for the technologies"
+              }
+            },
+            {
+              "id": "Requirements 12.3.7",
+              "name": "Requirements 12.3.7",
+              "fullDescription": {
+                "text": "List of company-approved products"
+              }
+            },
+            {
+              "id": "Requirements 12.3.8",
+              "name": "Requirements 12.3.8",
+              "fullDescription": {
+                "text": "Automatic disconnect of modem sessions after a specific period of inactivity"
+              }
+            },
+            {
+              "id": "Requirements 12.3.9",
+              "name": "Requirements 12.3.9",
+              "fullDescription": {
+                "text": "Activation of modems for vendors only when needed by vendors, with immediate deactivation after use"
+              }
+            },
+            {
+              "id": "Requirements 12.3.10",
+              "name": "Requirements 12.3.10",
+              "fullDescription": {
+                "text": "When accessing cardholder data remotely via modem, prohibition of storage of cardholder data onto local hard drives, floppy disks, or other external media. Prohibition of cut-and-paste and print functions during remote access."
+              }
+            },
+            {
+              "id": "Requirements 12.4",
+              "name": "Requirements 12.4",
+              "fullDescription": {
+                "text": "Ensure that the security policy and procedures clearly define information security responsibilities for all employees and contractors."
+              }
+            },
+            {
+              "id": "Requirements 12.5",
+              "name": "Requirements 12.5",
+              "fullDescription": {
+                "text": "Assign to an individual or team the following information security management responsibilities:"
+              }
+            },
+            {
+              "id": "Requirements 12.5.1",
+              "name": "Requirements 12.5.1",
+              "fullDescription": {
+                "text": "Establish, document, and distribute security policies and procedures"
+              }
+            },
+            {
+              "id": "Requirements 12.5.2",
+              "name": "Requirements 12.5.2",
+              "fullDescription": {
+                "text": "Monitor and analyze security alerts and information, and distribute to appropriate personnel"
+              }
+            },
+            {
+              "id": "Requirements 12.5.3",
+              "name": "Requirements 12.5.3",
+              "fullDescription": {
+                "text": "Establish, document, and distribute security incident response and escalation procedures to ensure timely and effective handling of all situations"
+              }
+            },
+            {
+              "id": "Requirements 12.5.4",
+              "name": "Requirements 12.5.4",
+              "fullDescription": {
+                "text": "Administer user accounts, including additions, deletions, and modifications"
+              }
+            },
+            {
+              "id": "Requirements 12.5.5",
+              "name": "Requirements 12.5.5",
+              "fullDescription": {
+                "text": "Monitor and control all access to data."
+              }
+            },
+            {
+              "id": "Requirements 12.6",
+              "name": "Requirements 12.6",
+              "fullDescription": {
+                "text": "Implement a formal security awareness program to make all employees aware of the importance of cardholder data security."
+              }
+            },
+            {
+              "id": "Requirements 12.6.1",
+              "name": "Requirements 12.6.1",
+              "fullDescription": {
+                "text": "Educate employees upon hire and at least annually (for example, by letters, posters, memos, meetings, and promotions)"
+              }
+            },
+            {
+              "id": "Requirements 12.6.2",
+              "name": "Requirements 12.6.2",
+              "fullDescription": {
+                "text": "Require employees to acknowledge in writing that they have read and understood the company’s security policy and procedures."
+              }
+            },
+            {
+              "id": "Requirements 12.7",
+              "name": "Requirements 12.7",
+              "fullDescription": {
+                "text": "Screen potential employees to minimize the risk of attacks from internal sources.\nFor those employees such as store cashiers who only have access to one card number at a time when facilitating a transaction, this requirement is a recommendation only"
+              }
+            },
+            {
+              "id": "Requirements 12.8",
+              "name": "Requirements 12.8",
+              "fullDescription": {
+                "text": "If cardholder data is shared with service providers, then contractually the following is required:"
+              }
+            },
+            {
+              "id": "Requirements 12.8.1",
+              "name": "Requirements 12.8.1",
+              "fullDescription": {
+                "text": "Service providers must adhere to the PCI DSS requirements"
+              }
+            },
+            {
+              "id": "Requirements 12.8.2",
+              "name": "Requirements 12.8.2",
+              "fullDescription": {
+                "text": "Agreement that includes an acknowledgement that the service provider is responsible for the security of cardholder data the provider possesses."
+              }
+            },
+            {
+              "id": "Requirements 12.9",
+              "name": "Requirements 12.9",
+              "fullDescription": {
+                "text": "Implement an incident response plan. Be prepared to respond immediately to a system breach."
+              }
+            },
+            {
+              "id": "Requirements 12.9.1",
+              "name": "Requirements 12.9.1",
+              "fullDescription": {
+                "text": "Create the incident response plan to be implemented in the event of system compromise. Ensure the plan addresses, at a minimum, specific incident response procedures, business recovery and continuity procedures, data backup processes, roles and responsibilities, and communication and contact strategies (for example, informing the Acquirers and credit card associations)"
+              }
+            },
+            {
+              "id": "Requirements 12.9.2",
+              "name": "Requirements 12.9.2",
+              "fullDescription": {
+                "text": "Test the plan at least annually"
+              }
+            },
+            {
+              "id": "Requirements 12.9.3",
+              "name": "Requirements 12.9.3",
+              "fullDescription": {
+                "text": "Designate specific personnel to be available on a 24/7 basis to respond to alerts"
+              }
+            },
+            {
+              "id": "Requirements 12.9.4",
+              "name": "Requirements 12.9.4",
+              "fullDescription": {
+                "text": "Provide appropriate training to staff with security breach response responsibilities"
+              }
+            },
+            {
+              "id": "Requirements 12.9.5",
+              "name": "Requirements 12.9.5",
+              "fullDescription": {
+                "text": "Include alerts from intrusion detection, intrusion prevention, and file integrity monitoring systems"
+              }
+            },
+            {
+              "id": "Requirements 12.9.6",
+              "name": "Requirements 12.9.6",
+              "fullDescription": {
+                "text": "Develop process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments."
+              }
+            },
+            {
+              "id": "Requirements 12.10",
+              "name": "Requirements 12.10",
+              "fullDescription": {
+                "text": "All processors and service providers must maintain and implement policies and procedures to manage connected entities, to include the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.10.1",
+              "name": "Requirements 12.10.1",
+              "fullDescription": {
+                "text": "Maintain a list of connected entities"
+              }
+            },
+            {
+              "id": "Requirements 12.10.2",
+              "name": "Requirements 12.10.2",
+              "fullDescription": {
+                "text": "Ensure proper due diligence is conducted prior to connecting an entity"
+              }
+            },
+            {
+              "id": "Requirements 12.10.3",
+              "name": "Requirements 12.10.3",
+              "fullDescription": {
+                "text": "Ensure the entity is PCI DSS compliant"
+              }
+            },
+            {
+              "id": "Requirements 12.10.4",
+              "name": "Requirements 12.10.4",
+              "fullDescription": {
+                "text": "Connect and disconnect entities by following an established process."
+              }
+            },
+            {
+              "id": "Requirements A",
+              "name": "Hosting providers protect cardholder data environment",
+              "fullDescription": {
+                "text": "As referenced in Requirement 12.8, all service providers with access to cardholder data (including hosting providers) must adhere to the PCI DSS. In addition, Requirement 2.4 states that hosting providers must protect each entity’s hosted environment and data. Therefore, hosting providers must give special consideration to the following:"
+              }
+            },
+            {
+              "id": "Requirements A.1",
+              "name": "Requirements A.1",
+              "fullDescription": {
+                "text": "Protect each entity’s (that is merchant, service provider, or other entity) hosted environment and data, as in A.1.1 through A.1.4:"
+              }
+            },
+            {
+              "id": "Requirements A.1.1",
+              "name": "Requirements A.1.1",
+              "fullDescription": {
+                "text": "Ensure that each entity only has access to own cardholder data environment"
+              }
+            },
+            {
+              "id": "Requirements A.1.2",
+              "name": "Requirements A.1.2",
+              "fullDescription": {
+                "text": "Restrict each entity’s access and privileges to own cardholder data environment only"
+              }
+            },
+            {
+              "id": "Requirements A.1.3",
+              "name": "Requirements A.1.3",
+              "fullDescription": {
+                "text": "Ensure logging and audit trails are enabled and unique to each entity’s cardholder data environment and consistent with PCI DSS Requirement 10"
+              }
+            },
+            {
+              "id": "Requirements A.1.4",
+              "name": "Requirements A.1.4",
+              "fullDescription": {
+                "text": "Enable processes to provide for timely forensic investigation in the event of a compromise to any hosted merchant or service provider."
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true
+        }
+      ]
+    }
+  ]
+}

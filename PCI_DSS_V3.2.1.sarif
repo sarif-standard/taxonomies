@@ -5,7 +5,16 @@
     {
       "tool": {
         "driver": {
-          "name": "PCI DSS V3.2.1"
+          "guid": "73D7AC88-CADA-444E-A606-B657D4E17250",
+          "name": "PCI DSS V3.2.1",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Data Security Standard"
+          },
+          "version": "3.2.1",
+          "releaseDateUtc": "2018-05-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf"
         }
       },
       "columnKind": "utf16CodeUnits",

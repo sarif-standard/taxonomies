@@ -1,0 +1,3527 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "guid": "ACA11AA0-2EEA-42F0-B995-193193F56583",
+          "name": "PCI DSS V1.2",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Data Security Standard"
+          },
+          "version": "1.2",
+          "releaseDateUtc": "2008-10-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf"
+        }
+      },
+      "columnKind": "utf16CodeUnits",
+      "taxonomies": [
+        {
+          "guid": "ACA11AA0-2EEA-42F0-B995-193193F56583",
+          "name": "PCI DSS V1.2",
+          "organization": "PCI Security Standards Council",
+          "shortDescription": {
+            "text": "Payment Card Industry (PCI) Data Security Standard"
+          },
+          "version": "1.2",
+          "releaseDateUtc": "2008-10-01",
+          "downloadUri": "https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf",
+          "informationUri": "https://www.pcisecuritystandards.org/documents/PCI_Security_Assessment_Procedures_v1-2.pdf",
+          "taxa": [
+            {
+              "id": "Requirements 1",
+              "name": "Install and maintain a firewall configuration to protect cardholder data",
+              "fullDescription": {
+                "text": "Firewalls are computer devices that control computer traffic allowed between a company’s network (internal) and untrusted networks (external), as well as traffic into and out of more sensitive areas within a company’s internal trusted network. The cardholder data environment is an example of a more sensitive area within the trusted network of a company.\nA firewall examines all network traffic and blocks those transmissions that do not meet the specified security criteria.\nAll systems must be protected from unauthorized access from untrusted networks, whether entering the system via the Internet as e-commerce, employees’ Internet access through desktop browsers, employees’ e-mail access, dedicated connection such as business to business connections, via wireless networks, or via other sources. Often, seemingly insignificant paths to and from untrusted networks can provide unprotected pathways into key systems. Firewalls are a key protection mechanism for any computer network."
+              }
+            },
+            {
+              "id": "Requirements 1.1",
+              "name": "Requirements 1.1",
+              "fullDescription": {
+                "text": "Establish firewall and router configuration standards that include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1",
+              "name": "Testing Procedures 1.1",
+              "fullDescription": {
+                "text": "Obtain and inspect the firewall and router configuration standards and other documentation specified below to verify that standards are complete. Complete the following:"
+              }
+            },
+            {
+              "id": "Requirements 1.1.1",
+              "name": "Requirements 1.1.1",
+              "fullDescription": {
+                "text": "A formal process for approving and testing all network connections and changes to the firewall and router configurations"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.1",
+              "name": "Testing Procedures 1.1.1",
+              "fullDescription": {
+                "text": "Verify that there is a formal process for testing and approval of all network connections and changes to firewall and router configurations."
+              }
+            },
+            {
+              "id": "Requirements 1.1.2",
+              "name": "Requirements 1.1.2",
+              "fullDescription": {
+                "text": "Current network diagram with all connections to cardholder data, including any wireless networks"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.2.a",
+              "name": "Testing Procedures 1.1.2.a",
+              "fullDescription": {
+                "text": "Verify that a current network diagram (for example, one that shows cardholder data flows over the network) exists and that it documents all connections to cardholder data, including any wireless networks."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.2.b",
+              "name": "Testing Procedures 1.1.2.b",
+              "fullDescription": {
+                "text": "Verify that the diagram is kept current."
+              }
+            },
+            {
+              "id": "Requirements 1.1.3",
+              "name": "Requirements 1.1.3",
+              "fullDescription": {
+                "text": "Requirements for a firewall at each Internet connection and between any demilitarized zone (DMZ) and the internal network zone"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.3",
+              "name": "Testing Procedures 1.1.3",
+              "fullDescription": {
+                "text": "Verify that firewall configuration standards include requirements for a firewall at each Internet connection and between any DMZ and the internal network zone. Verify that the current network diagram is consistent with the firewall configuration standards."
+              }
+            },
+            {
+              "id": "Requirements 1.1.4",
+              "name": "Requirements 1.1.4",
+              "fullDescription": {
+                "text": "Description of groups, roles, and responsibilities for logical management of network components"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.4",
+              "name": "Testing Procedures 1.1.4",
+              "fullDescription": {
+                "text": "Verify that firewall and router configuration standards include a description of groups, roles, and responsibilities for logical management of network components."
+              }
+            },
+            {
+              "id": "Requirements 1.1.5",
+              "name": "Requirements 1.1.5",
+              "fullDescription": {
+                "text": "Documentation and business justification for use of all services, protocols, and ports allowed, including documentation of security features implemented for those protocols considered to be insecure"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.5.a",
+              "name": "Testing Procedures 1.1.5.a",
+              "fullDescription": {
+                "text": "Verify that firewall and router configuration standards include a documented list of services, protocols and ports necessary for business—for example, hypertext transfer protocol (HTTP) and Secure Sockets Layer (SSL), Secure Shell (SSH), and Virtual Private Network (VPN) protocols."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.5.b",
+              "name": "Testing Procedures 1.1.5.b",
+              "fullDescription": {
+                "text": "Identify insecure services, protocols, and ports allowed; and verify they are necessary and that security features are documented and implemented by examining firewall and router configuration standards and settings for each service. An example of an insecure service, protocol, or port is FTP, which passes user credentials in clear-text."
+              }
+            },
+            {
+              "id": "Requirements 1.1.6",
+              "name": "Requirements 1.1.6",
+              "fullDescription": {
+                "text": "Requirement to review firewall and router rule sets at least every six months"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.6.a",
+              "name": "Testing Procedures 1.1.6.a",
+              "fullDescription": {
+                "text": "Verify that firewall and router configuration standards require review of firewall and router rule sets at least every six months."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.1.6.b",
+              "name": "Testing Procedures 1.1.6.b",
+              "fullDescription": {
+                "text": "Obtain and examine documentation to verify that the rule sets are reviewed at least every six months."
+              }
+            },
+            {
+              "id": "Requirements 1.2",
+              "name": "Requirements 1.2",
+              "fullDescription": {
+                "text": "Build a firewall configuration that restricts connections between untrusted networks and any system components in the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.2",
+              "name": "Testing Procedures 1.2",
+              "fullDescription": {
+                "text": "Examine firewall and router configurations to verify that connections are restricted between untrusted networks and system components in the cardholder data environment, as follows:"
+              }
+            },
+            {
+              "id": "Requirements 1.2.1",
+              "name": "Requirements 1.2.1",
+              "fullDescription": {
+                "text": "Restrict inbound and outbound traffic to that which is necessary for the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.2.1.a",
+              "name": "Testing Procedures 1.2.1.a",
+              "fullDescription": {
+                "text": "Verify that inbound and outbound traffic is limited to that which is necessary for the cardholder data environment, and that the restrictions are documented."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.2.1.b",
+              "name": "Testing Procedures 1.2.1.b",
+              "fullDescription": {
+                "text": "Verify that all other inbound and outbound traffic is specifically denied, for example by using an explicit “deny all” or an implicit deny after allow statement."
+              }
+            },
+            {
+              "id": "Requirements 1.2.2",
+              "name": "Requirements 1.2.2",
+              "fullDescription": {
+                "text": "Secure and synchronize router configuration files."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.2.2",
+              "name": "Testing Procedures 1.2.2",
+              "fullDescription": {
+                "text": "Verify that router configuration files are secure and synchronized—for example, running configuration files (used for normal running of the routers) and start-up configuration files (used when machines are re-booted), have the same, secure configurations."
+              }
+            },
+            {
+              "id": "Requirements 1.2.3",
+              "name": "Requirements 1.2.3",
+              "fullDescription": {
+                "text": "Install perimeter firewalls between any wireless networks and the cardholder data environment, and configure these firewalls to deny or control (if such traffic is necessary for business purposes) any traffic from the wireless environment into the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.2.3",
+              "name": "Testing Procedures 1.2.3",
+              "fullDescription": {
+                "text": "Verify that there are perimeter firewalls installed between any wireless networks and systems that store cardholder data, and that these firewalls deny or control (if such traffic is necessary for business purposes) any traffic from the wireless environment into the cardholder data environment."
+              }
+            },
+            {
+              "id": "Requirements 1.3",
+              "name": "Requirements 1.3",
+              "fullDescription": {
+                "text": "Prohibit direct public access between the Internet and any system component in the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3",
+              "name": "Testing Procedures 1.3",
+              "fullDescription": {
+                "text": "Examine firewall and router configurations, as detailed below, to determine that there is no direct access between the Internet and system components, including the choke router at the Internet, the DMZ router and firewall, the DMZ cardholder segment, the perimeter router, and the internal cardholder network segment."
+              }
+            },
+            {
+              "id": "Requirements 1.3.1",
+              "name": "Requirements 1.3.1",
+              "fullDescription": {
+                "text": "Implement a DMZ to limit inbound and outbound traffic to only protocols that are necessary for the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.1",
+              "name": "Testing Procedures 1.3.1",
+              "fullDescription": {
+                "text": "Verify that a DMZ is implemented to limit inbound and outbound traffic to only protocols that are necessary for the cardholder data environment."
+              }
+            },
+            {
+              "id": "Requirements 1.3.2",
+              "name": "Requirements 1.3.2",
+              "fullDescription": {
+                "text": "Limit inbound Internet traffic to IP addresses within the DMZ."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.2",
+              "name": "Testing Procedures 1.3.2",
+              "fullDescription": {
+                "text": "Verify that inbound Internet traffic is limited to IP addresses within the DMZ."
+              }
+            },
+            {
+              "id": "Requirements 1.3.3",
+              "name": "Requirements 1.3.3",
+              "fullDescription": {
+                "text": "Do not allow any direct routes inbound or outbound for traffic between the Internet and the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.3",
+              "name": "Testing Procedures 1.3.3",
+              "fullDescription": {
+                "text": "Verify there is no direct route inbound or outbound for traffic between the Internet and the cardholder data environment."
+              }
+            },
+            {
+              "id": "Requirements 1.3.4",
+              "name": "Requirements 1.3.4",
+              "fullDescription": {
+                "text": "Do not allow internal addresses to pass from the Internet into the DMZ."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.4",
+              "name": "Testing Procedures 1.3.4",
+              "fullDescription": {
+                "text": "Verify that internal addresses cannot pass from the Internet into the DMZ."
+              }
+            },
+            {
+              "id": "Requirements 1.3.5",
+              "name": "Requirements 1.3.5",
+              "fullDescription": {
+                "text": "Restrict outbound traffic from the cardholder data environment to the Internet such that outbound traffic can only access IP addresses within the DMZ."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.5",
+              "name": "Testing Procedures 1.3.5",
+              "fullDescription": {
+                "text": "Verify that outbound traffic from the cardholder data environment to the Internet can only access IP addresses within the DMZ."
+              }
+            },
+            {
+              "id": "Requirements 1.3.6",
+              "name": "Requirements 1.3.6",
+              "fullDescription": {
+                "text": "Implement stateful inspection, also known as dynamic packet filtering. (That is, only ”established” connections are allowed into the network.)"
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.6",
+              "name": "Testing Procedures 1.3.6",
+              "fullDescription": {
+                "text": "Verify that the firewall performs stateful inspection (dynamic packet filtering). [Only established connections should be allowed in, and only if they are associated with a previously established session (run a port scanner on all TCP ports with “syn reset” or ”syn ack” bits set—a response means packets are allowed through even if they are not part of a previously established session).]"
+              }
+            },
+            {
+              "id": "Requirements 1.3.7",
+              "name": "Requirements 1.3.7",
+              "fullDescription": {
+                "text": "Place the database in an internal network zone, segregated from the DMZ."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.7",
+              "name": "Testing Procedures 1.3.7",
+              "fullDescription": {
+                "text": "Verify that the database is on an internal network zone, segregated from the DMZ."
+              }
+            },
+            {
+              "id": "Requirements 1.3.8",
+              "name": "Requirements 1.3.8",
+              "fullDescription": {
+                "text": "Implement IP masquerading to prevent internal addresses from being translated and revealed on the Internet, using RFC 1918 address space. Use network address translation (NAT) technologies—for example, port address translation (PAT)."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.3.8",
+              "name": "Testing Procedures 1.3.8",
+              "fullDescription": {
+                "text": "For the sample of firewall and router components, verify that NAT or other technology using RFC 1918 address space is used to restrict broadcast of IP addresses from the internal network to the Internet (IP masquerading)."
+              }
+            },
+            {
+              "id": "Requirements 1.4",
+              "name": "Requirements 1.4",
+              "fullDescription": {
+                "text": "Install personal firewall software on any mobile and/or employee-owned computers with direct connectivity to the Internet (for example, laptops used by employees), which are used to access the organization’s network."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.4.a",
+              "name": "Testing Procedures 1.4.a",
+              "fullDescription": {
+                "text": "Verify that mobile and/or employee-owned computers with direct connectivity to the Internet (for example, laptops used by employees), and which are used to access the organization’s network, have personal firewall software installed and active."
+              }
+            },
+            {
+              "id": "Testing Procedures 1.4.b",
+              "name": "Testing Procedures 1.4.b",
+              "fullDescription": {
+                "text": "Verify that the personal firewall software is configured by the organization to specific standards and is not alterable by mobile computer users."
+              }
+            },
+            {
+              "id": "Requirements 2",
+              "name": "Do not use vendor-supplied defaults for system passwords and other security parameters",
+              "fullDescription": {
+                "text": "Malicious individuals (external and internal to a company) often use vendor default passwords and other vendor default settings to compromise systems. These passwords and settings are well known by hacker communities and are easily determined via public information."
+              }
+            },
+            {
+              "id": "Requirements 2.1",
+              "name": "Requirements 2.1",
+              "fullDescription": {
+                "text": "Always change vendor-supplied defaults before installing a system on the network—for example, include passwords, simple network management protocol (SNMP) community strings, and elimination of unnecessary accounts. "
+              }
+            },
+            {
+              "id": "Testing Procedures 2.1",
+              "name": "Testing Procedures 2.1",
+              "fullDescription": {
+                "text": "Choose a sample of system components, critical servers, and wireless access points, and attempt to log on (with system administrator help) to the devices using default vendor-supplied accounts and passwords, to verify that default accounts and passwords have been changed. (Use vendor manuals and sources on the Internet to find vendorsupplied accounts/passwords.)"
+              }
+            },
+            {
+              "id": "Requirements 2.1.1",
+              "name": "Requirements 2.1.1",
+              "fullDescription": {
+                "text": "For wireless environments connected to the cardholder data environment or transmitting cardholder data, change wireless vendor defaults, including but not limited to default wireless encryption keys, passwords, and SNMP community strings. Ensure wireless device security settings are enabled for strong encryption technology for authentication and transmission."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.1.1",
+              "name": "Testing Procedures 2.1.1",
+              "fullDescription": {
+                "text": "Verify the following regarding vendor default settings for wireless environments and ensure that all wireless networks implement strong encryption mechanisms (for example, AES):\n• Encryption keys were changed from default at installation, and are changed anytime anyone with knowledge of the keys leaves the company or changes positions\n• Default SNMP community strings on wireless devices were changed\n• Default passwords/passphrases on access points were changed\n• Firmware on wireless devices is updated to support strong encryption for authentication and transmission over wireless networks (for example, WPA/WPA2)\n• Other security-related wireless vendor defaults, if applicable"
+              }
+            },
+            {
+              "id": "Requirements 2.2",
+              "name": "Requirements 2.2",
+              "fullDescription": {
+                "text": "Develop configuration standards for all system components. Assure that these standards address all known security vulnerabilities and are consistent with industry-accepted system hardening standards."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.a",
+              "name": "Testing Procedures 2.2.a",
+              "fullDescription": {
+                "text": "Examine the organization’s system configuration standards for all types of system components and verify the system configuration standards are consistent with industryaccepted hardening standards—for example, SysAdmin Audit Network Security (SANS), National Institute of Standards Technology (NIST), and Center for Internet Security (CIS). "
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.b",
+              "name": "Testing Procedures 2.2.b",
+              "fullDescription": {
+                "text": "Verify that system configuration standards include each item below (at 2.2.1 – 2.2.4)."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.c",
+              "name": "Testing Procedures 2.2.c",
+              "fullDescription": {
+                "text": "Verify that system configuration standards are applied when new systems are configured."
+              }
+            },
+            {
+              "id": "Requirements 2.2.1",
+              "name": "Requirements 2.2.1",
+              "fullDescription": {
+                "text": "Implement only one primary function per server."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.1",
+              "name": "Testing Procedures 2.2.1",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that only one primary function is implemented per server. For example, web servers, database servers, and DNS should be implemented on separate servers."
+              }
+            },
+            {
+              "id": "Requirements 2.2.2",
+              "name": "Requirements 2.2.2",
+              "fullDescription": {
+                "text": "Disable all unnecessary and insecure services and protocols (services and protocols not directly needed to perform the device’s specified function)."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.2",
+              "name": "Testing Procedures 2.2.2",
+              "fullDescription": {
+                "text": "For a sample of system components, inspect enabled system services, daemons, and protocols. Verify that unnecessary or insecure services or protocols are not enabled, or are justified and documented as to appropriate use of the service. For example, FTP is not used, or is encrypted via SSH or other technology."
+              }
+            },
+            {
+              "id": "Requirements 2.2.3",
+              "name": "Requirements 2.2.3",
+              "fullDescription": {
+                "text": "Configure system security parameters to prevent misuse."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.3.a",
+              "name": "Testing Procedures 2.2.3.a",
+              "fullDescription": {
+                "text": "Interview system administrators and/or security managers to verify that they have knowledge of common security parameter settings for system components."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.3.b",
+              "name": "Testing Procedures 2.2.3.b",
+              "fullDescription": {
+                "text": "Verify that common security parameter settings are included in the system configuration standards."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.3.c",
+              "name": "Testing Procedures 2.2.3.c",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that common security parameters are set appropriately."
+              }
+            },
+            {
+              "id": "Requirements 2.2.4",
+              "name": "Requirements 2.2.4",
+              "fullDescription": {
+                "text": "Remove all unnecessary functionality, such as scripts, drivers, features, subsystems, file systems, and unnecessary web servers."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.2.4",
+              "name": "Testing Procedures 2.2.4",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that all unnecessary functionality (for example, scripts, drivers, features, subsystems, file systems, etc.) is removed. Verify enabled functions are documented and support secure configuration, and that only documented functionality is present on the sampled machines."
+              }
+            },
+            {
+              "id": "Requirements 2.3",
+              "name": "Requirements 2.3",
+              "fullDescription": {
+                "text": "Encrypt all non-console administrative access. Use technologies such as SSH, VPN, or SSL/TLS for webbased management and other non-console administrative access."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.3",
+              "name": "Testing Procedures 2.3",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that nonconsole administrative access is encrypted by:\n• Observing an administrator log on to each system to verify that a strong encryption method is invoked before the administrator’s password is requested;\n• Reviewing services and parameter files on systems to determine that Telnet and other remote log-in commands are not available for use internally; and\n• Verifying that administrator access to the webbased management interfaces is encrypted with strong cryptography. "
+              }
+            },
+            {
+              "id": "Requirements 2.4",
+              "name": "Requirements 2.4",
+              "fullDescription": {
+                "text": "Shared hosting providers must protect each entity’s hosted environment and cardholder data. These providers must meet specific requirements as detailed in Appendix A: Additional PCI DSS Requirements for Shared Hosting Providers."
+              }
+            },
+            {
+              "id": "Testing Procedures 2.4",
+              "name": "Testing Procedures 2.4",
+              "fullDescription": {
+                "text": "Perform testing procedures A.1.1 through A.1.4 detailed in Appendix A: Additional PCI DSS Requirements for Shared Hosting Providers for PCI DSS assessments of shared hosting providers, to verify that shared hosting providers protect their entities’ (merchants and service providers) hosted environment and data."
+              }
+            },
+            {
+              "id": "Requirements 3",
+              "name": "Protect stored cardholder data",
+              "fullDescription": {
+                "text": "Protection methods such as encryption, truncation, masking, and hashing are critical components of cardholder data protection. If an intruder circumvents other network security controls and gains access to encrypted data, without the proper cryptographic keys, the data is unreadable and unusable to that person. Other effective methods of protecting stored data should be considered as potential risk mitigation opportunities. For example, methods for minimizing risk include not storing cardholder data unless absolutely necessary, truncating cardholder data if full PAN is not needed, and not sending PAN in unencrypted e-mails.\nPlease refer to the PCI DSS Glossary of Terms, Abbreviations, and Acronyms for definitions of “strong cryptography” and other PCI DSS terms."
+              }
+            },
+            {
+              "id": "Requirements 3.1",
+              "name": "Requirements 3.1",
+              "fullDescription": {
+                "text": "Keep cardholder data storage to a minimum. Develop a data retention and disposal policy. Limit storage amount and retention time to that which is required for business, legal, and/or regulatory purposes, as documented in the data retention policy."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.1",
+              "name": "Testing Procedures 3.1",
+              "fullDescription": {
+                "text": "Obtain and examine the company policies and procedures for data retention and disposal, and perform the following\n• Verify that policies and procedures include legal, regulatory, and business requirements for data retention, including specific requirements for retention of cardholder data (for example, cardholder data needs to be held for X period for Y business reasons)\n• Verify that policies and procedures include provisions for disposal of data when no longer needed for legal, regulatory, or business reasons, including disposal of cardholder data\n• Verify that policies and procedures include coverage for all storage of cardholder data\n• Verify that policies and procedures include a programmatic (automatic) process to remove, at least on a quarterly basis, stored cardholder data that exceeds business retention requirements, or, alternatively, requirements for a review, conducted at least on a quarterly basis, to verify that stored cardholder data does not exceed business retention requirements"
+              }
+            },
+            {
+              "id": "Requirements 3.2",
+              "name": "Requirements 3.2",
+              "fullDescription": {
+                "text": "Do not store sensitive authentication data after authorization (even if encrypted).\nSensitive authentication data includes the data as cited in the following Requirements 3.2.1 through 3.2.3:"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.2",
+              "name": "Testing Procedures 3.2",
+              "fullDescription": {
+                "text": "If sensitive authentication data is received and deleted, obtain and review the processes for deleting the data to verify that the data is unrecoverable. \nFor each item of sensitive authentication data below, perform the following steps:"
+              }
+            },
+            {
+              "id": "Requirements 3.2.1",
+              "name": "Requirements 3.2.1",
+              "fullDescription": {
+                "text": "Do not store the full contents of any track from the magnetic stripe (located on the back of a card, contained in a chip, or elsewhere). This data is alternatively called full track, track, track 1, track 2, and magnetic-stripe data.\nNote: In the normal course of business, the following data elements from the magnetic stripe may need to be retained:\n• The cardholder’s name,\n• Primary account number (PAN),\n• Expiration date, and\n• Service code\nTo minimize risk, store only these data elements as needed for business.\nNote: See PCI DSS Glossary of Terms, Abbreviations, and Acronyms for additional information."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.2.1",
+              "name": "Testing Procedures 3.2.1",
+              "fullDescription": {
+                "text": "For a sample of system components, examine the following and verify that the full contents of any track from the magnetic stripe on the back of card are not stored under any circumstance:\n• Incoming transaction data\n• All logs (for example, transaction, history, debugging, error)\n• History files\n• Trace files\n• Several database schemas\n• Database contents"
+              }
+            },
+            {
+              "id": "Requirements 3.2.2",
+              "name": "Requirements 3.2.2",
+              "fullDescription": {
+                "text": "Do not store the cardverification code or value (threedigit or four-digit number printed on the front or back of a payment card) used to verify card-notpresent transactions.\nNote: See PCI DSS Glossary of Terms, Abbreviations, and Acronyms for additional information."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.2.2",
+              "name": "Testing Procedures 3.2.2",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that the three-digit or four-digit card-verification code or value printed on the front of the card or the signature panel (CVV2, CVC2, CID, CAV2 data) is not stored under any circumstance:\n• Incoming transaction data\n• All logs (for example, transaction, history, debugging, error)\n• History files\n• Trace files\n• Several database schemas\n• Database contents"
+              }
+            },
+            {
+              "id": "Requirements 3.2.3",
+              "name": "Requirements 3.2.3",
+              "fullDescription": {
+                "text": "Do not store the personal identification number (PIN) or the encrypted PIN block."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.2.3",
+              "name": "Testing Procedures 3.2.3",
+              "fullDescription": {
+                "text": "For a sample of system components, examine the following and verify that PINs and encrypted PIN blocks are not stored under any circumstance:\n• Incoming transaction data\n• All logs (for example, transaction, history, debugging, error)\n• History files\n• Trace files\n• Several database schemas\n• Database contents"
+              }
+            },
+            {
+              "id": "Requirements 3.3",
+              "name": "Requirements 3.3",
+              "fullDescription": {
+                "text": "Mask PAN when displayed (the first six and last four digits are the maximum number of digits to be displayed).\nNotes:\n• This requirement does not apply to employees and other parties with a legitimate business need to see the full PAN.\n• This requirement does not supersede stricter requirements in place for displays of cardholder data—for example, for point-ofsale (POS) receipts."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.3",
+              "name": "Testing Procedures 3.3",
+              "fullDescription": {
+                "text": "Obtain and examine written policies and examine displays of PAN (for example, on screen, on paper receipts) to verify that primary account numbers (PANs) are masked when displaying cardholder data, except for those with a legitimate business need to see full PAN."
+              }
+            },
+            {
+              "id": "Requirements 3.4",
+              "name": "Requirements 3.4",
+              "fullDescription": {
+                "text": "Render PAN, at minimum, unreadable anywhere it is stored (including on portable digital media, backup media, in logs) by using any of the following approaches:\n• One-way hashes based on strong cryptography\n• Truncation\n• Index tokens and pads (pads must be securely stored)\n• Strong cryptography with associated key-management processes and procedures The MINIMUM account information that must be rendered unreadable is the PAN.\nNotes:\n• If for some reason, a company is unable render the PAN unreadable, refer to Appendix B: Compensating Controls.\n• “Strong cryptography” is defined in the PCI DSS Glossary of Terms, Abbreviations, and Acronyms"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.a",
+              "name": "Testing Procedures 3.4.a",
+              "fullDescription": {
+                "text": "Obtain and examine documentation about the system used to protect the PAN, including the vendor, type of system/process, and the encryption algorithms (if applicable). Verify that the PAN is rendered unreadable using one of the following methods:\n• One-way hashes based on strong cryptography\n• Truncation\n• Index tokens and pads, with the pads being securely stored\n• Strong cryptography, with associated keymanagement processes and procedures"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.b",
+              "name": "Testing Procedures 3.4.b",
+              "fullDescription": {
+                "text": "Examine several tables or files from a sample of data repositories to verify the PAN is rendered unreadable (that is, not stored in plain-text)."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.c",
+              "name": "Testing Procedures 3.4.c",
+              "fullDescription": {
+                "text": "Examine a sample of removable media (for example, back-up tapes) to confirm that the PAN is rendered unreadable."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.d",
+              "name": "Testing Procedures 3.4.d",
+              "fullDescription": {
+                "text": "Examine a sample of audit logs to confirm that the PAN is sanitized or removed from the logs."
+              }
+            },
+            {
+              "id": "Requirements 3.4.1",
+              "name": "Requirements 3.4.1",
+              "fullDescription": {
+                "text": "If disk encryption is used (rather than file- or column-level database encryption), logical access must be managed independently of native operating system access control mechanisms (for example, by not using local user account databases). Decryption keys must not be tied to user accounts."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.1.a",
+              "name": "Testing Procedures 3.4.1.a",
+              "fullDescription": {
+                "text": "If disk encryption is used, verify that logical access to encrypted file systems is implemented via a mechanism that is separate from the native operating systems mechanism (for example, not using local user account databases)."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.1.b",
+              "name": "Testing Procedures 3.4.1.b",
+              "fullDescription": {
+                "text": "Verify that cryptographic keys are stored securely (for example, stored on removable media that is adequately protected with strong access controls)."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.4.1.c",
+              "name": "Testing Procedures 3.4.1.c",
+              "fullDescription": {
+                "text": "Verify that cardholder data on removable media is encrypted wherever stored.\nNote: Disk encryption often cannot encrypt removable media, so data stored on this media will need to be encrypted separately"
+              }
+            },
+            {
+              "id": "Requirements 3.5",
+              "name": "Requirements 3.5",
+              "fullDescription": {
+                "text": "Protect cryptographic keys used for encryption of cardholder data against both disclosure and misuse:"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.5",
+              "name": "Testing Procedures 3.5",
+              "fullDescription": {
+                "text": "Verify processes to protect keys used for encryption of cardholder data against disclosure and misuse by performing the following:"
+              }
+            },
+            {
+              "id": "Requirements 3.5.1",
+              "name": "Requirements 3.5.1",
+              "fullDescription": {
+                "text": "Restrict access to cryptographic keys to the fewest number of custodians necessary."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.5.1",
+              "name": "Testing Procedures 3.5.1",
+              "fullDescription": {
+                "text": "Examine user access lists to verify that access to keys is restricted to very few custodians."
+              }
+            },
+            {
+              "id": "Requirements 3.5.2",
+              "name": "Requirements 3.5.2",
+              "fullDescription": {
+                "text": "Store cryptographic keys securely in the fewest possible locations and forms."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.5.2",
+              "name": "Testing Procedures 3.5.2",
+              "fullDescription": {
+                "text": "Examine system configuration files to verify that keys are stored in encrypted format and that keyencrypting keys are stored separately from dataencrypting keys."
+              }
+            },
+            {
+              "id": "Requirements 3.6",
+              "name": "Requirements 3.6",
+              "fullDescription": {
+                "text": "Fully document and implement all key-management processes and procedures for cryptographic keys used for encryption of cardholder data, including the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.a",
+              "name": "Testing Procedures 3.6.a",
+              "fullDescription": {
+                "text": "Verify the existence of key-management procedures for keys used for encryption of cardholder data.\nNote: Numerous industry standards for key management are available from various resources including NIST, which can be found at http://csrc.nist.gov"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.b",
+              "name": "Testing Procedures 3.6.b",
+              "fullDescription": {
+                "text": "For service providers only: If the service provider shares keys with their customers for transmission of cardholder data, verify that the service provider provides documentation to customers that includes guidance on how to securely store and change customer’s keys (used to transmit data between customer and service provider)."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.c",
+              "name": "Testing Procedures 3.6.c",
+              "fullDescription": {
+                "text": "Examine the key-management procedures and perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 3.6.1",
+              "name": "Requirements 3.6.1",
+              "fullDescription": {
+                "text": "Generation of strong cryptographic keys"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.1",
+              "name": "Testing Procedures 3.6.1",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require the generation of strong keys."
+              }
+            },
+            {
+              "id": "Requirements 3.6.2",
+              "name": "Requirements 3.6.2",
+              "fullDescription": {
+                "text": "Secure cryptographic key distribution"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.2",
+              "name": "Testing Procedures 3.6.2",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require secure key distribution."
+              }
+            },
+            {
+              "id": "Requirements 3.6.3",
+              "name": "Requirements 3.6.3",
+              "fullDescription": {
+                "text": "Secure cryptographic key storage"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.3",
+              "name": "Testing Procedures 3.6.3",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require secure key storage."
+              }
+            },
+            {
+              "id": "Requirements 3.6.4",
+              "name": "Requirements 3.6.4",
+              "fullDescription": {
+                "text": "Periodic cryptographic key changes\n• As deemed necessary and recommended by the associated application (for example, re-keying); preferably automatically\n• At least annually"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.4",
+              "name": "Testing Procedures 3.6.4",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require periodic key changes at least annually."
+              }
+            },
+            {
+              "id": "Requirements 3.6.5",
+              "name": "Requirements 3.6.5",
+              "fullDescription": {
+                "text": "Retirement or replacement of old or suspected compromised cryptographic keys"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.5.a",
+              "name": "Testing Procedures 3.6.5.a",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require the retirement of old keys (for example: archiving, destruction, and revocation as applicable)."
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.5.b",
+              "name": "Testing Procedures 3.6.5.b",
+              "fullDescription": {
+                "text": "Verify that the key-management procedures are implemented to require the replacement of known or suspected compromised keys."
+              }
+            },
+            {
+              "id": "Requirements 3.6.6",
+              "name": "Requirements 3.6.6",
+              "fullDescription": {
+                "text": "Split knowledge and establishment of dual control of cryptographic keys"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.6",
+              "name": "Testing Procedures 3.6.6",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require split knowledge and dual control of keys (for example, requiring two or three people, each knowing only their own part of the key, to reconstruct the whole key)."
+              }
+            },
+            {
+              "id": "Requirements 3.6.7",
+              "name": "Requirements 3.6.7",
+              "fullDescription": {
+                "text": "Prevention of unauthorized substitution of cryptographic keys"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.7",
+              "name": "Testing Procedures 3.6.7",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require the prevention of unauthorized substitution of keys."
+              }
+            },
+            {
+              "id": "Requirements 3.6.8",
+              "name": "Requirements 3.6.8",
+              "fullDescription": {
+                "text": "Requirement for cryptographic key custodians to sign a form stating that they understand and accept their keycustodian responsibilities"
+              }
+            },
+            {
+              "id": "Testing Procedures 3.6.8",
+              "name": "Testing Procedures 3.6.8",
+              "fullDescription": {
+                "text": "Verify that key-management procedures are implemented to require key custodians to sign a form specifying that they understand and accept their keycustodian responsibilities."
+              }
+            },
+            {
+              "id": "Requirements 4",
+              "name": "Encrypt transmission of cardholder data across open, public networks",
+              "fullDescription": {
+                "text": "Sensitive information must be encrypted during transmission over networks that are easily accessed by malicious individuals. Misconfigured wireless networks and vulnerabilities in legacy encryption and authentication protocols can be continued targets of malicious individuals who exploit these vulnerabilities to gain privileged access to cardholder data environments."
+              }
+            },
+            {
+              "id": "Requirements 4.1",
+              "name": "Requirements 4.1",
+              "fullDescription": {
+                "text": "Use strong cryptography and security protocols such as SSL/TLS or IPSEC to safeguard sensitive cardholder data during transmission over open, public networks.\nExamples of open, public networks that are in scope of the PCI DSS are:\n• The Internet,\n• Wireless technologies,\n• Global System for Mobile communications (GSM), and\n• General Packet Radio Service (GPRS)."
+              }
+            },
+            {
+              "id": "Testing Procedures 4.1.a",
+              "name": "Testing Procedures 4.1.a",
+              "fullDescription": {
+                "text": "Verify the use of encryption (for example, SSL/TLS or IPSEC) wherever cardholder data is transmitted or received over open, public networks\n• Verify that strong encryption is used during data transmission\n• For SSL implementations:\n- Verify that the server supports the latest patched versions.\n- Verify that HTTPS appears as a part of the browser Universal Record Locator (URL).\n- Verify that no cardholder data is required when HTTPS does not appear in the URL.\n• Select a sample of transactions as they are received and observe transactions as they occur to verify that cardholder data is encrypted during transit.\n• Verify that only trusted SSL/TLS keys/certificates are accepted.\n• Verify that the proper encryption strength is implemented for the encryption methodology in use. (Check vendor recommendations/best practices.)"
+              }
+            },
+            {
+              "id": "Requirements 4.1.1",
+              "name": "Requirements 4.1.1",
+              "fullDescription": {
+                "text": "Ensure wireless networks transmitting cardholder data or connected to the cardholder data environment, use industry best practices (for example, IEEE 802.11i) to implement strong encryption for authentication and transmission.\n• For new wireless implementations, it is prohibited to implement WEP after March 31, 2009.\n• For current wireless implementations, it is prohibited to use WEP after June 30, 2010."
+              }
+            },
+            {
+              "id": "Testing Procedures 4.1.1",
+              "name": "Testing Procedures 4.1.1",
+              "fullDescription": {
+                "text": "For wireless networks transmitting cardholder data or connected to the cardholder data environment, verify that industry best practices (for example, IEEE 802.11i) are used to implement strong encryption for authentication and transmission."
+              }
+            },
+            {
+              "id": "Requirements 4.2",
+              "name": "Requirements 4.2",
+              "fullDescription": {
+                "text": "Never send unencrypted PANs by end-user messaging technologies (for example, e-mail, instant messaging, chat)."
+              }
+            },
+            {
+              "id": "Testing Procedures 4.2.a",
+              "name": "Testing Procedures 4.2.a",
+              "fullDescription": {
+                "text": "Verify that strong cryptography is used whenever cardholder data is sent via end-user messaging technologies."
+              }
+            },
+            {
+              "id": "Testing Procedures 4.2.b",
+              "name": "Testing Procedures 4.2.b",
+              "fullDescription": {
+                "text": "Verify the existence of a policy stating that unencrypted PANs are not to be sent via end-user messaging technologies."
+              }
+            },
+            {
+              "id": "Requirements 5",
+              "name": "Use and regularly update anti-virus software or programs",
+              "fullDescription": {
+                "text": "Malicious software, commonly referred to as “malware”—including viruses, worms, and Trojans—enters the network during many business approved activities including employees’ e-mail and use of the Internet, mobile computers, and storage devices, resulting in the exploitation of system vulnerabilities. Anti-virus software must be used on all systems commonly affected by malware to protect systems from current and evolving malicious software threats."
+              }
+            },
+            {
+              "id": "Requirements 5.1",
+              "name": "Requirements 5.1",
+              "fullDescription": {
+                "text": "Deploy anti-virus software on all systems commonly affected by malicious software (particularly personal computers and servers)."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.1",
+              "name": "Testing Procedures 5.1",
+              "fullDescription": {
+                "text": "For a sample of system components including all operating system types commonly affected by malicious software, verify that anti-virus software is deployed if applicable anti-virus technology exists."
+              }
+            },
+            {
+              "id": "Requirements 5.1.1",
+              "name": "Requirements 5.1.1",
+              "fullDescription": {
+                "text": "Ensure that all anti-virus programs are capable of detecting, removing, and protecting against all known types of malicious software."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.1.1",
+              "name": "Testing Procedures 5.1.1",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that all anti-virus programs detect, remove, and protect against all known types of malicious software (for example, viruses, Trojans, worms, spyware, adware, and rootkits)."
+              }
+            },
+            {
+              "id": "Requirements 5.2",
+              "name": "Requirements 5.2",
+              "fullDescription": {
+                "text": "Ensure that all anti-virus mechanisms are current, actively running, and capable of generating audit logs."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.2",
+              "name": "Testing Procedures 5.2",
+              "fullDescription": {
+                "text": "Verify that all anti-virus software is current, actively running, and capable of generating logs by performing the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 5.2.a",
+              "name": "Testing Procedures 5.2.a",
+              "fullDescription": {
+                "text": "Obtain and examine the policy and verify that it requires updating of anti-virus software and definitions."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.2.b",
+              "name": "Testing Procedures 5.2.b",
+              "fullDescription": {
+                "text": "Verify that the master installation of the software is enabled for automatic updates and periodic scans."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.2.c",
+              "name": "Testing Procedures 5.2.c",
+              "fullDescription": {
+                "text": "For a sample of system components including all operating system types commonly affected by malicious software, verify that automatic updates and periodic scans are enabled."
+              }
+            },
+            {
+              "id": "Testing Procedures 5.2.d",
+              "name": "Testing Procedures 5.2.d",
+              "fullDescription": {
+                "text": "For a sample of system components, verify that antivirus software log generation is enabled and that such logs are retained in accordance with PCI DSS Requirement 10.7"
+              }
+            },
+            {
+              "id": "Requirements 6",
+              "name": "Develop and maintain secure systems and applications",
+              "fullDescription": {
+                "text": "Unscrupulous individuals use security vulnerabilities to gain privileged access to systems. Many of these vulnerabilities are fixed by vendorprovided security patches, which must be installed by the entities that manage the systems. All critical systems must have the most recently released, appropriate software patches to protect against exploitation and compromise of cardholder data by malicious individuals and malicious software.\nNote: Appropriate software patches are those patches that have been evaluated and tested sufficiently to determine that the patches do not conflict with existing security configurations. For in-house developed applications, numerous vulnerabilities can be avoided by using standard system development processes and secure coding techniques."
+              }
+            },
+            {
+              "id": "Requirements 6.1",
+              "name": "Requirements 6.1",
+              "fullDescription": {
+                "text": "Ensure that all system components and software have the latest vendor-supplied security patches installed. Install critical security patches within one month of release.\nNote: An organization may consider applying a risk-based approach to prioritize their patch installations. For example, by prioritizing critical infrastructure (for example, public-facing devices and systems, databases) higher than less-critical internal devices, to ensure high-priority systems and devices are addressed within one month, and addressing less critical devices and systems within three months"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.1.a",
+              "name": "Testing Procedures 6.1.a",
+              "fullDescription": {
+                "text": "For a sample of system components and related software, compare the list of security patches installed on each system to the most recent vendor security patch list, to verify that current vendor patches are installed."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.1.b",
+              "name": "Testing Procedures 6.1.b",
+              "fullDescription": {
+                "text": "Examine policies related to security patch installation to verify they require installation of all critical new security patches within one month."
+              }
+            },
+            {
+              "id": "Requirements 6.2",
+              "name": "Requirements 6.2",
+              "fullDescription": {
+                "text": "Establish a process to identify newly discovered security vulnerabilities (for example, subscribe to alert services freely available on the Internet). Update configuration standards as required by PCI DSS Requirement 2.2 to address new vulnerability issues."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.2.a",
+              "name": "Testing Procedures 6.2.a",
+              "fullDescription": {
+                "text": "Interview responsible personnel to verify that processes are implemented to identify new security vulnerabilities."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.2.b",
+              "name": "Testing Procedures 6.2.b",
+              "fullDescription": {
+                "text": "Verify that processes to identify new security vulnerabilities include using outside sources for security vulnerability information and updating the system configuration standards reviewed in Requirement 2.2 as new vulnerability issues are found."
+              }
+            },
+            {
+              "id": "Requirements 6.3",
+              "name": "Requirements 6.3",
+              "fullDescription": {
+                "text": "Develop software applications in accordance with PCI DSS (for example, secure authentication and logging) and based on industry best practices, and incorporate information security throughout the software development life cycle. These processes must include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.a",
+              "name": "Testing Procedures 6.3.a",
+              "fullDescription": {
+                "text": "Obtain and examine written software development processes to verify that the processes are based on industry standards, security is included throughout the life cycle, and software applications are developed in accordance with PCI DSS."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.b",
+              "name": "Testing Procedures 6.3.b",
+              "fullDescription": {
+                "text": "From an examination of written software development processes, interviews of software developers, and examination of relevant data (network configuration documentation, production and test data, etc.), verify that:"
+              }
+            },
+            {
+              "id": "Requirements 6.3.1",
+              "name": "Requirements 6.3.1",
+              "fullDescription": {
+                "text": "Testing of all security patches, and system and software configuration changes before deployment, including but not limited to the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1",
+              "name": "Testing Procedures 6.3.1",
+              "fullDescription": {
+                "text": "All changes (including patches) are tested before being deployed into production."
+              }
+            },
+            {
+              "id": "Requirements 6.3.1.1",
+              "name": "Requirements 6.3.1.1",
+              "fullDescription": {
+                "text": "Validation of all input (to prevent cross-site scripting, injection flaws, malicious file execution, etc.)"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1.1",
+              "name": "Testing Procedures 6.3.1.1",
+              "fullDescription": {
+                "text": "Validation of all input (to prevent cross-site scripting, injection flaws, malicious file execution, etc.)"
+              }
+            },
+            {
+              "id": "Requirements 6.3.1.2",
+              "name": "Requirements 6.3.1.2",
+              "fullDescription": {
+                "text": "Validation of proper error handling"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1.2",
+              "name": "Testing Procedures 6.3.1.2",
+              "fullDescription": {
+                "text": "Validation of proper error handling"
+              }
+            },
+            {
+              "id": "Requirements 6.3.1.3",
+              "name": "Requirements 6.3.1.3",
+              "fullDescription": {
+                "text": "Validation of secure cryptographic storage"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1.3",
+              "name": "Testing Procedures 6.3.1.3",
+              "fullDescription": {
+                "text": "Validation of secure cryptographic storage"
+              }
+            },
+            {
+              "id": "Requirements 6.3.1.4",
+              "name": "Requirements 6.3.1.4",
+              "fullDescription": {
+                "text": "Validation of secure communications"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1.4",
+              "name": "Testing Procedures 6.3.1.4",
+              "fullDescription": {
+                "text": "Validation of secure communications"
+              }
+            },
+            {
+              "id": "Requirements 6.3.1.5",
+              "name": "Requirements 6.3.1.5",
+              "fullDescription": {
+                "text": "Validation of proper rolebased access control (RBAC)"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.1.5",
+              "name": "Testing Procedures 6.3.1.5",
+              "fullDescription": {
+                "text": "Validation of proper rolebased access control (RBAC)"
+              }
+            },
+            {
+              "id": "Requirements 6.3.2",
+              "name": "Requirements 6.3.2",
+              "fullDescription": {
+                "text": "Separate development/test and production environments"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.2",
+              "name": "Testing Procedures 6.3.2",
+              "fullDescription": {
+                "text": "The development/test environments are separate from the production environment, with access control in place to enforce the separation."
+              }
+            },
+            {
+              "id": "Requirements 6.3.3",
+              "name": "Requirements 6.3.3",
+              "fullDescription": {
+                "text": "Separation of duties between development/test and production environments"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.3",
+              "name": "Testing Procedures 6.3.3",
+              "fullDescription": {
+                "text": "There is a separation of duties between personnel assigned to the development/test environments and those assigned to the production environment."
+              }
+            },
+            {
+              "id": "Requirements 6.3.4",
+              "name": "Requirements 6.3.4",
+              "fullDescription": {
+                "text": "Production data (live PANs) are not used for testing or development"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.4",
+              "name": "Testing Procedures 6.3.4",
+              "fullDescription": {
+                "text": "Production data (live PANs) are not used for testing and development, or are sanitized before use."
+              }
+            },
+            {
+              "id": "Requirements 6.3.5",
+              "name": "Requirements 6.3.5",
+              "fullDescription": {
+                "text": "Removal of test data and accounts before production systems become active"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.5",
+              "name": "Testing Procedures 6.3.5",
+              "fullDescription": {
+                "text": "Test data and accounts are removed before a production system becomes active."
+              }
+            },
+            {
+              "id": "Requirements 6.3.6",
+              "name": "Requirements 6.3.6",
+              "fullDescription": {
+                "text": "Removal of custom application accounts, user IDs, and passwords before applications become active or are released to customers"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.6",
+              "name": "Testing Procedures 6.3.6",
+              "fullDescription": {
+                "text": "Custom application accounts, user IDs and/or passwords are removed before system goes into production or is released to customers."
+              }
+            },
+            {
+              "id": "Requirements 6.3.7",
+              "name": "Requirements 6.3.7",
+              "fullDescription": {
+                "text": "Review of custom code prior to release to production or customers in order to identify any potential coding vulnerability\nNote: This requirement for code reviews applies to all custom code (both internal and public-facing), as part of the system development life cycle required by PCI DSS Requirement 6.3. Code reviews can be conducted by knowledgeable internal personnel or third parties. Web applications are also subject to additional controls, if they are public facing, to address ongoing threats and vulnerabilities after implementation, as defined at PCI DSS Requirement 6.6."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.7.a",
+              "name": "Testing Procedures 6.3.7.a",
+              "fullDescription": {
+                "text": "Obtain and review policies to confirm all custom application code changes for internal applications must be reviewed (either using manual or automated processes), as follows:\n• Code changes are reviewed by individuals other then the originating code author, and by individuals who are knowledgeable in code review techniques and secure coding practices.\n• Appropriate corrections are implemented prior to release.\n• Code review results are reviewed and approved by management prior to release."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.7.b",
+              "name": "Testing Procedures 6.3.7.b",
+              "fullDescription": {
+                "text": "Obtain and review policies to confirm that all custom application code changes for web applications must be reviewed (using either manual or automated processes) as follows:\n• Code changes are reviewed by individuals other then the originating code author, and by individuals who are knowledgeable in code review techniques and secure coding practices.\n• Code reviews ensure code is developed according to secure coding guidelines such as the Open Web Security Project Guide (see PCI DSS Requirement 6.5).\n• Appropriate corrections are implemented prior to release.\n• Code review results are reviewed and approved by management prior to release."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.3.7.c",
+              "name": "Testing Procedures 6.3.7.c",
+              "fullDescription": {
+                "text": "Select a sample of recent custom application changes and verify that custom application code is reviewed according to 6.3.7a and 6.3.7b above."
+              }
+            },
+            {
+              "id": "Requirements 6.4",
+              "name": "Requirements 6.4",
+              "fullDescription": {
+                "text": "Follow change control procedures for all changes to system components. The procedures must include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.a",
+              "name": "Testing Procedures 6.4.a",
+              "fullDescription": {
+                "text": "Obtain and examine company change-control procedures related to implementing security patches and software modifications, and verify that the procedures require items 6.4.1 – 6.4.4 below."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.b",
+              "name": "Testing Procedures 6.4.b",
+              "fullDescription": {
+                "text": "For a sample of system components and recent changes/security patches, trace those changes back to related change control documentation. For each change examined, perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 6.4.1",
+              "name": "Requirements 6.4.1",
+              "fullDescription": {
+                "text": "Documentation of impact"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.1",
+              "name": "Testing Procedures 6.4.1",
+              "fullDescription": {
+                "text": "Verify that documentation of customer impact is included in the change control documentation for each sampled change."
+              }
+            },
+            {
+              "id": "Requirements 6.4.2",
+              "name": "Requirements 6.4.2",
+              "fullDescription": {
+                "text": "Management sign-off by appropriate parties"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.2",
+              "name": "Testing Procedures 6.4.2",
+              "fullDescription": {
+                "text": "Verify that management sign-off by appropriate parties is present for each sampled change."
+              }
+            },
+            {
+              "id": "Requirements 6.4.3",
+              "name": "Requirements 6.4.3",
+              "fullDescription": {
+                "text": "Testing of operational functionality"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.3",
+              "name": "Testing Procedures 6.4.3",
+              "fullDescription": {
+                "text": "Verify that operational functionality testing is performed for each sampled change."
+              }
+            },
+            {
+              "id": "Requirements 6.4.4",
+              "name": "Requirements 6.4.4",
+              "fullDescription": {
+                "text": "Back-out procedures"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.4.4",
+              "name": "Testing Procedures 6.4.4",
+              "fullDescription": {
+                "text": "Verify that back-out procedures are prepared for each sampled change"
+              }
+            },
+            {
+              "id": "Requirements 6.5",
+              "name": "Requirements 6.5",
+              "fullDescription": {
+                "text": "Develop all web applications (internal and external, and including web administrative access to application) based on secure coding guidelines such as the Open Web Application Security Project Guide. Cover prevention of common coding vulnerabilities in software development processes, to include the following:\nNote: The vulnerabilities listed at 6.5.1 through 6.5.10 were current in the OWASP guide when PCI DSS v1.2 was published. However, if and when the OWASP guide is updated, the current version must be used for these requirements."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.a",
+              "name": "Testing Procedures 6.5.a",
+              "fullDescription": {
+                "text": "Obtain and review software development processes for any web-based applications. Verify that processes require training in secure coding techniques for developers, and are based on guidance such as the OWASP guide (http://www.owasp.org)."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.b",
+              "name": "Testing Procedures 6.5.b",
+              "fullDescription": {
+                "text": "Interview a sample of developers and obtain evidence that they are knowledgeable in secure coding techniques."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.c",
+              "name": "Testing Procedures 6.5.c",
+              "fullDescription": {
+                "text": "Verify that processes are in place to ensure that web applications are not vulnerable to the following:"
+              }
+            },
+            {
+              "id": "Requirements 6.5.1",
+              "name": "Requirements 6.5.1",
+              "fullDescription": {
+                "text": "Cross-site scripting (XSS) "
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.1",
+              "name": "Testing Procedures 6.5.1",
+              "fullDescription": {
+                "text": "Cross-site scripting (XSS) (Validate all parameters before inclusion.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.2",
+              "name": "Requirements 6.5.2",
+              "fullDescription": {
+                "text": "Injection flaws, particularly SQL injection. Also consider LDAP and Xpath injection flaws as well as other injection flaws."
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.2",
+              "name": "Testing Procedures 6.5.2",
+              "fullDescription": {
+                "text": "Injection flaws, particularly SQL injection (Validate input to verify user data cannot modify meaning of commands and queries.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.3",
+              "name": "Requirements 6.5.3",
+              "fullDescription": {
+                "text": "Malicious file execution"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.3",
+              "name": "Testing Procedures 6.5.3",
+              "fullDescription": {
+                "text": "Malicious file execution (Validate input to verify application does not accept filenames or files from users.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.4",
+              "name": "Requirements 6.5.4",
+              "fullDescription": {
+                "text": "Insecure direct object references"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.4",
+              "name": "Testing Procedures 6.5.4",
+              "fullDescription": {
+                "text": "Insecure direct object references (Do not expose internal object references to users.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.5",
+              "name": "Requirements 6.5.5",
+              "fullDescription": {
+                "text": "Cross-site request forgery (CSRF)"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.5",
+              "name": "Testing Procedures 6.5.5",
+              "fullDescription": {
+                "text": "Cross-site request forgery (CSRF) (Do not reply on authorization credentials and tokens automatically submitted by browsers.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.6",
+              "name": "Requirements 6.5.6",
+              "fullDescription": {
+                "text": "Information leakage and improper error handling"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.6",
+              "name": "Testing Procedures 6.5.6",
+              "fullDescription": {
+                "text": "Information leakage and improper error handling (Do not leak information via error messages or other means.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.7",
+              "name": "Requirements 6.5.7",
+              "fullDescription": {
+                "text": "Broken authentication and session management"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.7",
+              "name": "Testing Procedures 6.5.7",
+              "fullDescription": {
+                "text": "Broken authentication and session management (Properly authenticate users and protect account credentials and session tokens.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.8",
+              "name": "Requirements 6.5.8",
+              "fullDescription": {
+                "text": "Insecure cryptographic storage"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.8",
+              "name": "Testing Procedures 6.5.8",
+              "fullDescription": {
+                "text": "Insecure cryptographic storage (Prevent cryptographic flaws.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.9",
+              "name": "Requirements 6.5.9",
+              "fullDescription": {
+                "text": "Insecure communications "
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.9",
+              "name": "Testing Procedures 6.5.9",
+              "fullDescription": {
+                "text": "Insecure communications (Properly encrypt all authenticated and sensitive communications.)"
+              }
+            },
+            {
+              "id": "Requirements 6.5.10",
+              "name": "Requirements 6.5.10",
+              "fullDescription": {
+                "text": "Failure to restrict URL access"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.5.10",
+              "name": "Testing Procedures 6.5.10",
+              "fullDescription": {
+                "text": "Failure to restrict URL access (Consistently enforce access control in presentation layer and business logic for all URLs.)"
+              }
+            },
+            {
+              "id": "Requirements 6.6",
+              "name": "Requirements 6.6",
+              "fullDescription": {
+                "text": "For public-facing web applications, address new threats and vulnerabilities on an ongoing basis and ensure these applications are protected against known attacks by either of the following methods:\n• Reviewing public-facing web applications via manual or automated application vulnerability security assessment tools or methods, at least annually and after any changes\n• Installing a web-application firewall in front of public-facing web applications"
+              }
+            },
+            {
+              "id": "Testing Procedures 6.6",
+              "name": "Testing Procedures 6.6",
+              "fullDescription": {
+                "text": "For public-facing web applications, ensure that either one of the following methods are in place as follows:\n• Verify that public-facing web applications are reviewed (using either manual or automated vulnerability security assessment tools or methods), as follows:\n- At least annually\n- After any changes\n- By an organization that specializes in application security\n- That all vulnerabilities are corrected\n- That the application is re-evaluated after the corrections\n• Verify that a web-application firewall is in place in front of public-facing web applications to detect and prevent web-based attacks.\nNote: “An organization that specializes in application security” can be either a third-party company or an internal organization, as long as the reviewers specialize in application security and can demonstrate independence from the development team."
+              }
+            },
+            {
+              "id": "Requirements 7",
+              "name": "Restrict access to cardholder data by business need to know",
+              "fullDescription": {
+                "text": "To ensure critical data can only be accessed by authorized personnel, systems and processes must be in place to limit access based on need to know and according to job responsibilities.\n“Need to know” is when access rights are granted to only the least amount of data and privileges needed to perform a job."
+              }
+            },
+            {
+              "id": "Requirements 7.1",
+              "name": "Requirements 7.1",
+              "fullDescription": {
+                "text": "Limit access to system components and cardholder data to only those individuals whose job requires such access. Access limitations must include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.1",
+              "name": "Testing Procedures 7.1",
+              "fullDescription": {
+                "text": "Obtain and examine written policy for data control, and verify that the policy incorporates the following:"
+              }
+            },
+            {
+              "id": "Requirements 7.1.1",
+              "name": "Requirements 7.1.1",
+              "fullDescription": {
+                "text": "Restriction of access rights to privileged user IDs to least privileges necessary to perform job responsibilities"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.1.1",
+              "name": "Testing Procedures 7.1.1",
+              "fullDescription": {
+                "text": "Confirm that access rights for privileged user IDs are restricted to least privileges necessary to perform job responsibilities."
+              }
+            },
+            {
+              "id": "Requirements 7.1.2",
+              "name": "Requirements 7.1.2",
+              "fullDescription": {
+                "text": "Assignment of privileges is based on individual personnel’s job classification and function"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.1.2",
+              "name": "Testing Procedures 7.1.2",
+              "fullDescription": {
+                "text": "Confirm that privileges are assigned to individuals based on job classification and function (also called “role-based access control” or RBAC)."
+              }
+            },
+            {
+              "id": "Requirements 7.1.3",
+              "name": "Requirements 7.1.3",
+              "fullDescription": {
+                "text": "Requirement for an authorization form signed by management that specifies required privileges"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.1.3",
+              "name": "Testing Procedures 7.1.3",
+              "fullDescription": {
+                "text": "Confirm that an authorization form is required for all access, that it must specify required privileges, and that it must be signed by management."
+              }
+            },
+            {
+              "id": "Requirements 7.1.4",
+              "name": "Requirements 7.1.4",
+              "fullDescription": {
+                "text": "Implementation of an automated access control system"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.1.4",
+              "name": "Testing Procedures 7.1.4",
+              "fullDescription": {
+                "text": "Confirm that access controls are implemented via an automated access control system."
+              }
+            },
+            {
+              "id": "Requirements 7.2",
+              "name": "Requirements 7.2",
+              "fullDescription": {
+                "text": "Establish an access control system for systems components with multiple users that restricts access based on a user’s need to know, and is set to “deny all” unless specifically allowed.\nThis access control system must include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.2",
+              "name": "Testing Procedures 7.2",
+              "fullDescription": {
+                "text": "Examine system settings and vendor documentation to verify that an access control system is implemented as follows:"
+              }
+            },
+            {
+              "id": "Requirements 7.2.1",
+              "name": "Requirements 7.2.1",
+              "fullDescription": {
+                "text": "Coverage of all system components"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.2.1",
+              "name": "Testing Procedures 7.2.1",
+              "fullDescription": {
+                "text": "Confirm that access control systems are in place on all system components."
+              }
+            },
+            {
+              "id": "Requirements 7.2.2",
+              "name": "Requirements 7.2.2",
+              "fullDescription": {
+                "text": "Assignment of privileges to individuals based on job classification and function"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.2.2",
+              "name": "Testing Procedures 7.2.2",
+              "fullDescription": {
+                "text": "Confirm that access control systems are configured to enforce privileges assigned to individuals based on job classification and function."
+              }
+            },
+            {
+              "id": "Requirements 7.2.3",
+              "name": "Requirements 7.2.3",
+              "fullDescription": {
+                "text": "Default “deny-all” setting"
+              }
+            },
+            {
+              "id": "Testing Procedures 7.2.3",
+              "name": "Testing Procedures 7.2.3",
+              "fullDescription": {
+                "text": "Confirm that the access control systems has a default “deny-all” setting.\nNote: Some access control systems are set by default to “allow-all,” thereby permitting access unless/until a rule is written to specifically deny it."
+              }
+            },
+            {
+              "id": "Requirements 8",
+              "name": "Assign a unique ID to each person with computer access",
+              "fullDescription": {
+                "text": "Assigning a unique identification (ID) to each person with access ensures that each individual is uniquely accountable for his or her actions. When such accountability is in place, actions taken on critical data and systems are performed by, and can be traced to, known and authorized users."
+              }
+            },
+            {
+              "id": "Requirements 8.1",
+              "name": "Requirements 8.1",
+              "fullDescription": {
+                "text": "Assign all users a unique ID before allowing them to access system components or cardholder data."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.1",
+              "name": "Testing Procedures 8.1",
+              "fullDescription": {
+                "text": "Verify that all users are assigned a unique ID for access to system components or cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 8.2",
+              "name": "Requirements 8.2",
+              "fullDescription": {
+                "text": "In addition to assigning a unique ID, employ at least one of the following methods to authenticate all users:\n• Password or passphrase\n• Two-factor authentication (for example, token devices, smart cards, biometrics, or public keys)"
+              }
+            },
+            {
+              "id": "Testing Procedures 8.2",
+              "name": "Testing Procedures 8.2",
+              "fullDescription": {
+                "text": "To verify that users are authenticated using unique ID and additional authentication (for example, a password) for access to the cardholder data environment, perform the following:\n• Obtain and examine documentation describing the authentication method(s) used.\n• For each type of authentication method used and for each type of system component, observe an authentication to verify authentication is functioning consistent with documented authentication method(s)."
+              }
+            },
+            {
+              "id": "Requirements 8.3",
+              "name": "Requirements 8.3",
+              "fullDescription": {
+                "text": "Incorporate two-factor authentication for remote access (network-level access originating from outside the network) to the network by employees, administrators, and third parties. Use technologies such as remote authentication and dial-in service (RADIUS); terminal access controller access control system (TACACS) with tokens; or VPN (based on SSL/TLS or IPSEC) with individual certificates."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.3",
+              "name": "Testing Procedures 8.3",
+              "fullDescription": {
+                "text": "To verify that two-factor authentication is implemented for all remote network access, observe an employee (for example, an administrator) connecting remotely to the network and verify that both a password and an additional authentication item (for example, smart card, token, PIN) are required."
+              }
+            },
+            {
+              "id": "Requirements 8.4",
+              "name": "Requirements 8.4",
+              "fullDescription": {
+                "text": "Render all passwords unreadable during transmission and storage on all system components using strong cryptography (defined in PCI DSS Glossary of Terms, Abbreviations, and Acronyms)."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.4.a",
+              "name": "Testing Procedures 8.4.a",
+              "fullDescription": {
+                "text": "For a sample of system components, examine password files to verify that passwords are unreadable during transmission and storage."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.4.b",
+              "name": "Testing Procedures 8.4.b",
+              "fullDescription": {
+                "text": "For service providers only, observe password files to verify that customer passwords are encrypted."
+              }
+            },
+            {
+              "id": "Requirements 8.5",
+              "name": "Requirements 8.5",
+              "fullDescription": {
+                "text": "Ensure proper user authentication and password management for nonconsumer users and administrators on all system components as follows:"
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5",
+              "name": "Testing Procedures 8.5",
+              "fullDescription": {
+                "text": "Review procedures and interview personnel to verify that procedures are implemented for user authentication and password management, by performing the following:"
+              }
+            },
+            {
+              "id": "Requirements 8.5.1",
+              "name": "Requirements 8.5.1",
+              "fullDescription": {
+                "text": "Control addition, deletion, and modification of user IDs, credentials, and other identifier objects."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.1.a",
+              "name": "Testing Procedures 8.5.1.a",
+              "fullDescription": {
+                "text": "Select a sample of user IDs, including both administrators and general users. Verify that each user is authorized to use the system according to company policy by performing the following:\n• Obtain and examine an authorization form for each ID.\n• Verify that the sampled user IDs are implemented in accordance with the authorization form (including with privileges as specified and all signatures obtained), by tracing information from the authorization form to the system."
+              }
+            },
+            {
+              "id": "Requirements 8.5.2",
+              "name": "Requirements 8.5.2",
+              "fullDescription": {
+                "text": "Verify user identity before performing password resets."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.2",
+              "name": "Testing Procedures 8.5.2",
+              "fullDescription": {
+                "text": "Examine password procedures and observe security personnel to verify that, if a user requests a password reset by phone, e-mail, web, or other non-faceto-face method, the user’s identity is verified before the password is reset."
+              }
+            },
+            {
+              "id": "Requirements 8.5.3",
+              "name": "Requirements 8.5.3",
+              "fullDescription": {
+                "text": "Set first-time passwords to a unique value for each user and change immediately after the first use."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.3",
+              "name": "Testing Procedures 8.5.3",
+              "fullDescription": {
+                "text": "Examine password procedures and observe security personnel to verify that first-time passwords for new users are set to a unique value for each user and changed after first use."
+              }
+            },
+            {
+              "id": "Requirements 8.5.4",
+              "name": "Requirements 8.5.4",
+              "fullDescription": {
+                "text": "Immediately revoke access for any terminated users."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.4",
+              "name": "Testing Procedures 8.5.4",
+              "fullDescription": {
+                "text": "Select a sample of employees terminated in the past six months, and review current user access lists to verify that their IDs have been deactivated or removed."
+              }
+            },
+            {
+              "id": "Requirements 8.5.5",
+              "name": "Requirements 8.5.5",
+              "fullDescription": {
+                "text": "Remove/disable inactive user accounts at least every 90 days."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.5",
+              "name": "Testing Procedures 8.5.5",
+              "fullDescription": {
+                "text": "Verify that inactive accounts over 90 days old are either removed or disabled."
+              }
+            },
+            {
+              "id": "Requirements 8.5.6",
+              "name": "Requirements 8.5.6",
+              "fullDescription": {
+                "text": "Enable accounts used by vendors for remote maintenance only during the time period needed."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.6",
+              "name": "Testing Procedures 8.5.6",
+              "fullDescription": {
+                "text": "Verify that any accounts used by vendors to support and maintain system components are disabled, enabled only when needed by the vendor, and monitored while being used."
+              }
+            },
+            {
+              "id": "Requirements 8.5.7",
+              "name": "Requirements 8.5.7",
+              "fullDescription": {
+                "text": "Communicate password procedures and policies to all users who have access to cardholder data."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.7",
+              "name": "Testing Procedures 8.5.7",
+              "fullDescription": {
+                "text": "Interview the users from a sample of user IDs, to verify that they are familiar with password procedures and policies."
+              }
+            },
+            {
+              "id": "Requirements 8.5.8",
+              "name": "Requirements 8.5.8",
+              "fullDescription": {
+                "text": "Do not use group, shared, or generic accounts and passwords."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.8.a",
+              "name": "Testing Procedures 8.5.8.a",
+              "fullDescription": {
+                "text": "For a sample of system components, examine user ID lists to verify the following\n• Generic user IDs and accounts are disabled or removed.\n• Shared user IDs for system administration activities and other critical functions do not exist.\n• Shared and generic user IDs are not used to administer any system components."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.8.b",
+              "name": "Testing Procedures 8.5.8.b",
+              "fullDescription": {
+                "text": "Examine password policies/procedures to verify that group and shared passwords are explicitly prohibited."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.8.c",
+              "name": "Testing Procedures 8.5.8.c",
+              "fullDescription": {
+                "text": "Interview system administrators to verify that group and shared passwords are not distributed, even if requested."
+              }
+            },
+            {
+              "id": "Requirements 8.5.9",
+              "name": "Requirements 8.5.9",
+              "fullDescription": {
+                "text": "Change user passwords at least every 90 days."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.9",
+              "name": "Testing Procedures 8.5.9",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that user password parameters are set to require users to change passwords at least every 90 days.\nFor service providers only, review internal processes and customer/user documentation to verify that customer passwords are required to change periodically and that customers are given guidance as to when, and under what circumstances, passwords must change."
+              }
+            },
+            {
+              "id": "Requirements 8.5.10",
+              "name": "Requirements 8.5.10",
+              "fullDescription": {
+                "text": "Require a minimum password length of at least seven characters."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.10",
+              "name": "Testing Procedures 8.5.10",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that password parameters are set to require passwords to be at least seven characters long.\nFor service providers only, review internal processes and customer/user documentation to verify that customer passwords are required to meet minimum length requirements."
+              }
+            },
+            {
+              "id": "Requirements 8.5.11",
+              "name": "Requirements 8.5.11",
+              "fullDescription": {
+                "text": "Use passwords containing both numeric and alphabetic characters."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.11",
+              "name": "Testing Procedures 8.5.11",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that password parameters are set to require passwords to contain both numeric and alphabetic characters.\nFor service providers only, review internal processes and customer/user documentation to verify that customer passwords are required to contain both numeric and alphabetic characters."
+              }
+            },
+            {
+              "id": "Requirements 8.5.12",
+              "name": "Requirements 8.5.12",
+              "fullDescription": {
+                "text": "Do not allow an individual to submit a new password that is the same as any of the last four passwords he or she has used."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.12",
+              "name": "Testing Procedures 8.5.12",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that password parameters are set to require that new passwords cannot be the same as the four previously used passwords.\nFor service providers only, review internal processes and customer/user documentation to verify that new customer passwords cannot be the same as the previous four passwords."
+              }
+            },
+            {
+              "id": "Requirements 8.5.13",
+              "name": "Requirements 8.5.13",
+              "fullDescription": {
+                "text": "Limit repeated access attempts by locking out the user ID after not more than six attempts."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.13",
+              "name": "Testing Procedures 8.5.13",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that password parameters are set to require that a user’s account is locked out after not more than six invalid logon attempts.\nFor service providers only, review internal processes and customer/user documentation to verify that customer accounts are temporarily locked-out after not more than six invalid access attempts."
+              }
+            },
+            {
+              "id": "Requirements 8.5.14",
+              "name": "Requirements 8.5.14",
+              "fullDescription": {
+                "text": "Set the lockout duration to a minimum of 30 minutes or until administrator enables the user ID."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.14",
+              "name": "Testing Procedures 8.5.14",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that password parameters are set to require that once a user account is locked out, it remains locked for a minimum of 30 minutes or until a system administrator resets the account."
+              }
+            },
+            {
+              "id": "Requirements 8.5.15",
+              "name": "Requirements 8.5.15",
+              "fullDescription": {
+                "text": "If a session has been idle for more than 15 minutes, require the user to re-enter the password to reactivate the terminal."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.15",
+              "name": "Testing Procedures 8.5.15",
+              "fullDescription": {
+                "text": "For a sample of system components, obtain and inspect system configuration settings to verify that system/session idle time out features have been set to 15 minutes or less."
+              }
+            },
+            {
+              "id": "Requirements 8.5.16",
+              "name": "Requirements 8.5.16",
+              "fullDescription": {
+                "text": "Authenticate all access to any database containing cardholder data. This includes access by applications, administrators, and all other users."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.16.a",
+              "name": "Testing Procedures 8.5.16.a",
+              "fullDescription": {
+                "text": "Review database and application configuration settings and verify that user authentication and access to databases includes the following:\n• All users are authenticated prior to access.\n• All user access to, user queries of, and user actions on (for example, move, copy, delete), the database are through programmatic methods only (for example, through stored procedures).\n• Direct access or queries to databases are restricted to database administrators."
+              }
+            },
+            {
+              "id": "Testing Procedures 8.5.16.b",
+              "name": "Testing Procedures 8.5.16.b",
+              "fullDescription": {
+                "text": "Review database applications and the related application IDs to verify that application IDs can only be used by the applications (and not by individual users or other processes)."
+              }
+            },
+            {
+              "id": "Requirements 9",
+              "name": "Restrict physical access to cardholder data.",
+              "fullDescription": {
+                "text": "Any physical access to data or systems that house cardholder data provides the opportunity for individuals to access devices or data and to remove systems or hardcopies, and should be appropriately restricted."
+              }
+            },
+            {
+              "id": "Requirements 9.1",
+              "name": "Requirements 9.1",
+              "fullDescription": {
+                "text": "Use appropriate facility entry controls to limit and monitor physical access to systems in the cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.1",
+              "name": "Testing Procedures 9.1",
+              "fullDescription": {
+                "text": "Verify the existence of physical security controls for each computer room, data center, and other physical areas with systems in the cardholder data environment.\n• Verify that access is controlled with badge readers or other devices including authorized badges and lock and key.\n• Observe a system administrator’s attempt to log into consoles for randomly selected systems in the cardholder environment and verify that they are “locked” to prevent unauthorized use."
+              }
+            },
+            {
+              "id": "Requirements 9.1.1",
+              "name": "Requirements 9.1.1",
+              "fullDescription": {
+                "text": "Use video cameras or other access control mechanisms to monitor individual physical access to sensitive areas. Review collected data and correlate with other entries. Store for at least three months, unless otherwise restricted by law.\nNote: “Sensitive areas” refers to any data center, server room or any area that houses systems that store, process, or transmit cardholder data. This excludes the areas where only point-of-sale terminals are present, such as the cashier areas in a retail store."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.1.1",
+              "name": "Testing Procedures 9.1.1",
+              "fullDescription": {
+                "text": "Verify that video cameras or other access control mechanisms are in place to monitor the entry/exit points to sensitive areas. Video cameras or other mechanisms should be protected from tampering or disabling. Verify that video cameras or other mechanisms are monitored and that data from cameras or other mechanisms is stored for at least three months."
+              }
+            },
+            {
+              "id": "Requirements 9.1.2",
+              "name": "Requirements 9.1.2",
+              "fullDescription": {
+                "text": "Restrict physical access to publicly accessible network jacks."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.1.2",
+              "name": "Testing Procedures 9.1.2",
+              "fullDescription": {
+                "text": "Verify by interviewing network administrators and by observation that network jacks are enabled only when needed by authorized employees. For example, conference rooms used to host visitors should not have network ports enabled with DHCP. Alternatively, verify that visitors are escorted at all times in areas with active network jacks."
+              }
+            },
+            {
+              "id": "Requirements 9.1.3",
+              "name": "Requirements 9.1.3",
+              "fullDescription": {
+                "text": "Restrict physical access to wireless access points, gateways, and handheld devices."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.1.3",
+              "name": "Testing Procedures 9.1.3",
+              "fullDescription": {
+                "text": "Verify that physical access to wireless access points, gateways, and handheld devices is appropriately restricted."
+              }
+            },
+            {
+              "id": "Requirements 9.2",
+              "name": "Requirements 9.2",
+              "fullDescription": {
+                "text": "Develop procedures to help all personnel easily distinguish between employees and visitors, especially in areas where cardholder data is accessible.\nFor purposes of this requirement, “employee” refers to full-time and parttime employees, temporary employees and personnel, and contractors and consultants who are “resident” on the entity’s site. A “visitor” is defined as a vendor, guest of an employee, service personnel, or anyone who needs to enter the facility for a short duration, usually not more than one day."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.2.a",
+              "name": "Testing Procedures 9.2.a",
+              "fullDescription": {
+                "text": "Review processes and procedures for assigning badges to employees, and visitors, and verify these processes include the following:\n• Granting new badges, changing access requirements, and revoking terminated employee and expired visitor badges\n• Limited access to badge system"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.2.b",
+              "name": "Testing Procedures 9.2.b",
+              "fullDescription": {
+                "text": "Observe people within the facility to verify that it is easy to distinguish between employees and visitors."
+              }
+            },
+            {
+              "id": "Requirements 9.3",
+              "name": "Requirements 9.3",
+              "fullDescription": {
+                "text": "Make sure all visitors are handled as follows:"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.3",
+              "name": "Testing Procedures 9.3",
+              "fullDescription": {
+                "text": "Verify that employee/visitor controls are in place as follows:"
+              }
+            },
+            {
+              "id": "Requirements 9.3.1",
+              "name": "Requirements 9.3.1",
+              "fullDescription": {
+                "text": "Authorized before entering areas where cardholder data is processed or maintained"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.3.1",
+              "name": "Testing Procedures 9.3.1",
+              "fullDescription": {
+                "text": "Observe visitors to verify the use of visitor ID badges. Attempt to gain access to the data center to verify that a visitor ID badge does not permit unescorted access to physical areas that store cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 9.3.2",
+              "name": "Requirements 9.3.2",
+              "fullDescription": {
+                "text": "Given a physical token (for example, a badge or access device) that expires and that identifies the visitors as non-employee"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.3.2",
+              "name": "Testing Procedures 9.3.2",
+              "fullDescription": {
+                "text": "Examine employee and visitor badges to verify that ID badges clearly distinguish employees from visitors/outsiders and that visitor badges expire."
+              }
+            },
+            {
+              "id": "Requirements 9.3.3",
+              "name": "Requirements 9.3.3",
+              "fullDescription": {
+                "text": "Asked to surrender the physical token before leaving the facility or at the date of expiration"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.3.3",
+              "name": "Testing Procedures 9.3.3",
+              "fullDescription": {
+                "text": "Observe visitors leaving the facility to verify visitors are asked to surrender their ID badge upon departure or expiration."
+              }
+            },
+            {
+              "id": "Requirements 9.4",
+              "name": "Requirements 9.4",
+              "fullDescription": {
+                "text": "Use a visitor log to maintain a physical audit trail of visitor activity. Document the visitor’s name, the firm represented, and the employee authorizing physical access on the log. Retain this log for a minimum of three months, unless otherwise restricted by law."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.4.a",
+              "name": "Testing Procedures 9.4.a",
+              "fullDescription": {
+                "text": "Verify that a visitor log is in use to record physical access to the facility as well as for computer rooms and data centers where cardholder data is stored or transmitted."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.4.b",
+              "name": "Testing Procedures 9.4.b",
+              "fullDescription": {
+                "text": "Verify that the log contains the visitor’s name, the firm represented, and the employee authorizing physical access, and is retained for at least three months."
+              }
+            },
+            {
+              "id": "Requirements 9.5",
+              "name": "Requirements 9.5",
+              "fullDescription": {
+                "text": "Store media back-ups in a secure location, preferably an off-site facility, such as an alternate or back-up site, or a commercial storage facility. Review the location’s security at least annually."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.5",
+              "name": "Testing Procedures 9.5",
+              "fullDescription": {
+                "text": "Verify that the storage location is reviewed at least annually to determine that back-up media storage is secure."
+              }
+            },
+            {
+              "id": "Requirements 9.6",
+              "name": "Requirements 9.6",
+              "fullDescription": {
+                "text": "Physically secure all paper and electronic media that contain cardholder data."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.6",
+              "name": "Testing Procedures 9.6",
+              "fullDescription": {
+                "text": "Verify that procedures for protecting cardholder data include controls for physically securing paper and electronic media (including computers, removable electronic media, networking, and communications hardware, telecommunication lines, paper receipts, paper reports, and faxes)."
+              }
+            },
+            {
+              "id": "Requirements 9.7",
+              "name": "Requirements 9.7",
+              "fullDescription": {
+                "text": "Maintain strict control over the internal or external distribution of any kind of media that contains cardholder data, including the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.7",
+              "name": "Testing Procedures 9.7",
+              "fullDescription": {
+                "text": "Verify that a policy exists to control distribution of media containing cardholder data, and that the policy covers all distributed media including that distributed to individuals."
+              }
+            },
+            {
+              "id": "Requirements 9.7.1",
+              "name": "Requirements 9.7.1",
+              "fullDescription": {
+                "text": "Classify the media so it can be identified as confidential."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.7.1",
+              "name": "Testing Procedures 9.7.1",
+              "fullDescription": {
+                "text": "Verify that all media is classified so that it can be identified as “confidential.”"
+              }
+            },
+            {
+              "id": "Requirements 9.7.2",
+              "name": "Requirements 9.7.2",
+              "fullDescription": {
+                "text": "Send the media by secured courier or other delivery method that can be accurately tracked."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.7.2",
+              "name": "Testing Procedures 9.7.2",
+              "fullDescription": {
+                "text": "Verify that all media sent outside the facility is logged and authorized by management and sent via secured courier or other delivery method that can be tracked."
+              }
+            },
+            {
+              "id": "Requirements 9.8",
+              "name": "Requirements 9.8",
+              "fullDescription": {
+                "text": "Ensure management approves any and all media containing cardholder data that is moved from a secured area (especially when media is distributed to individuals)"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.8",
+              "name": "Testing Procedures 9.8",
+              "fullDescription": {
+                "text": "Select a recent sample of several days of offsite tracking logs for all media containing cardholder data, and verify the presence in the logs of tracking details and proper management authorization."
+              }
+            },
+            {
+              "id": "Requirements 9.9",
+              "name": "Requirements 9.9",
+              "fullDescription": {
+                "text": "Maintain strict control over the storage and accessibility of media that contains cardholder data."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.9",
+              "name": "Testing Procedures 9.9",
+              "fullDescription": {
+                "text": "Obtain and examine the policy for controlling storage and maintenance of hardcopy and electronic media and verify that the policy requires periodic media inventories."
+              }
+            },
+            {
+              "id": "Requirements 9.9.1",
+              "name": "Requirements 9.9.1",
+              "fullDescription": {
+                "text": "Properly maintain inventory logs of all media and conduct media inventories at least annually."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.9.1",
+              "name": "Testing Procedures 9.9.1",
+              "fullDescription": {
+                "text": "Obtain and review the media inventory log to verify that periodic media inventories are performed at least annually."
+              }
+            },
+            {
+              "id": "Requirements 9.10",
+              "name": "Requirements 9.10",
+              "fullDescription": {
+                "text": "Destroy media containing cardholder data when it is no longer needed for business or legal reasons as follows:"
+              }
+            },
+            {
+              "id": "Testing Procedures 9.10",
+              "name": "Testing Procedures 9.10",
+              "fullDescription": {
+                "text": "Obtain and examine the periodic media destruction policy and verify that it covers all media containing cardholder data and confirm the following:"
+              }
+            },
+            {
+              "id": "Requirements 9.10.1",
+              "name": "Requirements 9.10.1",
+              "fullDescription": {
+                "text": "Shred, incinerate, or pulp hardcopy materials so that cardholder data cannot be reconstructed."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.10.1.a",
+              "name": "Testing Procedures 9.10.1.a",
+              "fullDescription": {
+                "text": "Verify that hard-copy materials are cross-cut shredded, incinerated, or pulped such that there is reasonable assurance the hard-copy materials cannot be reconstructed."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.10.1.b",
+              "name": "Testing Procedures 9.10.1.b",
+              "fullDescription": {
+                "text": "Examine storage containers used for information to be destroyed to verify that the containers are secured. For example, verify that a “to-be-shredded” container has a lock preventing access to its contents."
+              }
+            },
+            {
+              "id": "Requirements 9.10.2",
+              "name": "Requirements 9.10.2",
+              "fullDescription": {
+                "text": "Render cardholder data on electronic media unrecoverable so that cardholder data cannot be reconstructed."
+              }
+            },
+            {
+              "id": "Testing Procedures 9.10.2",
+              "name": "Testing Procedures 9.10.2",
+              "fullDescription": {
+                "text": "Verify that cardholder data on electronic media is rendered unrecoverable via a secure wipe program in accordance with industry-accepted standards for secure deletion, or otherwise physically destroying the media (for example, degaussing)."
+              }
+            },
+            {
+              "id": "Requirements 10",
+              "name": "Track and monitor all access to network resources and cardholder data.",
+              "fullDescription": {
+                "text": "Logging mechanisms and the ability to track user activities are critical in preventing, detecting, or minimizing the impact of a data compromise. The presence of logs in all environments allows thorough tracking, alerting, and analysis when something does go wrong. Determining the cause of a compromise is very difficult without system activity logs."
+              }
+            },
+            {
+              "id": "Requirements 10.1",
+              "name": "Requirements 10.1",
+              "fullDescription": {
+                "text": "Establish a process for linking all access to system components (especially access done with administrative privileges such as root) to each individual user."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.1",
+              "name": "Testing Procedures 10.1",
+              "fullDescription": {
+                "text": "Verify through observation and interviewing the system administrator, that audit trails are enabled and active for system components."
+              }
+            },
+            {
+              "id": "Requirements 10.2",
+              "name": "Requirements 10.2",
+              "fullDescription": {
+                "text": "Implement automated audit trails for all system components to reconstruct the following events:"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2",
+              "name": "Testing Procedures 10.2",
+              "fullDescription": {
+                "text": "Through interviews, examination of audit logs, and examination of audit log settings, perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 10.2.1",
+              "name": "Requirements 10.2.1",
+              "fullDescription": {
+                "text": "All individual accesses to cardholder data"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.1",
+              "name": "Testing Procedures 10.2.1",
+              "fullDescription": {
+                "text": "Verify all individual access to cardholder data is logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.2",
+              "name": "Requirements 10.2.2",
+              "fullDescription": {
+                "text": "All actions taken by any individual with root or administrative privileges"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.2",
+              "name": "Testing Procedures 10.2.2",
+              "fullDescription": {
+                "text": "Verify actions taken by any individual with root or administrative privileges is logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.3",
+              "name": "Requirements 10.2.3",
+              "fullDescription": {
+                "text": "Access to all audit trails"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.3",
+              "name": "Testing Procedures 10.2.3",
+              "fullDescription": {
+                "text": "Verify access to all audit trails is logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.4",
+              "name": "Requirements 10.2.4",
+              "fullDescription": {
+                "text": "Invalid logical access attempts"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.4",
+              "name": "Testing Procedures 10.2.4",
+              "fullDescription": {
+                "text": "Verify invalid logical access attempts are logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.5",
+              "name": "Requirements 10.2.5",
+              "fullDescription": {
+                "text": "Use of identification and authentication mechanisms"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.5",
+              "name": "Testing Procedures 10.2.5",
+              "fullDescription": {
+                "text": "Verify use of identification and authentication mechanisms is logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.6",
+              "name": "Requirements 10.2.6",
+              "fullDescription": {
+                "text": "Initialization of the audit logs"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.6",
+              "name": "Testing Procedures 10.2.6",
+              "fullDescription": {
+                "text": "Verify initialization of audit logs is logged."
+              }
+            },
+            {
+              "id": "Requirements 10.2.7",
+              "name": "Requirements 10.2.7",
+              "fullDescription": {
+                "text": "Creation and deletion of system-level objects"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.2.7",
+              "name": "Testing Procedures 10.2.7",
+              "fullDescription": {
+                "text": "Verify creation and deletion of system level objects are logged."
+              }
+            },
+            {
+              "id": "Requirements 10.3",
+              "name": "Requirements 10.3",
+              "fullDescription": {
+                "text": "Record at least the following audit trail entries for all system components for each event:"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3",
+              "name": "Testing Procedures 10.3",
+              "fullDescription": {
+                "text": "Through interviews and observation, for each auditable event (from 10.2), perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 10.3.1",
+              "name": "Requirements 10.3.1",
+              "fullDescription": {
+                "text": "User identification"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.1",
+              "name": "Testing Procedures 10.3.1",
+              "fullDescription": {
+                "text": "Verify user identification is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.3.2",
+              "name": "Requirements 10.3.2",
+              "fullDescription": {
+                "text": "Type of event"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.2",
+              "name": "Testing Procedures 10.3.2",
+              "fullDescription": {
+                "text": "Verify type of event is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.3.3",
+              "name": "Requirements 10.3.3",
+              "fullDescription": {
+                "text": "Date and time"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.3",
+              "name": "Testing Procedures 10.3.3",
+              "fullDescription": {
+                "text": "Verify date and time stamp is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.3.4",
+              "name": "Requirements 10.3.4",
+              "fullDescription": {
+                "text": "Success or failure indication"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.4",
+              "name": "Testing Procedures 10.3.4",
+              "fullDescription": {
+                "text": "Verify success or failure indication is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.3.5",
+              "name": "Requirements 10.3.5",
+              "fullDescription": {
+                "text": "Origination of event "
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.5",
+              "name": "Testing Procedures 10.3.5",
+              "fullDescription": {
+                "text": "Verify origination of event is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.3.6",
+              "name": "Requirements 10.3.6",
+              "fullDescription": {
+                "text": "Identity or name of affected data, system component, or resource"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.3.6",
+              "name": "Testing Procedures 10.3.6",
+              "fullDescription": {
+                "text": "Verify identity or name of affected data, system component, or resources is included in log entries."
+              }
+            },
+            {
+              "id": "Requirements 10.4",
+              "name": "Requirements 10.4",
+              "fullDescription": {
+                "text": "Synchronize all critical system clocks and times."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.4",
+              "name": "Testing Procedures 10.4",
+              "fullDescription": {
+                "text": "Obtain and review the process for acquiring and distributing the correct time within the organization, as well as the time-related system-parameter settings for a sample of system components. Verify the following is included in the process and implemented:"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.4.a",
+              "name": "Testing Procedures 10.4.a",
+              "fullDescription": {
+                "text": "Verify that a known, stable version of NTP (Network Time Protocol) or similar technology, kept current per PCI DSS Requirements 6.1 and 6.2, is used for time synchronization."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.4.b",
+              "name": "Testing Procedures 10.4.b",
+              "fullDescription": {
+                "text": "Verify that internal servers are not all receiving time signals from external sources. [Two or three central time servers within the organization receive external time signals [directly from a special radio, GPS satellites, or other external sources based on International Atomic Time and UTC (formerly GMT)], peer with each other to keep accurate time, and share the time with other internal servers.]"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.4.c",
+              "name": "Testing Procedures 10.4.c",
+              "fullDescription": {
+                "text": "Verify that specific external hosts are designated from which the timeservers will accept NTP time updates (to prevent a malicious individual from changing the clock). Optionally, those updates can be encrypted with a symmetric key, and access control lists can be created that specify the IP addresses of client machines that will be provided with the NTP service (to prevent unauthorized use of internal time servers).\nSee www.ntp.org for more information"
+              }
+            },
+            {
+              "id": "Requirements 10.5",
+              "name": "Requirements 10.5",
+              "fullDescription": {
+                "text": "Secure audit trails so they cannot be altered."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5",
+              "name": "Testing Procedures 10.5",
+              "fullDescription": {
+                "text": "Interview system administrator and examine permissions to verify that audit trails are secured so that they cannot be altered as follows: "
+              }
+            },
+            {
+              "id": "Requirements 10.5.1",
+              "name": "Requirements 10.5.1",
+              "fullDescription": {
+                "text": "Limit viewing of audit trails to those with a job-related need."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5.1",
+              "name": "Testing Procedures 10.5.1",
+              "fullDescription": {
+                "text": "Verify that only individuals who have a jobrelated need can view audit trail files."
+              }
+            },
+            {
+              "id": "Requirements 10.5.2",
+              "name": "Requirements 10.5.2",
+              "fullDescription": {
+                "text": "Protect audit trail files from unauthorized modifications."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5.2",
+              "name": "Testing Procedures 10.5.2",
+              "fullDescription": {
+                "text": "Verify that current audit trail files are protected from unauthorized modifications via access control mechanisms, physical segregation, and/or network segregation."
+              }
+            },
+            {
+              "id": "Requirements 10.5.3",
+              "name": "Requirements 10.5.3",
+              "fullDescription": {
+                "text": "Promptly back up audit trail files to a centralized log server or media that is difficult to alter."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5.3",
+              "name": "Testing Procedures 10.5.3",
+              "fullDescription": {
+                "text": "Verify that current audit trail files are promptly backed up to a centralized log server or media that is difficult to alter."
+              }
+            },
+            {
+              "id": "Requirements 10.5.4",
+              "name": "Requirements 10.5.4",
+              "fullDescription": {
+                "text": "Write logs for external-facing technologies onto a log server on the internal LAN."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5.4",
+              "name": "Testing Procedures 10.5.4",
+              "fullDescription": {
+                "text": "Verify that logs for external-facing technologies (for example, wireless, firewalls, DNS, mail) are offloaded or copied onto a secure centralized internal log server or media."
+              }
+            },
+            {
+              "id": "Requirements 10.5.5",
+              "name": "Requirements 10.5.5",
+              "fullDescription": {
+                "text": "Use file-integrity monitoring or change-detection software on logs to ensure that existing log data cannot be changed without generating alerts (although new data being added should not cause an alert)."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.5.5",
+              "name": "Testing Procedures 10.5.5",
+              "fullDescription": {
+                "text": "Verify the use of file-integrity monitoring or change-detection software for logs by examining system settings and monitored files and results from monitoring activities."
+              }
+            },
+            {
+              "id": "Requirements 10.6",
+              "name": "Requirements 10.6",
+              "fullDescription": {
+                "text": "Review logs for all system components at least daily. Log reviews must include those servers that perform security functions like intrusion-detection system (IDS) and authentication, authorization, and accounting protocol (AAA) servers (for example, RADIUS).\nNote: Log harvesting, parsing, and alerting tools may be used to meet compliance with Requirement 10.6"
+              }
+            },
+            {
+              "id": "Testing Procedures 10.6.a",
+              "name": "Testing Procedures 10.6.a",
+              "fullDescription": {
+                "text": "Obtain and examine security policies and procedures to verify that they include procedures to review security logs at least daily and that follow-up to exceptions is required."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.6.b",
+              "name": "Testing Procedures 10.6.b",
+              "fullDescription": {
+                "text": "Through observation and interviews, verify that regular log reviews are performed for all system components."
+              }
+            },
+            {
+              "id": "Requirements 10.7",
+              "name": "Requirements 10.7",
+              "fullDescription": {
+                "text": "Retain audit trail history for at least one year, with a minimum of three months immediately available for analysis (for example, online, archived, or restorable from back-up)."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.7.a",
+              "name": "Testing Procedures 10.7.a",
+              "fullDescription": {
+                "text": "Obtain and examine security policies and procedures and verify that they include audit log retention policies and require audit log retention for at least one year."
+              }
+            },
+            {
+              "id": "Testing Procedures 10.7.b",
+              "name": "Testing Procedures 10.7.b",
+              "fullDescription": {
+                "text": "Verify that audit logs are available for at least one year and processes are in place to restore at least the last three months’ logs for immediate analysis."
+              }
+            },
+            {
+              "id": "Requirements 11",
+              "name": "Regularly test security systems and processes.",
+              "fullDescription": {
+                "text": "Vulnerabilities are being discovered continually by malicious individuals and researchers, and being introduced by new software. System components, processes, and custom software should be tested frequently to ensure security controls continue to reflect a changing environment. "
+              }
+            },
+            {
+              "id": "Requirements 11.1",
+              "name": "Requirements 11.1",
+              "fullDescription": {
+                "text": "Test for the presence of wireless access points by using a wireless analyzer at least quarterly or deploying a wireless IDS/IPS to identify all wireless devices in use."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.1.a",
+              "name": "Testing Procedures 11.1.a",
+              "fullDescription": {
+                "text": "Verify that a wireless analyzer is used at least quarterly, or that a wireless IDS/IPS is implemented and configured to identify all wireless devices."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.1.b",
+              "name": "Testing Procedures 11.1.b",
+              "fullDescription": {
+                "text": " If a wireless IDS/IPS is implemented, verify the configuration will generate alerts to personnel."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.1.c",
+              "name": "Testing Procedures 11.1.c",
+              "fullDescription": {
+                "text": "Verify the organization’s Incident Response Plan (Requirement 12.9) includes a response in the event unauthorized wireless devices are detected."
+              }
+            },
+            {
+              "id": "Requirements 11.2",
+              "name": "Requirements 11.2",
+              "fullDescription": {
+                "text": "Run internal and external network vulnerability scans at least quarterly and after any significant change in the network (such as new system component installations, changes in network topology, firewall rule modifications, product upgrades).\nNote: Quarterly external vulnerability scans must be performed by an Approved Scanning Vendor (ASV) qualified by Payment Card Industry Security Standards Council (PCI SSC). Scans conducted after network changes may be performed by the company’s internal staff."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.2.a",
+              "name": "Testing Procedures 11.2.a",
+              "fullDescription": {
+                "text": "Inspect output from the most recent four quarters of internal network, host, and application vulnerability scans to verify that periodic security testing of the devices within the cardholder data environment occurs. Verify that the scan process includes rescans until passing results are obtained.\nNote: External scans conducted after network changes, and internal scans, may be performed by the company’s qualified internal personnel or third parties"
+              }
+            },
+            {
+              "id": "Testing Procedures 11.2.b",
+              "name": "Testing Procedures 11.2.b",
+              "fullDescription": {
+                "text": "Verify that external scanning is occurring on a quarterly basis in accordance with the PCI Security Scanning Procedures, by inspecting output from the four most recent quarters of external vulnerability scans to verify that:\n• Four quarterly scans occurred in the most recent 12-month period;\n• The results of each scan satisfy the PCI Security Scanning Procedures (for example, no urgent, critical, or high vulnerabilities);\n• The scans were completed by an Approved Scanning Vendor (ASV) qualified by PCI SSC.\nNote: It is not required that four passing quarterly scans must be completed for initial PCI DSS compliance if the assessor verifies 1) the most recent scan result was a passing scan, 2) the entity has documented policies and procedures requiring quarterly scanning, and 3) vulnerabilities noted in the scan results have been corrected as shown in a re-scan. For subsequent years after the initial PCI DSS review, four passing quarterly scans must have occurred."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.2.c",
+              "name": "Testing Procedures 11.2.c",
+              "fullDescription": {
+                "text": "Verify that internal and/or external scanning is performed after any significant change in the network, by inspecting scan results for the last year. Verify that the scan process includes rescans until passing results are obtained."
+              }
+            },
+            {
+              "id": "Requirements 11.3",
+              "name": "Requirements 11.3",
+              "fullDescription": {
+                "text": "Perform external and internal penetration testing at least once a year and after any significant infrastructure or application upgrade or modification (such as an operating system upgrade, a subnetwork added to the environment, or a web server added to the environment). These penetration tests must include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 11.3.a",
+              "name": "Testing Procedures 11.3.a",
+              "fullDescription": {
+                "text": "Obtain and examine the results from the most recent penetration test to verify that penetration testing is performed at least annually and after any significant changes to the environment. Verify that noted vulnerabilities were corrected and testing repeated."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.3.b",
+              "name": "Testing Procedures 11.3.b",
+              "fullDescription": {
+                "text": "Verify that the test was performed by a qualified internal resource or qualified external third party, and if applicable, organizational independence of the tester exists (not required to be a QSA or ASV)."
+              }
+            },
+            {
+              "id": "Requirements 11.3.1",
+              "name": "Requirements 11.3.1",
+              "fullDescription": {
+                "text": "Network-layer penetration tests"
+              }
+            },
+            {
+              "id": "Testing Procedures 11.3.1",
+              "name": "Testing Procedures 11.3.1",
+              "fullDescription": {
+                "text": "Verify that the penetration test includes networklayer penetration tests. These tests should include components that support network functions as well as operating systems"
+              }
+            },
+            {
+              "id": "Requirements 11.3.2",
+              "name": "Requirements 11.3.2",
+              "fullDescription": {
+                "text": "Application-layer penetration tests"
+              }
+            },
+            {
+              "id": "Testing Procedures 11.3.2",
+              "name": "Testing Procedures 11.3.2",
+              "fullDescription": {
+                "text": "Verify that the penetration test includes application-layer penetration tests. For web applications, the tests should include, at a minimum, the vulnerabilities listed in Requirement 6.5."
+              }
+            },
+            {
+              "id": "Requirements 11.4",
+              "name": "Requirements 11.4",
+              "fullDescription": {
+                "text": "Use intrusion-detection systems, and/or intrusion-prevention systems to monitor all traffic in the cardholder data environment and alert personnel to suspected compromises. Keep all intrusion-detection and prevention engines up-to-date."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.4.a",
+              "name": "Testing Procedures 11.4.a",
+              "fullDescription": {
+                "text": "Verify the use of intrusion-detection systems and/or intrusion-prevention systems and that all traffic in the cardholder data environment is monitored."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.4.b",
+              "name": "Testing Procedures 11.4.b",
+              "fullDescription": {
+                "text": "Confirm IDS and/or IPS are configured to alert personnel of suspected compromises."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.4.c",
+              "name": "Testing Procedures 11.4.c",
+              "fullDescription": {
+                "text": "Examine IDS/IPS configurations and confirm IDS/IPS devices are configured, maintained, and updated per vendor instructions to ensure optimal protection."
+              }
+            },
+            {
+              "id": "Requirements 11.5",
+              "name": "Requirements 11.5",
+              "fullDescription": {
+                "text": "Deploy file-integrity monitoring software to alert personnel to unauthorized modification of critical system files, configuration files, or content files; and configure the software to perform critical file comparisons at least weekly.\nNote: For file-integrity monitoring purposes, critical files are usually those that do not regularly change, but the modification of which could indicate a system compromise or risk of compromise. File-integrity monitoring products usually come pre-configured with critical files for the related operating system. Other critical files, such as those for custom applications, must be evaluated and defined by the entity (that is, the merchant or service provider)."
+              }
+            },
+            {
+              "id": "Testing Procedures 11.5",
+              "name": "Testing Procedures 11.5",
+              "fullDescription": {
+                "text": "Verify the use of file-integrity monitoring products within the cardholder data environment by observing system settings and monitored files, as well as reviewing results from monitoring activities.\nExamples of files that should be monitored:\n• System executables\n• Application executables\n• Configuration and parameter files\n• Centrally stored, historical or archived, log and audit files"
+              }
+            },
+            {
+              "id": "Requirements 12",
+              "name": "Maintain a policy that addresses information security for employees and contractors.",
+              "fullDescription": {
+                "text": "A strong security policy sets the security tone for the whole company and informs employees what is expected of them. All employees should be aware of the sensitivity of data and their responsibilities for protecting it. For the purposes of this requirement, “employees” refers to full-time and part-time employees, temporary employees and personnel, and contractors and consultants who are “resident” on the company’s site."
+              }
+            },
+            {
+              "id": "Requirements 12.1",
+              "name": "Requirements 12.1",
+              "fullDescription": {
+                "text": "Establish, publish, maintain, and disseminate a security policy that accomplishes the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.1",
+              "name": "Testing Procedures 12.1",
+              "fullDescription": {
+                "text": "Examine the information security policy and verify that the policy is published and disseminated to all relevant system users (including vendors, contractors, and business partners)."
+              }
+            },
+            {
+              "id": "Requirements 12.1.1",
+              "name": "Requirements 12.1.1",
+              "fullDescription": {
+                "text": "Addresses all PCI DSS requirements."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.1.1",
+              "name": "Testing Procedures 12.1.1",
+              "fullDescription": {
+                "text": "Verify that the policy addresses all PCI DSS requirements."
+              }
+            },
+            {
+              "id": "Requirements 12.1.2",
+              "name": "Requirements 12.1.2",
+              "fullDescription": {
+                "text": "Includes an annual process that identifies threats, and vulnerabilities, and results in a formal risk assessment."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.1.2",
+              "name": "Testing Procedures 12.1.2",
+              "fullDescription": {
+                "text": "Verify that the information security policy includes an annual risk assessment process that identifies threats, vulnerabilities, and results in a formal risk assessment."
+              }
+            },
+            {
+              "id": "Requirements 12.1.3",
+              "name": "Requirements 12.1.3",
+              "fullDescription": {
+                "text": "Includes a review at least once a year and updates when the environment changes."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.1.3",
+              "name": "Testing Procedures 12.1.3",
+              "fullDescription": {
+                "text": "Verify that the information security policy is reviewed at least annually and updated as needed to reflect changes to business objectives or the risk environment."
+              }
+            },
+            {
+              "id": "Requirements 12.2",
+              "name": "Requirements 12.2",
+              "fullDescription": {
+                "text": "Develop daily operational security procedures that are consistent with requirements in this specification (for example, user account maintenance procedures, and log review procedures)."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.2.a",
+              "name": "Testing Procedures 12.2.a",
+              "fullDescription": {
+                "text": "Examine the daily operational security procedures. Verify that they are consistent with this specification, and include administrative and technical procedures for each of the requirements."
+              }
+            },
+            {
+              "id": "Requirements 12.3",
+              "name": "Requirements 12.3",
+              "fullDescription": {
+                "text": "Develop usage policies for critical employee-facing technologies (for example, remote-access technologies, wireless technologies, removable electronic media, laptops, personal data/digital assistants (PDAs), e-mail usage and Internet usage) to define proper use of these technologies for all employees and contractors. Ensure these usage policies require the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3",
+              "name": "Testing Procedures 12.3",
+              "fullDescription": {
+                "text": "Obtain and examine the policy for critical employee-facing technologies and perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.3.1",
+              "name": "Requirements 12.3.1",
+              "fullDescription": {
+                "text": "Explicit management approval"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.1",
+              "name": "Testing Procedures 12.3.1",
+              "fullDescription": {
+                "text": "Verify that the usage policies require explicit management approval to use the technologies."
+              }
+            },
+            {
+              "id": "Requirements 12.3.2",
+              "name": "Requirements 12.3.2",
+              "fullDescription": {
+                "text": "Authentication for use of the technology"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.2",
+              "name": "Testing Procedures 12.3.2",
+              "fullDescription": {
+                "text": "Verify that the usage policies require that all technology use be authenticated with user ID and password or other authentication item (for example, token)."
+              }
+            },
+            {
+              "id": "Requirements 12.3.3",
+              "name": "Requirements 12.3.3",
+              "fullDescription": {
+                "text": "A list of all such devices and personnel with access"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.3",
+              "name": "Testing Procedures 12.3.3",
+              "fullDescription": {
+                "text": "Verify that the usage policies require a list of all devices and personnel authorized to use the devices."
+              }
+            },
+            {
+              "id": "Requirements 12.3.4",
+              "name": "Requirements 12.3.4",
+              "fullDescription": {
+                "text": "Labeling of devices with owner, contact information, and purpose"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.4",
+              "name": "Testing Procedures 12.3.4",
+              "fullDescription": {
+                "text": "Verify that the usage policies require labeling of devices with owner, contact information, and purpose."
+              }
+            },
+            {
+              "id": "Requirements 12.3.5",
+              "name": "Requirements 12.3.5",
+              "fullDescription": {
+                "text": "Acceptable uses of the technology"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.5",
+              "name": "Testing Procedures 12.3.5",
+              "fullDescription": {
+                "text": "Verify that the usage policies require acceptable uses for the technology"
+              }
+            },
+            {
+              "id": "Requirements 12.3.6",
+              "name": "Requirements 12.3.6",
+              "fullDescription": {
+                "text": "Acceptable network locations for the technologies"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.6",
+              "name": "Testing Procedures 12.3.6",
+              "fullDescription": {
+                "text": "Verify that the usage policies require acceptable network locations for the technology."
+              }
+            },
+            {
+              "id": "Requirements 12.3.7",
+              "name": "Requirements 12.3.7",
+              "fullDescription": {
+                "text": "List of company-approved products"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.7",
+              "name": "Testing Procedures 12.3.7",
+              "fullDescription": {
+                "text": "Verify that the usage policies require a list of company-approved products."
+              }
+            },
+            {
+              "id": "Requirements 12.3.8",
+              "name": "Requirements 12.3.8",
+              "fullDescription": {
+                "text": "Automatic disconnect of sessions for remote-access technologies after a specific period of inactivity"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.8",
+              "name": "Testing Procedures 12.3.8",
+              "fullDescription": {
+                "text": "Verify that the usage policies require automatic disconnect of sessions for remote-access technologies after a specific period of inactivity."
+              }
+            },
+            {
+              "id": "Requirements 12.3.9",
+              "name": "Requirements 12.3.9",
+              "fullDescription": {
+                "text": "Activation of remote-access technologies for vendors only when needed by vendors, with immediate deactivation after use"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.9",
+              "name": "Testing Procedures 12.3.9",
+              "fullDescription": {
+                "text": "Verify that the usage policies require activation of remote-access technologies used by vendors only when needed by vendors, with immediate deactivation after use."
+              }
+            },
+            {
+              "id": "Requirements 12.3.10",
+              "name": "Requirements 12.3.10",
+              "fullDescription": {
+                "text": "When accessing cardholder data via remote-access technologies, prohibit copy, move, and storage of cardholder data onto local hard drives and removable electronic media."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.3.10",
+              "name": "Testing Procedures 12.3.10",
+              "fullDescription": {
+                "text": "Verify that the usage policies prohibit copying, moving, or storing of cardholder data onto local hard drives, and removable electronic media when accessing such data via remote-access technologies."
+              }
+            },
+            {
+              "id": "Requirements 12.4",
+              "name": "Requirements 12.4",
+              "fullDescription": {
+                "text": "Ensure that the security policy and procedures clearly define information security responsibilities for all employees and contractors."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.4",
+              "name": "Testing Procedures 12.4",
+              "fullDescription": {
+                "text": "Verify that information security policies clearly define information security responsibilities for both employees and contractors."
+              }
+            },
+            {
+              "id": "Requirements 12.5",
+              "name": "Requirements 12.5",
+              "fullDescription": {
+                "text": "Assign to an individual or team the following information security management responsibilities:"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5",
+              "name": "Testing Procedures 12.5",
+              "fullDescription": {
+                "text": "Verify the formal assignment of information security to a Chief Security Officer or other security-knowledgeable member of management. Obtain and examine information security policies and procedures to verify that the following information security responsibilities are specifically and formally assigned:"
+              }
+            },
+            {
+              "id": "Requirements 12.5.1",
+              "name": "Requirements 12.5.1",
+              "fullDescription": {
+                "text": "Establish, document, and distribute security policies and procedures."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5.1",
+              "name": "Testing Procedures 12.5.1",
+              "fullDescription": {
+                "text": "Verify that responsibility for creating and distributing security policies and procedures is formally assigned."
+              }
+            },
+            {
+              "id": "Requirements 12.5.2",
+              "name": "Requirements 12.5.2",
+              "fullDescription": {
+                "text": "Monitor and analyze security alerts and information, and distribute to appropriate personnel."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5.2",
+              "name": "Testing Procedures 12.5.2",
+              "fullDescription": {
+                "text": "Verify that responsibility for monitoring and analyzing security alerts and distributing information to appropriate information security and business unit management personnel is formally assigned."
+              }
+            },
+            {
+              "id": "Requirements 12.5.3",
+              "name": "Requirements 12.5.3",
+              "fullDescription": {
+                "text": "Establish, document, and distribute security incident response and escalation procedures to ensure timely and effective handling of all situations."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5.3",
+              "name": "Testing Procedures 12.5.3",
+              "fullDescription": {
+                "text": "Verify that responsibility for creating and distributing security incident response and escalation procedures is formally assigned."
+              }
+            },
+            {
+              "id": "Requirements 12.5.4",
+              "name": "Requirements 12.5.4",
+              "fullDescription": {
+                "text": "Administer user accounts, including additions, deletions, and modifications"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5.4",
+              "name": "Testing Procedures 12.5.4",
+              "fullDescription": {
+                "text": "Verify that responsibility for administering user account and authentication management is formally assigned."
+              }
+            },
+            {
+              "id": "Requirements 12.5.5",
+              "name": "Requirements 12.5.5",
+              "fullDescription": {
+                "text": "Monitor and control all access to data."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.5.5",
+              "name": "Testing Procedures 12.5.5",
+              "fullDescription": {
+                "text": "Verify that responsibility for monitoring and controlling all access to data is formally assigned."
+              }
+            },
+            {
+              "id": "Requirements 12.6",
+              "name": "Requirements 12.6",
+              "fullDescription": {
+                "text": "Implement a formal security awareness program to make all employees aware of the importance of cardholder data security."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.6.a",
+              "name": "Testing Procedures 12.6.a",
+              "fullDescription": {
+                "text": "Verify the existence of a formal security awareness program for all employees."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.6.b",
+              "name": "Testing Procedures 12.6.b",
+              "fullDescription": {
+                "text": "Obtain and examine security awareness program procedures and documentation and perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.6.1",
+              "name": "Requirements 12.6.1",
+              "fullDescription": {
+                "text": "Educate employees upon hire and at least annually."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.6.1.a",
+              "name": "Testing Procedures 12.6.1.a",
+              "fullDescription": {
+                "text": "Verify that the security awareness program provides multiple methods of communicating awareness and educating employees (for example, posters, letters, memos, web based training, meetings, and promotions)."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.6.1.b",
+              "name": "Testing Procedures 12.6.1.b",
+              "fullDescription": {
+                "text": "Verify that employees attend awareness training upon hire and at least annually."
+              }
+            },
+            {
+              "id": "Requirements 12.6.2",
+              "name": "Requirements 12.6.2",
+              "fullDescription": {
+                "text": "Require employees to acknowledge at least annually that they have read and understood the company’s security policy and procedures."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.6.2",
+              "name": "Testing Procedures 12.6.2",
+              "fullDescription": {
+                "text": "Verify that the security awareness program requires employees to acknowledge (for example, in writing or electronically) at least annually that they have read and understand the company’s information security policy."
+              }
+            },
+            {
+              "id": "Requirements 12.7",
+              "name": "Requirements 12.7",
+              "fullDescription": {
+                "text": "Screen potential employees (see definition of “employee” at 9.2 above) prior to hire to minimize the risk of attacks from internal sources. For those employees such as store cashiers who only have access to one card number at a time when facilitating a transaction, this requirement is a recommendation only"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.7",
+              "name": "Testing Procedures 12.7",
+              "fullDescription": {
+                "text": "Inquire with Human Resource department management and verify that background checks are conducted (within the constraints of local laws) on employees prior to hire who will have access to cardholder data or the cardholder data environment. (Examples of background checks include previous employment history, criminal record, credit history, and reference checks.)"
+              }
+            },
+            {
+              "id": "Requirements 12.8",
+              "name": "Requirements 12.8",
+              "fullDescription": {
+                "text": "If cardholder data is shared with service providers, maintain and implement policies and procedures to manage service providers, to include the following:"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.8",
+              "name": "Testing Procedures 12.8",
+              "fullDescription": {
+                "text": "If the entity being assessed shares cardholder data with service providers (for example, back-up tape storage facilities, managed service providers such as Web hosting companies or security service providers, or those that receive data for fraud modeling purposes), through observation, review of policies and procedures, and review of supporting documentation, perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.8.1",
+              "name": "Requirements 12.8.1",
+              "fullDescription": {
+                "text": "Maintain a list of service providers."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.8.1",
+              "name": "Testing Procedures 12.8.1",
+              "fullDescription": {
+                "text": "Verify that a list of service providers is maintained."
+              }
+            },
+            {
+              "id": "Requirements 12.8.2",
+              "name": "Requirements 12.8.2",
+              "fullDescription": {
+                "text": "Maintain a written agreement that includes an acknowledgement that the service providers are responsible for the security of cardholder data the service providers possess."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.8.2",
+              "name": "Testing Procedures 12.8.2",
+              "fullDescription": {
+                "text": "Verify that the written agreement includes an acknowledgement by the service providers of their responsibility for securing cardholder data."
+              }
+            },
+            {
+              "id": "Requirements 12.8.3",
+              "name": "Requirements 12.8.3",
+              "fullDescription": {
+                "text": "Ensure there is an established process for engaging service providers including proper due diligence prior to engagement."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.8.3",
+              "name": "Testing Procedures 12.8.3",
+              "fullDescription": {
+                "text": "Verify that policies and procedures are documented and were followed including proper due diligence prior to engaging any service provider."
+              }
+            },
+            {
+              "id": "Requirements 12.8.4",
+              "name": "Requirements 12.8.4",
+              "fullDescription": {
+                "text": "Maintain a program to monitor service providers’ PCI DSS compliance status."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.8.4",
+              "name": "Testing Procedures 12.8.4",
+              "fullDescription": {
+                "text": "Verify that the entity assessed maintains a program to monitor its service providers’ PCI DSS compliance status."
+              }
+            },
+            {
+              "id": "Requirements 12.9",
+              "name": "Requirements 12.9",
+              "fullDescription": {
+                "text": "Implement an incident response plan. Be prepared to respond immediately to a system breach."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9",
+              "name": "Testing Procedures 12.9",
+              "fullDescription": {
+                "text": "Obtain and examine the Incident Response Plan and related procedures and perform the following:"
+              }
+            },
+            {
+              "id": "Requirements 12.9.1",
+              "name": "Requirements 12.9.1",
+              "fullDescription": {
+                "text": "Create the incident response plan to be implemented in the event of system breach. Ensure the plan addresses the following, at a minimum:\n• Roles, responsibilities, and communication and contact strategies in the event of a compromise including notification of the payment brands, at a minimum\n• Specific incident response procedures\n• Business recovery and continuity procedures\n• Data back-up processes\n• Analysis of legal requirements for reporting compromises\n• Coverage and responses of all critical system components\n• Reference or inclusion of incident response procedures from the payment brands"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.1",
+              "name": "Testing Procedures 12.9.1",
+              "fullDescription": {
+                "text": "Verify that the Incident Response Plan includes:\n• Roles, responsibilities, and communication strategies in the event of a compromise including notification of the payment brands, at a minimum\n• Specific incident response procedures,\n• Business recovery and continuity procedures,\n• Data back-up processes\n• Analysis of legal requirements for reporting compromises (for example, California Bill 1386 which requires notification of affected consumers in the event of an actual or suspected compromise for any business with California residents in their database)\n• Coverage and responses for all critical system components\n• Reference or inclusion of incident response procedures from the payment brands"
+              }
+            },
+            {
+              "id": "Requirements 12.9.2",
+              "name": "Requirements 12.9.2",
+              "fullDescription": {
+                "text": "Test the plan at least annually"
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.2",
+              "name": "Testing Procedures 12.9.2",
+              "fullDescription": {
+                "text": "Verify that the plan is tested at least annually."
+              }
+            },
+            {
+              "id": "Requirements 12.9.3",
+              "name": "Requirements 12.9.3",
+              "fullDescription": {
+                "text": "Designate specific personnel to be available on a 24/7 basis to respond to alerts."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.3",
+              "name": "Testing Procedures 12.9.3",
+              "fullDescription": {
+                "text": "Verify through observation and review of policies, that there is 24/7 incident response and monitoring coverage for any evidence of unauthorized activity, detection of unauthorized wireless access points, critical IDS alerts, and/or reports of unauthorized critical system or content file changes."
+              }
+            },
+            {
+              "id": "Requirements 12.9.4",
+              "name": "Requirements 12.9.4",
+              "fullDescription": {
+                "text": "Provide appropriate training to staff with security breach response responsibilities."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.4",
+              "name": "Testing Procedures 12.9.4",
+              "fullDescription": {
+                "text": "Verify through observation and review of policies that staff with security breach responsibilities are periodically trained."
+              }
+            },
+            {
+              "id": "Requirements 12.9.5",
+              "name": "Requirements 12.9.5",
+              "fullDescription": {
+                "text": "Include alerts from intrusiondetection, intrusion-prevention, and file-integrity monitoring systems."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.5",
+              "name": "Testing Procedures 12.9.5",
+              "fullDescription": {
+                "text": "Verify through observation and review of processes that monitoring and responding to alerts from security systems including detection of unauthorized wireless access points are covered in the Incident Response Plan."
+              }
+            },
+            {
+              "id": "Requirements 12.9.6",
+              "name": "Requirements 12.9.6",
+              "fullDescription": {
+                "text": "Develop process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments."
+              }
+            },
+            {
+              "id": "Testing Procedures 12.9.6",
+              "name": "Testing Procedures 12.9.6",
+              "fullDescription": {
+                "text": "Verify through observation and review of policies that there is a process to modify and evolve the incident response plan according to lessons learned and to incorporate industry developments."
+              }
+            },
+            {
+              "id": "Requirements A",
+              "name": "Shared hosting providers must protect the cardholder data environment",
+              "fullDescription": {
+                "text": "As referenced in Requirement 12.8, all service providers with access to cardholder data (including shared hosting providers) must adhere to the PCI DSS. In addition, Requirement 2.4 states that shared hosting providers must protect each entity’s hosted environment and data. Therefore, shared hosting providers must additionally comply with the requirements in this Appendix."
+              }
+            },
+            {
+              "id": "Requirements A.1",
+              "name": "Requirements A.1",
+              "fullDescription": {
+                "text": "Protect each entity’s (that is merchant, service provider, or other entity) hosted environment and data, per A.1.1 through A.1.4: A hosting provider must fulfill these requirements as well as all other relevant sections of the PCI DSS.\nNote: Even though a hosting provider may meet these requirements, the compliance of the entity that uses the hosting provider is not guaranteed. Each entity must comply with the PCI DSS and validate compliance as applicable."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1",
+              "name": "Testing Procedures A.1",
+              "fullDescription": {
+                "text": "Specifically for a PCI DSS assessment of a shared hosting provider, to verify that shared hosting providers protect entities’ (merchants and service providers) hosted environment and data, select a sample of servers (Microsoft Windows and Unix/Linux) across a representative sample of hosted merchants and service providers, and perform A.1.1 through A.1.4 below."
+              }
+            },
+            {
+              "id": "Requirements A.1.1",
+              "name": "Requirements A.1.1",
+              "fullDescription": {
+                "text": "Ensure that each entity only runs processes that have access to that entity’s cardholder data environment."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.1",
+              "name": "Testing Procedures A.1.1",
+              "fullDescription": {
+                "text": "If a shared hosting provider allows entities (for example, merchants or service providers) to run their own applications, verify these application processes run using the unique ID of the entity. For example:\n• No entity on the system can use a shared web server user ID.\n• All CGI scripts used by an entity must be created and run as the entity’s unique user ID."
+              }
+            },
+            {
+              "id": "Requirements A.1.2",
+              "name": "Requirements A.1.2",
+              "fullDescription": {
+                "text": "Restrict each entity’s access and privileges to own cardholder data environment only."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.2.a",
+              "name": "Testing Procedures A.1.2.a",
+              "fullDescription": {
+                "text": "Verify the user ID of any application process is not a privileged user (root/admin)."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.2.b",
+              "name": "Testing Procedures A.1.2.b",
+              "fullDescription": {
+                "text": "Verify each entity (merchant, service provider) has read, write, or execute permissions only for files and directories it owns or for necessary system files (restricted via file system permissions, access control lists, chroot, jailshell, etc.). IMPORTANT: An entity’s files may not be shared by group."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.2.c",
+              "name": "Testing Procedures A.1.2.c",
+              "fullDescription": {
+                "text": "Verify an entity’s users do not have write access to shared system binaries."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.2.d",
+              "name": "Testing Procedures A.1.2.d",
+              "fullDescription": {
+                "text": "Verify that viewing of log entries is restricted to the owning entity."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.2.e",
+              "name": "Testing Procedures A.1.2.e",
+              "fullDescription": {
+                "text": "To ensure each entity cannot monopolize server resources to exploit vulnerabilities (for example, error, race, and restart conditions, resulting in, for example, buffer overflows), verify restrictions are in place for the use of these system resources:\n• Disk space\n• Bandwidth\n• Memory\n• CPU"
+              }
+            },
+            {
+              "id": "Requirements A.1.3",
+              "name": "Requirements A.1.3",
+              "fullDescription": {
+                "text": "Ensure logging and audit trails are enabled and unique to each entity’s cardholder data environment and consistent with PCI DSS Requirement 10."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.3.a",
+              "name": "Testing Procedures A.1.3.a",
+              "fullDescription": {
+                "text": "Verify the shared hosting provider has enabled logging as follows, for each merchant and service provider environment:\n• Logs are enabled for common third-party applications.\n• Logs are active by default.\n• Logs are available for review by the owning entity.\n• Log locations are clearly communicated to the owning entity."
+              }
+            },
+            {
+              "id": "Requirements A.1.4",
+              "name": "Requirements A.1.4",
+              "fullDescription": {
+                "text": "Enable processes to provide for timely forensic investigation in the event of a compromise to any hosted merchant or service provider."
+              }
+            },
+            {
+              "id": "Testing Procedures A.1.4",
+              "name": "Testing Procedures A.1.4",
+              "fullDescription": {
+                "text": "Verify the shared hosting provider has written policies that provide for a timely forensics investigation of related servers in the event of a compromise."
+              }
+            }
+          ],
+          "contents": ["localizedData","nonLocalizedData"],
+          "isComprehensive": true
+        }
+      ]
+    }
+  ]
+}
