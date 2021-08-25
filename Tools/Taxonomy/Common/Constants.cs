@@ -9,6 +9,7 @@ namespace Taxonomy.Common
 
         private static class Guid
         {
+            public static string CWE_7PK_V4_5 = "B3D28502-8E8C-43E2-AE32-F8E79C7245D6";
             public static string CWE_Comprehensive_V43 = "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5";
             public static string CWE_Comprehensive_V44 = "7D699257-C37D-4A10-9C98-D7DB481F1A8B";
             public static string CWE_Top_25_2019 = "B37033B9-1D33-482B-AD09-C6E788340839";
@@ -36,6 +37,14 @@ namespace Taxonomy.Common
             public static string WASC_V1 = "E30814F7-D50D-4936-9B0C-B80ACD412434";
             public static string WASC_V2 = "982D1AD0-AEAB-4960-BFCE-A18953EFD6D6";
         }
+
+        public static TaxonomyData CWE_7PK_V4_5 = new TaxonomyData
+        {
+            Guid = Guid.CWE_7PK_V4_5,
+            Name = "CWE",
+            Location = REPO_PATH + "CWE_7PK_v4.5.sarif",
+            ReleaseDate = "2021-07-20",
+        };
 
         public static TaxonomyData CWE_Comprehensive_V43 = new TaxonomyData
         {
