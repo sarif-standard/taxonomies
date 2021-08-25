@@ -8,6 +8,7 @@ This repo stores SARIF Taxonomies
 -----|-----|-----|-----
 CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec/cwec_v4.3.xml.zip) | [CWE_v4.3.sarif](CWE_v4.3.sarif)
 CWE| v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
+CWE | Seven Pernicious Kingdoms (7PK) v4.5 | [link](https://cwe.mitre.org/data/xml/views/700.xml.zip) | [CWE_7PK_v4.5.sarif](CWE_7PK_v4.5.sarif)
 CWE | Top 25 2019 | [link](https://cwe.mitre.org/data/xml/views/1200.xml.zip) | [CWE_Top25_v2019.sarif](CWE_Top25_v2019.sarif)
 CWE | Top 25 2020 | [link](https://cwe.mitre.org/data/xml/views/1350.xml.zip) | [CWE_Top25_v2020.sarif](CWE_Top25_v2020.sarif)
 DISA | CCI v2 | [link](https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/u_draft_cci_specification_v2r0.2.zip) | [DISA_CCI_v2.sarif](DISA_CCI_v2.sarif)
@@ -41,6 +42,12 @@ Generate CWE Sarif file
 
 ```bash
 generate-cwe --type comprehensive --source-file-path "cwec_v4.4.xml" --target-file-path "CWE_v4.4.sarif" --version "4.4"
+```
+
+Generate CWE Seven Pernicious Kingdoms (7PK) Sarif file
+
+```bash
+generate-cwe --type 7pk --source-file-path "700.xml" --target-file-path "CWE_7PK_v4.5.sarif" --version "4.5"
 ```
 
 Generate CWE Top 25 Sarif file

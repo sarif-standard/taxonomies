@@ -160,6 +160,21 @@ namespace Taxonomy.Cwe
                             break;
                     }
                     break;
+                case "7pk":
+                    switch (version.ToLower())
+                    {
+                        case "4.5":
+                            cweTaxonomy.Name = Constants.CWE_7PK_V4_5.Name;
+                            cweTaxonomy.Guid = Constants.CWE_7PK_V4_5.Guid;
+                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_7PK_V4_5.ReleaseDate;
+                            cweTaxonomy.InformationUri = new Uri("https://https://cwe.mitre.org/data/definitions/700.html");
+                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/views/700.xml.zip");
+                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration Seven Pernicious Kingdoms" };
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -209,7 +224,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name } };
+            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name, InformationUri = cweTaxonomy.InformationUri } };
 
             Run run = new Run
             {
