@@ -5,7 +5,8 @@
     {
       "tool": {
         "driver": {
-          "name": "CWE Top 25 2019"
+          "name": "CWE Top 25 2019",
+          "informationUri": "https://cwe.mitre.org/data/slices/1200.html"
         }
       },
       "columnKind": "utf16CodeUnits",

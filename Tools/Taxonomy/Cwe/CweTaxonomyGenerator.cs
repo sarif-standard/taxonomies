@@ -224,7 +224,7 @@ namespace Taxonomy.Cwe
 
             taxonomies.Add(cweTaxonomy);
 
-            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name } };
+            var tool = new Tool { Driver = new ToolComponent { Name = cweTaxonomy.Name, InformationUri = cweTaxonomy.InformationUri } };
 
             Run run = new Run
             {

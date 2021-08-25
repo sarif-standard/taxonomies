@@ -41,7 +41,7 @@ namespace Taxonomy.Common
         public static TaxonomyData CWE_7PK_V4_5 = new TaxonomyData
         {
             Guid = Guid.CWE_7PK_V4_5,
-            Name = "CWE",
+            Name = "CWE 7PK V4.5",
             Location = REPO_PATH + "CWE_7PK_v4.5.sarif",
             ReleaseDate = "2021-07-20",
         };
@@ -49,7 +49,7 @@ namespace Taxonomy.Common
         public static TaxonomyData CWE_Comprehensive_V43 = new TaxonomyData
         {
             Guid = Guid.CWE_Comprehensive_V43,
-            Name = "CWE",
+            Name = "CWE V4.3",
             Location = REPO_PATH + "CWE_v4.3.sarif",
             ReleaseDate = "2020-12-10",
         };
@@ -57,7 +57,7 @@ namespace Taxonomy.Common
         public static TaxonomyData CWE_Comprehensive_V44 = new TaxonomyData
         {
             Guid = Guid.CWE_Comprehensive_V44,
-            Name = "CWE",
+            Name = "CWE V4.4",
             Location = REPO_PATH + "CWE_v4.4.sarif",
             ReleaseDate = "2021-03-15",
         };

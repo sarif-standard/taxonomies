@@ -5,14 +5,15 @@
     {
       "tool": {
         "driver": {
-          "name": "CWE"
+          "name": "CWE 7PK V4.5",
+          "informationUri": "https://https://cwe.mitre.org/data/definitions/700.html"
         }
       },
       "columnKind": "utf16CodeUnits",
       "taxonomies": [
         {
           "guid": "B3D28502-8E8C-43E2-AE32-F8E79C7245D6",
-          "name": "CWE",
+          "name": "CWE 7PK V4.5",
           "organization": "MITRE",
           "shortDescription": {
             "text": "The MITRE Common Weakness Enumeration Seven Pernicious Kingdoms"

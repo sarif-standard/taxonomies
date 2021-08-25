@@ -5,14 +5,15 @@
     {
       "tool": {
         "driver": {
-          "name": "CWE v4.4"
+          "name": "CWE V4.4",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.4.pdf"
         }
       },
       "columnKind": "utf16CodeUnits",
       "taxonomies": [
         {
           "guid": "7D699257-C37D-4A10-9C98-D7DB481F1A8B",
-          "name": "CWE",
+          "name": "CWE V4.4",
           "organization": "MITRE",
           "shortDescription": {
             "text": "The MITRE Common Weakness Enumeration"
@@ -57684,7 +57685,7 @@
               }
             }
           ],
-          "contents": ["localizedData","nonLocalizedData"],
+          "contents": [ "localizedData", "nonLocalizedData" ],
           "isComprehensive": true,
           "minimumRequiredLocalizedDataSemanticVersion": "4.4",
           "supportedTaxonomies": []
