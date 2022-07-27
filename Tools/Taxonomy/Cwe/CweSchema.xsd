@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://cwe.mitre.org/cwe-6" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cwe="http://cwe.mitre.org/cwe-6" xmlns:xhtml="http://www.w3.org/1999/xhtml" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.4">
+<xs:schema targetNamespace="http://cwe.mitre.org/cwe-6" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cwe="http://cwe.mitre.org/cwe-6" xmlns:xhtml="http://www.w3.org/1999/xhtml" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.8">
 	<xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
     <xs:annotation>
         <xs:documentation>The CWE Schema is maintained by The MITRE Corporation and developed in partnership with the public CWE Community. For more information, including how to get involved in the project and how to submit change requests, please visit the CWE website at https://cwe.mitre.org.</xs:documentation>
         <xs:appinfo>
             <schema>Core Definition</schema>
-            <version>6.4</version>
-            <date>15 March 2021</date>
-            <terms_of_use>Copyright (c) 2006-2021, The MITRE Corporation. All rights reserved. The contents of this file are subject to the terms of the CWE License located at https://cwe.mitre.org/about/termsofuse.html. See the CWE License for the specific language governing permissions and limitations for use of this schema. When distributing copies of the CWE Schema, this license header must be included.</terms_of_use>
+            <version>6.8</version>
+            <date>28 June 2022</date>
+            <terms_of_use>Copyright (c) 2006-2022, The MITRE Corporation. All rights reserved. The contents of this file are subject to the terms of the CWE License located at https://cwe.mitre.org/about/termsofuse.html. See the CWE License for the specific language governing permissions and limitations for use of this schema. When distributing copies of the CWE Schema, this license header must be included.</terms_of_use>
         </xs:appinfo>
     </xs:annotation>
     <!-- =============================================================================== -->
@@ -104,7 +104,7 @@
 			<xs:element name="Related_Attack_Patterns" type="cwe:RelatedAttackPatternsType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="References" type="cwe:ReferencesType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Notes" type="cwe:NotesType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="ID" type="xs:integer" use="required"/>
 		<xs:attribute name="Name" type="xs:string" use="required"/>
@@ -118,7 +118,7 @@
 	<xs:complexType name="CategoryType">
 		<xs:annotation>
 			<xs:documentation>A category is a collection of weaknesses based on some common characteristic or attribute. The shared attribute may be any number of things including, but not limited to, environment (J2EE, .NET), functional area (authentication, cryptography) and the relevant resource (credentials management, certificate issues). A Category is used primarily as an organizational mechanism for CWE and should not be mapped to by external sources.</xs:documentation>
-			<xs:documentation>The required Summary element contains the key points that define the category and helps the user understand what the category is attempting to be. The optional Relationships element is used to define relationships (MemberOf and HasMember) with other weaknesses, categories, and views. The optional Taxonomy_Mappings element is used to relate this category to similar categories in taxomomies outside of CWE. The optional References element is used to provide further reading and insight into this category. This element should be used when the category is based on external sources or projects. The optional Notes element is used to provide additional comments or clarifications that cannot be captured using the other elements of the category. The optional Content_History element is used to keep track of the original author of the category and any subsequent modifications to the content. This provides a means of contacting the authors and modifiers for clarifying ambiguities, or in merging overlapping contributions.</xs:documentation>
+			<xs:documentation>The required Summary element contains the key points that define the category and helps the user understand what the category is attempting to be. The optional Relationships element is used to define relationships (Member_Of and Has_Member) with other weaknesses, categories, and views. The optional Taxonomy_Mappings element is used to relate this category to similar categories in taxomomies outside of CWE. The optional References element is used to provide further reading and insight into this category. This element should be used when the category is based on external sources or projects. The optional Notes element is used to provide additional comments or clarifications that cannot be captured using the other elements of the category. The optional Content_History element is used to keep track of the original author of the category and any subsequent modifications to the content. This provides a means of contacting the authors and modifiers for clarifying ambiguities, or in merging overlapping contributions.</xs:documentation>
 			<xs:documentation>The required ID attribute provides a unique identifier for the category. It is meant to be static for the lifetime of the category. If the category becomes deprecated, the ID should not be reused, and a placeholder for the deprecated category should be left in the catalog. The required Name attribute provides a descriptive title used to give the reader an idea of what characteristics this category represents. All words in the name should be capitalized except for articles and prepositions unless they begin or end the name. The required Status attribute defines the maturity of the information for this category. Please refer to the StatusEnumeration simple type for a list of valid values and their meanings.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -127,7 +127,7 @@
 			<xs:element name="Taxonomy_Mappings" type="cwe:TaxonomyMappingsType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="References" type="cwe:ReferencesType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Notes" type="cwe:NotesType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="ID" type="xs:integer" use="required"/>
 		<xs:attribute name="Name" type="xs:string" use="required"/>
@@ -139,7 +139,7 @@
 	<xs:complexType name="ViewType">
 		<xs:annotation>
 			<xs:documentation>A view represents a perspective with which one might look at the weaknesses in the catalog. There are three different types of views as defined by the type attribute: graphs, explicit slices, and implicit slices. The members of a view are either defined externally through the members element (in the case of a graph or an explicit slice) or by the optional filter element (in the case of an implicit slice).</xs:documentation>
-			<xs:documentation>The required Objective element describes the perspective from which the view has been constructed. The optional Audience element provides a reference to the target stakeholders or groups for whom the view is most relevant. The optional Members element is used to define MemberOf relationships with categories. The optional Filter element is only used for implicit slices (see the Type attribute) and holds an XSL query for identifying which entries are members of the view. The optional References element is used to provide further reading and insight into this view. This element should be used when the view is based on external sources or projects. The optional Notes element is used to provide any additional comments that cannot be captured using the other elements of the view. The optional Content_History element is used to keep track of the original author of the view and any subsequent modifications to the content. This provides a means of contacting the authors and modifiers for clarifying ambiguities, or in merging overlapping contributions.</xs:documentation>
+			<xs:documentation>The required Objective element describes the perspective from which the view has been constructed. The optional Audience element provides a reference to the target stakeholders or groups for whom the view is most relevant. The optional Members element is used to define Member_Of relationships with categories. The optional Filter element is only used for implicit slices (see the Type attribute) and holds an XSL query for identifying which entries are members of the view. The optional References element is used to provide further reading and insight into this view. This element should be used when the view is based on external sources or projects. The optional Notes element is used to provide any additional comments that cannot be captured using the other elements of the view. The optional Content_History element is used to keep track of the original author of the view and any subsequent modifications to the content. This provides a means of contacting the authors and modifiers for clarifying ambiguities, or in merging overlapping contributions.</xs:documentation>
 			<xs:documentation>The required ID attribute provides a unique identifier for the view. It is meant to be static for the lifetime of the view. If the view becomes deprecated, the ID should not be reused, and a placeholder for the deprecated view should be left in the catalog. The required Name attribute provides a descriptive title used to give the reader an idea of what perspective this view represents. All words in the name should be capitalized except for articles and prepositions, unless they begin or end the name. The required Type attribute describes how this view is being constructed. Please refer to the ViewTypeEnumeration simple type for a list of valid values and their meanings. The required Status attribute defines the maturity of the information for this view. Please refer to the StatusEnumeration simple type for a list of valid values and their meanings.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
@@ -149,7 +149,7 @@
 			<xs:element name="Filter" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="References" type="cwe:ReferencesType" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="Notes" type="cwe:NotesType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Content_History" type="cwe:ContentHistoryType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="ID" type="xs:integer" use="required"/>
 		<xs:attribute name="Name" type="xs:string" use="required"/>
@@ -403,7 +403,7 @@
 	</xs:complexType>
     <xs:complexType name="MemberType">
         <xs:annotation>
-            <xs:documentation>The MemberType complex type may be used to establish a Has_Member or MemberOf type relationship within the designated View_ID. This type will establish a relationship between the container Category/View ID and the target CWE_ID.</xs:documentation>
+            <xs:documentation>The MemberType complex type may be used to establish a Has_Member or Member_Of type relationship within the designated View_ID. This type will establish a relationship between the container Category/View ID and the target CWE_ID.</xs:documentation>
         </xs:annotation>
         <xs:attribute name="CWE_ID" type="xs:integer" use="required"/>
         <xs:attribute name="View_ID" type="xs:integer" use="required"/>
@@ -621,6 +621,8 @@
 			<xs:enumeration value="Architecture or Design Review"/>
 			<xs:enumeration value="Dynamic Analysis with Manual Results Interpretation"/>
 			<xs:enumeration value="Dynamic Analysis with Automated Results Interpretation"/>
+			<xs:enumeration value="Formal Verification"/>
+			<xs:enumeration value="Simulation / Emulation"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -639,13 +641,14 @@
 	</xs:simpleType>
 	<xs:simpleType name="EffectivenessEnumeration">
 		<xs:annotation>
-			<xs:documentation>The EffectivenessEnumeration simple type defines the different values related to how effective a mitigation may be in preventing the weakness. A value of "High" means the mitigation is frequently successful in eliminating the weakness entirely. A value of "Moderate" means the mitigation will prevent the weakness in multiple forms, but it does not have complete coverage of the weakness. A value of "Limited" means the mitigation may be useful in limited circumstances, or it is only applicable to a subset of potential errors of this weakness type. A value of "Incidental" means the mitigation is generally not effective and will only provide protection by chance, rather than in a reliable manner. A value of "Defense in Depth" means the mitigation may not necessarily prevent the weakness, but it may help to minimize the potential impact of an attacker exploiting the weakness.</xs:documentation>
+			<xs:documentation>The EffectivenessEnumeration simple type defines the different values related to how effective a mitigation may be in preventing the weakness. A value of "High" means the mitigation is frequently successful in eliminating the weakness entirely. A value of "Moderate" means the mitigation will prevent the weakness in multiple forms, but it does not have complete coverage of the weakness. A value of "Limited" means the mitigation may be useful in limited circumstances, or it is only applicable to a subset of potential errors of this weakness type. A value of "Incidental" means the mitigation is generally not effective and will only provide protection by chance, rather than in a reliable manner. A value of "Defense in Depth" means the mitigation may not necessarily prevent the weakness, but it may help to minimize the potential impact of an attacker exploiting the weakness. A value of "Discouraged Common Practice" is used to indicate mitigations that are commonly attempted but known to be ineffective or highly risky.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="High"/>
 			<xs:enumeration value="Moderate"/>
 			<xs:enumeration value="Limited"/>
 			<xs:enumeration value="Incidental"/>
+			<xs:enumeration value="Discouraged Common Practice"/>
 			<xs:enumeration value="Defense in Depth"/>
 			<xs:enumeration value="None"/>
 		</xs:restriction>
@@ -723,6 +726,7 @@
 			<xs:enumeration value="PHP"/>
 			<xs:enumeration value="Python"/>
 			<xs:enumeration value="Ruby"/>
+			<xs:enumeration value="Rust"/>
 			<xs:enumeration value="Shell"/>
 			<xs:enumeration value="SQL"/>
 			<xs:enumeration value="Swift"/>
@@ -1076,72 +1080,232 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Web Server"/>
 			<xs:enumeration value="Database Server"/>
-			<xs:enumeration value="Accelerator IP">
+			<xs:enumeration value="Accelerator Hardware">
 				<xs:annotation>
-					<xs:documentation>IP dedicated to offload a specific workload to enhance performance: DSP, packet processing, mathematical, compression, etc.</xs:documentation>
+					<xs:documentation>hardware Intellectual Property (IP) dedicated to offload a specific workload to enhance performance: DSP, packet processing, mathematical, compression, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Analog and Mixed Signal Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) that controls/senses the electricals for communication which receives/transmits signals conditioned outside of a system’s digital domain.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Audio/Video Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) designed to manipulate audio/video data: coders/decoders, speech recognition, format converters, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Bus/Interface Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) implementing an interconnect among elements in a computing system: I2C, PCIe, DDR, MMC, USB, GPIO, NoC, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Clock/Counter Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) reflecting the passage of time in oscillations or human units: Real Time Clock, Watchdog, Monotonic Counter, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Communication Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) designed to transmit/receive information: Modulator/Demodulator, GPS, 802.11, Bluetooth, CDMA/DSM, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Controller Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) circuit hard-wired (e.g., an FSM) to react in a closed-loop control system or other limited context, to control another entity: Arbiter, APIC, USB, Peripheral, Memory, Storage, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Memory Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) implementing volatile (transient) data storage: DRAM, SRAM, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Microcontroller Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) implementing a specialized processor acting as a programmable controller.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Network on Chip Hardware"/>
+			<xs:enumeration value="Power Management Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) that controls and/or monitors the power state of a system: voltage regulators, power controllers, power monitors, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Processor Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) implementing a general-purpose computing engine: CPU, GPU, RISC, CISC, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Security Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP), including hardware security modules (HSM), designed to protect assets: cryptography, auth, tamper detection, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sensor Hardware"/>
+			<xs:enumeration value="Storage Hardware"/>
+			<xs:enumeration value="Test/Debug Hardware">
+				<xs:annotation>
+					<xs:documentation>hardware Intellectual Property (IP) designed to verify functionality and identify root cause of defects: JTAG, BIST, boundary scan, pattern generator, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Accelerator IP Hardware">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) dedicated to offload a specific workload to enhance performance: DSP, packet processing, mathematical, compression, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Accelerator">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) dedicated to offload a specific workload to enhance performance: DSP, packet processing, mathematical, compression, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Analog and Mixed Signal IP">
 				<xs:annotation>
-					<xs:documentation>IP that controls/senses the electricals for communication which receives/transmits signals conditioned outside of a system’s digital domain.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) that controls/senses the electricals for communication which receives/transmits signals conditioned outside of a system’s digital domain.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Analog and Mixed Signal">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) that controls/senses the electricals for communication which receives/transmits signals conditioned outside of a system’s digital domain.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Audio/Video IP">
 				<xs:annotation>
-					<xs:documentation>IP designed to manipulate audio/video data: coders/decoders, speech recognition, format converters, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) designed to manipulate audio/video data: coders/decoders, speech recognition, format converters, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Audio/Video">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) designed to manipulate audio/video data: coders/decoders, speech recognition, format converters, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Bus/Interface IP">
 				<xs:annotation>
-					<xs:documentation>IP implementing an interconnect among elements in a computing system: I2C, PCIe, DDR, MMC, USB, GPIO, NoC, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) implementing an interconnect among elements in a computing system: I2C, PCIe, DDR, MMC, USB, GPIO, NoC, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Bus/Interface">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7.  Hardware Intellectual Property (IP) implementing an interconnect among elements in a computing system: I2C, PCIe, DDR, MMC, USB, GPIO, NoC, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Clock/Counter IP">
 				<xs:annotation>
-					<xs:documentation>IP reflecting the passage of time in oscillations or human units: Real Time Clock, Watchdog, Monotonic Counter, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) reflecting the passage of time in oscillations or human units: Real Time Clock, Watchdog, Monotonic Counter, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Clock/Counter">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7.  Hardware Intellectual Property (IP) reflecting the passage of time in oscillations or human units: Real Time Clock, Watchdog, Monotonic Counter, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Communication IP">
 				<xs:annotation>
-					<xs:documentation>IP designed to transmit/receive information: Modulator/Demodulator, GPS, 802.11, Bluetooth, CDMA/DSM, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) designed to transmit/receive information: Modulator/Demodulator, GPS, 802.11, Bluetooth, CDMA/DSM, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Communication">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) designed to transmit/receive information: Modulator/Demodulator, GPS, 802.11, Bluetooth, CDMA/DSM, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Controller IP">
 				<xs:annotation>
-					<xs:documentation>IP circuit hard-wired (e.g., an FSM) to react in a closed-loop control system or other limited context, to control another entity: Arbiter, APIC, USB, Peripheral, Memory, Storage, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) circuit hard-wired (e.g., an FSM) to react in a closed-loop control system or other limited context, to control another entity: Arbiter, APIC, USB, Peripheral, Memory, Storage, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Controller">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) circuit hard-wired (e.g., an FSM) to react in a closed-loop control system or other limited context, to control another entity: Arbiter, APIC, USB, Peripheral, Memory, Storage, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Memory IP">
 				<xs:annotation>
-					<xs:documentation>IP implementing volatile (transient) data storage: DRAM, SRAM, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) implementing volatile (transient) data storage: DRAM, SRAM, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Memory">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) implementing volatile (transient) data storage: DRAM, SRAM, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Microcontroller IP">
 				<xs:annotation>
-					<xs:documentation>IP implementing a specialized processor acting as a programmable controller.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) implementing a specialized processor acting as a programmable controller.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Network on Chip IP"/>
+			<xs:enumeration value="Microcontroller">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) implementing a specialized processor acting as a programmable controller.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Network on Chip IP">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in scheme 7.0.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Network on Chip">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in scheme 7.0. It was only used in CWE 4.7.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Power Management IP">
 				<xs:annotation>
-					<xs:documentation>IP that controls and/or monitors the power state of a system: voltage regulators, power controllers, power monitors, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) that controls and/or monitors the power state of a system: voltage regulators, power controllers, power monitors, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Power Management">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) that controls and/or monitors the power state of a system: voltage regulators, power controllers, power monitors, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Processor IP">
 				<xs:annotation>
-					<xs:documentation>IP implementing a general-purpose computing engine: CPU, GPU, RISC, CISC, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) implementing a general-purpose computing engine: CPU, GPU, RISC, CISC, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Processor">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) implementing a general-purpose computing engine: CPU, GPU, RISC, CISC, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Security IP">
 				<xs:annotation>
-					<xs:documentation>IP designed to protect assets: cryptography, auth, tamper detection, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP), including hardware security modules (HSM), designed to protect assets: cryptography, auth, tamper detection, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Sensor IP"/>
-			<xs:enumeration value="Storage IP"/>
+			<xs:enumeration value="Security">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP), including hardware security modules (HSM), designed to protect assets: cryptography, auth, tamper detection, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sensor IP">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sensor">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Storage IP">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Storage">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Test/Debug IP">
 				<xs:annotation>
-					<xs:documentation>IP designed to verify functionality and identify root cause of defects: JTAG, BIST, boundary scan, pattern generator, etc.</xs:documentation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. Hardware Intellectual Property (IP) designed to verify functionality and identify root cause of defects: JTAG, BIST, boundary scan, pattern generator, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Test/Debug">
+				<xs:annotation>
+					<xs:documentation>Note: this value will be deprecated in schema 7.0. It was only used in CWE 4.7. Hardware Intellectual Property (IP) designed to verify functionality and identify root cause of defects: JTAG, BIST, boundary scan, pattern generator, etc.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Other"/>

@@ -115,27 +115,12 @@ namespace Taxonomy.Cwe
             switch (type.ToLower())
             {
                 case "comprehensive":
-                    switch (version.ToLower())
-                    {
-                        case "4.3":
-                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V43.Name;
-                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V43.Guid;
-                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V43.ReleaseDate;
-                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.3.pdf");
-                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip");
-                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
-                            break;
-                        case "4.4":
-                            cweTaxonomy.Name = Constants.CWE_Comprehensive_V44.Name;
-                            cweTaxonomy.Guid = Constants.CWE_Comprehensive_V44.Guid;
-                            cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive_V44.ReleaseDate;
-                            cweTaxonomy.InformationUri = new Uri("https://cwe.mitre.org/data/published/cwe_v4.4.pdf");
-                            cweTaxonomy.DownloadUri = new Uri("https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip");
-                            cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
-                            break;
-                        default:
-                            break;
-                    }
+                    cweTaxonomy.Name = Constants.CWE_Comprehensive[version].Name;
+                    cweTaxonomy.Guid = Constants.CWE_Comprehensive[version].Guid;
+                    cweTaxonomy.ReleaseDateUtc = Constants.CWE_Comprehensive[version].ReleaseDate;
+                    cweTaxonomy.DownloadUri = new Uri(Constants.CWE_Comprehensive[version].DownloadUri);
+                    cweTaxonomy.InformationUri = new Uri(Constants.CWE_Comprehensive[version].InformationUri);
+                    cweTaxonomy.ShortDescription = new MultiformatMessageString { Text = "The MITRE Common Weakness Enumeration" };
                     break;
                 case "top25":
                     switch (version.ToLower())

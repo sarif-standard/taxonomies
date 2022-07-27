@@ -6,8 +6,12 @@ This repo stores SARIF Taxonomies
 
 | **Taxonomy** | **Version** | **Souce File** | **SARIF File** |
 -----|-----|-----|-----
-CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec/cwec_v4.3.xml.zip) | [CWE_v4.3.sarif](CWE_v4.3.sarif)
-CWE| v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
+CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip) | [CWE_v4.3.sarif](CWE_v4.3.sarif)
+CWE | v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
+CWE | v4.5 | [link](https://cwe.mitre.org/data/xml/cwec_v4.5.xml.zip) | [CWE_v4.5.sarif](CWE_v4.5.sarif)
+CWE | v4.6 | [link](https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip) | [CWE_v4.6.sarif](CWE_v4.6.sarif)
+CWE | v4.7 | [link](https://cwe.mitre.org/data/xml/cwec_v4.7.xml.zip) | [CWE_v4.7.sarif](CWE_v4.7.sarif)
+CWE | v4.8 | [link](https://cwe.mitre.org/data/xml/cwec_v4.8.xml.zip) | [CWE_v4.8.sarif](CWE_v4.8.sarif)
 CWE | Seven Pernicious Kingdoms (7PK) v4.5 | [link](https://cwe.mitre.org/data/xml/views/700.xml.zip) | [CWE_7PK_v4.5.sarif](CWE_7PK_v4.5.sarif)
 CWE | Top 25 2019 | [link](https://cwe.mitre.org/data/xml/views/1200.xml.zip) | [CWE_Top25_v2019.sarif](CWE_Top25_v2019.sarif)
 CWE | Top 25 2020 | [link](https://cwe.mitre.org/data/xml/views/1350.xml.zip) | [CWE_Top25_v2020.sarif](CWE_Top25_v2020.sarif)
@@ -115,6 +119,7 @@ Generate WASC 2.00 Sarif file
 ```bash
 generate-wasc --source-file-path "http://projects.webappsec.org/Threat%20Classification%20Taxonomy%20Cross%20Reference%20View" --target-file-path "..\..\..\..\..\WASC_2.00.sarif" --version "2.00"
 ```
+
 ## License
 
 Microsoft SARIF Taxonomies are licensed under the [MIT license](https://github.com/microsoft/sarif-visualstudio-extension/blob/main/LICENSE).

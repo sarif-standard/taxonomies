@@ -1959,6 +1959,9 @@ public enum LanguageNameEnumeration {
     Ruby,
     
     /// <remarks/>
+    Rust,
+    
+    /// <remarks/>
     Shell,
     
     /// <remarks/>
@@ -2588,68 +2591,187 @@ public enum TechnologyNameEnumeration {
     DatabaseServer,
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlEnumAttribute("Accelerator IP")]
-    AcceleratorIP,
+    [System.Xml.Serialization.XmlEnumAttribute("Accelerator Hardware")]
+    AcceleratorHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Analog and Mixed Signal Hardware")]
+    AnalogandMixedSignalHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Audio/Video Hardware")]
+    AudioVideoHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Bus/Interface Hardware")]
+    BusInterfaceHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Clock/Counter Hardware")]
+    ClockCounterHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Communication Hardware")]
+    CommunicationHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Controller Hardware")]
+    ControllerHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Memory Hardware")]
+    MemoryHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Microcontroller Hardware")]
+    MicrocontrollerHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Network on Chip Hardware")]
+    NetworkonChipHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Power Management Hardware")]
+    PowerManagementHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Processor Hardware")]
+    ProcessorHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Security Hardware")]
+    SecurityHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Sensor Hardware")]
+    SensorHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Storage Hardware")]
+    StorageHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Test/Debug Hardware")]
+    TestDebugHardware,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Accelerator IP Hardware")]
+    AcceleratorIPHardware,
+    
+    /// <remarks/>
+    Accelerator,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Analog and Mixed Signal IP")]
     AnalogandMixedSignalIP,
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Analog and Mixed Signal")]
+    AnalogandMixedSignal,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Audio/Video IP")]
     AudioVideoIP,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Audio/Video")]
+    AudioVideo,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Bus/Interface IP")]
     BusInterfaceIP,
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Bus/Interface")]
+    BusInterface,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Clock/Counter IP")]
     ClockCounterIP,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Clock/Counter")]
+    ClockCounter,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Communication IP")]
     CommunicationIP,
     
     /// <remarks/>
+    Communication,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Controller IP")]
     ControllerIP,
+    
+    /// <remarks/>
+    Controller,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Memory IP")]
     MemoryIP,
     
     /// <remarks/>
+    Memory,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Microcontroller IP")]
     MicrocontrollerIP,
+    
+    /// <remarks/>
+    Microcontroller,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Network on Chip IP")]
     NetworkonChipIP,
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Network on Chip")]
+    NetworkonChip,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Power Management IP")]
     PowerManagementIP,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Power Management")]
+    PowerManagement,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Processor IP")]
     ProcessorIP,
     
     /// <remarks/>
+    Processor,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Security IP")]
     SecurityIP,
+    
+    /// <remarks/>
+    Security,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Sensor IP")]
     SensorIP,
     
     /// <remarks/>
+    Sensor,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Storage IP")]
     StorageIP,
     
     /// <remarks/>
+    Storage,
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Test/Debug IP")]
     TestDebugIP,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Test/Debug")]
+    TestDebug,
     
     /// <remarks/>
     Other,
@@ -3395,6 +3517,14 @@ public enum DetectionMethodEnumeration {
     DynamicAnalysiswithAutomatedResultsInterpretation,
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Formal Verification")]
+    FormalVerification,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Simulation / Emulation")]
+    SimulationEmulation,
+    
+    /// <remarks/>
     Other,
 }
 
@@ -3610,6 +3740,10 @@ public enum EffectivenessEnumeration {
     
     /// <remarks/>
     Incidental,
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("Discouraged Common Practice")]
+    DiscouragedCommonPractice,
     
     /// <remarks/>
     [System.Xml.Serialization.XmlEnumAttribute("Defense in Depth")]
