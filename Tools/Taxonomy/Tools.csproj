@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,7 +14,7 @@
     <PackageReference Include="CsvHelper" Version="26.1.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.33" />
     <PackageReference Include="Markdig" Version="0.24.0" />
-    <PackageReference Include="Sarif.Sdk" Version="2.4.5" />
+    <PackageReference Include="Sarif.Sdk" Version="3.0.0-beta1" />
     <PackageReference Include="System.Linq.Async" Version="4.0.0" />
   </ItemGroup>
 

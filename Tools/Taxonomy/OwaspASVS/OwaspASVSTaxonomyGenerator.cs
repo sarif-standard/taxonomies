@@ -55,7 +55,7 @@ namespace Taxonomy
         private Run ConvertToSarif(List<OwaspASVSCsvRecord> records, string version)
         {
             var supportedTaxonomies = new List<ToolComponentReference>();
-            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.CWE_Comprehensive_V44.Guid, Name = Constants.CWE_Comprehensive_V44.Name });
+            supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.CWE_Comprehensive["4.4"].Guid, Name = Constants.CWE_Comprehensive["4.4"].Name });
             supportedTaxonomies.Add(new ToolComponentReference() { Guid = Constants.Nist_SP80063B.Guid, Name = Constants.Nist_SP80063B.Name });
 
             IList<ToolComponent> taxonomies = new List<ToolComponent>();
@@ -91,8 +91,8 @@ namespace Taxonomy
             externalPropertyFileReferences.Taxonomies = new List<ExternalPropertyFileReference>();
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
             {
-                Guid = Constants.CWE_Comprehensive_V44.Guid,
-                Location = new ArtifactLocation() { Uri = new Uri(Constants.CWE_Comprehensive_V44.Location) }
+                Guid = Constants.CWE_Comprehensive["4.4"].Guid,
+                Location = new ArtifactLocation() { Uri = new Uri(Constants.CWE_Comprehensive["4.4"].Location) }
             });
 
             externalPropertyFileReferences.Taxonomies.Add(new ExternalPropertyFileReference()
@@ -126,7 +126,7 @@ namespace Taxonomy
                         Target = new ReportingDescriptorReference
                         {
                             Id = id,
-                            ToolComponent = new ToolComponentReference { Name = Constants.CWE_Comprehensive_V44.Name, Guid = Constants.CWE_Comprehensive_V44.Guid },
+                            ToolComponent = new ToolComponentReference { Name = Constants.CWE_Comprehensive["4.4"].Name, Guid = Constants.CWE_Comprehensive["4.4"].Guid },
                         },
                         Kinds = new string[] { "relevant" },
                     });

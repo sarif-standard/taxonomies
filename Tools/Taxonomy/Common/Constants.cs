@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.Collections.Generic;
+
 namespace Taxonomy.Common
 {
     public static class Constants
@@ -10,15 +12,19 @@ namespace Taxonomy.Common
         private static class Guid
         {
             public static string CWE_7PK_V4_5 = "B3D28502-8E8C-43E2-AE32-F8E79C7245D6";
-            public static string CWE_Comprehensive_V43 = "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5";
-            public static string CWE_Comprehensive_V44 = "7D699257-C37D-4A10-9C98-D7DB481F1A8B";
+            public static string CWE_Comprehensive_V4_3 = "FFC64C90-42B6-44CE-8BEB-F6B7DAE649E5";
+            public static string CWE_Comprehensive_V4_4 = "7D699257-C37D-4A10-9C98-D7DB481F1A8B";
+            public static string CWE_Comprehensive_V4_5 = "474AE5EE-3D14-4862-B691-00658507100F";
+            public static string CWE_Comprehensive_V4_6 = "D9175477-7CDB-4A3B-9037-3D913B16947A";
+            public static string CWE_Comprehensive_V4_7 = "CC7C15FF-3B88-4B86-A2DB-55A4DD8F6200";
+            public static string CWE_Comprehensive_V4_8 = "A70FCFF4-F2E9-4210-9D2A-BF50D7D64D5D";
             public static string CWE_Top_25_2019 = "B37033B9-1D33-482B-AD09-C6E788340839";
             public static string CWE_Top_25_2020 = "4D54E275-787C-493E-9F1A-4149C1A906C0";
             public static string DISA_CCI_V2 = "A5D61558-0042-4F62-A2E3-59EA163BD5D6";
             public static string Nist_SP80053_V4 = "EE4E6942-6346-45EE-BBA2-9998A214D80E";
             public static string Nist_SP80053_V5 = "AAFBAB93-5201-419E-8443-D4925C542398";
             public static string Nist_SP80063B = "CC3BE6A5-E774-41CF-B74C-C928269B6778";
-            public static string Owasp_ASVS_V402 = "BBEA1F18-F56A-4202-B9A9-3FC348B81E5A";
+            public static string Owasp_ASVS_V4_0_2 = "BBEA1F18-F56A-4202-B9A9-3FC348B81E5A";
             public static string Owasp_Mobile_Top_10_2014 = "F539BA7E-3C82-4C60-B8C9-EC151E27E140";
             public static string Owasp_Mobile_Top_10_2016 = "62118DBB-B3B1-4489-BE8E-938A6C071CED";
             public static string Owasp_Top_10_2004 = "35A384BD-CA28-449B-8ACC-60873A53E5CB";
@@ -46,20 +52,74 @@ namespace Taxonomy.Common
             ReleaseDate = "2021-07-20",
         };
 
-        public static TaxonomyData CWE_Comprehensive_V43 = new TaxonomyData
+        public static Dictionary<string, TaxonomyData> CWE_Comprehensive = new Dictionary<string, TaxonomyData>()
         {
-            Guid = Guid.CWE_Comprehensive_V43,
-            Name = "CWE V4.3",
-            Location = REPO_PATH + "CWE_v4.3.sarif",
-            ReleaseDate = "2020-12-10",
-        };
-
-        public static TaxonomyData CWE_Comprehensive_V44 = new TaxonomyData
-        {
-            Guid = Guid.CWE_Comprehensive_V44,
-            Name = "CWE V4.4",
-            Location = REPO_PATH + "CWE_v4.4.sarif",
-            ReleaseDate = "2021-03-15",
+            {
+                "4.3",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_3,
+                    Name = "CWE V4.3",
+                    Location = REPO_PATH + "CWE_v4.3.sarif",
+                    ReleaseDate = "2020-12-10",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.3.pdf",
+                }
+            },
+            {
+                "4.4",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_4,
+                    Name = "CWE V4.4",
+                    Location = REPO_PATH + "CWE_v4.4.sarif",
+                    ReleaseDate = "2021-03-15",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.4.pdf",
+                }
+            },
+            {
+                "4.5",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_5,
+                    Name = "CWE V4.5",
+                    Location = REPO_PATH + "CWE_v4.5.sarif",
+                    ReleaseDate = "2021-07-20",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.5.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.5.pdf",
+                }
+            },
+            {
+                "4.6",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_6,
+                    Name = "CWE V4.6",
+                    Location = REPO_PATH + "CWE_v4.6.sarif",
+                    ReleaseDate = "2021-10-28",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+                }
+            },
+            {
+                "4.7",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_7,
+                    Name = "CWE V4.7",
+                    Location = REPO_PATH + "CWE_v4.7.sarif",
+                    ReleaseDate = "2022-04-28",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.7.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.7.pdf",
+                }
+            },
+            {
+                "4.8",
+                new TaxonomyData {
+                    Guid = Guid.CWE_Comprehensive_V4_8,
+                    Name = "CWE V4.8",
+                    Location = REPO_PATH + "CWE_v4.8.sarif",
+                    ReleaseDate = "2022-06-28",
+                    DownloadUri = "https://cwe.mitre.org/data/xml/cwec_v4.8.xml.zip",
+                    InformationUri = "https://cwe.mitre.org/data/published/cwe_v4.8.pdf",
+                }
+            },
         };
 
         public static TaxonomyData CWE_Top_25_2019 = new TaxonomyData
@@ -112,7 +172,7 @@ namespace Taxonomy.Common
 
         public static TaxonomyData Owasp_ASVS_V402 = new TaxonomyData
         {
-            Guid = Guid.Owasp_ASVS_V402,
+            Guid = Guid.Owasp_ASVS_V4_0_2,
             Name = "OWASP",
             Location = REPO_PATH + "OWASP_ASVS_v4.0.2.sarif",
             ReleaseDate = "2020-10-01",
@@ -254,5 +314,7 @@ namespace Taxonomy.Common
         public string Guid;
         public string Location;
         public string ReleaseDate;
+        public string DownloadUri;
+        public string InformationUri;
     }
 }
