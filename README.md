@@ -4,7 +4,7 @@ This repo stores SARIF Taxonomies
 
 ## Data Source
 
-| **Taxonomy** | **Version** | **Souce File** | **SARIF File** |
+| **Taxonomy** | **Version** | **Source File** | **SARIF File** |
 -----|-----|-----|-----
 CWE | v4.3 | [link](https://cwe.mitre.org/data/xml/cwec_v4.3.xml.zip) | [CWE_v4.3.sarif](CWE_v4.3.sarif)
 CWE | v4.4 | [link](https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip) | [CWE_v4.4.sarif](CWE_v4.4.sarif)
@@ -39,7 +39,7 @@ WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20T
 
 ## Tool Usage
 
-Download form official website using the links in Data Source section above. Unzip as needed.
+Download from official website using the links in Data Source section above. Unzip as needed.
 Execute the tool with proper parameters, samples below.
 
 Generate CWE Sarif file
