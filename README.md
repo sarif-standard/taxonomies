@@ -39,7 +39,7 @@ WASC | v2.0.0 | [link](http://projects.webappsec.org/Threat%20Classification%20T
 
 ## Tool Usage
 
-Download form official website using the links in Data Source section above. Unzip as needed.
+Download from official website using the links in Data Source section above. Unzip as needed.
 Execute the tool with proper parameters, samples below.
 
 Generate CWE Sarif file
